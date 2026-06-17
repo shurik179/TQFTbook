@@ -1,7 +1,28 @@
-# Deployment / online hosting — research notes (for LATER)
+# Deployment / online hosting
 
-Not started yet. Current priority is a perfect LOCAL build (`build_site.py`).
-This file records the hosting investigation so we can pick it up later.
+## Current status (2026-06): manual deploy to PythonAnywhere (free tier)
+
+Serving from the **committed build artifacts** (no build on the host). Step-by-step
+in **`deploy/DEPLOY-PYTHONANYWHERE.md`**; files in `deploy/` (WSGI template +
+`pa_update.sh`). Publish model = **manual**: build locally → `git push` → run
+`deploy/pa_update.sh` in a PA Bash console (git pull + reload).
+
+## TODO (future): move to GitHub Actions CI
+
+The author does **not** want to build locally long-term, so the plan is to move
+to **CI**: GitHub Actions rebuilds the site on push (install TeX Live +
+poppler-utils, run `build_site.py --no-serve`, commit `build/tags` back for tag
+permanence) and deploys to the host — on PythonAnywhere via the **reload API**
+(needs the paid Developer plan; token in GitHub Secrets), or by switching to a
+host with native push-deploy (Railway/Render). The build/serve split and the
+host comparison below already cover this; the remaining work is writing
+`.github/workflows/build.yml` and wiring the deploy/reload step. See "The commit
+-> live pipeline" section further down.
+
+---
+
+The rest of this file is the original hosting investigation (host comparison,
+cost notes, the commit->live pipeline, comment-moderation options).
 
 ## Key architectural decision: separate BUILD from SERVE
 

@@ -207,6 +207,10 @@ lost on a reinstall. Copies are in `website/patches/` — re-apply if rebuilt.
    small ∘), 2 spots. Not a diagram, so the figure passes leave it; MathJax v2
    may render it slightly off. Deal with later — e.g. strip the `\tiny` (and any
    other bare font-size commands) from inside math during prep, or stub it.
+6. **Deployment**: manual deploy to PythonAnywhere is set up — see
+   `deploy/DEPLOY-PYTHONANYWHERE.md` (+ `deploy/` files). **TODO (future):** move
+   to GitHub Actions CI so the site rebuilds on push without building locally;
+   details in `DEPLOYMENT.md`.
 
 Branding/UX + content already DONE: title/subtitle, About, statistics page +
 blurb, single-page sidebar, top nav, removed blog (feed + nav + tile), removed

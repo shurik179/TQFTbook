@@ -340,3 +340,9 @@ private/*
 # local Python virtualenvs (machine-specific, contain absolute paths)
 website/venv/
 website/venv-tex/
+
+# runtime, user-generated (server creates it; never overwrite live comments via pull)
+website/site/comments.sqlite
+
+# Flask instance folder: runtime cache (fetched feeds, etc.)
+website/repos/gerby-website/instance/

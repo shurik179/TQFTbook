@@ -20,6 +20,14 @@ db.init(DATABASE)
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+# Comments are runtime data (user-posted), NOT shipped in the repo, so a fresh
+# deploy may have no comments.sqlite. Create the DB + table on startup if missing
+# (no-op once it exists); this keeps live comments independent of `git pull`.
+try:
+  comments.create_tables([Comment], safe=True)
+except Exception as e:
+  app.logger.warning("could not initialize comments table: %s" % e)
+
 #app.config["flask_profiler"] = {
 #    "enabled": "true",
 #    "storage": {
