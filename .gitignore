@@ -337,3 +337,6 @@ private/*
 
 # OS X files
 .DS_Store
+# local Python virtualenvs (machine-specific, contain absolute paths)
+website/venv/
+website/venv-tex/
