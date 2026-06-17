@@ -1,5 +1,8 @@
-# Website venv (venv), Python 3.9. Note the deliberate pins peewee<4 and
-# PyPDF2<3 (newer ones break on 3.9). Install:  venv/bin/python -m pip install -r requirements-web.txt
+# Website venv (venv). Note the deliberate pins peewee<4 and PyPDF2<3.
+# Install:  venv/bin/python -m pip install -r requirements-web.txt
+# NB: plasTeX is intentionally NOT here -- gerby never imports it (build or
+# serve), and it pins an old Jinja2 that conflicts with Flask. Rendering uses
+# the separate venv-tex (requirements-tex.txt).
 bleach==6.2.0
 blinker==1.9.0
 click==8.1.8
@@ -17,7 +20,6 @@ MarkupSafe==3.0.3
 mdx_bleach==0.1.4
 networkx==3.2.1
 peewee==3.19.0
-./repos/plastex
 pybtex==0.26.1
 PyPDF2==2.12.1
 python-markdown-math==0.9

@@ -30,8 +30,8 @@ cd ~/TQFTbook/website
 python3.10 -m venv venv
 venv/bin/pip install -r requirements-web.txt
 ```
-(3.10 is fine; use 3.9 if you want to match local exactly. Ignore that this also
-pulls plasTeX — it's a declared dependency but isn't used when only serving.)
+(3.10 is fine; use 3.9 to match local exactly. plasTeX is intentionally not in
+this list — only the rendering venv needs it, and serving doesn't.)
 
 ### 4. Create the web app
 PA dashboard → **Web** tab → **Add a new web app** →
