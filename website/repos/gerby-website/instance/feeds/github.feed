@@ -4,7 +4,103 @@
   <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commits/main"/>
   <link type="application/atom+xml" rel="self" href="https://github.com/shurik179/TQFTbook/commits/main.atom"/>
   <title>Recent Commits to TQFTbook:main</title>
-  <updated>2026-06-17T13:07:20Z</updated>
+  <updated>2026-06-17T14:20:47Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/fc8d777e41b2dd1128671021c220cb217cffced1</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/fc8d777e41b2dd1128671021c220cb217cffced1"/>
+    <title>
+        Add venv requirements files + README Setup section
+    </title>
+    <updated>2026-06-17T14:20:47Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Add venv requirements files + README Setup section
+
+Pin both venvs (requirements-tex.txt / requirements-web.txt, generated from the
+working venvs with local-path lines normalized) and document how to recreate
+them from a fresh clone, including re-applying the Gerby-renderer patches.
+
+Co-Authored-By: Claude Opus 4.8 &amp;lt;noreply@anthropic.com&amp;gt;&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/03b75b95870e7b8de8a2488489fb8b0f590cde04</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/03b75b95870e7b8de8a2488489fb8b0f590cde04"/>
+    <title>
+        Stop tracking local venvs (machine-specific, absolute paths)
+    </title>
+    <updated>2026-06-17T14:17:48Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Stop tracking local venvs (machine-specific, absolute paths)
+
+Co-Authored-By: Claude Opus 4.8 &amp;lt;noreply@anthropic.com&amp;gt;&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/3f98190bb702ee993c01ca26bd14f360fbb5b022</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/3f98190bb702ee993c01ca26bd14f360fbb5b022"/>
+    <title>
+        Vendor plastex + gerby-website forks; document them in README
+    </title>
+    <updated>2026-06-17T14:16:36Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Vendor plastex + gerby-website forks; document them in README
+
+The two forks under website/repos/ each had their own .git, so the outer
+repo recorded them as empty embedded repos (nothing pushed to GitHub).
+Removed the nested .git dirs so their files are tracked normally, and added
+a README section with their upstream URLs + exact fork commits and where our
+patches live.
+
+Co-Authored-By: Claude Opus 4.8 &amp;lt;noreply@anthropic.com&amp;gt;&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/7991ceea078a94ebc4f2b1a05c80374bba557c76</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/7991ceea078a94ebc4f2b1a05c80374bba557c76"/>
+    <title>
+        website rebuild
+    </title>
+    <updated>2026-06-17T13:57:31Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;website rebuild&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/c2e5123a7d12c1a7aab53d14cbb81f7cd55bf1bf</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/c2e5123a7d12c1a7aab53d14cbb81f7cd55bf1bf"/>
+    <title>
+        added gerby-built website structure
+    </title>
+    <updated>2026-06-17T13:44:18Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;added gerby-built website structure&lt;/pre&gt;
+    </content>
+  </entry>
   <entry>
     <id>tag:github.com,2008:Grit::Commit/fb53d54252220e801c6f0bc6a80300e2badebdbf</id>
     <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/fb53d54252220e801c6f0bc6a80300e2badebdbf"/>
