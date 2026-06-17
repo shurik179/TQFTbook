@@ -1,5 +1,7 @@
 ## Core latex/pdflatex auxiliary files:
-*.aux
+# note that we want to keep main aux file 
+c*.aux
+p*.aux
 *.lof
 *.log
 *.lot
@@ -329,3 +331,9 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# all private files 
+private/*
+
+# OS X files
+.DS_Store

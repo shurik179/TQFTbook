@@ -1,0 +1,89 @@
+\documentclass{amsbook}
+%\usepackage[
+%  paperheight=11in,
+%  paperwidth=8.5in,
+%  textwidth=6.5in,
+%  textheight=9in
+%]{geometry}
+
+\usepackage{amsmath,amssymb, mathtools}
+\usepackage{array}
+\usepackage[mathscr]{euscript}
+
+%\usepackage{bm}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[alphabetic,y2k,lite]{amsrefs}
+%%%%%%%%       HyperRef
+\usepackage{hyperref}
+\hypersetup{colorlinks,
+                    allcolors=blue,
+                    %citecolor=blue,
+                    plainpages=false,
+                    hypertexnames=false}
+%%%%%%%%%
+\usepackage{imakeidx}
+\makeindex
+
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+\setcounter{tocdepth}{1}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+
+\input{definitions.tex}
+\input{tikzsetup.tex}
+\input{tikzcob.tex}
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%
+\frontmatter
+\title{Lectures on  TQFT}
+\author{Alexander Kirillov}
+\address{Department of Mathematics, Stony Brook University,
+        Stony Brook, NY 11790}
+\email{kirillov@math.stonybrook.edu}
+\date{Spring 2026}
+\maketitle
+\tableofcontents
+
+\include{c0-preface}
+
+\mainmatter
+\part{Basic definitions}
+\include{p1-overview}
+\include{c1-motivation}
+\include{c2-categories}
+\include{c3-cobordisms}
+\part{TQFTs in 2 dimensions}
+\include{p2-overview}
+\include{c4-2d-classification}
+\include{c5-frobenius}
+\include{c6-DW}
+\include{c7-2categories}
+\include{c8-duality-2cat}
+\include{c9-separable}
+\include{c10-2d-extended}
+\include{c11-PL}
+\include{c12-2d-lattice}
+\include{c13-defects}
+\part{Cobordism hypothesis}
+\include{p3-overview}
+\include{c14-higher-cat}
+\include{c15-cobordism-hyp}
+\part{Tensor categories and Turaev--Viro theory}
+\include{p4-overview}
+\include{c16-tens}
+\include{c17-duality-tens}
+\include{c18-spherical}
+\include{c19-TV}
+\part{Chern--Simons and Crane--Yetter theories}
+\include{c20-321}
+
+\backmatter
+\printindex
+\input{bibliography.tex}
+
+\end{document}
