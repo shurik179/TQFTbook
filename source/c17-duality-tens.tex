@@ -1,0 +1,358 @@
+%!TEX root = TQFTnotes.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Duality in 3-category $\Tens$}\label{c:tens-dual}
+
+In the previous chapter, we had outlined the construction of the 3-category
+$\Tens$ of finite tensor categories. Our goal now is to try and construct
+extended 3d TQFTs $\Bord_3\to \Tens$. By cobordism hypothesis, framed extended
+TQFTs are classified by fully dualizable objects in $\Tens$, and oriented TQFTs
+are classified by $\SO(3)$ homotopy fixed points of the groupoid $\Tens^\fd$.
+Thus, our next goal is to determine which objects, 1- and 2-morphisms in
+$\Tens$ have duals/adjoint. We had done a similar study for 2-category $\Alg$ in
+\chref{c:separable-frobenius}, where we established that fully dualizable
+objects are separable algebras, and $\SO(2)$ homotopy fixed points are symmetric
+Frobenius algebras; here we will present analog of these results, but one level
+higher in our category ladder.
+
+As before, we will be mostly skipping the proofs, referring the reader to
+original papers. Our main reference for this chapter is \ocite{dsps-dualizable}.
+
+Throughout this chapter, we assume that the ground field $\kk$ is algebraically
+closed and has characteristic 0. All $\kk$-linear categories discussed in this
+chapter are assumed to be finite; all functors between them are assumed to be
+$\kk$-linear and right exact.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Duality for objects and morphisms}\label{s:duality-obj-mor}
+
+First, we study the question of duality for objects of $\Tens$, i.e., for finite
+tensor categories. Here the answer is simple and very similar to the one for
+2-category $\Alg$.
+
+Let $\calC$ be a finite tensor category. It is naturally a $\calC$-bimodule
+category; equivalently, we can consider it as either left or right module
+category over the tensor category $\calC^e=\calC\boxtimes\calC^\mop$.
+
+\begin{theorem}\label{t:tens-rigid}
+  Every finite tensor category is rigid as an object in $\Tens$; the dual is
+  given by category $\calC^\mop$. The evaluation and coevaluation 1-morphisms
+  are given by $\calC$, considered as either left or right module over
+  $\calC^e$.
+\end{theorem}
+A proof can be found in \ocite{dsps-dualizable}*{Proposition 3.1.2}.
+
+This theorem is a direct analog of \thref{t:alg-duals1}.
+
+Let us now study duality for 1-morphisms in $\Tens$. Recall that given finite
+tensor categories $\calC$, $\calD$, the 2-category of 1-morphisms
+$\calD\to\calC$ is the category of finite $\calC$-$\calD$ bimodule categories.
+
+Warning: in \ocite{dsps-dualizable}, they use opposite convention!
+
+\begin{theorem}\label{t:bimodule-dualizable}
+  Let ${}_\calC\calM_\calD$ be a finite bimodule category considered as
+  1-morphism between finite tensor categories $\calD\to\calC$. Then it has both
+  left and right adjoints, given by categories $\calM^\vee=\Fun_\calC(\calM,
+  \calC)$, ${}^\vee\calM=\Fun_{\calD^\mop}(\calM, \calD)$.
+\end{theorem}
+
+Proof is given in \ocite{dsps-dualizable}*{Proposition 3.2.1}.
+
+
+The final step in our discussion of dualizability in $\Tens$ is determining
+which 2-morphisms (i.e., module functors between bimodule categories) have left
+and right adjoints. This is where things become non-trivial. Indeed, it is a
+standard result of homological algebra that if a functor between abelian
+categories has both left and right adjoints, then it must be exact --- and not
+every functor between bimodule categories is exact. Thus, it is not surprising
+that we need to impose additional conditions to have adjoints.
+
+\begin{theorem}\label{t:tens-dual-2-morph}
+  Let $\calM$, $\calN$ be finite \emph{semisimple} $\calC$-$\calD$ bimodule
+  categories. Then any $F\in \Fun (\calM, \calN)$ has both left and right
+  adjoints, where $\Fun$ is the category of $\calC$-$\calD$ bimodule functors;
+  moreover, left and right adjoints of $F$ are isomorphic.
+\end{theorem}
+As before, word ``semisimple'' just refers to the structure of abelian category;
+it is not related to bimodule structure.
+%This statement is an analog of \thref{t:ssalg}, where a similar result is
+%%%proved for bimodules over algebras.
+In the case $\calC=\calD=\vecf$, bimodule categories are just finite
+$\kk$-linear categories; in this case, the statement of this theorem is exactly
+the statement of \coref{c:adjoint-semisimple}. Proof of the general case of this
+theorem is given in  \ocite{dsps-dualizable}*{Proposition 3.4.1}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fully dualizable objects in $\Tens$}\label{s:tens-dualizable}
+We can now put it all together and describe the maximal subcategory with duals
+in $\Tens$.
+
+\begin{theorem}\label{t:tens-dualizable}
+  Let $\Tens^\sss\subset \Tens$ be the category with the following objects and
+  morphisms:
+  \begin{itemize}
+    \item Objects: \emph{semisimple} finite tensor categories
+    \item 1-morphisms: semisimple finite bimodule categories
+    \item 2-morphisms: all module functors between bimodule categories
+    \item 3-morphisms: functorial morphisms
+  \end{itemize}
+  Then $\Tens^\sss$ is a category with duals.
+\end{theorem}
+This is \ocite{dsps-dualizable}*{Proposition 3.4.3}.
+
+Note that the word semisimple just refers to the structure of $\kk$-linear
+category; it is not related to monoidal structure or structure of a bimodule
+category.
+
+Indeed, if $\calC$ is a semisimple finite tensor category, then it has a dual
+$\calC^\mop$ which is obviously also semisimple, and the evaluation and
+coevaluation 1-morphisms are themselves semisimple module categories (since both
+are given by $\calC$ itself) and thus are 1-morphisms in $\Tens^\sss$.
+Similarly, it is easy to show that for a semisimple bimodule category
+${}_\calC\calM_\calD$ considered as a 1-morphism in $\Tens^\sss$, the left and
+right adjoints, which are given by $\Fun_\calC(\calM, \calC)$ and
+$\Fun_\calD(\calM, \calD)$, are again semisimple and thus are 1-morphisms in
+$\Tens^\sss$. Finally, by \thref{t:tens-dual-2-morph}, every 2-morphism in
+$\Tens^\sss$ has left and right adjoints.
+
+
+\begin{remark}
+  In \ocite{dsps-dualizable} this theorem is formulated slightly differently:
+  instead of requiring objects, i.e., tensor categories, to be semisimple, they
+  require these categories to be \emph{separable}\index{tensor
+  category!separable}, which better matches the definition for algebras.
+  However, in characteristic zero case, these two notions coincide, and defining
+  notion of separable tensor category is more complicated than doing it for
+  algebras (we cannot state it directly; instead we state in terms of an algebra
+  in the category). Therefore, we have chosen to simplify the exposition and
+  avoid introducing the notion of separable tensor category.
+\end{remark}
+
+Semisimple finite tensor categories have another name: they are called
+\emph{fusion categories}\index{category!fusion}.
+
+
+\begin{definition}\label{d:fusion}
+  A fusion category is a a semisimple finite tensor category, i.e., a semisimple
+  finite $\kk$-linear category with a rigid monoidal structure such that
+  $\End(\one)=\kk$.
+\end{definition}
+
+As an immediate corollary of \thref{t:tens-dualizable}, we get the
+following result.
+\begin{corollary}\label{c:fusion-fd}
+  Any fusion category is a fully dualizable object in $\Tens$.
+\end{corollary}
+
+In fact, one can prove that it converse is also true: a finite tensor
+category is fully dualizable as an object in $\Tens$ if and only if it is
+semisimple; see \ocite{dsps-dualizable}*{Proposition 3.4.10}.
+
+Thus, by Cobordism Hypothesis, framed extended 3d TQFTs with values in $\Tens$
+are classified by fusion categories.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$\SO(3)$ fixed points and spherical
+    fusion categories}\label{s:spherical1}
+
+Finally, let us try and classify oriented 3d extended TQFTs. According to
+general theory, such TQFTs are classified by homotopy fixed points for $\SO(3)$
+action on $\Tens^\sss$. Unfortunately, explaining how $\SO(3)$ acts on
+$\Tens^\sss$ is rather non-trivial. We will only show one small piece of this
+data.
+
+FIXME: this section is a very rough draft
+
+Recall that $\pi_1(\SO(3))=\Z_2$. Arguing the same way as in FIXME, we see that
+this shows that we must have an action of $\Z_2$ on $\Tens^\sss$; the action of
+generator of $\Z_2$ is called the \emph{Serre automorphism}.
+\ocite{dsps-dualizable} has a detailed description of this action in terms of
+framing.
+
+It takes some time to unravel that definition, but the end result is that the
+Serre automorphism gives a twist: it sends a $\calC$-$\calD$ bimodule category
+$\calM$ to the category ${}_{\<rr>}\calM$, which is again a $\calC$-$\calD$
+bimodule category. It coincides with $\calM$ as abelian category, but now the
+right action of $\calC$ is given by $c\times m\to c^{**}\otimes m$.
+
+This suggests that a homotopy fixed point for $\SO(3)$ action should be a fusion
+category $\calC$ together with functorial isomorphism $c\to c^{**}$ (and
+possibly some other structures).
+
+\begin{remark}\label{r:radford}
+  These ideas suggest that in any fusion category there should be a natural
+  isomorphism $c\to c^{****}$. This is indeed true, but highly non-trivial; see
+  \ocite{etingof-fusion}*{Corollary 7.19.3}. It is closely related with
+  classical result of Radford that in a finite-dimensional Hopf algebra, fourth
+  power of antipode is an inner automorphism. We refer the reader to
+  \ocite{etingof-fusion}*{Section 7.19} for discussion of this.
+\end{remark}
+
+This naturally leads us to the following definition.
+
+\begin{definition}\label{d:pivotal}
+  A \emph{pivotal}\index{category!pivotal} category is a rigid monoidal category $\calC$ together with a
+  functorial isomorphism $\de\colon X\to X^{**}$ such that $\de_{X\otimes Y} =
+  \de_X \otimes \de_Y$, $\de_{\one}=1$.
+\end{definition}
+
+\begin{example}\label{x:vecf-pivotal}
+  The category $\vecf$ of finite-dimensional vector spaces has a canonical
+  pivotal structure. Same holds for the category $\Rep G$ of finite-dimensional
+  representations of a group $G$.
+\end{example}
+
+\begin{exercise}\label{ec:pivotal-duals-compatible}
+  Show that $\de$ is automatically compatible with duals:\\
+  $\de_{X^*}=\bigl((\de_X)^*\bigr)^{-1}$.
+\end{exercise}
+
+Note that pivotal structure is extra data: the same monoidal category can have
+more than one pivotal structure. It is currently unknown whether every fusion
+category admits at least one pivotal structure.
+
+
+\begin{example}\label{x:sl2-pivotal}
+  Let $\calC$ be the category of finite-dimensional representations of Lie
+  algebra $\sll(2,\C)$. Define the pivotal structure by
+  $$
+    \de=\de_0\circ z
+  $$
+  where $\de_0$ is the standard vector space isomorphism $V\simeq V^{**}$ and
+  $z=\exp(\pi i h)$, $h=\begin{pmatrix} 1 & 0\\ 0 &-1\end{pmatrix}\in \sll(2)$;
+  thus, $z=+1$ on irreducible representations with even highest weight (or
+  integer spin)  and $z=-1$ on representations wiht odd highest weight
+  (half-integer spin).
+
+  This example might seem artificial, but in fact it (or rather similar pivotal
+  structure for representations of the corresponding quantum group) frequently
+  appears in the literature in implicit form. For example, in the standard
+  definition of the Kauffman bracket invariant of links (see \ocite{kauffman}),
+  the invariant of the unknot is equal to $-(A^2+A^{-2})$, so even in the
+  classical limit $A=1$, we get answer $-2$. The reason for that is that in
+  fact that invariant can be described in terms of knot invariants coming from
+  the category of representations of $U_q\sll(2)$ but with the pivotal
+  structure defined as in this example.
+\end{example}
+
+The pivotal structure allows us to define a trace of an endomorphism. Recall
+that rigidity provides evaluation and coevaluation morphisms (see
+\seref{s:1d-tqft-rigid})
+$$
+  \ev_X\colon X^*\otimes X\to \one,\qquad \coev_X\colon \one\to X\otimes X^*,
+$$
+and similarly $\ev_{X^*}\colon X^{**}\otimes X^*\to \one$,
+$\coev_{X^*}\colon \one\to X^*\otimes X^{**}$ for the dual object $X^*$.
+
+\begin{definition}\label{d:traces}
+  Let $\calC$ be a pivotal category with pivotal structure $\de_X\colon X\isoto
+  X^{**}$. For $f\in \End(X)$, the \emph{left trace} and \emph{right
+  trace}\index{trace!of morphism in a pivotal category}
+  $\tr^L(f),\tr^R(f)\in \End(\one)$ are defined by
+  \begin{align*}
+    \tr^L(f) &= \ev_{X^*}\circ\bigl((\de_X\circ f)\otimes \id_{X^*}\bigr)\circ
+                \coev_X,\\
+    \tr^R(f) &= \ev_X\circ\bigl(\id_{X^*}\otimes (f\circ\de_X^{-1})\bigr)\circ
+                \coev_{X^*}.
+  \end{align*}
+  (see \firef{f:trace}).
+  The \emph{left} and \emph{right dimensions}\index{dimension!of an object
+  in a pivotal category} of $X$ are
+  $\dim^L(X)=\tr^L(\id_X)$ and $\dim^R(X)=\tr^R(\id_X)$.
+\end{definition}
+
+\begin{figure}[ht]
+\begin{tikzpicture}[vcenter]
+      \node at (-1.2,0) {$\tr^L(f)=$};
+      \node[morphism_sq] (f) at (0,0) {$f$};
+      \draw(f.north)-- +(0, 0.3)  coordinate (top1)
+            arc (180:0:0.5)  coordinate (top);
+      \draw(f.south)-- +(0, -0.3) coordinate (bot1)
+            arc (-180:0:0.5)
+      coordinate (bottom);
+      \draw(top)--(bottom);
+      \node[right] at (top) {$X^*$};
+      \node[left] at (top1) {$X$};
+      \node[left] at (bot1) {$X^{**}$};
+  \end{tikzpicture}
+\qquad
+  \begin{tikzpicture}[vcenter]
+      \node at (-2,0) {$\tr^R(f)=$};
+      \node[morphism_sq] (f) at (0,0) {$f$};
+      \draw(f.north)-- +(0, 0.3)  coordinate (top1)
+            arc (0:180:0.5)  coordinate (top);
+      \draw(f.south)-- +(0, -0.3) coordinate (bot1)
+            arc (0:-180:0.5)
+      coordinate (bottom);
+      \draw(top)--(bottom);
+      \node[left] at (top) {$X^*$};
+      \node[right] at (top1) {$X^{**}$};
+      \node[right] at (bot1) {$X$};
+    \end{tikzpicture}
+
+
+\caption{Left and right traces;
+  pivotal isomorphism $\de_X$ and its inverse are not shown.}\label{f:trace}
+\end{figure}
+Since for a finite tensor category $\End(\one)=\kk$, the traces and dimensions
+are elements of $\kk$.
+
+\begin{lemma}\label{l:trace-properties}
+  Left and right traces in a pivotal category $\calC$ have the
+  following properties \textup{(}stated for $\tr^L$; the
+  same holds for $\tr^R$\textup{)}:
+  \begin{enumerate}
+    \item \textup{(}Cyclicity\textup{)} For any $f\colon X\to Y$ and $g\colon Y\to X$,
+      $\tr^L(g\circ f)=\tr^L(f\circ g)$.
+    \item \textup{(}Multiplicativity\textup{)} For $f\in \End(X)$, $g\in \End(Y)$,
+      $\tr^L(f\otimes g)=\tr^L(f)\,\tr^L(g)$; in particular,
+      $\dim^L(X\otimes Y)=\dim^L(X)\,\dim^L(Y)$.
+    \item \textup{(}Additivity\textup{)} If $\calC$ is an abelian category, and
+      $0\to X'\to X\to X''\to 0$ is a short exact sequence
+      and $f\in \End(X)$ preserves $X'$,  inducing $f'\in \End(X')$ and $f''\in
+      \End(X'')$, then $\tr^L(f)=\tr^L(f')+\tr^L(f'')$; in particular,
+      $\dim^L(X)=\dim^L(X')+\dim^L(X'')$.
+    \item \textup{(}Duality\textup{)} $\tr^L(f)=\tr^R(f^*)$, where $f^*\in \End(X^*)$ is the
+      dual morphism \textup{(}see \ecref{ec:dual-morphism}\textup{)}; in
+      particular,
+      $\dim^L(X)=\dim^R(X^*)$.
+  \end{enumerate}
+\end{lemma}
+Proofs, together with a more detailed discussion of pivotal structures and
+dimensions, can be found in \ocite{etingof-fusion}*{Section 4.7}.
+
+\begin{definition}\label{d:spherical}
+  A pivotal category $\calC$ is called
+  \emph{spherical}\index{category!spherical}
+  if for any $X\in \calC$, $f\in \End(X)$ we have
+  $$
+  \tr^L(f)=\tr^R(f).
+  $$
+  In this case, we will just use notation $\tr(f)$ for the trace of a morphism
+  $f$, and $\dim(X)=\dim^L(X)=\dim^R(X)$ for dimension of an object.
+\end{definition}
+
+Note that it is immediate from \leref{l:trace-properties} that in a
+spherical category, $\tr(f)=\tr(f^*)$; in particular,
+\begin{equation}
+ \dim (X)=\dim(X^*).
+\end{equation}
+
+\begin{remark}
+  All known examples of pivotal categories are spherical. It is an open problem
+  if there exist non-spherical pivotal categories.
+\end{remark}
+
+\begin{remark}
+  Let $\calC$ be a pivotal fusion category. It can be shown that this
+  pivotal structure is spherical if and only if $\de^2\colon V\to V^{****}$
+  coincides with the canonical isomorphism $V\isoto V^{****}$ mentioned in
+  \reref{r:radford}, see \ocite{dsps-dualizable}*{Proposition 3.5.4}.
+\end{remark}
+
+\begin{conjecture}
+  Homotopy fixed points of $\SO(3)$ action on $\Tens^\sss$ are spherical fusion
+  categories.
+\end{conjecture}
+Reference: \ocite{dsps-dualizable}*{Conjecture 3.5.10}.

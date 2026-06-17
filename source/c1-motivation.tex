@@ -1,0 +1,182 @@
+%!TEX root = TQFTnotes.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Physical motivation}\label{c:physical-motivation}
+Overview of classical and quantum field theory. $N$ is the configuration space
+of the theory, $\dim N = n-1$; $M= N\times[t_0, t_1]$ is the spacetime.
+
+%%%%%%%%%%%%%%
+\section{Classical/quantum mechanics}\label{s:mechanics}
+
+The table below summarizes the main structures in classical
+and quantum mechanics:
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{r|l|l}
+    &Classical mechanics & Quantum mechanics  \\
+    \hline
+    Position
+    &$x\in N$ (configuration space)
+    & $\psi \in H_N=L^2(N)$ \\
+    Trajectory
+    &$\gamma\colon [t_0, t_1]\to N$
+    &$U_{t_0,t_1}\colon H_N\to H_N$ \\
+    Action
+    & $S[\gamma]=\int L(\gamma,\dot\gamma) dt$
+    & \\
+    Laws of motion
+    &\parbox[t]{5cm}{Least action principle\par
+      \quad $\delta S[\gamma]=0$ (fixed endpoints)
+    }
+    & \parbox[t]{7cm}{
+      $(U\psi)(x_1) = \int_N (K(x_0, x_1) \psi(x_0) dx_0$\par
+        $K(x_0,x_1) = \int_P e^{\frac{i}{\hbar} S[\gamma]} D\gamma$\par
+        $P=\{\gamma: \gamma(t_0)=x_0, \gamma(t_1)=x_1$\}
+
+      }
+      \\
+  \end{tabular}
+  \caption{FIXME}
+  \label{tab:mechanics}
+\end{table}
+Note that in the limit $\hbar \to 0$, the integral in the definition of
+$K(x_0, x_1)$ is dominated by the contribution from the neighborhood of
+critical points of the action. For finite-dimensional integrals of this
+form, method of stationary phase allows one to write asymptotic expansion
+in powers of $\hbar$.
+
+%%%%%%%%%%%%%%
+\section{Classical/quantum field theory}\label{s:field-theory}
+In field theory, a point $x\in N$ is replaced by the field $\ph$, which is
+typically either a function on $N$ (with values in some target space $V$)
+or a section of a vector bundle or a connection. We will denote by
+$\mathcal{F}_N$ the space of all fields on $N$.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{r|l|l}
+    &Classical field theory  & QFT  \\
+    \hline
+    &$\ph \in \calF_N$
+    & $\psi \in \calH_N=L^2(\calF_N)$ \\
+    Trajectory
+    &$\ph\in \calF_{M}$, $M=N\times[t_0, t_1]$
+    &$U_{t_0,t_1}\colon \calH_N\to \calH_N$ \\
+    Action
+    & $S[\ph]=\int_M L(\ph, \del_\mu\ph) d^{n}x$
+    & \\
+    Laws of motion
+    &\parbox[t]{5cm}{Least action principle\par
+      \quad $\delta S[\ph]=0$ (fixed restriction to $t=t_0$,$t=t_1$)
+    }
+    & \parbox[t]{7cm}{
+      $(U\psi)(\ph_1) = \int_N (K(\ph_0, \ph_1) \psi(\ph_0) D\ph_0$\par
+        $K(\ph_0,\ph_1) = \int_P e^{\frac{i}{\hbar} S[\ph]} D\ph$\par
+        $P=\{\ph\in \calF_M: \ph(t_0)=\ph_0, \ph(t_1)=\ph_1$\}
+      }\\
+  \end{tabular}
+  \caption{FIXME}
+  \label{tab:qft}
+\end{table}
+The above formulas freely use integrals over infinite-dimensional
+spaces of paths/fields, which are very hard to define rigorously; as of
+now, QFT cannot be defined rigorously as a mathematical theory except very
+few special cases. Usually the best one can do is to write the
+asymptotics formulas, expanding the operator $U$ or the kernel $K$ as a
+series in powers of $\hbar$, and even that requires a lot of work.
+
+However, if we ignore that and assume that all the above makes sense, we get the
+following structure (again, at the moment we choose to ignore details)
+\begin{enumerate}
+  \item For every $n-1$-dimensional manifold $N$,
+    we have a Hilbert space $\calH_N$. Moreover, since
+    $\calF_{N_1\sqcup N_2} = \calF_{N_1}\times \calF_{N_2}$, we get
+    \begin{equation}\label{e:qft_axiom1}
+      \calH_{N_1\sqcup N_2} = \calH_{N_1}\otimes \calH_{N_2}
+    \end{equation}
+  \item The definition of operator $U_{t_0, t_1}$ immediately generalizes,
+    using the same formulas, to arbitrary $n$-dimensional manifold $M$ and
+    not only the cylinder $N\times [t_0, t_1]$: if $\del M= N_0\sqcup N_1$
+    (with appropriate orientations), then $U_M$ is an operator
+    \begin{equation}
+      U_M\colon \calH_{N_0}\to \calH_{N_1}
+    \end{equation}
+    In particular, for a closed spacetime (i.e. $\del M=\varnothing$), we get
+    $U_M\in \C$ is a number; in physics it is usually called the
+    \emph{partition function} and denoted by $Z(M)$.
+  \item So defined operators satisfy the gluing axiom:
+    (FIXME)
+\end{enumerate}
+
+So far we haven't specified what we mean by ``manifold''. Usually in
+physics the spacetime is an oriented pseudo-Riemannian manifold, with metric
+of signature $(1, n-1)$. However, we will be interested in a very special
+case, namely when all the structures above do not use the metric on the
+space; thus, we only require $M$ to be an oriented smooth manifold. Such
+theories are called \emph{topological}. The most famous example of such a
+theory is Chern--Simons theory (see \ocite{witten-jones}), in which the
+spacetime $M$ must be 3-dimensional, fields are $\SU(n)$ connections on $M$
+(which,
+after choosing a trivialization of the bundle, can be described by one-forms
+with values in the Lie algebra  $\su(n)$) and the action is given by
+\begin{equation}
+  S[A] = g \int_M \tr(A\wedge dA + \tfrac{2}{3}A\wedge A\wedge A)
+\end{equation}
+
+We can take properties above as axioms.
+\begin{predefinition}
+  An $n$-dimensional topological field theory (TQFT) is the following
+  collection of data
+  \begin{itemize}
+    \item For every  $(n-1)$-dimensional oriented smooth manifold $N$, a
+      vector space $Z(N)$
+    \item For every $n$-dimensional oriented manifold $M$ such that
+      $\del M=N_0\sqcup N_1$, a linear operator $Z_M\colon Z_{N_0}\to Z_{N_1}$,
+  \end{itemize}
+  This data has to satisfy the properties above (gluing axiom, disjoint
+  union).
+\end{predefinition}
+
+(Clearly, there is a lot more detail to be filled in, which we will do later).
+
+This definition is due to Atiyah (\ocite{atiyah}).
+
+Having this definition, instead of defining a TQFT by a path integral or other
+global construction (which can be very hard to do), we can try to construct
+TQFTs by defining $Z(M)$ for ``elementary blocks'' and gluing every manifold
+from them. For $n=2$, these blocks are disk, cylinder, and pair of pants.
+
+\begin{center}
+  \begin{tikzpicture}
+    \pic at (0,0) {pants};
+    \pic at (2,0) {cylinder};
+    \pic at (3, -0.5) {cup};
+  \end{tikzpicture}
+\end{center}
+
+Of course, we need to have some compatibility conditions to ensure that
+different ways of gluing the manifold from pieces give the same result;
+essentially, we are trying to define manifolds by ``generators and
+relations''. For $n=2$ it is not too hard (we will do so next week); for
+larger $n$, it is harder --- e.g. for $n=3$ we can consider so-called
+Heegard decomposition (which already requires infinitely many blocks, all
+handlebodies of arbitrary genus) or use  surgery along knots
+(again, to be discussed later).
+
+
+However, there is another idea: why stop at manifolds with boundary?
+If we allow manifold with corners of any codimension, the set of
+``elementary blocks'' is greatly simplified: any manifold can be glued
+together from just one block, an $n$-dimensional simplex.
+Such theories are called  fully extended (or sometimes local) TQFTs;
+see \ocite{lurie-cobordism}.
+
+But the price you pay is algebraic complexity: for closed $n$-manifold,
+the theory gives you a number;  for a codimension 1 manifold, a vector space.
+What is the next level?
+
+One way to answer is that codimension 2 should give you a category, and so on;
+thus, doing it properly requires a notion of $n$-categories (or a variation of
+that, called $(\infty, n)$ categories). This gets confusing quite fast\dots
+
+\clearpage
