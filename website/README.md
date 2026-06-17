@@ -10,6 +10,31 @@ the Gerby website and the plasTeX fork are vendored under `repos/`.
 The LaTeX sources are **not** in this directory — they live in the sibling
 `../source/` tree and are never modified; the build works on copies in `build/`.
 
+## Setup (first time / after a fresh clone)
+
+The two virtualenvs are **not** committed (they're machine-specific), so recreate
+them once. You need **Python 3.9.x**, plus a TeX distribution (`pdflatex`) and
+**poppler** (`pdftocairo`) on your PATH — set their location in `[tools] tex_bin`
+in `config.ini` if they aren't already found. From the `website/` directory:
+
+```bash
+# 1. rendering venv — plasTeX (with the OLD Jinja2 the Gerby fork needs)
+python3.9 -m venv venv-tex
+venv-tex/bin/python -m pip install -r requirements-tex.txt
+# re-apply our Gerby-renderer patches onto the freshly installed plasTeX:
+cp patches/gerby-renderer/* \
+   venv-tex/lib/python3.9/site-packages/plasTeX/Renderers/Gerby/
+
+# 2. website venv — Flask app + the gerby fork (editable, already patched in repos/)
+python3.9 -m venv venv
+venv/bin/python -m pip install -r requirements-web.txt
+```
+
+The two venvs **must stay separate**: they pin conflicting Jinja2 versions, and
+rendering with the website venv silently corrupts output (see `FINDINGS.md`).
+Only `venv-tex` needs the renderer patch re-applied; the website's changes live
+in `repos/gerby-website` and come in with the editable install.
+
 ## Rebuilding the site
 
 One command regenerates everything from the LaTeX source and (re)starts the
@@ -98,6 +123,8 @@ removed so they're tracked as plain files of this repo, not nested submodules):
 website/
 ├── config.ini          # ← single source of truth for all locations
 ├── website_paths.py    # reads config.ini; every script imports paths from here
+├── requirements-tex.txt  # deps for venv-tex (rendering)   — see Setup
+├── requirements-web.txt  # deps for venv     (website)     — see Setup
 ├── build_site.py       # the one-command rebuild orchestrator
 ├── serve.sh            # serve the already-built site
 ├── moderate.py         # comment moderation CLI

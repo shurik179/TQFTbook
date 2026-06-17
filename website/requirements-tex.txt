@@ -1,0 +1,7 @@
+# Rendering venv (venv-tex), Python 3.9. Pins the OLD Jinja2/MarkupSafe
+# that the plasTeX Gerby fork needs -- this is why it must be SEPARATE
+# from the website venv. Install:  venv-tex/bin/python -m pip install -r requirements-tex.txt
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+./repos/plastex
+Unidecode==1.4.0

@@ -1,0 +1,32 @@
+# Website venv (venv), Python 3.9. Note the deliberate pins peewee<4 and
+# PyPDF2<3 (newer ones break on 3.9). Install:  venv/bin/python -m pip install -r requirements-web.txt
+bleach==6.2.0
+blinker==1.9.0
+click==8.1.8
+feedparser==6.0.12
+Flask==3.1.3
+Flask-HTTPAuth==4.8.1
+flask-profiler==1.8.1
+-e ./repos/gerby-website
+importlib_metadata==8.7.1
+itsdangerous==2.2.0
+Jinja2==3.1.6
+latexcodec==3.0.1
+Markdown==3.9
+MarkupSafe==3.0.3
+mdx_bleach==0.1.4
+networkx==3.2.1
+peewee==3.19.0
+./repos/plastex
+pybtex==0.26.1
+PyPDF2==2.12.1
+python-markdown-math==0.9
+PyYAML==6.0.3
+sgmllib3k==1.0.0
+simplejson==4.1.1
+typing_extensions==4.15.0
+Unidecode==1.4.0
+validators==0.35.0
+webencodings==0.5.1
+Werkzeug==3.1.8
+zipp==3.23.1
