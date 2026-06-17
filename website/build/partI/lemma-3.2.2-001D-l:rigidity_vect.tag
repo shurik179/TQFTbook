@@ -1,0 +1,3 @@
+<article class="env-lemma" id="001D">
+  <p><a class="environment-identifier" href="/tag/001D">Lemma <span data-tag="001D">3.2.2</span>.</a> Let $V_+, V_-$, $\operatorname{ev}, \operatorname{coev}$ be as in Theorem&#160;<a href="/tag/001B" data-tag="001B">3.2.1</a>. Then $V_+, V_-$ are finite-dimensional, and one can identify $V_-=V_+^*$ so that $\operatorname{ev}, \operatorname{coev}$ become the usual evaluation and coevaluation maps $V\otimes V^*\to \mathbf{k}$, $\mathbf{k}\to V\otimes V^*\colon 1\mapsto \sum e_ i\otimes e^ i$. </p>
+</article>

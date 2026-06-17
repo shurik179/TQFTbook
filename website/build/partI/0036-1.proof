@@ -1,0 +1,14 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      The sequence of pictures below gives a graphical proof that $e$ is central; we leave it to the reader to rewrite it algebraically: 
+    <p>
+      <div class="equation" id="00F5">
+    <span class="equation-label"><a href="/tag/00F5" data-tag="00F5">5.1.8</a></span>
+    <div class="centered"><img class="includegraphics" src="/static/figures/c5-fig03.svg"></div>
+</div>
+    <p>
+       Coassociativity, the counit axiom, and the Frobenius property are proved by very similar computations, which we leave to the reader. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

@@ -1,0 +1,3 @@
+<article class="env-example" id="003A">
+  <p><a class="environment-identifier" href="/tag/003A">Example <span data-tag="003A">5.1.1</span>.</a> Let $A=\mathbb {C}[x]/(x^{n+1})$, with $\varepsilon (x^ k)=1$ if $k=n$ and $\varepsilon (x^ k)=0$ otherwise. This is a commutative Frobenius algebra which has a natural topological interpretation: it is the cohomology of $\mathbb {C}P^ n$. In particular, for $n=1$, this Frobenius algebra and the corresponding TQFT play an important role in the theory of Khovanov homology. </p>
+</article>

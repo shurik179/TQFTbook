@@ -1,0 +1,16 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}
+  \node[label = right:$A$] (A) at (0,0){};
+  \node[label = right:$B$] (B) at (0,-1.5){};
+  \draw (A)-- +(-3,0)  arc (90:270:0.25)
+  -- +(1,0) arc (90:-90:0.25)
+  -- +(-1,0) arc(90:270:0.25)
+  -- (B);
+  \node[fill = white] at (-2.5,-0.5) {$B$};
+  \node[fill = white] at (-2.5,-1) {$A$};
+\end{tikzpicture}
+$
+\end{document}

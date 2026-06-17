@@ -1,0 +1,3 @@
+<article class="env-theorem" id="000G">
+  <p><a class="environment-identifier" href="/tag/000G">Theorem <span data-tag="000G">2.3.1</span>.</a> Let $M$ be a monoid and $a_1, \dots , a_ n\in M$. Consider all possible expressions obtained by writing $a_1, \dots , a_ n$ (in this order), then inserting some copies of $1$ and then putting parentheses so that multiplications are just binary products, e.g., $(a_1 \cdot 1) \cdot (1 \cdot a_2) $. Then all of them are equal: if $X_1, X_2$ are two such expressions (with the same $a_1, \dots , a_ n$), then $X_1=X_2$. </p>
+</article>

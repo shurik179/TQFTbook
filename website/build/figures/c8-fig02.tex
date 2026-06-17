@@ -1,0 +1,22 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    \node (y1) at (0,0) {$Y$};
+    \node (x1) at (1.2,0) {$X$};
+    \node (y2) at (2.4,0) {$Y$};
+    \node (x2) at (3.6,0) {$X$};
+    \draw[->] (y1)--(x1) node[pos=0.5,scale =0.7,above]{$g$};
+    \draw[->] (x1)--(y2) node[pos=0.5,scale =0.7,above]{$f$};
+    \draw[->] (y2)--(x2) node[pos=0.5,scale =0.7,above]{$g$};
+    \draw[->] (x1) to[bend left=50] node[pos=0.2,scale =0.7,above]{$1_X$} (x2);
+    \draw[->] (y1) to [bend left=55] node[scale =0.7,above]{$g$} (x2);
+    \draw[2morphism, ->] (2.4, 0.6)--(2.4,0.2) node[pos = 0.5,scale
+    =0.7,right]{$\eta$};
+    \draw[->] (y1) to[bend right=50] node[pos=0.7,scale =0.7,below]{$1_Y$}
+    (y2);
+    \draw[->] (y1) to [bend right=55] node[scale =0.7,below]{$g$} (x2);
+    \draw[2morphism, ->] (1.2, -0.2)--(1.2,-0.6) node[pos = 0.5,scale
+    =0.7,right]{$\eps$};
+\end{tikzpicture}
+\end{document}

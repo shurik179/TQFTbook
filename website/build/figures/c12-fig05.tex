@@ -1,0 +1,13 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+  \coordinate (v-) at (-1,0);
+  \coordinate (v0) at (0,0);
+  \coordinate (v+) at (1,0);
+  \node[dotnode] at (v0) {};
+  \node[above] at (v0) {$v$};
+  \draw[->] (v-)--(v0) node[pos=0.6, above, scale =0.8]{$a'$};
+  \draw[->] (v0)--(v+) node[pos=0.6, above, scale=0.8]{$a''$};
+\end{tikzpicture}
+\end{document}

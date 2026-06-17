@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 10.3.1. Relations between generators of $\mathbf{Bord}_2$.</figcaption>

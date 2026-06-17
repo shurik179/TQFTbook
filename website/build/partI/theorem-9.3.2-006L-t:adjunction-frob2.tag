@@ -1,0 +1,4 @@
+<article class="env-theorem" id="006L">
+  <p><a class="environment-identifier" href="/tag/006L">Theorem <span data-tag="006L">9.3.2</span>.</a> Let $A$ be an algebra together with adjunction data $\operatorname{ev}_ A\dashv \operatorname{coev}_ A$, $\operatorname{coev}_ A\dashv \operatorname{ev}_ A$. Then $A$ is separable and has a canonical structure of a symmetric Frobenius algebra, with the counit $\varepsilon \colon A/[A,A]\to \mathbf{k}$ given by the counit of adjunction $\operatorname{ev}\dashv \operatorname{coev}$. </p>
+  <p>Conversely, let $A$ be a separable symmetric Frobenius algebra. Then we can define adjunction data $\operatorname{ev}_ A\dashv \operatorname{coev}_ A$, $\operatorname{coev}_ A\dashv \operatorname{ev}_ A$. </p>
+</article>

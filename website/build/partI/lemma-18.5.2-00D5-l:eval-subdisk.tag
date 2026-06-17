@@ -1,0 +1,3 @@
+<article class="env-lemma" id="00D5">
+  <p><a class="environment-identifier" href="/tag/00D5">Lemma <span data-tag="00D5">18.5.2</span>.</a> Let $\Gamma $ be a $\mathcal{C}$-colored graph in a disk $D$, and let $D'\subset D$ be a subdisk such that $\partial D'$ does not contain vertices of $\Gamma $ and meets edges of $\Gamma $ transversally. Then $\langle \Gamma \rangle _ D$ will not change if we replace subgraph $\Gamma \cap D'$ by a single vertex colored by $\langle \Gamma \cap D'\rangle _{D'}$. </p>
+</article>

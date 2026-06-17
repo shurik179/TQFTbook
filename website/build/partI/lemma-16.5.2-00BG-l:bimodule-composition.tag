@@ -1,0 +1,3 @@
+<article class="env-lemma" id="00BG">
+  <p><a class="environment-identifier" href="/tag/00BG">Lemma <span data-tag="00BG">16.5.2</span>.</a> Let $\mathcal{A}$, $\mathcal{B}$, $\mathcal{C}$ be finite tensor categories, and let $\mathcal{M}$ be a finite $\mathcal{A}$-$\mathcal{B}$ bimodule category, and $\mathcal{N}$ a finite $\mathcal{B}$-$\mathcal{C}$ bimodule category. Then the balanced tensor product $\mathcal{M}\boxtimes _{\mathcal{B}} \mathcal{N}$ has a natural structure of $\mathcal{A}$-$\mathcal{C}$ bimodule category. </p>
+</article>

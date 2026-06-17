@@ -1,0 +1,3 @@
+<article class="env-exercise" id="006G">
+  <p><a class="environment-identifier" href="/tag/006G">Exercise <span data-tag="006G">9.3.1</span>.</a> Show that for a finite-dimensional algebra $A$, constructing an isomorphism of $A$-bimodules $A\simeq A^*$ is equivalent to defining on $A$ a structure of a symmetric Frobenius algebra (compare with Exercise&#160;<a href="/tag/003J" data-tag="003J">5.2.1</a>). </p>
+</article>

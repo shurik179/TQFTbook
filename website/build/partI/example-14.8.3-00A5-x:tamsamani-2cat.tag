@@ -1,0 +1,4 @@
+<article class="env-example" id="00A5">
+  <p><a class="environment-identifier" href="/tag/00A5">Example <span data-tag="00A5">14.8.3</span>.</a> Let $\mathcal{M}=\mathbf{Cat}$ be the category of small categories. Define the functor $\tau _{\leq 0}\colon \mathbf{Cat}\to \mathbf{Set}$ by $\tau _{\leq 0}(\mathcal{C})=\text{set of isomorphism classes of objects in }\mathcal{C}$, and let $\mathcal{W}$ be the set of equivalences between categories. Then a $\mathbf{Cat}$-enriched Segal category is the same as a weak 2-category. </p>
+  <p>Details can be found in <span class="cite">[<a href="/bibliography/tamsamani">Tam1999</a>, <span class="postnote">Section 4</span>]</span> (see also <span class="cite">[<a href="/bibliography/lack-paoli">LP2008</a>]</span>). </p>
+</article>

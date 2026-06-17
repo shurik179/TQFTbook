@@ -1,0 +1,22 @@
+\documentclass{book}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% --- minimal stubs for things plasTeX/MathJax can handle ---
+\providecommand{\xRightarrow}[1]{\Rightarrow}
+\providecommand{\coloneqq}{:=}
+\providecommand{\mathscr}[1]{\mathcal{#1}}
+
+% amsrefs replacements: treat \ocite like \cite, stub bib env later
+\providecommand{\ocite}[1]{[\textrm{#1}]}
+\providecommand{\cite}[1]{[\textrm{#1}]}
+
+\input{definitions.tex}
+\input{tikzsetup.tex}
+\input{tikzcob.tex}
+
+\begin{document}
+\include{c2-categories}
+\end{document}

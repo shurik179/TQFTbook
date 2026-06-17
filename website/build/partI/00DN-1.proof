@@ -1,0 +1,7 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Indeed, by Lemma&#160;<a href="/tag/00DL" data-tag="00DL">18.7.1</a>, $\mathcal{Z}(\mathcal{C})$ is a rigid monoidal $\mathbf{k}$-linear category, and the unit object of $\mathcal{Z}(\mathcal{C})=\mathbf{1}$ is simple. Thus, it only remains to show that $\mathcal{Z}(\mathcal{C})$ is finite and semisimple. This immediately follows from Lemma&#160;<a href="/tag/00DM" data-tag="00DM">18.7.2</a> together with Theorem&#160;<a href="/tag/00B7" data-tag="00B7">16.4.2</a> 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

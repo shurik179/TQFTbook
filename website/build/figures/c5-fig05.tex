@@ -1,0 +1,39 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+    \begin{scope}
+      \node[dotnode] (a) at (0,0){};
+      \draw (a)-- +(0,-0.7) coordinate (b);
+      \draw (a) arc (180:0:0.25) coordinate (c);
+      \draw (c) -- (c|-b);
+      \draw (a) to [out = 135, in =-90, looseness = 1.5] (-0.25, 0.7);
+    \end{scope}
+    \node at (1,0) {$=$};
+    \begin{scope}[xshift=2.5cm]
+      \node[dotnode] (a) at (0,0){};
+      \draw (a) arc(0:-180:0.25) arc (0:180:0.25) -- +(0,-0.7) coordinate
+      (b);
+      \draw (a) arc (180:0:0.25) coordinate (c);
+      \draw (c) -- (c|-b);
+      \draw (a) to [out = 135, in =-90, looseness = 1.5] (-0.25, 0.7);
+    \end{scope}
+    \node at (3.5,0) {$=$};
+    \begin{scope}[xshift=4.5cm]
+      \node[dotnode] (a) at (0,0){};
+      \draw (a)  arc (0:180:0.25) -- +(0,-0.7) coordinate
+      (b);
+      \draw (a)arc(-180:0:0.25) arc (180:0:0.25) coordinate (c);
+      \draw (c) -- (c|-b);
+      \draw (a) to [out = 45, in =-90, looseness = 1.5] (0.25, 0.7);
+    \end{scope}
+    \node at (5.85,0) {$=$};
+    \begin{scope}[xshift=6.8cm]
+      \node[dotnode] (a) at (0,0){};
+      \draw (a)  arc (0:180:0.25) -- +(0,-0.7) coordinate
+      (b);
+      \draw (a) -- (a|-b);
+      \draw (a) to [out = 45, in =-90, looseness = 1.5] (0.25, 0.7);
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

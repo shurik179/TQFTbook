@@ -1,0 +1,28 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    %top level
+    \node (1) at (0,0){};
+    \node (2) at (8mm,0){};
+    \node (3) at (16mm,0){};
+    \node (4) at (24mm,0){};
+    % labels
+    \node[above, draw = none] at (1) {$a_1$};
+    \node[above, draw = none] at (2) {$a_2$};
+    \node[above, draw = none] at (3) {$a_3$};
+    \node[above, draw = none] at (4) {$a_4$};
+    % 2nd level
+    \node[dotnode] (12) at (4mm, -6mm){};
+    \draw (1)--(12)--(2);
+    \node[dotnode] (34) at (20mm, -6mm){};
+    \draw (3)--(34)--(4);
+    %3rd level
+    %4th level
+    \node[dotnode] (1234) at (12mm, -18mm){};
+    \draw (12)--(1234)--(34);
+    %root
+    \node (root) at (12mm, -24mm){};
+    \draw (1234)--(root);
+  \end{tikzpicture}
+\end{document}

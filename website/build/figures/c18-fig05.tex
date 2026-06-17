@@ -1,0 +1,47 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    % ev
+    \begin{scope}
+    \draw[midarrow] (0.4,0) arc (0:-180:0.4);
+    \node at (0, -0.1){$X$};
+    \node[right,scale=0.9] at (0.8,-0.15)
+        {$\ev_X\colon X^*\otimes X\to
+    \one$};
+    \end{scope}
+    % \tilde ev
+    \begin{scope}[yshift =-1cm]
+    \draw[midarrow] (-0.4,0) arc (-180:0:0.4);
+    \node at (0, -0.1){$X$};
+    \node[right,scale=0.9] at (0.8,-0.15)
+       {$\ev_{X^*}\circ (\de_X\otimes 1_{X^*})\colon X\otimes X^*\to \one$};
+    \end{scope}
+    % coev
+    \begin{scope}[yshift =-2cm]
+    \draw[midarrow] (0.4,-0.4) arc (0:180:0.4);
+    \node at (0, -0.25){$X$};
+    \node[right,scale=0.9] at (0.8,-0.15)
+       {$\coev_{X}\colon \one \to X\otimes X^*$};
+    \end{scope}
+    % tilde coev
+    \begin{scope}[yshift =-3cm]
+        \draw[midarrow] (-0.4,-0.4) arc (180:0:0.4);
+    \node at (0, -0.25){$X$};
+    \node[right,scale=0.9] at (0.8,-0.15)
+       {$(\id \otimes \de^{-1}_X)\coev_{X^*}\colon \one \to X^*\otimes X$};
+    \end{scope}
+    \begin{scope}[xshift =-3cm]
+    \draw[midarrow] (0,0) --(0,-0.8);
+    \node[left] at (0, -0.4){$X$};
+    \node[right,scale=0.9] at (0.3,-0.4)
+       {$\id_X$};
+    \end{scope}
+    \begin{scope}[xshift =-3cm, yshift=-2cm]
+    \draw[midarrow] (0,-0.8) --(0,0);
+    \node[left] at (0, -0.4){$X$};
+    \node[right,scale=0.9] at (0.3,-0.4)
+       {$\id_{X^*}$};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

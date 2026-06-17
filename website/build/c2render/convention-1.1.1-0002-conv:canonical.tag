@@ -1,0 +1,3 @@
+<article class="env-convention" id="0002">
+  <p><a class="environment-identifier" href="/tag/0002">Convention <span data-tag="0002">1.1.1</span>.</a> A collection of objects $X_\alpha $ of category $\mathcal{C}$, together with a collection of isomorphisms $f_{\beta \alpha }\colon X_\alpha \xrightarrow {\sim }X_\beta $, such that $f_{\alpha \beta }f_{\beta \gamma }=f_{\alpha \gamma }$, $f_{\alpha \alpha }=\operatorname{id}_{X_\alpha }$, is treated as a single object in $\mathcal{C}$. </p>
+</article>

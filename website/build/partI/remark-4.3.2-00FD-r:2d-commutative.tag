@@ -1,0 +1,3 @@
+<article class="env-remark" id="00FD">
+  <p><a class="environment-identifier" href="/tag/00FD">Remark <span data-tag="00FD">4.3.2</span>.</a> Note that commutativity of $m$ and cocommutativity of $\Delta $ do not come from any of the Cerf moves in Figure&#160;<a href="/tag/002N" data-tag="002N">4.3.2</a>; they follow from the symmetric-pants argument (<a href="/tag/00F2" data-tag="00F2">4.3.2</a>) (and its mirror image), which in turn reflects the symmetric monoidal structure of $\mathbf{Cob}_2$. </p>
+</article>

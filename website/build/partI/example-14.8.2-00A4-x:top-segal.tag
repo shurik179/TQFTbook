@@ -1,0 +1,3 @@
+<article class="env-example" id="00A4">
+  <p><a class="environment-identifier" href="/tag/00A4">Example <span data-tag="00A4">14.8.2</span>.</a> For $\mathcal{M}=\mathbf{Top}$, the definition of $\mathbf{Top}$-enriched Segal category is equivalent to that of a Segal category given in Definition&#160;<a href="/tag/009Z" data-tag="009Z">14.7.1</a>: $\mathbf{Seg}(\mathbf{Top}) = \mathbf{Seg}$. </p>
+</article>

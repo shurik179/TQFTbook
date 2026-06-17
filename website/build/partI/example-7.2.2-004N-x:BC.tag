@@ -1,0 +1,3 @@
+<article class="env-example" id="004N">
+  <p><a class="environment-identifier" href="/tag/004N">Example <span data-tag="004N">7.2.2</span>.</a> Let $\mathcal{C}$ be a monoidal category. Define the 2-category $\mathcal{B}\mathcal{C}$ as the 2-category with one object $*$ and morphisms given by $\operatorname{Hom}_{\mathcal{B}\mathcal{C}}(*,*) =\mathcal{C}$, with horizontal composition given by tensor product. It is easy to see that this is indeed a 2-category; conversely, every 2-category with only one object is obtained in this way. This is sometimes called <em>delooping</em> of $\mathcal{C}$. </p>
+</article>

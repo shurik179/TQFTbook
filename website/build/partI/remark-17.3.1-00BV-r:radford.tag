@@ -1,0 +1,3 @@
+<article class="env-remark" id="00BV">
+  <p><a class="environment-identifier" href="/tag/00BV">Remark <span data-tag="00BV">17.3.1</span>.</a> These ideas suggest that in any fusion category there should be a natural isomorphism $c\to c^{****}$. This is indeed true, but highly non-trivial; see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Corollary 7.19.3</span>]</span>. It is closely related with classical result of Radford that in a finite-dimensional Hopf algebra, fourth power of antipode is an inner automorphism. We refer the reader to <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 7.19</span>]</span> for discussion of this. </p>
+</article>

@@ -1,0 +1,21 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Equivalence of (1) and (2) is Theorem&#160;<a href="/tag/006C" data-tag="006C">9.2.2</a> (note that a Frobenius algebra is automatically finite-dimensional). 
+    <p>
+      (3)$\implies $(1) is immediate: we can take $\sum x_ i C\otimes x^ i$ as separability idempotent. 
+    <p>
+      (4)$\implies $(3) is also clear: if $w=\sum x_ i x^ i$ is invertible, then its inverse $w^{-1}$ must be central, and $\sum x_ i w^{-1} x^ i=1$. 
+    <p>
+      It remains to prove (1)$\implies $(4). 
+    <p>
+      Assume that $A$ is separable; then $A$ is semisimple and moreover, if $\bar\mathbf{k}$ is the algebraic closure of $\mathbf{k}$, then $A_{\bar\mathbf{k}}=A\otimes _\mathbf{k}\bar\mathbf{k}$ is semisimple. By Lemma&#160;<a href="/tag/003E" data-tag="003E">5.2.1</a>, $A_{\bar\mathbf{k}}\simeq \bigoplus \operatorname{Mat}_{n_ i}(\bar\mathbf{k})$, and $\varepsilon (a)=\sum \lambda _ i \operatorname{tr}(a_ i)$. An easy explicit computation then shows that the element $e$ is given by 
+    <p>
+      <div class="equation">
+  \[  e = \sum \lambda _ i^{-1}E^ i_{kl}\otimes E^ i_{lk}  \]
+</div>
+    <p>
+       where $E^ i_{kl}$ are matrix units in $\operatorname{Mat}_{n_ i}(\bar\mathbf{k})$, and thus, $w=\sum \lambda _ i^{-1} n_ i 1_ i$, where $1_ i$ is the identity matrix in $\operatorname{Mat}_{n_ i}(\bar\mathbf{k})$. Therefore, $w$ is invertible in $A_{\bar\mathbf{k}}$ and thus in $A$. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

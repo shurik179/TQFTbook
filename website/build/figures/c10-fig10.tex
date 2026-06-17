@@ -1,0 +1,13 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    \pic[scale = 2, cobheight = 0.8cm] (p) {revsaddle};
+    \node[below right] at (p-top1b) {\tiny 1};
+    \node[below right] at (p-top2b) {\tiny 2};
+    \node[above] at (p-top2t) {\tiny 3};
+    \node[above left] at (p-bot2t) {\tiny 3};
+    \node[above left] at (p-top1t) {\tiny 4};
+    \node[below left] at (p-bot1t) {\tiny 4};
+  \end{tikzpicture}
+\end{document}

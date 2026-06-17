@@ -1,0 +1,11 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      The cases $g=0, 1$ have already been discussed. For general $g\ge 1$, it is easy to see that $Z_ A(\Sigma _ g)=\operatorname{tr}(W^{g-1})$, where $W\colon A\to A$ is given by $W = Z_ A(\Sigma _{1,2})$, with $\Sigma _{1,2}$ a torus with one in-boundary circle and one out-boundary circle: 
+    <p>
+      <div class="centered"><img class="includegraphics" src="figures/c5-eqfig06.svg" /></div>
+    <p>
+       Using the formula for comultiplication, we see that $W(e_ i)=\lambda _ i^{-1}e_ i$, which immediately gives the statement of the lemma. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

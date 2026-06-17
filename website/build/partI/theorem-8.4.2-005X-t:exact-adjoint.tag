@@ -1,0 +1,3 @@
+<article class="env-theorem" id="005X">
+  <p><a class="environment-identifier" href="/tag/005X">Theorem <span data-tag="005X">8.4.2</span>.</a> Assume that $\mathbf{k}$ is an algebraically closed field of characteristic zero. Let $\mathcal{C}$, $\mathcal{D}\in \mathbf{Lin}$ be finite $\mathbf{k}$-linear categories. Then a functor $F\colon \mathcal{C}\to \mathcal{D}$ has a left adjoint if and only if it is left exact. </p>
+</article>

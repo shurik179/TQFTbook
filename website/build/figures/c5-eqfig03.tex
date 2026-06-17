@@ -1,0 +1,20 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{aligned}
+\begin{aligned}
+      &\begin{tikzpicture}[vcenter]
+        \pic{rigidity};
+        \node at (1.5, -1) {$=$};
+        \draw (2,0)--(2,-2);
+        \node at (2.5, -1) {$=$};
+        \begin{scope}[xshift=4cm, x=-1cm]
+        \pic{rigidity};
+        \end{scope}
+      \end{tikzpicture}\\[5pt]
+      & \sum (x, x_i)x^i =x = \sum (x^i, x) x_i
+    \end{aligned}
+\end{aligned}
+$
+\end{document}

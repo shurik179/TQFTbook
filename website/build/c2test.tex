@@ -1,0 +1,22 @@
+\documentclass{book}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[mathscr]{euscript}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% mathtools breaks plasTeX -> stub the few macros c2 needs
+\providecommand{\xRightarrow}[1]{\Rightarrow}
+\providecommand{\coloneqq}{\mathrel{:=}}
+
+% amsrefs breaks plasTeX -> stub citation commands
+\providecommand{\ocite}[1]{[\textrm{#1}]}
+
+% set default theorem style BEFORE inputting definitions (the fix)
+\theoremstyle{plain}
+\input{definitions.tex}
+\input{tikzsetup.tex}
+\input{tikzcob.tex}
+
+\begin{document}
+\include{c2-categories}
+\end{document}

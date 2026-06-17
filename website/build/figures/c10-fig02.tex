@@ -1,0 +1,105 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    %% cusp relations
+    \begin{scope}[cobheight=0.8cm]
+      \pic (c) at (0,0) {cusp2};
+      \pic[notop] at (c-bottom1) {cusp1};
+      \node at (1.5,-1) {$=$};
+      \draw (1.8,0) rectangle (3, -2);
+      %% second cusp relation
+      \pic (c2) at (5,0) {cusp1};
+      \pic at (c2-bottom1)  {cusp2};
+      \pic (z1) at (7.5,0) {zigzag1};
+      \pic (z2) at (7.5,-2) {zigzag1};
+      \draw (7.5,0)--(7.5,-2);
+      \node at (6.9,-1.25) {$=$};
+      \draw (z1-top2) -- (z2-top2);
+      \draw (z1-leftelbow) -- (z2-leftelbow);
+      \draw[cobdash] (z1-rightelbow) -- (z2-rightelbow);
+      \node at (4, -3) {cusp relations};
+    \end{scope}
+    %% swallowtail relations
+    \begin{scope}[yshift = -4cm]
+      %FIXME
+      \path[fill=black!10] (0,0) rectangle (5,-2);
+      \node at (3, -3) {swallowtail relation};
+    \end{scope}
+    %% morse relations
+    \begin{scope}[yshift = -8cm]
+      \path (0,0) rectangle (5,-2);
+      \pic (c) at (0,-1) {cap};
+      \pic[cobheight=0.8cm, notop] at (0,-1) {halfcylinder_l};
+      \pic[cobheight=0.8cm,notop] at (0,-1) {saddle};
+      \pic[cobheight=0.5cm] at (1,-0.5) {halfcylinder_l};
+      \node at (1.5, -1.2) {$=$};
+      \pic[cobheight=1.3cm] at (2.3,-0.5) {halfcylinder_l};
+      \node at (1, -3) {Morse relations};
+    \end{scope}
+    %% flip relation
+
+    \begin{scope}[yshift = -10cm, xshift=4cm]
+      %\draw (0,0) rectangle (5,3);
+      	%% left side of the flip relation.
+      	\begin{scope}[yshift=-2cm]
+      	\draw (0, 3) arc (90: -90: 0.3cm and 0.1cm) -- (0, 2) -- (1.6,2);
+      	\draw [densely dashed] (1,3) arc (-90: 90: 0.3cm and 0.1cm) -- (0.8,
+      	3.2);
+      	\draw [densely dashed] (1,3) arc (90: 180: 0.3cm and 0.1cm);
+      	\draw (0.7, 2.9) arc (180: 270: 0.3cm and 0.1cm) -- (1.6, 2.8) ;
+      	\draw (1,3) -- (1, 2.8);
+      	\draw [densely dashed] (0, 2.2) -- (1,2.2) arc (-90: 90: 0.3cm and
+      	0.1cm) -- (-.1, 2.4);
+      	\draw [densely dashed] (1.3, 2.3) -- (1.3, 3.1);
+      	\draw (.3, 2.9) arc (180: 360: 0.2cm and 0.3cm);
+      	\draw (0, 3) -- (-.1, 3) -- (-.1, 2.2) -- (0, 2.2);
+      	\node (C) at (1, 3.7) {};
+      	\draw plot [smooth] coordinates{(0.7, 2.9) (0.7,3) (0.9, 3.3)
+      	(C.center)};
+      	\draw [densely dashed] plot [smooth] coordinates{(1.3, 3.1) (1.3,3.2)
+      	(1.1, 3.4) (C.center)};
+      	\draw (-.1, 2.4) -- (-.2, 2.4) -- (-.2, 3.2) -- (0, 3.2);
+      	\draw [densely dashed] (0, 3.2) -- (.3, 3.2);
+      	\draw (.3, 3.2) -- (0.8, 3.2);
+      	\draw (-.2, 3.2) -- (-.2, 4) -- (1.6,4) -- (1.6, 2);
+      	\draw (0, 3.8) arc (90: -90: 0.3cm and 0.1cm) -- (0, 2.8);
+      	\draw (0, 3.8) -- (-.1, 3.8) -- (-.1, 3);
+      	\draw (.3, 3.7) -- (.3, 2.9);
+      	\end{scope}
+      	\begin{scope}[xshift = 2cm]
+      	\node at (0,1) {=};
+      \end{scope}
+      	%Other part of the flip relation
+      \begin{scope}[xshift = 2.5cm,]
+      	%perimeter
+      	\draw (0,0.4) -- (0,2) -- (2, 2) -- (2, 0) -- (0.4, 0) -- (0.4, 1.6);
+      	\draw (0.2, 0.2) -- (0.2, 1.8);
+      	%top
+      	\draw (0.2, 1.8) -- (1.4, 1.8) arc (90: -90:  0.3cm and 0.1cm) -- (0.4,
+      	1.6);
+      	%bottom
+      	\draw (0, 0.4) -- (0.2, 0.4) (0.2, 0.2) -- (0.4, 0.2);
+      	\draw [densely dashed] (0.2, 0.4) -- (0.4, 0.4) arc (90: -90:  0.3cm
+      	and 0.1cm);
+      	%left middle
+      	\draw (0, 1.2) -- (0.2, 1.2) (0.2, 1) -- (0.4, 1);
+      	\draw [densely dashed] (0.2, 1.2) -- (0.4, 1.2) arc (90: -90:  0.3cm
+      	and 0.1cm) (0.7, 1.1) -- (0.7, 0.3);
+      	%right middle
+      	\draw (0.4, 0.8) -- (1.4, 0.8) arc (-90: 0: 0.3cm and 0.1cm) -- (1.7,
+      	1.7)
+      	(1.7, 1.2) -- (2, 1.2) plot [smooth] coordinates{ (1.7, 0.9) (1.65,
+      	0.8) (1.5, 0.65)  (1.4, 0.5)};
+      	\draw [densely dashed] (1.4, 1) arc (90: 0: 0.3cm and 0.1cm) (1.4, 1)
+      	arc (270: 90: 0.3cm and 0.1cm)
+      	-- (1.7, 1.2) (0.7, 1.1) arc (180: 0: 0.2cm and 0.3cm )
+      	plot [smooth] coordinates{(1.1,1.1) (1.1, 0.9) (1.3, 0.7) (1.4, 0.5)};
+      \end{scope}
+      \begin{scope}[xshift = 1.6cm,  yshift = -.5cm]
+      	\node at (0,0) {+ permutations};
+      \end{scope}
+      \node at (2,-1) {cusp flip relation};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

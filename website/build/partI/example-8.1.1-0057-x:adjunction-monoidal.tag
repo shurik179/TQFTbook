@@ -1,0 +1,3 @@
+<article class="env-example" id="0057">
+  <p><a class="environment-identifier" href="/tag/0057">Example <span data-tag="0057">8.1.1</span>.</a> Let $\mathcal{C}$ be a monoidal category, and let $B\mathcal{C}$ be the corresponding 2-category with one object as defined in Example&#160;<a href="/tag/004N" data-tag="004N">7.2.2</a>. Then the definition of adjunction for 1-morphisms in $B\mathcal{C}$ coincides with the notion of dual pairs of objects in $\mathcal{C}$: $A\dashv B$ as 1-morphisms in $B\mathcal{C}$ if and only if $B$ is the right dual of $A$ in $\mathcal{C}$. </p>
+</article>

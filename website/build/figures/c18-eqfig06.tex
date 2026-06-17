@@ -1,0 +1,13 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+P(f) = \frac{1}{\dim \calC}\quad
+    \begin{tikzpicture}[vcenter]
+       \node[morphism_sq] (f) at (0,0) {$f$};
+       \draw[drinfeld center] (f)-- +(0,1.2) node[black,left] {$Z$};
+       \draw[drinfeld center] (f)-- +(0,-1.2) node[black,left] {$Z'$};
+       \draw[regular, overline] (f) circle (0.6);
+    \end{tikzpicture}
+$
+\end{document}

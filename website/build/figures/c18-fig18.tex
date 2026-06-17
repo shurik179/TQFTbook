@@ -1,0 +1,24 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+        %% drinfeld center
+        \node[label=above:$Z$] (z) at (-1,1) {};
+        \draw[drinfeld center] (z) -- (-1,0) to [out=-90, in=90]
+        (1,-1.5);
+        %% morphism
+       \node[morphism_sq, minimum width=1.4cm] (ph) at (0,0) {$\ph$};
+        %% top
+        \node[label=above:$A_1$] (A1) at (-0.4,1){};
+        \node[label=above:$A_k$] (Ak) at (0.4,1){};
+        \node at (0, 0.6) {\dots};
+        \draw[overline] (A1)-- (A1|-ph.north);
+        \draw[overline] (Ak)-- (Ak|-ph.north);
+        %% bottom
+        \node[label=below:$B_1$] (B1) at (-0.4,-1.5){};
+        \node[label=below:$B_m$] (Bm) at (0.4,-1.5){};
+        \node at (0, -1.1) {\dots};
+        \draw[overline] (B1)-- (B1|-ph.south);
+        \draw[overline] (Bm)-- (Bm|-ph.south);
+    \end{tikzpicture}
+\end{document}

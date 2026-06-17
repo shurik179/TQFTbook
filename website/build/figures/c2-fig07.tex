@@ -1,0 +1,12 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzcd}[column sep=5mm, row sep=large]
+    A\otimes B\otimes C
+    \arrow[rr,"c_{A, B\otimes C}"]
+    \arrow[dr,"c_{A,B}"']
+    && B\otimes C\otimes A\\
+    & B\otimes A\otimes C
+    \arrow[ur,"c_{A,C}"]  &
+  \end{tikzcd}
+\end{document}

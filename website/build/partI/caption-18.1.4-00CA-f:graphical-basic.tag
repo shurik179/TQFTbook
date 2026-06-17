@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 18.1.4. Morphisms corresponding to elementary diagrams.</figcaption>

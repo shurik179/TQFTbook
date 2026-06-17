@@ -1,0 +1,3 @@
+<article class="env-example" id="000R">
+  <p><a class="environment-identifier" href="/tag/000R">Example <span data-tag="000R">2.3.3</span>.</a> Consider the category of representations of a group $G$. Then the forgetful functor from this category to the category of vector spaces is a monoidal functor. More generally, given a subgroup $H\subset G$, the restriction functor $\operatorname{Res}^ G_ H\colon \operatorname{Rep}G\to \operatorname{Rep}H$ has an obvious monoidal structure. </p>
+</article>

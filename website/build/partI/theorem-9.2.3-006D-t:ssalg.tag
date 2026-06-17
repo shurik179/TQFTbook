@@ -1,0 +1,3 @@
+<article class="env-theorem" id="006D">
+  <p><a class="environment-identifier" href="/tag/006D">Theorem <span data-tag="006D">9.2.3</span>.</a> Let $\mathbf{ssAlg}\subset \mathbf{Alg}$ be the category whose objects are separable algebras, and 1-morphisms are finite-dimensional bimodules. Then $\mathbf{ssAlg}$ is a category with duals as defined in Definition&#160;<a href="/tag/005M" data-tag="005M">8.2.2</a>. </p>
+</article>

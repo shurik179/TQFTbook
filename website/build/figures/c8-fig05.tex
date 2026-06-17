@@ -1,0 +1,29 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+    \begin{scope}
+      % objects
+      \node (x) at (0,0) {$A\otimes B$};
+      \node (y) at (3,0) {$\one$};
+      % 1-morphisms
+      \draw[->, thick, bend left=35] (x) to node[above] {$zz_+$} (y);
+      \draw[->, thick, bend right=35] (x) to node[below] {$\ev$} (y);
+      % 2-morphism as a double arrow between the 1-morphisms
+      \draw[2morphism,->] (1.5,0.3) -- (1.5,-0.3)
+            node[midway, right, scale=0.8] {$\al\otimes 1$};
+    \end{scope}
+    \node at (3.8,0) {$=$};
+    \begin{scope}[xshift=5cm]
+      % objects
+      \node (x) at (0,0) {$A\otimes B$};
+      \node (y) at (3,0) {$\one$};
+      % 1-morphisms
+      \draw[->, thick, bend left=35] (x) to node[above] {$zz_+$} (y);
+      \draw[->, thick, bend right=35] (x) to node[below] {$\ev$} (y);
+      % 2-morphism as a double arrow between the 1-morphisms
+      \draw[2morphism,->] (1.5,0.3) -- (1.5,-0.3)
+      node[midway, right, scale=0.8] {$1\otimes \be$};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

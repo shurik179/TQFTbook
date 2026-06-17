@@ -1,0 +1,35 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[thick,every node/.style={font=\small},>=stealth]
+      %% pasting diagram
+      % objects
+      \node (x) at (0,0) {$X$};
+      \node (y) at (2,0) {$Y$};
+      \node (z) at (4,0) {$Z$};
+      % 1-morphisms
+      \draw[->,  bend left=45] (x) to node[above] {$f_1$} (y);
+      \draw[->,  bend right=45] (x) to node[below] {$g_1$} (y);
+      \draw[->] (x)--(y);
+      \draw[->,  bend left=45] (y) to node[above] {$f_2$} (z);
+      \draw[->,  bend right=45] (y) to node[below] {$g_2$} (z);
+      \draw[->] (y)--(z);
+      % 2-morphism as a double arrow between the 1-morphisms
+      \draw[2morphism,->] (1,0.4) -- (1,0.1);
+      \draw[2morphism,<-] (1,-0.4) -- (1,-0.1);
+      \draw[2morphism,->] (3,0.4) -- (3,0.1);
+      \draw[2morphism,<-] (3,-0.4) -- (3,-0.1);
+      %%%%%%%
+      \draw[->,squiggly] (4.75,0)--(5.75,0);
+      \begin{scope}[xshift=6.25cm]
+        % objects
+        \node (x) at (0,0) {$X$};
+        \node (z) at (2,0) {$Z$};
+        % 1-morphisms
+        \draw[->,  bend left=35] (x) to node[above] {$f_2f_1$} (z);
+        \draw[->,  bend right=35] (x) to node[below] {$g_2g_1$} (z);
+        % 2-morphism as a double arrow between the 1-morphisms
+        \draw[2morphism,->] (1,0.3) -- (1,-0.3);
+      \end{scope}
+    \end{tikzpicture}
+\end{document}

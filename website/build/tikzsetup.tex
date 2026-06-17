@@ -1,0 +1,96 @@
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{tikz, tikz-3dplot}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}%\usetikzlibrary{tqft}
+\usetikzlibrary{spath3}
+
+% Default TikZ option: draw all paths unless overridden
+\tikzset{vcenter/.style={baseline=(current bounding box.center)}}
+\tikzset{every picture/.style={label distance =-2mm,>=stealth, semithick}}
+%\tikzset{tqft/cobordism/.style={draw}}
+%\tikzset{tqft/every boundary component/.style = {draw}}
+\tikzset{dotnode/.style={fill,circle,inner sep=1pt}}
+\tikzset{midarrow/.style={postaction={decorate},
+                 decoration={
+                    markings,% switch on markings
+                    mark=at position #1 with {\arrow{>}},
+                 }},
+        midarrow/.default=0.5
+}
+\tikzset{morphism_sq/.style = {rectangle, inner sep=3pt,draw = black!50,
+minimum size=18pt,scale=0.8}}
+\tikzset{morphism/.style = {circle,draw,inner sep=1pt, minimum
+size=18pt, scale=0.8}}
+\tikzset{stringnode/.style={rectangle, inner sep=5pt, draw = black!50, fill=black!10}}
+\tikzset{2morphism/.style={line width=0.6pt, double distance=1.5pt}}
+\tikzset{squiggly/.style={decorate,decoration={snake,amplitude=1mm,segment length=3mm, post=lineto, post length=2mm},}}
+\tikzset{blue_dot/.style={pattern color = blue, pattern = dots}}
+\tikzset{red_lines/.style={pattern color = red, pattern = north west lines}}
+\tikzset{lightblue/.style={fill=blue!15}}
+\tikzset{lightred/.style={fill=red!40}}
+\tikzset{lightyellow/.style={fill=yellow!35}}
+\tikzset{euler/.style={fill,circle,inner sep=1.5pt, draw = black!50, fill=red}}
+\tikzset{regular/.style={densely dashed}}
+\tikzset{drinfeld center/.style ={green!60!black, double
+distance=1pt}}
+\tikzset{overline/.style={preaction={draw,line
+width=2mm,white,-},semithick,>=stealth}}
+%drinfeld center=[>=stealth,green!60!black, double
+%distance=1pt]]
+
+\tikzset{rigidity/.pic = {
+    \draw [pic actions]  (0,0)--(0,-1) arc (-180:0:0.25) arc (180:0:0.25) -- +(0,-1);
+  }
+  }
+\tikzset{coev/.pic = {
+    \draw [pic actions]  (0,0) arc (180:0:0.25);
+  }
+}
+\tikzset{ev/.pic = {
+    \draw [pic actions]  (0,0) arc (-180:0:0.25);
+  }
+}
+\tikzset{mult/.pic = {
+    \node[dotnode] (o) at (0,0){};
+    \draw [pic actions]  (-0.25,0.5)--(o)--(0.25,0.5);
+    \draw [pic actions]  (o)--(0,-0.5);
+  }
+}
+\tikzset{comult/.pic = {
+    \node[dotnode] (o) at (0,0){};
+    \draw [pic actions]  (-0.25,-0.5)--(o)--(0.25,-0.5);
+    \draw [pic actions]  (o)--(0,0.5);
+  }
+}
+
+\usepackage{tikz-cd}
+
+
+
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc}
+%\newcommand{\tikzsetup}{
+%  \tikzstyle tikzdefault=[semithick,>=stealth];
+%  \tikzstyle dotnode=[fill,circle,inner sep=1pt];
+%  \tikzstyle morphism=[circle,draw,inner sep=1pt, minimum
+%size=18pt, scale=0.8];
+%  \tikzstyle coupon=[draw,inner sep=1pt, minimum size=18pt,scale=0.8];
+%  \tikzstyle overline=[preaction={draw,line
+%width=2mm,white,-},semithick,>=stealth];
+%  \tikzstyle drinfeld center=[>=stealth,green!60!black, double
+%distance=1pt]];
+%  \tikzstyle cell=[fill=black!10,draw, very thin];
+%   \tikzstyle midarrow=[fill, dart, dart tail angle=112,
+%    dart tip angle=53,inner sep=0.55pt,sloped,allow upside down];
+%   \tikzstyle revmidarrow=[fill, dart, dart tail angle=112,
+%    dart tip angle=53,inner sep=0.55pt,sloped,
+%    allow upside down,rotate=180];
+%}
+%%
+
+

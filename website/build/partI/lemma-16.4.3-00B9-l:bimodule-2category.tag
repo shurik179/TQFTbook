@@ -1,0 +1,3 @@
+<article class="env-lemma" id="00B9">
+  <p><a class="environment-identifier" href="/tag/00B9">Lemma <span data-tag="00B9">16.4.3</span>.</a> Let $\mathcal{C}$, $\mathcal{D}$ be finite tensor categories. The 2-category of finite $\mathcal{C}$-$\mathcal{D}$ bimodule categories is equivalent to the 2-category of finite $(\mathcal{C}\boxtimes \mathcal{D}^{{\mathrm{mp}}})$ module categories. In particular, 2-category of left $\mathcal{C}$-module categories is equivalent to the 2-category of right $\mathcal{C}^{\mathrm{mp}}$-module categories. </p>
+</article>

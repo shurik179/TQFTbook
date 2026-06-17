@@ -1,0 +1,3 @@
+<article class="env-theorem" id="001S">
+  <p><a class="environment-identifier" href="/tag/001S">Theorem <span data-tag="001S">3.4.1</span>.</a> Let $Z\colon \mathbf{Cob}_ n\to \mathcal{C}$ be an $n$-dimensional TQFT with values in a symmetric monoidal category $\mathcal{C}$. Then for any closed $(n-1)$-dimensional manifold $N$, $Z(N)\in \mathcal{C}$ is rigid, and $Z(\overline{N})$ is a dual of $Z(N)$. </p>
+</article>

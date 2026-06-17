@@ -1,0 +1,12 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzcd}[column sep=5mm, row sep=large]
+          A\otimes B\otimes Z
+          \arrow[rr,"\ga_{A\otimes B}"]
+          \arrow[dr,"1_A\otimes \ga_B"']
+          && Z\otimes A\otimes B\\
+          & A\otimes Z\otimes B
+          \arrow[ur,"\ga_A\otimes 1_B"] &
+        \end{tikzcd}
+\end{document}

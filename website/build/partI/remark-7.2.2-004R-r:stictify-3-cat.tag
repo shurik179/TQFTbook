@@ -1,0 +1,3 @@
+<article class="env-remark" id="004R">
+  <p><a class="environment-identifier" href="/tag/004R">Remark <span data-tag="004R">7.2.2</span>.</a> Do not let this theorem give you the wrong idea. For $n=3$, the notion of a weak $3$-category (which is quite hard to define, see <span class="cite">[<a href="/bibliography/gordon-power-street">GPS1995</a>]</span>) is not equivalent to that of a strict 3-category (which is relatively easy to define). We will return to this when discussing higher categories in Chapter&#160;<a href="/tag/0098" data-tag="0098">14</a>. </p>
+</article>

@@ -1,0 +1,3 @@
+<article class="env-example" id="00AP">
+  <p><a class="environment-identifier" href="/tag/00AP">Example <span data-tag="00AP">16.2.1</span>.</a> Let $A$ be a finite-dimensional algebra over $\mathbf{k}$. Then the category $A\mathbf{{-}mod}$ of finite-dimensional $A$-modules is a finite $\mathbf{k}$-linear category. Moreover, it is easy to show that conversely, every finite $\mathbf{k}$-linear category is equivalent to the category $A\mathbf{{-}mod}$ for some finite-dimensional algebra $A$ (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section&#160;1.8</span>]</span>). </p>
+</article>

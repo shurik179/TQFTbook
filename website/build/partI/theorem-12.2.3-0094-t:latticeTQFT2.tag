@@ -1,0 +1,3 @@
+<article class="env-theorem" id="0094">
+  <p><a class="environment-identifier" href="/tag/0094">Theorem <span data-tag="0094">12.2.3</span>.</a> For a separable symmetric Frobenius algebra $A$, the (non-extended) TQFT defined by state-sum formulas (<a href="/tag/008W" data-tag="008W">12.2.5</a>), (<a href="/tag/008Z" data-tag="008Z">12.2.7</a>) coincides with the (non-extended) TQFT defined in Chapter&#160;<a href="/tag/0071" data-tag="0071">10</a>. </p>
+</article>

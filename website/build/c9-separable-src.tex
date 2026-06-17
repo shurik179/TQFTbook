@@ -1,0 +1,705 @@
+%!TEX root = TQFTnotes.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Separable Frobenius algebras}\label{c:separable-frobenius}
+
+In this chapter, we study duality in the 2-category $\Alg$ of algebras and
+bimodules, which was introduced in \exref{x:alg}. It turns out that the maximal
+subcategory with duals in $\Alg$ is the category of separable algebras (which in
+characteristic zero is the same as finite-dimensional semisimple algebras); if
+we also want to trivialize the Serre functor (in other words, if we want to have
+adjunction between evaluation and coevaluation 1-morphisms), we arrive at the
+notion of a separable symmetric Frobenius algebra. These results will be heavily
+used later, when we classify extended 2-dimensional TQFTs.
+
+To simplify the exposition, throughout this chapter we assume that $\kk$ is a
+field of characteristic zero.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Duality in $\Alg$}\label{s:alg-duals}
+Our goal is analyzing duality in the 2-category $\Alg$, looking at duality
+both for objects and for 1-morphisms. Recall that objects of this category are
+associative algebras, and 1-morphisms $A\to B$ are $B$-$A$-bimodules.
+
+
+Let us begin by looking at duality for objects. It turns out that each $A\in
+\Alg$ has a dual. Namely,\index{opposite!algebra} for an algebra $A$, denote by
+$A^\op$ the \emph{opposite algebra}, which coincides with $A$ as a vector space
+but has the opposite multiplication. Then any $A$-bimodule can also be considered
+as a left module over the algebra $A\otimes A^\op$, or as a right module over
+$A\otimes A^\op$. In particular, $A$ itself is a left module over $A\otimes
+A^\op$, and also a right module over $A\otimes
+A^\op$.
+
+
+\begin{theorem}\label{t:alg-duals1}
+  Let $A\in \Alg$. Define the evaluation and coevaluation morphisms
+  $A^\op \otimes A\to \kk$, $\kk \to A\otimes A^\op$
+  to be $A$, considered either as a left or a right $A\otimes A^\op$ module:
+  \begin{equation}\label{e:alg-duals1}
+    \begin{aligned}
+      \ev &= A_{A\otimes A^\op} \colon A\otimes A^\op\to \kk\\
+      \coev &= {}_{A\otimes A^\op} A \colon \kk \to A\otimes A^\op.
+    \end{aligned}
+  \end{equation}
+  Then $(A, A^\op, \ev, \coev, \al,\be)$ is a coherent dual pair in $\Alg$,
+  with isomorphisms $\al, \be\colon A\otimes_A A \isoto A$ given by
+  multiplication.
+\end{theorem}
+In other words, any algebra $A$ has a dual, namely $A^\op$.
+Note that it has nothing to do with the dual vector space, and
+it works for finite-dimensional as well as infinite-dimensional algebras.
+
+Let us now look at duality for 1-morphisms, i.e., bimodules.
+Recall that a module $P$ over an algebra $A$ is called
+\emph{projective}\index{projective module}
+if it is a direct summand of a free module.
+
+\begin{theorem}\label{t:alg-adjoint}
+  Let ${}_BM_A$ be a $B$-$A$-bimodule, considered as a 1-morphism
+  $A\to B$ in $\Alg$.
+  Then the following are equivalent:
+  \begin{enumerate}
+    \item $M$ has a right adjoint.
+    \item There exists an $A$-$B$-bimodule $N$, an element
+      $e=\sum_{i=1}^k n_i\otimes m_i\in N\otimes M$,
+      and a morphism of $B$-bimodules $(\, ,\,)\colon M\otimes_A N\to B$
+      such that $e$ is central: for any $x\in A$,
+      $$
+        \sum (xn_i)\otimes m_i=\sum n_i\otimes (m_i x)
+      $$
+      and for any $m\in M$, $n\in N$ we have
+      \begin{equation}\label{e:alg-adjoint-snake}
+        \begin{aligned}
+          m&=\sum (m, n_i) m_i,\\
+          n&=\sum n_i (m_i, n).
+        \end{aligned}
+      \end{equation}
+    \item $M$ is a finitely generated projective $B$-module.
+  \end{enumerate}
+  In this case, its right adjoint is isomorphic to the module
+  $N=M^\vee = \Hom_B (M, B)$ \textup{(}note that it has a
+  canonical $A$-$B$-bimodule structure\textup{)}.
+\end{theorem}
+\begin{proof}
+  Equivalence (1)$\iff$ (2) is obvious from the definition; the form
+  $(\, , \,)$ plays the role of evaluation morphism, and $e=\eta (1)$,
+  where $\eta\colon A\to N\otimes M$ is the coevaluation.
+
+  To prove (2)$\implies$ (3), assume that we are given such an
+  $e=\sum_{i=1}^k n_i\otimes m_i$. Consider the free
+  $B$-module $F$ of rank $k$: $F=\bigoplus B x_i$. Define morphisms
+  of $B$-modules $s\colon M\to F$, $p\colon F\to M$ by
+  \begin{align*}
+  s(m)&=\sum (m, n_i)x_i\\
+  p(x_i)&=m_i.
+  \end{align*}
+  Then it follows from (2) that $p\circ s =\id_{M}$, which implies that
+  $M$ is a direct summand in $F$, so $M$ is projective of finite rank.
+  Thus, (2)$\implies$ (3).
+
+  Proof of (3)$\implies$ (2) is similar and is left to the reader.
+
+  Finally, to show that in this case, the right adjoint $N$ is isomorphic
+  to $M^\vee$, we construct morphisms $N\to M^\vee$, $M^\vee\to N$ as follows:
+  \begin{align*}
+    N&\to M^\vee\colon n\mapsto (-, n)\\
+    M^\vee&\to N\colon f\mapsto \sum n_i f(m_i)
+  \end{align*}
+  We leave it to the reader to verify that the so-defined maps are indeed morphisms
+  of right $A$-modules, and that they are mutually inverse.
+\end{proof}
+
+Similarly, $M$ has a left adjoint iff it is finitely generated and projective
+as a right $A$-module.
+
+%%%%%%%%%%%%%%%
+\section{Separable algebras}\label{s:separable}
+
+\thref{t:alg-adjoint} shows that in order for the coevaluation morphism $\kk
+\to A^\op\otimes A$ (which is given by $A$ considered as a left $A^\op \otimes
+A$ module) to have a right adjoint in $\Alg$, it is necessary that $A$ is a
+projective $A^\op\otimes A$ module. This naturally leads us to the notion of a
+\emph{separable} algebra. We give a brief review of this notion here, referring
+the reader to \cite[Chapter 10]{pierce} for details.
+
+
+\begin{lemma}\label{l:separable}\index{algebra!separable}
+  Let $A$ be an associative algebra over a field $\kk$.
+  Then the following are equivalent:
+  \begin{enumerate}
+    \item $A$ is projective as a left module over $A^e=A\otimes A^\op$.
+    \item The multiplication map $m\colon A\otimes A\to A$,
+      considered as a morphism of $A$-bimodules
+      ${}_AA\otimes A_A \to {}_A A_A$,
+      has a one-sided inverse: there exists a morphism of $A$-bimodules
+      $\De\colon A\to A\otimes A$ such that $m\circ \De=\id_A$.
+   \item There exists an element $E=\sum x_i\otimes y_i\in A\otimes A$ which
+     is central: $\sum ax_i \otimes y_i=\sum x_i \otimes y_ia$ and satisfies
+     $m(E)=\sum x_iy_i=1$.
+   \end{enumerate}
+\end{lemma}
+\begin{proof}
+  (1)$\implies$(2) is a standard fact of basic algebra: if $P$ is a projective
+  module, then any surjective morphism $X\to P\to 0$ has a one-sided inverse.
+
+  Similarly, (2)$\implies$(1) is immediate from the definition: if such a
+  morphism $\De$ exists, then $A$ is a direct summand in
+  the free $A^e$-module $A\otimes A\simeq A^e$.
+
+  Finally, (3) is just a rewriting of (2).
+\end{proof}
+\begin{definition}\label{d:separable}
+  An algebra satisfying one of the equivalent conditions of \leref{l:separable}
+  is called \emph{separable}.
+\end{definition}
+An element $E\in A\otimes A$ as in part (3) of the lemma above is called a
+\emph{separability idempotent}\index{separability idempotent}. This terminology
+is justified by the following exercise.
+\begin{exercise}\label{ec:separability-idempotent}
+  Let $A$ be a separable algebra with separability idempotent $E$.
+  Then $E$, considered as an element in the algebra $A\otimes A^\op$,
+  satisfies $E^2=E$.
+\end{exercise}
+
+
+Note that the separability idempotent is not unique, nor does it have
+to be symmetric, as is illustrated by the following example.
+\begin{example}\label{x:matrix}
+  Let $A=\Mat_n(\kk)$ be the matrix algebra. Choose an index $k$ and define
+  $e_k=\sum_i E_{ik}\otimes E_{ki}$, where $E_{ij}$ are matrix units.
+  Then each of $e_k$ is a separability idempotent, so $A$ is separable.
+
+  We can also take as the separability idempotent the element
+  $$
+    E=\tfrac{1}{n}\sum E_{ij}\otimes E_{ji}
+  $$
+  which has the added benefit of being symmetric.
+\end{example}
+\begin{remark}
+  It can be shown that a \emph{symmetric} separability idempotent, if it exists, is
+  unique, see \cite[Theorem 3.1]{aguiar}.
+\end{remark}
+
+
+One of the main results of this theory is the following.
+\begin{theorem}\label{t:separable-ss}
+  If $\kk$ has characteristic zero, an algebra $A$ over $\kk$ is
+  separable if and only if it is finite-dimensional and semisimple.
+  In this case, for any field extension $\kk\subset F$, the algebra
+  $A_F=A\otimes_\kk F$ is also semisimple over $F$.
+\end{theorem}
+We skip the proof of this result, referring the reader to
+\cite[Section 10.7]{pierce}.
+
+\begin{remark}
+  In fact, \thref{t:separable-ss} can be generalized: it works for any perfect
+  field, i.e., a field such that any finite extension of it is separable in the
+  sense used in Galois theory. This includes not only fields of characteristic
+  zero, but also finite fields.
+\end{remark}
+
+
+
+
+Since any module over a semisimple algebra is projective,
+the results of the previous section immediately imply the following theorem.
+\begin{theorem}\label{t:ssalg}
+  Let $\ssAlg\subset \Alg$ be the category whose objects are separable
+  algebras, and 1-morphisms are finite-dimensional
+  bimodules. Then $\ssAlg$ is a category with duals as defined in
+  \deref{d:category-duals}.
+\end{theorem}
+
+\begin{exercise}\label{ec:serre-separable}
+  Show that for a separable algebra $A$, the Serre automorphism as defined in
+  \deref{d:serre} is given by $A^*$ (dual vector space), considered as
+  an $A$-bimodule.
+\end{exercise}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Separable symmetric Frobenius algebras}\label{s:ssfrob}
+The results of the previous section show that fully dualizable objects in $\Alg$ are
+separable algebras. However, for future use, let us also consider this question:
+what are fully dualizable algebras for which the evaluation $\ev_A$ and
+coevaluation $\coev_A$ are adjoints of each other?
+
+
+One way to answer that is to use the notion of Serre functor, introduced in
+\seref{s:serre}. By the results of that section, if $\ev$ has left and right
+duals $\ev^L$, $\ev^R$, then they coincide with the coevaluation $\coev$ twisted
+by the Serre automorphism or its inverse. Thus, to construct adjunctions
+$\ev\dashv\coev$, $\coev\dashv\ev$ we need to construct an isomorphism
+$S_A\simeq 1_A$. Since by \ecref{ec:serre-separable} the Serre automorphism for
+an algebra $A$ is given by $A^*$ considered as an $A$-bimodule, we see that
+trivialization of the Serre automorphism is the same as a choice of an
+isomorphism of $A$-bimodules $A\simeq A^*$.
+
+It turns out that the answer is related to Frobenius algebras. Recall that a
+symmetric Frobenius algebra is a finite-dimensional algebra $A$ together with a
+linear map $\eps\colon A\to\kk$ such that the pairing
+$$
+  A\otimes A\to \kk\colon
+  a\otimes b \mapsto (a,b)=\eps(ab)
+$$
+is a symmetric non-degenerate bilinear form, see \deref{d:frobenius2},
+\deref{d:frobenius_symmetric}.
+
+
+
+
+\begin{exercise}\label{ec:fd-algebra-separable}
+  Show that for a finite-dimensional algebra $A$, constructing an isomorphism of
+  $A$-bimodules $A\simeq A^*$ is equivalent to defining on $A$ a structure of
+  a symmetric Frobenius algebra (compare with \ecref{ec:dual-module-frob}).
+\end{exercise}
+
+
+However, it is useful to also give a more direct construction, relating
+adjunctions $\ev\dashv\coev$, $\coev\dashv\ev$ defined by \eqref{e:alg-duals1}
+with the Frobenius algebra structure.
+
+\begin{theorem}\label{t:adjunction-frob}
+  Let $A$ be an algebra considered as an object in $\Alg$. Then defining
+  adjunction data for $\ev_A\dashv\coev_A$ is equivalent to defining on $A$ a
+  structure of a symmetric Frobenius algebra.
+\end{theorem}
+In particular, this theorem shows that such an adjunction is only possible if
+$A$ is finite-dimensional.
+\begin{proof}
+
+  By definition, adjunction data consists of the unit and the counit of adjunction, i.e.,
+  2-morphisms $\eps \colon \ev_A\circ \coev_A \to 1_\kk$, $\eta \colon
+  1_{A\otimes A^\op}\to \coev_A\circ \ev_A$, where $\ev_A\colon A\otimes
+  A^\op\to\kk$, $\coev_A \colon \kk \to A\otimes A^\op$ are evaluation and
+  coevaluation 1-morphisms.
+
+  Recalling that $\ev_A$ is given by $A$ considered as a right $A^e$ module, and
+  $\coev_A$ is given by $A$ considered as a left $A^e$ module, we see that
+  composition of 1-morphisms $\ev_A \circ \coev_A$,
+  considered as a $\kk$-bimodule, in other words a vector space, is given by
+  $$
+  \ev_A \circ \coev_A \simeq A\otimes_{A^e} A\simeq A/[A,A]
+  $$
+  where $[A,A]$ is the subspace in $A$ generated by $xy-yx, x,y\in A$.
+  Note that $A/[A,A]$ is just a vector space; it has no natural algebra
+  structure (unlike the situation with Lie algebras, where $L/[L,L]$ is
+  a Lie algebra), since $[A,A]$ is not an ideal in $A$.
+
+
+  Thus, we see that the counit of adjunction
+  $\eps\colon \ev_A \circ \coev_A\to 1_\kk$
+  is a linear map
+  $$
+    \eps\colon A/[A,A]\to \kk
+  $$
+  or equivalently, a map $\eps \colon A\to \kk$ such that $\eps(xy)=\eps(yx)$.
+
+  Similarly, the unit of adjunction should be a morphism of bimodules
+  ${}_{A^e} A^e_{A^e} \to {}_{A^e}A\otimes A_{A^e}$. Unpacking this definition,
+  we see that $\eta$ is a map of modules over 4 copies of $A$:
+  \begin{equation}\label{e:eta-ssfrob}
+  \eta\colon {}_{A_1} A_{A_2}\otimes {}_{A^\op_3}A_{A^\op_4}
+      \to   {}_{A_1} A_{A_3}\otimes {}_{A_4}A_{A_2}
+  \end{equation}
+  where indices are used to indicate copies of $A$. It is immediate that such a
+  morphism is uniquely determined by $e=\eta(1\otimes 1)$, which must be
+  \emph{bicentral}\index{bicentral element}: if $e=\sum x_i\otimes x^i$, then
+  \begin{equation}\label{e:bicentral}
+     \begin{aligned}
+       \sum xx_i\otimes x^i&=\sum x_i\otimes x^ix,\\
+       \sum x_iy\otimes x^i&=\sum x_i\otimes yx^i.
+     \end{aligned}
+   \end{equation}
+   We leave it to the reader to check that the adjunction conditions on $\eta$,
+   $\eps$ are equivalent to the conditions that for any $x\in A$, we have
+   $$
+     x= \sum (x, x_i)x^i = \sum (x, x^i) x_i,
+   $$
+   where $(a,b)=\eps(ab)$ (compare with the proof of \thref{t:frobenius1}).
+   This means that $(\, ,\,)$ is a non-degenerate pairing and $x_i, x^i$
+   are dual bases with respect to this pairing, so $A$ is a symmetric Frobenius
+   algebra.
+   Conversely, if $A$ is a symmetric Frobenius algebra, we can define
+   $e=\sum x_i \otimes x^i$ where $x_i$, $x^i$ are dual bases with respect to
+   the Frobenius pairing. By \thref{t:frobenius2}, the so-defined $e$ is central;
+   since it is symmetric, it is also bicentral and thus defines a morphism
+   $\eta$ as in \eqref{e:eta-ssfrob}.
+
+\end{proof}
+
+\begin{remark}
+  If you have difficulty keeping track of the many copies of $A$ and in which
+  order they appear, you are not alone. Fortunately, it will become clearer
+  once we relate it to geometry: see \seref{s:extended-alg}.
+\end{remark}
+
+
+So far we have discussed adjunction $\ev\dashv \coev$. What about the other
+adjunction, $\coev\dashv \ev$?
+
+First, by \thref{t:alg-adjoint}, in order for $\coev={}_{A^e}A$ to have a right
+adjoint it is necessary that $A$ is projective over $A^e$, that is, that $A$ is
+separable. It turns out that this is also sufficient --- if we assume we
+already have adjunction $\ev\dashv\coev$.
+
+
+\begin{theorem}\label{t:adjunction-frob2}
+  Let $A$ be an algebra together with adjunction data $\ev_A\dashv\coev_A$,
+  $\coev_A\dashv\ev_A$. Then $A$ is separable and has a canonical structure of a
+  symmetric Frobenius algebra, with the counit $\eps\colon A/[A,A]\to \kk$ given
+  by the counit of adjunction $\ev\dashv\coev$.
+
+  Conversely, let $A$ be a separable symmetric Frobenius algebra. Then we can
+  define adjunction data $\ev_A\dashv\coev_A$, $\coev_A\dashv\ev_A$.
+\end{theorem}
+
+To prove this theorem, we will need two preliminary results.
+
+\begin{theorem}\label{t:adjunction-frob3}
+  For an algebra $A$, adjunction data for adjunction $\coev_A\dashv\ev_A$ is
+  equivalent to an element $C\in A/[A,A]$ and a bicentral element
+  $$
+    \tilde e=\sum\tilde x_i\otimes \tilde x^i\in A\otimes A
+  $$
+  such that $\sum \tilde x_i C \tilde x^i=1$.
+\end{theorem}
+Note that bicentrality of $\tilde e$ implies that $\sum \tilde x_i C \tilde
+x^i$ only depends on the class of $C$ in $A/[A,A]$.
+
+The proof of this theorem is similar to the proof of \thref{t:adjunction-frob};
+the element $C$ corresponds to the unit $\kk \to \ev_A \circ \coev_A$, and $\tilde
+e$ corresponds to the counit $\coev_A\circ \ev_A \to 1_{A^e}$. We leave the
+details to the reader.
+
+
+
+Before proving the next theorem, we need some notation. Let $A$ be a symmetric
+Frobenius algebra and let $x_i, x^i$ be dual bases with respect to the Frobenius
+pairing. Consider the map $f\colon A\to A$ given by $x\mapsto \sum x_i xx^i$.
+Then bicentrality of $e$ implies that for any $x$, $f(x)\in z(A)$, where $z(A)$
+is the center of $A$. Similarly, it also shows that $f(xy)=f(yx)$, so we can
+consider $f$ as a map
+\begin{equation}\label{e:coinv-inv}
+  \begin{aligned}
+    A/[A,A]&\to z(A)\\
+    [x]&\mapsto \sum x_ixx^i.
+  \end{aligned}
+\end{equation}
+
+
+
+\begin{theorem}\label{t:separable-frobenius}
+  Let $A$ be a symmetric Frobenius algebra over a field $\kk$ of characteristic
+  zero. Let $x_i, x^i$ be dual bases in $A$ with respect to the Frobenius
+  pairing. Then the following are equivalent:
+  \begin{enumerate}
+    \item $A$ is separable.
+    \item $A$ is semisimple.
+    \item There exists $[C]\in A/[A,A]$ such that $\sum x_iCx^i=1$.
+    \item The Euler element \textup{(}see \eqref{e:euler}\textup{)}
+      \begin{equation}\label{e:euler2}\index{Euler element}
+        w=\sum x_ix^i
+      \end{equation}
+      is invertible.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  Equivalence of (1) and (2) is \thref{t:separable-ss}
+  (note that a Frobenius algebra is automatically finite-dimensional).
+
+  (3)$\implies$(1) is immediate: we can take $\sum x_i C\otimes x^i$ as
+  separability idempotent.
+
+  (4)$\implies$(3) is also clear: if $w=\sum x_i x^i$ is invertible, then its
+  inverse $w^{-1}$ must be central, and $\sum x_i w^{-1} x^i=1$.
+
+  It remains to prove (1)$\implies$(4).
+
+  Assume that $A$ is separable; then $A$ is semisimple and moreover, if
+  $\bar \kk$ is the algebraic closure of $\kk$, then
+  $A_{\bar \kk}=A\otimes_\kk \bar\kk$ is semisimple. By
+  \leref{l:frobenius-ss}, $A_{\bar\kk}\simeq\bigoplus \Mat_{n_i}(\bar \kk)$,
+  and $\eps(a)=\sum \la_i \tr(a_i)$.
+  An easy explicit computation then shows that the element $e$ is given by
+  $$
+    e = \sum \la_i^{-1}E^i_{kl}\otimes E^i_{lk}
+  $$
+  where $E^i_{kl}$ are matrix units in $\Mat_{n_i}(\bar \kk)$,
+  and thus, $w=\sum \la_i^{-1} n_i 1_i$, where $1_i$ is the identity matrix in
+  $\Mat_{n_i}(\bar \kk)$. Therefore, $w$ is invertible in $A_{\bar \kk}$
+  and thus in $A$.
+\end{proof}
+\begin{remark}
+  An alternative proof which does not rely on the classification of
+  semisimple algebras is given in \cite[Theorem 2.14]{lauda-pfeiffer}.
+\end{remark}
+
+Now we can return to \thref{t:adjunction-frob2}.
+
+\begin{proof}[Proof of \thref{t:adjunction-frob2}]
+  One direction is easy. Assume that we have adjunctions $\ev_A\dashv\coev_A$,
+  $\coev_A\dashv\ev_A$. By \thref{t:adjunction-frob}, the first of these
+  adjunctions defines on $A$ a structure of a symmetric Frobenius algebra. By
+  \thref{t:adjunction-frob3}, the second adjunction gives an element $\sum
+  \tilde x_i \otimes C\tilde x^i$ which is a separability idempotent (see
+  \leref{l:separable}); thus, $A$ is separable.
+
+  Conversely, let $A$ be a separable symmetric Frobenius algebra. By
+  \thref{t:adjunction-frob}, this gives rise to adjunction $\ev_A\dashv\coev_A$,
+  so we only need to construct the second adjunction $\coev_A\dashv\ev_A$. To do
+  it, let $C=[w^{-1}]\in A/[A,A]$, where $w$ is the Euler element (see
+  \thref{t:separable-frobenius}) and $\tilde e=e =\sum x_i \otimes x^i$; by
+  \thref{t:adjunction-frob3} they define an adjunction $\coev_A\dashv
+  \ev_A$.
+\end{proof}
+\begin{remark}
+  The careful reader can note that the construction of bi-adjunction
+  $\ev\dashv\coev$, $\coev\dashv\ev$ from a symmetric Frobenius algebra has an
+  extra feature: the elements $e$, $\tilde e$, which are parts of these
+  adjunctions, actually coincide. It is natural to ask whether it is always so:
+  does having two adjunctions as above automatically imply that $\tilde e=e$?
+
+  The answer is ``no'': in general, $\tilde e\ne e$; however, if both
+  adjunctions exist, then we can modify data for one of them so that the equality
+  $\tilde e=e$ is satisfied. See the discussion of ``cusp flip relation'' at the end
+  of \seref{s:2d-xtqft-classification}.
+\end{remark}
+
+
+For future use, we also give here some further properties of separable symmetric
+Frobenius algebras.
+
+\begin{exercise}\label{ec:standard-frobenius}
+  Let $A$ be a finite-dimensional semisimple algebra. Define the counit
+  $\eps\colon A\to \kk$ by
+  $$
+  \eps(a) = \tr(L_a)
+  $$
+  where $L_a\colon A\to A$ is the operator of left multiplication by $a$.
+  Prove that this defines on $A$ a structure of a symmetric Frobenius algebra,
+  and for this structure, the Euler element \eqref{e:euler2} is $w=1$.
+
+  (Hint: it suffices to consider the case $A=\Mat_n(\kk)$. Alternatively, to
+prove that $(\, ,\, )$ is non-degenerate, you can prove that the kernel
+of this bilinear form is a 2-sided ideal in $A$ which consists of
+nilpotent elements, and thus for a semisimple algebra must be trivial.)
+\end{exercise}
+
+
+
+\begin{corollary}\label{c:euler3}
+  Let $A$ be a separable symmetric Frobenius algebra, and let $w=\sum x_ix^i$
+  be the Euler element defined by \eqref{e:euler2}. Then $w^{-1}$ is central,
+  and the map
+  \begin{equation}\label{e:center-isom2}
+    A/[A,A] \to z(A)\colon [a]\mapsto \sum x_iax^i
+  \end{equation}
+  is an isomorphism; its inverse is given by
+  \begin{equation}\label{e:center-isom3}
+    z(A) \to A/[A,A]\colon z \mapsto w^{-1}z.
+  \end{equation}
+  In particular, $\sum x_i w^{-1}x^i=1$ and the
+  element
+  $$
+    E= \sum w^{-1} x_i \otimes x^i = \sum x_i \otimes x^i w^{-1}
+  $$
+  is a symmetric separability idempotent.
+\end{corollary}
+
+Another reformulation of this corollary is the statement that the map
+\begin{equation}\label{e:center-projector}
+  \begin{aligned}
+    p\colon A&\to A\\
+            a&\mapsto w^{-1}\sum x_i a x^i
+  \end{aligned}
+\end{equation}
+is a projector onto the center of $A$, and $\ker(p)=[A,A]$. Using the graphical
+representation of operations in a Frobenius algebra as in \chref{c:frobenius},
+this projector can be represented by \firef{f:frob-center}.
+
+\begin{figure}[ht]
+  \begin{tikzpicture}
+    \node[dotnode] (om) at (0,0) {};
+    \draw (om) arc(-90:270:0.4cm);
+    \draw (om)--+(0,-0.5);
+    \draw (om)--+(0, 1.5);
+    \node[euler] at (0, -0.25){};
+    %%%%%%%%%%%%
+    \node at (0.75,0.5) {$=$};
+    \node[dotnode] (om2) at (1.5,0) {};
+    \draw (om2)--+(0,-0.5);
+    \node[dotnode] (a1) at (1.25, 0.75){};
+    \coordinate (a2) at (1.75, 0.75);
+    \coordinate (b1) at (1.25, 0.25);
+    \coordinate (b2) at (1.75, 0.25);
+    \draw (om2) to[out=45,in=-90] (b2)
+    to[out=90,in=-90] (a1)
+    arc(180:0:0.25cm)
+    to[out=-90,in=90] (b1)
+    to[out=-90,in=135] (om2);
+    \draw (a1)--+(0,0.75);
+    \node[euler] at (1.5, -0.25){};
+    %%%%%%%%%%%%
+    \node at (2.25,0.5) {$=$};
+    \node[dotnode] (om3) at (3,0) {};
+    \draw (om3)--+(0,-0.5);
+    \node[dotnode] (om4) at (3,1) {};
+    \coordinate (a3) at (2.75, 0.75){};
+    \coordinate (a4) at (3.25, 0.75);
+    \coordinate (b3) at (2.75, 0.25);
+    \coordinate (b4) at (3.25, 0.25);
+    \draw (om3) to[out=45,in=-90] (b4)
+    to[out=90,in=-90] (a3)
+    to[out=90,in=-135] (om4);
+    \draw (om4)
+    to[out=-45,in=90] (a4)
+    to[out=-90,in=90] (b3)
+    to[out=-90,in=135] (om3);
+    \draw (om4)--+(0,0.5);
+    \node[euler] at (3, -0.25){};
+  \end{tikzpicture}
+  \caption{Projector onto $z(A)$, see \eqref{e:center-projector}. Red dot stands
+  for operator of multiplication by $w^{-1}$.}
+  \label{f:frob-center}
+\end{figure}
+
+
+%\begin{theorem}
+%  Let $A, B$ be separable symmetric Frobenius algebras, and let ${}_BM_A$ be a
+%  finite-dimensional $B-A$ bimodule. Let $M^*$ be the dual vector space,
+%  considered as an $A-B$-bimodule (see \ecref{ec:dual-module-frob}).
+%  Then $M^*$ is both left and right adjoint of $M$, considered as a
+%  1-morphism in $\Alg$.
+%\end{theorem}
+%\begin{proof}
+%  It suffices to prove that $M^*$ is right adjoint of $M$; then by the same
+%  argument,  $M^{**} \simeq M$ is the right adjoint of $M^{*}$, so $M$
+%  and $M^*$ are both left and right adjoints of each other.
+%
+%  Since $B$ is semisimple, any finite-dimensional left $B$-module $M$ is
+%  projective and finitely generated. By \thref{t:alg-adjoint}, it has a right
+%  adjoint, given by $M^\vee= \Hom_B(M, B)$. On the other hand, we have proved
+%  before that for a symmetric Frobenius algebra, we have an isomorphism
+%  $M^\vee\simeq M^*$ (see \ecref{ec:dual-module-frob}). Thus, $M^*$ is the
+%  right adjoint of $M$.
+%
+%  It is instructive to give an explicit construction of the unit and counit of
+%  adjunction, i.e. morphisms $A\to M^* \otimes_B M$, $M\otimes_A M^*\to B$. The
+%  unit is given by $1\mapsto \sum   m^i\otimes m_i$, where  $m_i$ is a basis in
+%  $M$ and $m^i$ the dual basis in $M^*$. To define the counit, let $b_i, b^i\in
+%  B$ be such that $\sum b_i \otimes b^i$ is symmetric, bicentral, and  $\sum
+%  b_ib^i=1$; by \coref{c:euler3}, such an element exists.  Define the counit
+%map
+%  $M\otimes_A M^*\to B$ by
+%  $$
+%    \eps(m\otimes m^*)=\sum_j \<b_jm, m^*\>b^j=\sum_j \<m, m^*b_j\>b^j
+%  $$
+%  where $\<\, , \,\>$ stands for the pairing $M\otimes M^*\to \kk$.
+%
+%  We leave it to the reader to check that so defined unit and counit satisfy
+%  the adjunction equations, i.e. for any $m\in M$, $m^*\in M^*$ we have
+%  \begin{equation}
+%    \begin{aligned}
+%      \sum \eps(m\otimes m^i)\cdot m_i&=m,\\
+%      \sum m^i\cdot \eps(m_i\otimes  m^*)&=m^*.
+%    \end{aligned}
+%  \end{equation}
+%\end{proof}
+%
+%
+%%\begin{remark}
+%%  One can notice that $\ssfrob$ is exactly the same as the category
+%%  $\ssAlg$ of finite-dimensional semisimple algebras and bimodules: indeed,
+%%  by \ecref{ec:standard-frobenius}, every finite-dimensional semisimple
+%%  algebra has a symmetric Frobenius structure, and morphisms in $\ssfrob$
+%%  do not use the Frobenius structure at all. So one might ask why bother
+%%  introducing $\ssfrob$?
+%%
+%%  The correct answer is that you can think of $\ssfrob$ as an additional
+%%  structure on the category $\ssAlg$: namely, choosing a Frobenius
+%%  structure gives us a way of constructing an isomorphism between left and
+%%  right adjoints of the same 1-morphism $M$. We will get back to it later.
+%%\end{remark}
+
+
+
+\section{Invariants and coinvariants}\label{s:invariants}
+\coref{c:euler3}, which shows that for a separable symmetric Frobenius
+algebra we have a natural isomorphism $A/[A,A]\simeq z(A)$, is a special
+case of a more general result which we state here for future use.
+
+Namely, let $M$ be a bimodule over an associative algebra $A$ (no further
+restrictions yet). Define the spaces of invariants and coinvariants by
+\begin{equation}\label{e:coinv}
+  \begin{aligned}
+    M^{A}&=\Hom(A,M)=\{m\in M\st am=ma \text{ for any } a\in A\}\\
+    M_{A}&=A\otimes_{A^e} M = M/\<am-ma\>
+  \end{aligned}
+\end{equation}
+where $\Hom$ is computed in the category of $A$-bimodules, or
+equivalently, modules over $A^e=A\otimes A^\op$.
+
+Standard results of algebra show that the functor of invariants is left
+exact, and the functor of coinvariants is right exact. The corresponding
+derived functors are called \emph{Hochschild (co)homology}\index{Hochschild
+cohomology} of $A$ with
+coefficients in $M$ (see, e.g., \cite[Section 11.1]{pierce}):
+\begin{align*}
+  HH^n(A,M)&=\Ext_{A^e}^n(A,M),\\
+  HH_n(A,M)&=\Tor^{A^e}_n(A,M),
+\end{align*}
+so that $M^{A}=HH^0(A,M)$, $M_{A}=HH_0(A,M)$.
+For example, for $M=A$, we get
+\begin{align*}
+  HH^0(A)&=A^{(A)}=z(A),\\
+  HH_0(A)&=A_{(A)}= A/[A,A].
+\end{align*}
+
+For a general associative algebra, there is no relation between the functors of
+invariants and coinvariants. However, if $A$ is a symmetric separable Frobenius
+algebra, things are simplified. Namely, consider the map $p\colon M\to M$ given
+by
+$$
+  m\mapsto \sum w^{-1} x_imx^i=\sum x_imx^i w^{-1}.
+$$
+As in \eqref{e:coinv-inv}, it is easy to see that it descends to a map
+$M_{A}\to M^{A}$.
+\begin{lemma}\label{l:coinv-separable}
+  If $M$ is a bimodule over a separable symmetric Frobenius algebra $A$, then
+  the map
+  $$
+  m \mapsto \sum x_imx^i
+  $$
+  is an isomorphism $M_{A}\isoto M^{A}$.
+  \end{lemma}
+For $M=A$, this is exactly the statement of \coref{c:euler3}. We leave it
+to the reader to modify the proof of \coref{c:euler3} to this more general
+case.
+
+
+Note that since the functor of invariants is left exact and the functor of
+coinvariants is right exact, this shows that for a separable symmetric Frobenius
+algebra, both functors are exact so that higher Hochschild (co)homology vanishes.
+
+
+As an application, given a right $A$-module $M_A$ and a left $A$-module
+${}_A N$, there are two versions of tensor product over $A$:
+\begin{equation}\label{e:tensor-types}
+  \begin{aligned}
+    M\otimes_A N &= \Coinv (M\otimes N) =
+    M \otimes N/\<ma\otimes n- m\otimes an\>,\\
+    M\otimes^A N &=\Inv(M\otimes N) \\
+    &=\bigl\{x=\sum m_i\otimes n_i\in M\otimes N
+    \st \sum m_ia\otimes n_i=\sum m_i\otimes an_i\bigr\}.
+  \end{aligned}
+\end{equation}
+The first of these spaces (which is by far the more common) is a quotient of
+$M\otimes N$; the second is a subspace. As an immediate corollary of
+\leref{l:coinv-separable}, we see that for a separable symmetric Frobenius
+algebra, we have a canonical isomorphism $M \otimes_A N \simeq M\otimes^A
+N$.
+
+

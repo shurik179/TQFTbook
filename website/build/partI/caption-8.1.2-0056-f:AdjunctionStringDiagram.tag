@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 8.1.2. Adjunction equations via string diagrams</figcaption>

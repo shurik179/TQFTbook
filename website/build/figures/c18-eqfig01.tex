@@ -1,0 +1,31 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}[baseline=0]
+    \node[morphism_sq, minimum width=2.5cm] (ph) at (0,0){$\ph$};
+    \coordinate (a1) at (-0.8, -0.8);
+    \coordinate (a2) at (-0.4, -0.8);
+    \coordinate (a3) at (0.4, -0.8);
+    \coordinate (a4) at (0.8, -0.8);
+    \draw[->] (a1|-ph.south) -- (a1);
+    \draw[->] (a2|-ph.south) -- (a2);
+    \draw[->] (a4|-ph.south) -- (a4);
+    \node at (0.2, -0.7){\dots};
+  \end{tikzpicture}
+  \quad \mapsto \quad
+  \begin{tikzpicture}[baseline=0]
+    \useasboundingbox (-1.2,-0.8) rectangle (0.8,0.6);
+    \node[morphism_sq, minimum width=2.5cm] (ph) at (0,0){$\ph$};
+    \coordinate (a1) at (-0.8, -0.8);
+    \coordinate (a2) at (-0.4, -0.8);
+    \coordinate (a3) at (0.4, -0.8);
+    \coordinate (a4) at (0.8, -0.8);
+    \draw[->] (a2|-ph.south) -- (a2);
+    \draw[->] (a4|-ph.south) -- (a4);
+    \node at (0.2, -0.7){\dots};
+    \draw[->] (a1|-ph.south) to[out=-90, in=-90, looseness=2] (-1.5,0)
+     to [out=90, in=90] (1.5,0)--(1.5, -0.8);
+  \end{tikzpicture}
+$
+\end{document}

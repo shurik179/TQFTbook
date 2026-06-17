@@ -1,0 +1,31 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Our proof follows <span class="cite">[<a href="/bibliography/bdspv">bdspv</a>, <span class="postnote">Section A.6</span>]</span>, where the proof is attributed to André Henriques. (Note that they work in greater generality: they do not require the category to be abelian, instead imposing a weaker condition of Cauchy completeness.) 
+    <p>
+      First, finiteness easily follows from the observation that by (<a href="/tag/005U" data-tag="005U">8.4.1</a>), any $X\in \mathcal{C}$ is a subobject in a finite direct sum of copies of $X_1, \dots , X_ k$. Thus, the only simple objects that can appear in the Jordan–Hölder series for $X$ are those simple objects that appear in the Jordan–Hölder series for one of the $X_ i$; which implies that there are only finitely many of them. 
+    <p>
+      To prove semisimplicity, let $0\to A_1\to A_2\to A_3\to 0$ be a short exact sequence in $\mathcal{C}$. Using (<a href="/tag/005U" data-tag="005U">8.4.1</a>), we can rewrite it as a short exact sequence 
+    <p>
+      <div class="equation">
+  \[  0 \to \bigoplus \varepsilon (Y_ i, A_1)\otimes X_ i \to \bigoplus \varepsilon (Y_ i, A_2)\otimes X_ i \to \bigoplus \varepsilon (Y_ i, A_3)\otimes X_ i \to 0.  \]
+</div>
+    <p>
+       Since a direct sum of complexes is exact if and only if each summand is exact, this implies that each complex 
+    <p>
+      <div class="equation">
+  \[  K_ i = \Bigl ( 0 \to \varepsilon (Y_ i, A_1)\otimes X_ i \to \varepsilon (Y_ i, A_2)\otimes X_ i \to \varepsilon (Y_ i, A_3)\otimes X_ i \to 0 \Bigr )  \]
+</div>
+    <p>
+       is exact. This in turn is equivalent to the requirement that the complex of vector spaces 
+    <p>
+      <div class="equation">
+  \[  0 \to \varepsilon (Y_ i, A_1) \to \varepsilon (Y_ i, A_2) \to \varepsilon (Y_ i, A_3) \to 0  \]
+</div>
+    <p>
+       is exact. But each short exact sequence of vector spaces splits; thus, each short exact sequence $K_ i$ splits, which implies that the original short exact sequence $0\to A_1\to A_2\to A_3\to 0$ also splits. Thus, $\mathcal{C}$ is semisimple. 
+    <p>
+      We leave the proof of the remaining parts of the theorem as an exercise to the reader. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

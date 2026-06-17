@@ -1,0 +1,7 @@
+name: figure figure*
+<figure class="figure">
+  {{ obj }}
+</figure>
+
+name: caption nestedfigurecaption
+<figcaption class="figcaption">{{ obj.counter|capitalize }} {{ obj.ref }}. {{ obj }}</figcaption>

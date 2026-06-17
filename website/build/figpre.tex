@@ -1,0 +1,12 @@
+% Real preamble used ONLY for compiling figures to SVG (full fidelity).
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array}
+\usepackage[mathscr]{euscript}
+\usepackage{graphicx}
+\input{definitions.tex}
+\input{tikzsetup.tex}
+\input{tikzcob.tex}
+
+% Chapter-local TikZ styles defined in the body BEFORE a figure (so they fall
+% outside the extracted tikzpicture block). Hoisted here so the figures compile.
+\tikzset{l/.style={font=\fontsize{8}{8}\selectfont}}   % c7-2categories.tex:556

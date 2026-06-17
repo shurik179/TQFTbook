@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 11.3.2. Elementary moves for $n=2$</figcaption>

@@ -1,0 +1,4 @@
+<article class="env-definition" id="0087">
+  <p><a class="environment-identifier" href="/tag/0087">Definition <span data-tag="0087">11.3.1</span>.</a> A <em>generalized $k$-cell</em> in $\mathbb {R}^ N$ is a subset $C\subset \mathbb {R}^ N$ together with a decomposition $C=\odot {C}\sqcup \overset {\text{\bf \Large .}}{C}$ such that $\odot {C}=\varphi (\operatorname{Int}B^ k)$, $\overset {\text{\bf \Large .}}{C}=\varphi (\partial B^ k)$ (and thus $C=\varphi (B^ k)$) for some PL map $\varphi \colon B^ k\to \mathbb {R}^ N$ which is injective on the interior of $B^ k$. </p>
+  <p>In such a situation, the map $\varphi $ is called a <em>characteristic map</em>. </p>
+</article>

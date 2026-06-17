@@ -1,0 +1,63 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[thick]
+      \begin{scope}
+        \coordinate (LT) at (0,2);
+        \coordinate (LB) at (0,0);
+        \coordinate (RT) at (3, 2);
+        \coordinate (RB) at (3, 0);
+        \node[label=below:$f$] (f1) at (.9, 0){};
+        \node[label=above:$f$] (f2) at (2.1, 2){};
+
+        %%%%
+        \path[spath/save=zigzag] (f1.center) -- ++(0,1) arc (180:0: 0.3 cm) arc
+        (180: 360: 0.3 cm) -- (f2.center);
+        %%% fills
+        \fill [lightblue] [spath/use= zigzag] -- (LT) -- (LB)--(f1.center);
+        \fill [lightred] [spath/use= zigzag] -- (RT) -- (RB) -- (f1.center);
+        %%% draw line
+        \draw[spath/use= zigzag];
+        \node[right] at (0, 1) {$X$};
+        \node[left] at (3, 1) {$Y$};
+        %%%
+        \node at (3.5, 1) {=};
+        \fill [lightblue] (4, 2) rectangle (5, 0);
+        \fill [lightred] (5, 2) rectangle (6, 0);
+        \draw (5, 2) -- (5, 0);
+        \node[right] at (4, 1) {$X$};
+        \node[left] at (6, 1) {$Y$};
+        \node[above] at (5,2) {$f$};
+        \node[below] at (5,0) {$f$};
+      \end{scope}
+
+      \begin{scope}[yshift = -4cm]
+        \coordinate (LT) at (0,2);
+        \coordinate (LB) at (0,0);
+        \coordinate (RT) at (3, 2);
+        \coordinate (RB) at (3, 0);
+        \coordinate (g1) at (.9, 2);\node[above] at (g1) {$g$};
+        \coordinate (g2) at (2.1, 0);\node[below] at (g2) {$g$};
+
+        \path[spath/save=zigzag] (g1) -- ++(0,-1) arc (180:360: 0.3 cm) arc
+        (180: 0: 0.3 cm) -- (g2);
+        %%% fills
+        \fill [lightred] (LT)  [spath/use= zigzag] -- (LB) -- (LT);
+        \fill [lightblue] [spath/use= zigzag] -- (RB) -- (RT) -- (g1);
+        %%% draw line
+        \draw[spath/use= zigzag];
+        \node[right] at (0, 1) {$Y$};
+        \node[left] at (3, 1) {$X$};
+        %%%%%%%%%
+        \node at (3.5, 1) {=};
+        %%%%%%%%
+        \fill [lightred] (4, 2) rectangle (5, 0);
+        \fill [lightblue] (5, 2) rectangle (6, 0);
+        \node[right] at (4, 1) {$Y$};
+        \node[left] at (6, 1) {$X$};
+        \draw (5, 2) -- (5, 0);
+
+      \end{scope}
+
+    \end{tikzpicture}
+\end{document}

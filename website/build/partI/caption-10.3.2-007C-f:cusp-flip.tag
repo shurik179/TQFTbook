@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 10.3.2. Alternative presentation of cusp flip relation. Each side is a sequence of horizontal slices of the 2-cobordisms, each arrow is an elementary 2-morphism. Red highlight shows the area where the next move will be applied.</figcaption>

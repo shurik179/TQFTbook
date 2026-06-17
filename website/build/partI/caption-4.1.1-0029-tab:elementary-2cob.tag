@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Table 4.1.1. Connected elementary $2$-cobordisms</figcaption>

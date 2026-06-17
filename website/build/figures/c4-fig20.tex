@@ -1,0 +1,23 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5, every pic/.style={scale=0.5},vcenter]
+      %frobenius left
+      \pic at (0,0) (a1) {cylinder};
+      \pic at (1.5,0)(a2) {pants};
+      \pic[notop] at (a1-bottom1) {copants};
+      \pic[notop] at (a2-bottom2) {cylinder};
+      %%%
+      \node at (3, -1.2) {$\leftrightarrow$};
+      %%% frobenius symmetric
+      \pic at (3.5,0) (c1) {copants};
+      \pic[notop] at (c1-bottom1) {pants};
+      %%%
+      \node at (5, -1.2) {$\leftrightarrow$};
+      %%% frobenius right
+      \pic (b1) at (6.5,0) {pants};
+      \pic[notop] at (b1-bottom1) {cylinder};
+      \pic[notop] at (b1-bottom2) {copants};
+      \pic at (8,0) {cylinder};
+    \end{tikzpicture}
+\end{document}

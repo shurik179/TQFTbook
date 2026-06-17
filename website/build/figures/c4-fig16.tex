@@ -1,0 +1,11 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5, every pic/.style={scale=0.5},baseline=-0.6cm]
+      \pic(c) {cap};
+      \pic[notop] at (c-bottom1) {copants};
+      \pic[nobottom,cobheight=0.3cm] at (1,0.3){cylinder};
+      \node at (2,-0.6) {$\leftrightarrow$};
+      \pic[cobheight=1.5cm] at (3,0.3) {cylinder};
+    \end{tikzpicture}
+\end{document}

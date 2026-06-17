@@ -1,0 +1,15 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+    \foreach \i in {1,...,5} {
+      \coordinate (a\i) at (162-\i*72:1cm);
+    }
+    \coordinate (a6) at (a1);
+    \path[lightyellow] (a1)--(a2)--(a3)--(a4)--(a5)--(a1);
+    \foreach \i [evaluate=\i as \next using \i+1] in {1,...,5} {
+      \draw[->](a\i)--(a\next) node[pos=0.5,auto]{$r_\i$};
+    }
+    \node at (0,0) {$F$};
+  \end{tikzpicture}
+\end{document}

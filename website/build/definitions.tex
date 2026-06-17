@@ -1,0 +1,176 @@
+%!TEX root = TQFTnotes.tex
+%%%%%%%  Theorems etc
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+%%%%%%
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{predefinition}[theorem]{Preliminary Definition}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{convention}{Convention}[section]
+\newtheorem{example}{Example}[section]
+%\newtheorem{problem}[theorem]{Problem}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{examples}[example]{Examples}
+
+
+%%%%%%%% References to ...
+\newcommand{\chref}[1]{\hyperref[#1]{Chapter~{\rm\ref*{#1}}}}
+\newcommand{\seref}[1]{\hyperref[#1]{Section~{\rm\ref*{#1}}}}
+\newcommand{\firef}[1]{\hyperref[#1]{Figure~{\rm\ref*{#1}}}}
+\newcommand{\thref}[1]{\hyperref[#1]{Theorem~{\rm\ref*{#1}}}}
+\newcommand{\prref}[1]{\hyperref[#1]{Proposition~{\rm\ref*{#1}}}}
+\newcommand{\leref}[1]{\hyperref[#1]{Lemma~{\rm\ref*{#1}}}}
+\newcommand{\coref}[1]{\hyperref[#1]{Corollary~{\rm\ref*{#1}}}}
+\newcommand{\deref}[1]{\hyperref[#1]{Definition~{\rm\ref*{#1}}}}
+\newcommand{\exref}[1]{\hyperref[#1]{Example~{\rm\ref*{#1}}}}
+\newcommand{\ecref}[1]{\hyperref[#1]{Exercise~{\rm\ref*{#1}}}}
+\newcommand{\reref}[1]{\hyperref[#1]{Remark~{\rm\ref*{#1}}}}
+
+%%%%%%%%% Greek letters
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\De}{\Delta}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\ph}{\varphi}
+\newcommand{\Si}{\Sigma}
+\newcommand{\si}{\sigma}
+\newcommand{\om}{\omega}
+
+%%%%%%%%% calligraphic letters
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calZ}{\mathcal{Z}}
+\newcommand{\calW}{\mathcal{W}}
+%%%%%%%% fields
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\dd}{\mathbf{d}}
+%%%%%%%% Lie groups and algebras
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\OO}{\mathrm{O}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\g}{\mathfrak{g}}
+%%%%%%%%%%%% categories
+\newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Tam}{\mathbf{Tam}}
+\newcommand{\Seg}{\mathbf{Seg}}
+\newcommand{\sets}{\mathbf{Set}}
+\newcommand{\ssets}{\mathbf{sSet}}
+\newcommand{\svect}{\mathbf{SVec}}
+\newcommand{\vect}{\mathbf{Vec}}
+\newcommand{\vecf}{\mathbf{Vec_f}}
+\newcommand{\cat}{\mathbf{Cat}}
+\newcommand{\ab}{\mathbf{Ab}}
+\newcommand{\abf}{\mathbf{Ab_f}}
+\newcommand{\smoothman}{\mathbf{Man}}
+\newcommand{\plman}{\mathbf{PLMan}}
+\newcommand{\nCob}{\mathbf{Cob}_n}
+\newcommand{\oneCob}{\mathbf{Cob}_1}
+\newcommand{\twoCob}{\mathbf{Cob}_2}
+\newcommand{\Bord}{\mathbf{Bord}}
+\newcommand{\Bordfr}{\mathbf{Bord^{fr}}}
+\newcommand{\Bordor}{\mathbf{Bord^{or}}}
+\newcommand{\cfd}{\widetilde{\calC^{\fd}}}
+\newcommand{\Linlf}{\mathbf{Lin}}
+\newcommand{\Linf}{\mathbf{Lin_f}}
+\newcommand{\Alg}{\mathbf{Alg}}
+\newcommand{\ssAlg}{\mathbf{ssAlg}}
+\newcommand{\ssfrob}{\mathbf{ssFrob}}
+\newcommand{\Tens}{\mathbf{Tens}}
+\renewcommand{\mod}{\mathbf{{-}mod}}
+\newcommand{\Mod}{\mathbf{Mod}}
+\newcommand{\Bil}{\mathbf{Bil}}
+\newcommand{\OC}{\mathcal{O}(\mathcal{C})} % set of simple objects in C
+\newcommand{\Gr}{\mathbf{Gr}}
+
+%%%%%%%%%%% misc symbols
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\del}{\partial}
+\newcommand{\ov}[1]{\overline{#1}}
+\renewcommand{\odot}[1]{\overset{\circ}{#1}}
+\newcommand{\mdot}[1]{\overset{\text{\bf\Large .}}{#1}}
+\newcommand{\cob}[1]{\xRightarrow{#1}}
+\newcommand{\dotimes}{\otimes \dots\otimes}
+\newcommand{\dE}{E^\sharp}
+\newcommand{\Ddelta}{\mathbf{\Delta}}
+\newcommand{\ee}{\mathbf{e}}       % oriented edge
+\newcommand{\cc}[1]{\underset{\scriptstyle #1}{\circ}}
+
+\newcommand{\circtensor} {\setbox0\hbox{\large$\circlearrowleft$} \rlap{\hbox
+to\wd0{\hss$\times$\hss}}\box0}
+\newcommand{\circtensorsmall} {\setbox0\hbox{$\circlearrowleft$} \rlap{\hbox
+to\wd0{\hss$\times$\hss}}\box0}
+
+
+
+\newcommand{\st}{\; | \;}                     %  such that
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\thalf}{\tfrac{1}{2}}
+\newcommand{\surjto}{\twoheadrightarrow}      %    -->> surjection
+\newcommand{\injto}{\hookrightarrow}          %  (--> injection
+\newcommand{\isoto}{\xrightarrow{\sim}}       %  isomor.
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\q}{/ \! /}                       % // dual slash,tightspacing
+\newcommand{\ccirc}{\text{\tiny $\circ$}}     % small version of \circ
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\op}{{\mathrm{op}}}
+\newcommand{\mop}{{\mathrm{mp}}}
+\newcommand{\ttop}{{\mathrm{top}}}
+\newcommand{\bbot}{{\mathrm{bot}}}
+\newcommand{\fd}{{\mathrm{fd}}}
+\newcommand{\sss}{{\mathrm{ss}}}
+\newcommand{\tauzero}{\tau_{\leq 0}}
+\newcommand{\tauone}{\tau_{\leq 1}}
+
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Bal}{Bal}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Fun}{Fun}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\coev}{coev}
+\DeclareMathOperator{\Bun}{Bun}
+\newcommand{\tBun}{\widetilde{\Bun}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Rep}{Rep}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Cob}{Cob}
+\DeclareMathOperator{\Stab}{Stab}
+%\DeclareMathOperator{\ker}{Ker}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Inv}{Inv}
+\DeclareMathOperator{\Coinv}{Coinv}
+\DeclareMathOperator{\ddim}{\mathbf{dim}}
+\DeclareMathOperator{\Sing}{Sing}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Diag}{Diag} %category of C-colored diagrams

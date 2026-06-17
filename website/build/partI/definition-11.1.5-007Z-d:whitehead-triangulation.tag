@@ -1,0 +1,3 @@
+<article class="env-definition" id="007Z">
+  <p><a class="environment-identifier" href="/tag/007Z">Definition <span data-tag="007Z">11.1.5</span>.</a> Let $P$ be a polyhedron and $M$ a smooth manifold. We say that a map $f\colon P\to M$ is piecewise differentiable (PD) if there exists a triangulation of $P$ such that the restriction of $f$ to each simplex is smooth. We will say that $f$ is a PD homeomorphism if $f$ is piecewise differentiable, a homeomorphism, and the restriction of $f$ to each simplex has injective differential at each point. In this case, we say that $f$ is a Whitehead triangulation of $M$. </p>
+</article>

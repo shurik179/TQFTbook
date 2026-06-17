@@ -1,0 +1,37 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[thick, baseline=0, scale=0.9]
+       %% Input A on the left
+       \node[left] at (0,1) {$A$};
+       %% Output A on the right
+       \node[right] at (7,1) {$A$};
+
+       %% Input A goes from left to the braiding at x=2.8
+       \draw (0,1) -- (2.8,1);
+
+       %% ev^R cap (creates A and B): opens at x=1.7, with endpoints at
+       %% (2, 0.4) (= new A, top) and (2, -0.4) (= new B, bottom)
+       \draw (2, 0.4) arc (90:270:0.4);
+       \node[left] at (1.55,0) {\small$\ev^R$};
+
+       %% new A continues from (2, 0.4) to braiding at x=2.8
+       \draw (2, 0.4) -- (2.8, 0.4);
+
+       %% new B continues from (2,-0.4) to ev at x=5.2
+       \draw (2, -0.4) -- (5.2, -0.4);
+
+       %% Braiding c_{A,A}: input A (y=1) crosses with new A (y=0.4)
+       \draw (2.8, 1) to[out=0, in=180] (3.8, 0.4);  % input A goes down
+       \draw (2.8, 0.4) to[out=0, in=180] (3.8, 1);  % new A goes up
+
+       %% After braiding: new A at y=1 (continues to output),
+       %% input A at y=0.4 (continues to ev)
+       \draw (3.8, 1) -- (7, 1);
+       \draw (3.8, 0.4) -- (5.2, 0.4);
+
+       %% ev cup (closes input A with new B): opens at x=5.6
+       \draw (5.2, 0.4) arc (90:-90:0.4);
+       \node[right] at (5.65,0) {\small$\ev$};
+     \end{tikzpicture}
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[thick]
+      \begin{scope}
+        \node at (-.5, .5) {$\eta =$};
+        %%
+        \coordinate (LT) at (0, 1);
+        \coordinate (LB) at (0, 0);
+        \coordinate (RT) at (2, 1);
+        \coordinate (RB) at (2, 0);
+        \node (f) [label=below:$f$] at (.5, 0) {};
+        \node (g) [label=below:$g$]  at (1.5, 0) {};
+        \path[spath/save = arc] (f) arc (180: 0: 0.5 cm);
+        %% fills
+        \fill [lightblue] [spath/use=arc] -- (RB)--(RT)--(LT)--(LB)--cycle;
+        \fill [lightred] [spath/use=arc]--cycle;
+        %%
+        \draw[spath/use=arc];
+        \node[below right] at (LT) {$X$};
+        \node[above] at (1,0) {$Y$};
+      \end{scope}
+
+      \begin{scope}[xshift = 5cm]
+        \node at (-.5, .5) {$\eps =$};
+        %%%%%%%%%
+        \coordinate (LT) at (0, 1);
+        \coordinate (LB) at (0, 0);
+        \coordinate (RT) at (2, 1);
+        \coordinate (RB) at (2, 0);
+        \node (g) [label=above:$g$] at (.5, 1) {};
+        \node (f) [label=above:$f$]  at (1.5, 1) {};
+        \path[spath/save = arc] (g) arc (180: 360: 0.5 cm);
+        %% fills
+        \fill [lightred] [spath/use=arc] -- (RT)--(RB)--(LB)--(LT)--cycle;
+        \fill [lightblue] [spath/use=arc]--cycle;
+        %%
+        \draw[spath/use=arc];
+        \node[above right] at (LB) {$Y$};
+        \node[below] at (1,1) {$X$};
+      \end{scope}
+    \end{tikzpicture}
+\end{document}

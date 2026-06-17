@@ -1,0 +1,46 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    \begin{scope}
+      \draw[lightyellow] (0,0) circle (0.6);
+      \node[dotnode] (c) at (0,0) {};
+      \node[dotnode] (t) at (0,0.6) {};
+      \draw (c)--(t);
+    \end{scope}
+    \node at (1,0){$\leftrightarrow$};
+    \begin{scope}[xshift = 2cm]
+      \draw[lightyellow] (0,0) circle (0.6);
+      \node[dotnode] (c) at (0,0) {};
+      \node[dotnode] (t) at (0,0.6) {};
+      \node[dotnode] (b) at (0,-0.6) {};
+      \draw (c)--(t);
+    \end{scope}
+    \node at (3,0){$\leftrightarrow$};
+    \begin{scope}[xshift = 4cm]
+      \draw[lightyellow] (0,0) circle (0.6);
+      \node[dotnode] (c) at (0,0) {};
+      \node[dotnode] (t) at (0,0.6) {};
+      \node[dotnode] (b) at (0,-0.6) {};
+      \draw (b)--(t);
+    \end{scope}
+    \node at (5,0){$\leftrightarrow$};
+    \begin{scope}[xshift = 6cm]
+      \draw[lightyellow] (0,0) circle (0.6);
+      \node[dotnode] (t) at (0,0.6) {};
+      \node[dotnode] (b) at (0,-0.6) {};
+      \draw (b)--(t);
+    \end{scope}
+    \node at (7,0){$\leftrightarrow$};
+    \begin{scope}[xshift = 8cm]
+      \draw[lightyellow] (0,0) circle (0.6);
+      \node[dotnode] (t) at (0,0.6) {};
+      \node[dotnode] (b) at (0,-0.6) {};
+    \end{scope}
+    \node at (9,0){$\leftrightarrow$};
+    \begin{scope}[xshift = 10cm]
+      \draw[lightyellow] (0,0) circle (0.6);
+      \node[dotnode] (t) at (0,0.6) {};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

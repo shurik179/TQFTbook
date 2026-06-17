@@ -1,0 +1,14 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Define maps $\operatorname{ev}\colon A\otimes A \to \mathbf{k}$ and $\operatorname{coev}\colon \mathbf{k}\to A\otimes A$ by (<a href="/tag/00EK" data-tag="00EK">5.1.2</a>). Then it immediately follows from the Frobenius relation that these maps satisfy the rigidity condition: 
+    <p>
+      <div class="equation" id="0031">
+    <span class="equation-label"><a href="/tag/0031" data-tag="0031">5.1.3</a></span>
+    <div class="centered"><img class="includegraphics" src="/static/figures/c5-eqfig03.svg"></div>
+</div>
+    <p>
+       where $x_ i, x^ i$ are defined by $\Delta (1)=\sum x_ i \otimes x^ i$. Thus, by Lemma&#160;<a href="/tag/001D" data-tag="001D">3.2.2</a>, $A$ is finite-dimensional, and $\varepsilon (ab)$ is a non-degenerate pairing. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

@@ -1,0 +1,21 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+      \node at (1.6,-0.5){$s<0$};
+      \begin{axis}[
+          width=5cm,
+          height=6cm,
+          axis lines=middle,
+          xmin=-1.4, xmax=1.4,
+          ymin=-1.2, ymax=1.2,
+          samples=200,
+          domain=-1.5:1.5,
+          xlabel={$x$},
+          ylabel={$y$},
+          ticks=none,
+        ]
+        \addplot[blue, thick] {x^3-0.4*x};
+      \end{axis}
+    \end{tikzpicture}
+\end{document}

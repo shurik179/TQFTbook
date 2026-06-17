@@ -1,0 +1,56 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[line join=round]
+         \filldraw[white,fill=green,fill opacity=0.1](-2.872
+	,1.858)--(-.135,5.617)--(-2.391,3.949)--(-5.127,.19)--cycle;
+         \filldraw[white,fill=red,fill opacity=0.1](3.212,-4.9)--(4.306
+	,-3.396)--(4.306,3.532)--(2.391,.901)--(2.391,-3.949)--cycle;
+         \filldraw[white,fill=green,fill opacity=0.1](-4.306
+	,-3.532)--(3.212,-4.9)--(2.391,-3.949)--(-5.127,-2.581)--cycle;
+         \filldraw[white,fill=red,fill opacity=0.1](-2.872
+	,1.858)--(2.391,.901)--(4.306,3.532)--(2.872,5.07)--(-.135,5.617)--cycle;
+         \filldraw[white,fill=red,fill opacity=0.1](-5.127
+	,-2.581)--(-5.127,.19)--(-2.872,1.858)--(2.391,.901)--(2.391
+	,-3.949)--cycle;
+         \begin{scope}[font=\fontsize{8}{8}\selectfont]
+           \node (A) at (-2.391,3.949) {$(A(B(CD)))E$};
+           \node (B) at (-5.127,.19) {$(A((BC)D))E$}
+             edge [->] node [l, above left] {$(Aa)E$} (A);
+           \node (C) at (-5.127,-2.581) {$((A(BC))D)E$}
+             edge [->] node [l, left] {$aE$} (B);
+           \node (D) at (-4.306,-3.532) {$(((AB)C)D)E$}
+             edge [->] node [l, left] {$(aD)E$} (C);
+           \node (E) at (3.212,-4.9) {$((AB)C)(DE)$}
+             edge [<-] node [l, below] {$a$} (D);
+           \node (F) at (4.306,-3.396) {$(AB)(C(DE))$}
+             edge [<-] node [l, below right] {$a$} (E);
+           \node (G) at (4.306,3.532) {$A(B(C(DE)))$}
+             edge [<-] node [l, right] {$a$} (F);
+           \node (H) at (2.872,5.07) {$A(B((CD)E))$}
+             edge [->] node [l, above right] {$A(Ba)$} (G);
+           \node (I) at (-.135,5.617) {$A((B(CD))E)$}
+             edge [->] node [l, above] {$Aa$} (H)
+             edge [<-] node [l, above left] {$a$} (A);
+           \node (J) at (-2.872,1.858) {$A(((BC)D)E)$}
+             edge [->] node [l, below right] {$A(aE)$} (I)
+             edge [<-] node [l, below right] {$a$} (B);
+           \node (K) at (2.391,-3.949) {$(A(BC))(DE)$}
+             edge [<-] node [l, left] {$a(DE)$} (E)
+             edge [<-] node [l, above] {$a$} (C);
+           \node (L) at (2.391,.901) {$A((BC)(DE))$}
+             edge [<-] node [l, left] {$a$} (K)
+             edge [<-] node [l, above] {$Aa$} (J)
+             edge [->] node [l, above left] {$Aa$} (G);
+           \node at (-1,-1) {\tikz\node [rotate=-45] {$\Rightarrow$};};
+           \node at (-.5,-1) {$\pi$};
+           \node at (1,3) {\tikz\node [rotate=-45] {$\Rightarrow$};};
+           \node at (1.5,3) {$A \pi$};
+           \node at (3,-1.5) {\tikz\node [rotate=-45]
+	{$\Rightarrow$};};
+           \node at (3.5,-1.5) {$\pi$};
+           \node at (-1,-3.7) {$\cong$};
+           \node at (-2.5,3) {$\cong$};
+         \end{scope}
+       \end{tikzpicture}
+\end{document}

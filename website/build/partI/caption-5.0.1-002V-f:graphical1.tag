@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 5.0.1. Graphical presentation of operations in a Frobenius algebra. $P$ stands for permutation: $P(a\otimes b)=b\otimes a$.</figcaption>

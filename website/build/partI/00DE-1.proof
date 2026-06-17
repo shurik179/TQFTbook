@@ -1,0 +1,16 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      We define the isomorphism $\gamma $ by the following picture: 
+    <p>
+      <div class="equation" id="00DF">
+    <span class="equation-label"><a href="/tag/00DF" data-tag="00DF">18.6.2</a></span>
+    <div class="centered"><img class="includegraphics" src="/static/figures/c18-eqfig05.svg"></div>
+</div>
+    <p>
+       We refer the reader to <span class="cite">[<a href="/bibliography/balsam-kirillov">balsam-kirillov</a>]</span> for the proof that so defined $\gamma $ satisfies $\gamma _{A\otimes B}=\gamma _ A\circ \gamma _ B$; another proof of centrality of $E$ is given in <span class="cite">[<a href="/bibliography/etingof-fusion">etingof-fusion</a>, <span class="postnote">Proposition 7.18.5</span>]</span>. 
+    <p>
+      Construction of isomorphism $\gamma '$ is similar and is left to the reader. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

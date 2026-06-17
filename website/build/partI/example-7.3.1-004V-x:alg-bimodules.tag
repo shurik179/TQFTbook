@@ -1,0 +1,3 @@
+<article class="env-example" id="004V">
+  <p><a class="environment-identifier" href="/tag/004V">Example <span data-tag="004V">7.3.1</span>.</a> Let $\mathbf{Alg}$ be the weak 2-category of algebras and bimodules as defined in Example&#160;<a href="/tag/004D" data-tag="004D">7.1.2</a>. Then it has a natural structure of a symmetric monoidal 2-category, with $\otimes $ being the usual tensor product of algebras. </p>
+</article>

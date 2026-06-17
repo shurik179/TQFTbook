@@ -1,0 +1,3 @@
+<article class="env-theorem" id="00BM">
+  <p><a class="environment-identifier" href="/tag/00BM">Theorem <span data-tag="00BM">17.1.1</span>.</a> Every finite tensor category is rigid as an object in $\mathbf{Tens}$; the dual is given by category $\mathcal{C}^{\mathrm{mp}}$. The evaluation and coevaluation 1-morphisms are given by $\mathcal{C}$, considered as either left or right module over $\mathcal{C}^ e$. </p>
+</article>

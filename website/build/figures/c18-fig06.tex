@@ -1,0 +1,15 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[baseline=0pt]
+  \node[morphism] (ph) at (0,0) {$\ph$};
+  \draw[->] (ph)-- +(240:1cm) node[pos=0.7, left] {$A_n$} ;
+  \draw[->] (ph)-- +(180:1cm);
+  \draw[->] (ph)-- +(120:1cm);
+  \draw[->] (ph)-- +(60:1cm);
+  \draw[<-] (ph)-- +(0:1cm) node[pos=0.7, above] {$A_2$};
+  \draw[->] (ph)-- +(-60:1cm) node[pos=0.7, right] {$A_1$};
+  \node at (4.5,0) {$\ph \in \<A_1\boxtimes A_2^*\boxtimes\dots\boxtimes
+  A_n\>$};
+  \end{tikzpicture}
+\end{document}

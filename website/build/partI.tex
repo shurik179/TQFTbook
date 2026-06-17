@@ -1,0 +1,75 @@
+\documentclass{book}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% plasTeX-only stubs (real packages dropped: mathtools, euscript, amsrefs)
+\providecommand{\xRightarrow}[1]{\Rightarrow}
+\providecommand{\coloneqq}{\mathrel{:=}}
+\providecommand{\mathscr}[1]{\mathcal{#1}}
+
+\theoremstyle{plain}
+\input{definitions.tex}
+
+% Match the book's numbering: tables/figures/equations numbered within section
+% (e.g. 1.1.1), so they don't share a ref with the section itself (1.1) -- a
+% ref collision otherwise makes a table/figure label hijack the section's tag.
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+
+% definitions.tex's cross-ref commands use \hyperref[..]{..\ref*{..}}; plasTeX
+% does not render \ref* (comes out empty). Redefine them with plain \ref, which
+% Gerby resolves to a tag hyperlink.
+\renewcommand{\chref}[1]{Chapter~\ref{#1}}
+\renewcommand{\seref}[1]{Section~\ref{#1}}
+\renewcommand{\firef}[1]{Figure~\ref{#1}}
+\renewcommand{\thref}[1]{Theorem~\ref{#1}}
+\renewcommand{\prref}[1]{Proposition~\ref{#1}}
+\renewcommand{\leref}[1]{Lemma~\ref{#1}}
+\renewcommand{\coref}[1]{Corollary~\ref{#1}}
+\renewcommand{\deref}[1]{Definition~\ref{#1}}
+\renewcommand{\exref}[1]{Example~\ref{#1}}
+\renewcommand{\ecref}[1]{Exercise~\ref{#1}}
+\renewcommand{\reref}[1]{Remark~\ref{#1}}
+% plasTeX's \eqref renders the raw label; redefine via plain \ref (which Gerby
+% resolves to the number + tag link).
+\renewcommand{\eqref}[1]{(\ref{#1})}
+
+\begin{document}
+% Preface left out of the web version (served separately at /preface); it
+% remains in the PDF. This wrapper builds the WHOLE book -- all 5 parts.
+
+\part{Basic definitions}\label{p:basic-definitions}
+\include{p1-overview-src-gerby}
+\include{c1-motivation-src-gerby}
+\include{c2-categories-src-gerby}
+\include{c3-cobordisms-src-gerby}
+
+\part{TQFTs in 2 dimensions}\label{p:2d}
+\include{p2-overview-src-gerby}
+\include{c4-2d-classification-src-gerby}
+\include{c5-frobenius-src-gerby}
+\include{c6-DW-src-gerby}
+\include{c7-2categories-src-gerby}
+\include{c8-duality-2cat-src-gerby}
+\include{c9-separable-src-gerby}
+\include{c10-2d-extended-src-gerby}
+\include{c11-PL-src-gerby}
+\include{c12-2d-lattice-src-gerby}
+\include{c13-defects-src-gerby}
+
+\part{Cobordism hypothesis}\label{p:cobordism-hypothesis}
+\include{p3-overview-src-gerby}
+\include{c14-higher-cat-src-gerby}
+\include{c15-cobordism-hyp-src-gerby}
+
+\part{Tensor categories and Turaev--Viro theory}\label{p:tensor-categories}
+\include{c16-tens-src-gerby}
+\include{c17-duality-tens-src-gerby}
+\include{c18-spherical-src-gerby}
+\include{c19-TV-src-gerby}
+
+\part{Chern--Simons and Crane--Yetter theories}\label{p:chern-simons}
+\include{c20-321-src-gerby}
+\end{document}

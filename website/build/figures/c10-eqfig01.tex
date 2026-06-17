@@ -1,0 +1,29 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{aligned}
+\begin{aligned}
+    z_A&=Z\Bigl( \begin{tikzpicture}[baseline=-0.25cm]
+                  \pic {zigzag1};
+                  \node[scale=0.7] at (-0.2, 0) {$A$};
+                  \node[scale=0.7] at (1.4, -0.4) {$A$};
+                 \end{tikzpicture}
+            \Bigr)
+            =\bigl(
+              A\xto{1\otimes \coev} A\otimes B \otimes A\xto{\ev\otimes 1} A
+              \bigr)
+            \colon A\to A\\
+    z_B&=Z\Bigl(\begin{tikzpicture}[baseline=-0.25cm]
+                      \pic {zigzag1};
+                      \node[scale=0.7] at (-0.2, 0) {$B$};
+                      \node[scale=0.7] at (1.4, -0.4) {$B$};
+                     \end{tikzpicture}\Bigr)
+            =\bigl(
+              B\xto{\coev\otimes 1} B\otimes A \otimes B\xto{1\otimes \ev} B
+            \bigr)
+            \colon B\to B
+    \end{aligned}
+\end{aligned}
+$
+\end{document}

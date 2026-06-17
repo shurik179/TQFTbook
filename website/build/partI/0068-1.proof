@@ -1,0 +1,11 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      (1)$\implies $(2) is a standard fact of basic algebra: if $P$ is a projective module, then any surjective morphism $X\to P\to 0$ has a one-sided inverse. 
+    <p>
+      Similarly, (2)$\implies $(1) is immediate from the definition: if such a morphism $\Delta $ exists, then $A$ is a direct summand in the free $A^ e$-module $A\otimes A\simeq A^ e$. 
+    <p>
+      Finally, (3) is just a rewriting of (2). 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

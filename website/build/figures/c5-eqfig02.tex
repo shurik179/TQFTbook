@@ -1,0 +1,19 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}
+    \pic{ev};
+    \node at (0.75, 0){$=$};
+    \pic at (1.25,0) {mult};
+    \node[dotnode] at (1.25, -0.5){};
+  \end{tikzpicture}
+  \qquad
+  \begin{tikzpicture}
+    \pic{coev};
+    \node at (0.75, 0){$=$};
+    \pic at (1.25,0) {comult};
+    \node[dotnode] at (1.25, 0.5){};
+  \end{tikzpicture}
+$
+\end{document}

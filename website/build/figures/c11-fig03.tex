@@ -1,0 +1,26 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+     %circle
+    \begin{scope}
+      \draw[lightyellow] (0,0) circle (0.7);
+      \node[dotnode] (t) at (0,0.7) {};
+    \end{scope}
+    %circle
+    \begin{scope}[xshift=3cm]
+      \draw[lightyellow] (0,0) circle (0.7);
+      \node[dotnode] (c) at (0,0) {};
+      \node[dotnode] (t) at (0,0.7) {};
+      \draw (c)--(t);
+    \end{scope}
+    %annulus
+    \begin{scope}[xshift=6cm]
+      \draw[lightyellow, even odd rule] (0,0) circle (0.3)
+                     (0,0) circle (0.7);
+      \coordinate (a1) at (0,0.3);\node[dotnode] at (a1){};
+      \coordinate  (a2) at (0,0.7);\node[dotnode] at (a2){};
+      \draw (a1) --  (a2) ;
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\ga_A = \bigoplus_{i,j\in \OC} d_i
+    \begin{tikzpicture}[baseline=0pt]
+      \coordinate (bot) at (0,-1.5);
+      \coordinate (top) at (0,1.5);
+      \node at (0,0) {$\boxtimes$};
+      \node[morphism] (al) at (-0.7,0) {$\al$};
+      \node[morphism] (al*) at (0.7,0) {$\al$};
+      \draw[->] (al) -- (al|-bot) node[pos=0.8,right] {$j$};
+      \draw[->] (al|-top) -- (al) node[pos=0.1,right] {$i$};
+      \draw[<-] (al.120) to[out=120, in =-90] (-1.2,1.5);
+      \node[below left] at (-1.2,1.5){$A$};
+      \draw[->] (al*|-bot) -- (al*) node[pos=0.1,right] {$j$};
+      \draw[->] (al*) -- (al*|-top) node[pos=0.8,right] {$i$};
+      \draw[out=-60, in=90,->] (al*.-60) to (1.2,-1.5);
+      \node[above right] at (1.2,-1.5) {$A$};
+    \end{tikzpicture}
+$
+\end{document}

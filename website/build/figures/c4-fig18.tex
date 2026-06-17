@@ -1,0 +1,13 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5, every pic/.style={scale=0.5},vcenter]
+      \pic (p1) at (0,0) {copants};
+      \pic[notop] at (p1-bottom1) {copants};
+      \pic[cobshift=-0.5cm] at (2,0) {cylinder};
+      \node at (2.75,-1.2) {$\leftrightarrow$};
+      \pic[cobshift = 0.5cm] (p2) at (3.5,0) {cylinder};
+      \pic[notop] at (p2-bottom1) {copants};
+      \pic at (4.5,0) {copants};
+    \end{tikzpicture}
+\end{document}

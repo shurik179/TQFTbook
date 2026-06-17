@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 18.1.2. An example of $\mathcal{C}$-colored diagram</figcaption>

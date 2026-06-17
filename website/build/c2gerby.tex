@@ -1,0 +1,18 @@
+\documentclass{book}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% plasTeX-only stubs (real packages dropped: mathtools, euscript, amsrefs)
+\providecommand{\xRightarrow}[1]{\Rightarrow}
+\providecommand{\coloneqq}{\mathrel{:=}}
+\providecommand{\mathscr}[1]{\mathcal{#1}}
+\providecommand{\ocite}[1]{[\textrm{#1}]}
+\providecommand{\cite}[1]{[\textrm{#1}]}
+
+\theoremstyle{plain}
+\input{definitions.tex}
+
+\begin{document}
+\include{c2-categories-gerby}
+\end{document}

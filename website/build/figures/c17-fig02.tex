@@ -1,0 +1,17 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+      \node at (-2,0) {$\tr^R(f)=$};
+      \node[morphism_sq] (f) at (0,0) {$f$};
+      \draw(f.north)-- +(0, 0.3)  coordinate (top1)
+            arc (0:180:0.5)  coordinate (top);
+      \draw(f.south)-- +(0, -0.3) coordinate (bot1)
+            arc (0:-180:0.5)
+      coordinate (bottom);
+      \draw(top)--(bottom);
+      \node[left] at (top) {$X^*$};
+      \node[right] at (top1) {$X^{**}$};
+      \node[right] at (bot1) {$X$};
+    \end{tikzpicture}
+\end{document}

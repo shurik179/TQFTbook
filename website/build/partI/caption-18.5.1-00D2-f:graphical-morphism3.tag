@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 18.5.1. Coloring the vertices of $\mathcal{C}$-colored graphs. We put a small disk at the vertex.</figcaption>

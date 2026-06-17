@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 11.3.1. Examples of PLCW decompositions of a disk and an annulus.</figcaption>

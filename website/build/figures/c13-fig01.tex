@@ -1,0 +1,63 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5]
+	
+	\pgfdeclarelayer{nodelayer}
+	\pgfdeclarelayer{edgelayer}
+	\pgfdeclarelayer{labels}
+	\pgfsetlayers{edgelayer,nodelayer,labels,main}
+	\tikzset{
+		none/.style={},
+		defect/.style={draw=blue, line width=1.2pt},
+		junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
+	}
+	
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (4) at (1, 0) {};
+		\node [style=none] (5) at (3.75, 0) {};
+		\node [style=none] (B) at (1.5, -0.25) {};
+		\node [style=none] (C) at (3.25, -0.25) {};
+		\node [style=none] (8) at (-1.25, -2) {};
+		\node [style=none] (R) at (1, -2) {};
+		\node [style=none] (10) at (-5.25, -1.5) {};
+		\node [style=none] (11) at (-5, 2) {};
+		\node [style=none] (P) at (-1, 1.75) {};
+		\node [style=none] (Q) at (1, 1.75) {};
+		\node [style=none] (14) at (4.75, 1.75) {};
+		\node [style=none] (15) at (5, -1.5) {};
+		\node [style=none] (16) at (-4.5, 0.25) {};
+		\node [style=none] (17) at (-1.75, 0.25) {};
+		\node [style=none] (18) at (-4, 0) {};
+		\node [style=none] (19) at (-2.25, 0) {};
+		\node [style=none] (E) at (0, 1.25) {};
+		\node [style=none] (F) at (-0.05, -1.51) {};
+		\node [style=junction] (A) at (-0.59, -0.25) {};
+		\node [style=none] (D) at (5.38, -0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right, looseness=1.25] (4.center) to (5.center);
+		\draw [bend left, looseness=1.25] (B.center) to (C.center);
+		\draw [bend left=45] (11.center) to (P.center);
+		\draw [bend right=60] (P.center) to (Q.center);
+		\draw [bend left=45] (Q.center) to (14.center);
+		\draw [bend left=45, looseness=0.75] (14.center) to (15.center);
+		\draw [bend left=45] (15.center) to (R.center);
+		\draw [bend right, looseness=1.50] (R.center) to (8.center);
+		\draw [bend right=315, looseness=0.75] (8.center) to (10.center);
+		\draw [bend left=45] (10.center) to (11.center);
+		\draw [bend right, looseness=1.25] (16.center) to (17.center);
+		\draw [bend left, looseness=1.25] (18.center) to (19.center);
+		\draw [defect,bend right=45] (E.center) to (F.center);
+		\draw [defect,bend left=15] (A.center) to (B.center);
+		\draw [defect,bend left=15] (C.center) to (D.center);
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{labels}
+		\node[above, xshift=2pt, yshift=2pt] at (E) {$ _AM_B$};
+		\node[below, xshift=-2pt, yshift=-2pt ] at (F) {$ _AM_C$};
+		\node[below, xshift=-40pt, yshift=-2pt ] at (P) {$A$};
+		\node[below, xshift=30pt, yshift=-2pt ] at (Q) {$B$};
+		\node[above, xshift=30pt, yshift=2pt ] at (R) {$C$};
+	\end{pgfonlayer}
+\end{tikzpicture}
+\end{document}

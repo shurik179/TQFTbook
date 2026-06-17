@@ -1,0 +1,3 @@
+<article class="env-theorem" id="002H">
+  <p><a class="environment-identifier" href="/tag/002H">Theorem <span data-tag="002H">4.2.2</span>.</a> Let $M$ be a cobordism, and let $f_0, f_1$ be two excellent functions on $M$, with corresponding Morse decompositions $\mathcal{D}_0$, $\mathcal{D}_1$ as in (<a href="/tag/00EJ" data-tag="00EJ">4.1.2</a>). Then $\mathcal{D}_0$ and $\mathcal{D}_1$ can be obtained from each other by a finite sequence of birth-death moves and crossing moves and their inverses. </p>
+</article>

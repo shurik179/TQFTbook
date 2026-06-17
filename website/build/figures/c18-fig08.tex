@@ -1,0 +1,14 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+  \node[ellipse, thin, scale=0.8, inner sep=1pt, draw] (ph) at (0,0)
+               {$\ph\cc{X}\psi$};
+  \node at (-0.8,0.1) {$\vdots$};
+  \node at (0.8,0.1) {$\vdots$};
+  \draw[->] (ph)-- +(220:1cm) node[pos=1.0,below,scale=0.8] {$V_n$};
+  \draw[->] (ph)-- +(140:1cm) node[pos=1.0,above,scale=0.8] {$V_1$};
+  \draw[->] (ph)-- +(40:1cm) node[pos=1.0,above,scale=0.8] {$W_m$};
+  \draw[->] (ph)-- +(-40:1cm) node[pos=1.0,below,scale=0.8] {$W_1$};
+  \end{tikzpicture}
+\end{document}

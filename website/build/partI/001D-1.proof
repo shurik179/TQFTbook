@@ -1,0 +1,7 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Consider the map $V_-\to (V_+)^*$, given by $y\mapsto \operatorname{ev}(-,y)$; and a map $V_+^*\to V_-$ given by $f\mapsto \operatorname{id}\otimes f (\operatorname{coev}(1))$ (thus, if $\operatorname{coev}(1)=\sum y_ i \otimes x_ i$, then $f\mapsto \sum f(x_ i) y_ i$). Then the rigidity conditions say that these two maps are inverse to each other; thus, we have $V_-\simeq V_+^*$. Finite-dimensionality follows from the fact that the elements $y_ i$ generate $V_-$. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

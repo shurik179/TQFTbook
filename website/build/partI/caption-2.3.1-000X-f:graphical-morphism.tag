@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 2.3.1. Graphical notation for a morphism in a monoidal category.</figcaption>

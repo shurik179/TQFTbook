@@ -1,0 +1,3 @@
+<article class="env-example" id="00BE">
+  <p><a class="environment-identifier" href="/tag/00BE">Example <span data-tag="00BE">16.5.1</span>.</a> Let $\mathcal{C}=\mathbf{Vec_ f}$ be the category of finite-dimensional vector spaces. Then the balanced tensor product functor $\boxtimes _{\mathbf{Vec_ f}}$ coincides with Deligne product defined in Section&#160;<a href="/tag/004W" data-tag="004W">7.4</a>. </p>
+</article>

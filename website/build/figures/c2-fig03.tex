@@ -1,0 +1,12 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzcd}[column sep=5mm, row sep=large]
+          (A\otimes \one)\otimes B
+          \arrow[rr,"\alpha_{A,\one,B}"]
+          \arrow[dr,"r_A\otimes \mathrm{id}_B"']
+          && A\otimes(\one\otimes B)
+          \arrow[dl,"\mathrm{id}_A\otimes l_B"] \\
+          & A\otimes B &
+        \end{tikzcd}
+\end{document}

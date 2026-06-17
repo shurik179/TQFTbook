@@ -1,0 +1,3 @@
+<article class="env-theorem" id="00BP">
+  <p><a class="environment-identifier" href="/tag/00BP">Theorem <span data-tag="00BP">17.1.3</span>.</a> Let $\mathcal{M}$, $\mathcal{N}$ be finite <em>semisimple</em> $\mathcal{C}$-$\mathcal{D}$ bimodule categories. Then any $F\in \operatorname{Fun}(\mathcal{M}, \mathcal{N})$ has both left and right adjoints, where $\operatorname{Fun}$ is the category of $\mathcal{C}$-$\mathcal{D}$ bimodule functors; moreover, left and right adjoints of $F$ are isomorphic. </p>
+</article>

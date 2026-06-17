@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 9.3.1. Projector onto $z(A)$, see (<a href="/tag/006V" data-tag="006V">9.3.11</a>). Red dot stands for operator of multiplication by $w^{-1}$.</figcaption>

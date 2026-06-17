@@ -1,0 +1,29 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{aligned}
+\begin{aligned}
+    &\De(x)= (x\otimes 1) e = e (1\otimes x)\\
+    &\begin{tikzpicture}
+      \node at (-0.7,0) {$\De =$};
+      \begin{scope}
+        \node[dotnode] (a) at (0,0){};
+        \draw (a)-- +(0,0.5);
+        \draw (a)-- +(0,-0.5) coordinate (b);
+        \draw (a) arc (160:0:0.35) coordinate (c);
+        \draw (c) -- (c|-b);
+      \end{scope}
+      \node at (1,0) {$=$};
+      \begin{scope}[xshift=2cm]
+        \node[dotnode] (a) at (0,0){};
+        \draw (a)-- +(0,0.5);
+        \draw (a)-- +(0,-0.5) coordinate (b);
+        \draw (a) arc (20:180:0.35) coordinate (c);
+        \draw (c) -- (c|-b);
+      \end{scope}
+    \end{tikzpicture}
+  \end{aligned}
+\end{aligned}
+$
+\end{document}

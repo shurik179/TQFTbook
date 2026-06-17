@@ -1,0 +1,42 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    \begin{scope}
+      \node[dotnode] (a) at (0,0){};
+      \node[dotnode] (b) at (1.5,0){};
+      \draw[midarrow] (a) to [out =40, in =140](b);
+      \draw[midarrow] (b) to [out =-140, in =-40](a);
+      \draw[midarrow] (a) to [out=140, in = -140, looseness=60] (a);
+      \draw[midarrow] (b) to [out=40, in = -40, looseness=60] (b);
+      \node at (0.75, -1) {$A$};
+    \end{scope}
+    \begin{scope}[xshift=5cm]
+      \node[dotnode] (a) at (0,0){};
+      \node[dotnode] (b) at (2,0){};
+      \draw[midarrow] (a) to [out =50, in =40, looseness=1.6](b);
+      \draw[midarrow] (b) to [out =-40, in =-50, looseness=1.6](a);
+      \draw[midarrow] (a) to [out=140, in = -140, looseness=60] (a);
+      \draw[midarrow] (b) to [out=140, in = -140, looseness=60] (b);
+      \node at (1, -1) {$B$};
+    \end{scope}
+    \begin{scope}[yshift = -3cm]
+      \node[dotnode] (a) at (0,0){};
+      \node[dotnode] (b) at (1.5,0){};
+      \draw[midarrow] (a) to [out =40, in =140](b);
+      \draw[midarrow] (b) to [out =-140, in =-40](a);
+      \draw[midarrow] (b) to [out=40, in = 140, looseness=3] (a);
+      \draw[midarrow] (a) to [out=-140, in = -40, looseness=3] (b);
+      \node at (0.75, -1.25) {$C$};
+    \end{scope}
+    \begin{scope}[xshift=5cm, yshift=-3cm]
+      \node[dotnode] (a) at (0,0){};
+      \node[dotnode] (b) at (2,0){};
+      \draw[midarrow] (a) to [out =50, in =40, looseness=1.6](b);
+      \draw[midarrow] (b) to [out =-40, in =-50, looseness=1.6](a);
+      \draw[midarrow] (a) to [out=-140, in = -130, looseness=1.6] (b);
+      \draw[midarrow] (b) to [out=130, in = 140, looseness=1.6] (a);
+      \node at (1, -1.25) {$D$};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

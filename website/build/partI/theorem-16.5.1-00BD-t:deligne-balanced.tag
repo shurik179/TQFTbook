@@ -1,0 +1,3 @@
+<article class="env-theorem" id="00BD">
+  <p><a class="environment-identifier" href="/tag/00BD">Theorem <span data-tag="00BD">16.5.1</span>.</a> Let $\mathcal{C}$ be a finite tensor category over $\mathbf{k}$, and let $\mathcal{M}$, $\mathcal{N}$ be right and left finite $\mathcal{C}$-module categories. Then the balanced tensor product $\mathcal{M}\boxtimes _\mathcal{C}\mathcal{N}$ exists and is a finite $\mathbf{k}$-linear category. Moreover, the functor $\boxtimes _\mathcal{C}\colon \mathcal{M}\times \mathcal{N}\to \mathcal{M}\boxtimes _\mathcal{C}\mathcal{N}$ is exact in each argument. </p>
+</article>

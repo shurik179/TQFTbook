@@ -1,0 +1,3 @@
+<article class="env-lemma" id="005C">
+  <p><a class="environment-identifier" href="/tag/005C">Lemma <span data-tag="005C">8.1.2</span>.</a> Let $f\colon X\to Y$ be a 1-morphism in a weak 2-category $\mathcal{C}$. Then the remaining adjunction data, $g, \eta , \varepsilon $ (as in Definition&#160;<a href="/tag/0053" data-tag="0053">8.1.1</a>), if it exists, is unique up to unique isomorphism: if $(f,g,\eta ,\varepsilon )$ and $(f, \tilde g, \tilde\eta , \tilde\varepsilon )$ are two different sets of adjunction data with the same $f$, then there is a unique 2-morphism $\alpha \colon g\to \tilde g$ which makes the appropriate diagrams commutative. </p>
+</article>

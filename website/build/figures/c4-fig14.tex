@@ -1,0 +1,11 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+  \node[dotnode] (p) at (0,0){};
+  \draw[midarrow] (p)--(45:0.5cm);
+  \draw[midarrow] (p)--(225:0.5cm);
+  \draw[midarrow] (135:0.5cm)--(p);
+  \draw[midarrow] (-45:0.5cm)--(p);
+  \end{tikzpicture}
+\end{document}

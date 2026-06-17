@@ -1,0 +1,4 @@
+<div class="equation" id="009D">
+    <span class="equation-label"><a href="/tag/009D" data-tag="009D">14.4.1</a></span>
+    <div>\begin{equation} \label{e:nerve1} \begin{aligned}  X_0& = \operatorname{Obj}\mathcal{C}\quad (\text{objects of $\mathcal{C}$})\\  X_1& = \{  (x_0, x_1, f)\;  | \; x_ i \in \mathcal{C}, f\colon x_0\to x_1\}  \quad (\text{morphisms in $\mathcal{C}$})\\ & \dots \\  X_ n& =\{ (x_0, \dots , x_ n, f_1, \dots , f_ n)\;  | \; x_ i \in \mathcal{C}, f_ i\colon x_{i-1}\to x_ i \} \\ & \quad (\text{composable $n$-chains of morphisms in $\mathcal{C}$})\\ \end{aligned} \end{equation}</div>
+</div>

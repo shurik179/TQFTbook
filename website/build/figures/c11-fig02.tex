@@ -1,0 +1,58 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    %2-3 move
+    \begin{scope}
+      \coordinate (a) at (0, 0);
+      \coordinate (b) at (0.9,-0.2);
+      \coordinate (c) at (1.3, 0.4);
+      \coordinate (t) at (0.7, 1);
+      \coordinate (d) at (0.8, -1);
+      \path[lightyellow] (a)--(b)--(c)--(a);
+      \draw (a)--(b)--(t)--cycle;
+      \draw (b)--(c)--(t);
+      \draw (a)--(d)--(b) (d)--(c);
+      \draw[cobdash] (a)--(c);
+    \end{scope}
+    \node at (1.8,0) {$\leftrightarrow$};
+    \begin{scope}[xshift = 2.5cm]
+      \coordinate (a) at (0, 0);
+      \coordinate (b) at (0.9,-0.2);
+      \coordinate (c) at (1.3, 0.4);
+      \coordinate (t) at (0.7, 1);
+      \coordinate (d) at (0.8, -1);
+      \draw (a)--(b)--(t)--cycle;
+      \draw (b)--(c)--(t);
+      \draw (a)--(d)--(b) (d)--(c);
+      \draw[cobdash] (a)--(c);
+      \draw[red] (t)--(d);
+    \end{scope}
+    \node[above] at (1.8, -1.8) {2-3 move};
+    %% 4-1 move
+    \begin{scope}[xshift = 5cm, yshift = -0.2cm]
+      \coordinate (a) at (0, 0);
+      \coordinate (b) at (0.9,-0.2);
+      \coordinate (c) at (1.3, 0.4);
+      \coordinate (t) at (0.7, 1);
+      \coordinate (d) at (0.8, -1);
+      \draw (a)--(b)--(t)--cycle;
+      \draw (b)--(c)--(t);
+      \draw[cobdash] (a)--(c);
+    \end{scope}
+    \node at (6.8,0) {$\leftrightarrow$};
+    \begin{scope}[xshift = 7.5cm, yshift = -0.2cm]
+      \coordinate (a) at (0, 0);
+      \coordinate (b) at (0.9,-0.2);
+      \coordinate (c) at (1.3, 0.4);
+      \coordinate (t) at (0.7, 1);
+      \coordinate (d) at (0.8, -1);
+      \node[dotnode, red] (m) at (0.65, 0.3){};
+      \draw[red] (a)--(m)--(c) (b)--(m)--(t);
+      \draw (a)--(b)--(t)--cycle;
+      \draw (b)--(c)--(t);
+      \draw[cobdash] (a)--(c);
+    \end{scope}
+    \node[above] at (6.8, -1.8) {1-4 move};
+  \end{tikzpicture}
+\end{document}

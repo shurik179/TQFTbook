@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 8.1.1. String diagrams for adjunction unit and counit.</figcaption>

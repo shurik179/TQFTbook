@@ -1,0 +1,13 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Choose arbitrary isomorphisms $\alpha \colon fg\xrightarrow {\sim }1_ Y$, $\beta \colon gf\xrightarrow {\sim }1_ X$. Then the composition 
+    <p>
+      <div class="equation">
+  \[  \theta = (f\xrightarrow { \alpha ^{-1} \text{\tiny $\circ $}1_ f} fgf\xrightarrow {1_ f\text{\tiny $\circ $}\beta } f)  \]
+</div>
+    <p>
+       is an invertible 2-morphism $f\to f$. Thus, setting $\eta = (\theta ^{-1}$
+      <span class="qed">$\square$</span>
+    </p>
+</article>

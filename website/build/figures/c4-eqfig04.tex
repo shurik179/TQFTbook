@@ -1,0 +1,16 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}[scale =0.5, every
+  pic/.style={scale=0.5},vcenter]%coassociativity
+    \pic (q1) at (1,0) {pants};
+    \pic[notop] at (q1-bottom1) {pants};
+    \pic[notop,cobshift=0.5cm] at (q1-bottom2) {cylinder};
+    \node at (3,-1.2) {$\leftrightarrow$};
+    \pic (q2) at (4.5,0) {pants};
+    \pic[notop,cobshift=-0.5cm] at (q2-bottom1) {cylinder};
+    \pic[notop] at (q2-bottom2) {pants};
+  \end{tikzpicture}
+$
+\end{document}

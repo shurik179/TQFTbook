@@ -1,0 +1,14 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}[scale=0.7]
+    \draw[lightyellow] (-0.5,0) to[out = -90, in =90] (-1.5,-2)
+          -- (-0.5,-2) to[out = 90, in =90, looseness = 2] (0.5,-2)
+          -- (1.5, -2) to[out =90, in =-90] (0.5, 0)--cycle;
+    \draw[thick, ->] (-0.5,0) -- (0.5,0);
+    \draw[thick, ->](-1.5,-2) -- (-0.5,-2);
+    \draw[thick, ->](0.5,-2) -- (1.5,-2);
+  \end{tikzpicture}
+$
+\end{document}

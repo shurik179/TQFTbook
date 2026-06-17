@@ -1,0 +1,15 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+      \node[dotnode] (a) at (2,0.5)  {};
+      \node[dotnode] (b) at (2,-0.5)  {};
+      \draw (a)--+(0,0.5) {};
+      \draw (a) to[out=-60,in=60] (b) ;
+      \draw (a) to[out=-120,in=120] node[pos=0.5, euler]{} (b);
+      \draw (b)--+(0,-0.5);
+      \node at (2.5,0) {$=$};
+      \coordinate (top2) at (3,1);
+      \draw (top2)--+(0,-2);
+    \end{tikzpicture}
+\end{document}

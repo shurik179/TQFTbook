@@ -1,0 +1,23 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    \node[morphism_sq, minimum width=2cm] (ph) at (0,0) {$\ph$};
+    %% top
+    \node[label=above:$A_1$] (A1) at (-0.7,1){};
+    \node[label=above:$A_2$] (A2) at (0,1){};
+    \node[label=above:$A_3$] (A3) at (0.7,1){};
+    \draw[->] (A1)-- (A1|-ph.north);
+    \draw[<-] (A2)-- (A2|-ph.north);
+    \draw[->] (A3)-- (A3|-ph.north);
+    %% bottom
+    \node[label=below:$B_1$] (B1) at (-0.4,-1){};
+    \node[label=below:$B_2$] (B2) at (0.4,-1){};
+    \draw[->] (B1)-- (B1|-ph.south);
+    \draw[<-] (B2)-- (B2|-ph.south);
+    %% eqn
+    \node[right] at (2,0) {$\ph\colon A_1\otimes A_2^*\otimes A_3\to
+    B_1^*\otimes
+    B_2$};
+  \end{tikzpicture}
+\end{document}

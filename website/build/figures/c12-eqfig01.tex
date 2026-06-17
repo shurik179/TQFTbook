@@ -1,0 +1,13 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}
+    \coordinate (a) at (0,0){};
+    \coordinate (b) at (2,0){};
+    \draw[lightyellow] (a) to [out=40, in = 140] (b) to [out=220, in =-40] (a);
+    \node[dotnode] at (a){};
+    \node[dotnode] at (b){};
+  \end{tikzpicture}
+$
+\end{document}

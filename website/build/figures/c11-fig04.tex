@@ -1,0 +1,60 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+   \begin{scope}
+     \coordinate (c0) at (-0.8, 0);
+     \coordinate (c1) at (0.8, 0);
+     \coordinate (t0) at (-1.4, 0.5);
+     \coordinate (t1) at (1.4, 0.5);
+     \coordinate (b0) at (-1.4, -0.5);
+     \coordinate (b1) at (1.4, -0.5);
+     \path[lightyellow] (t0)--(c0)--(c1)--(t1)--(t0);
+     \path[lightyellow] (b0)--(c0)--(c1)--(b1)--(b0);
+     \draw (t0)--(c0)--(c1)--(t1) (b0)--(c0) (c1)--(b1);
+     \node[dotnode] at (c0){};
+     \node[dotnode] at (c1){};
+   \end{scope}
+    \node at (1.75,0) {$\leftrightarrow$};
+   \begin{scope}[xshift = 3.5cm]
+     \coordinate (c0) at (-0.8, 0);
+     \coordinate (c1) at (0.8, 0);
+     \coordinate (t0) at (-1.4, 0.5);
+     \coordinate (t1) at (1.4, 0.5);
+     \coordinate (b0) at (-1.4, -0.5);
+     \coordinate (b1) at (1.4, -0.5);
+     \path[lightyellow] (t0)--(c0)--(c1)--(t1)--(t0);
+     \path[lightyellow] (b0)--(c0)--(c1)--(b1)--(b0);
+     \draw (t0)--(c0)--(c1)--(t1) (b0)--(c0) (c1)--(b1);
+     \node[dotnode] at (c0){};
+     \node[dotnode] at (c1){};
+     \node[dotnode] at (0,0){};
+   \end{scope}
+   % polygon subdivision L
+   \begin{scope}[xshift = 7cm]
+     \coordinate (a0) at (0:0.7cm);
+     \coordinate (a1) at (72:0.7cm);
+     \coordinate (a2) at (144:0.7cm);
+     \coordinate (a3) at (216:0.7cm);
+     \coordinate (a4) at (288:0.7cm);
+     \draw[lightyellow] (a0) --  (a1) -- (a2) -- (a3) -- (a4) -- (a0);
+     \foreach \i in {0,...,4} {
+       \node[dotnode] at (a\i) {};
+     }
+   \end{scope}
+   \node at (8.2,0) {$\leftrightarrow$};
+    % polygon subdivision R
+   \begin{scope}[xshift = 9.2cm]
+      \coordinate (a0) at (0:0.7cm);
+      \coordinate (a1) at (72:0.7cm);
+      \coordinate (a2) at (144:0.7cm);
+      \coordinate (a3) at (216:0.7cm);
+      \coordinate (a4) at (288:0.7cm);
+      \draw[lightyellow] (a0) --  (a1) -- (a2) -- (a3) -- (a4) -- (a0);
+      \foreach \i in {0,...,4} {
+        \node[dotnode] at (a\i) {};
+      }
+      \draw (a0)--(a2);
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+  \node[morphism] (ph) at (0,0) {$\ph$};
+  \node[morphism] (psi) at (1,0) {$\psi$};
+  \node at (-0.7,0.1) {$\vdots$};
+  \node at (1.7,0.1) {$\vdots$};
+  \draw[->] (ph)-- +(220:1cm) node[pos=1.0,below,scale=0.8]
+  {$V_n$};
+  \draw[->] (ph)-- +(140:1cm) node[pos=1.0,above,scale=0.8]
+  {$V_1$};
+  \draw[->] (psi)-- +(40:1cm) node[pos=1.0,above,scale=0.8]
+  {$W_m$};
+  \draw[->] (psi)-- +(-40:1cm) node[pos=1.0,below,scale=0.8]
+  {$W_1$};
+  \draw[->] (ph) -- (psi) node[pos=0.5,above,scale=0.8] {$X$};
+  \end{tikzpicture}
+\end{document}

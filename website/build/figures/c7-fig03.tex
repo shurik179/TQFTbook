@@ -1,0 +1,32 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[thick,every node/.style={font=\small},>=stealth]
+    %% pasting diagram
+    % objects
+    \node (x) at (0,0) {$X$};
+    \node (y) at (2,0) {$Y$};
+    % 1-morphisms
+    \draw[->,  bend left=45] (x) to node[above] {$f_1$} (y);
+    \draw[->](x)--(y); %node[pos=0.2, above]{$f_2$};
+    \draw[->,  bend right=45] (x) to node[below] {$f_3$} (y);
+    % 2-morphism as a double arrow between the 1-morphisms
+    \draw[2morphism,->] (1,0.5) -- (1,0.05)
+    node[midway, right] {$\al$};
+    \draw[2morphism,->] (1,-0.05) -- (1,-0.5)
+    node[midway, right] {$\be$};
+    \draw[->,squiggly]
+    (2.5,0)--(3.5,0);
+    \begin{scope}[xshift=4cm]
+      % objects
+      \node (x) at (0,0) {$X$};
+      \node (y) at (2,0) {$Y$};
+      % 1-morphisms
+      \draw[->,  bend left=45] (x) to node[above] {$f_1$} (y);
+      \draw[->,  bend right=45] (x) to node[below] {$f_3$} (y);
+      % 2-morphism as a double arrow between the 1-morphisms
+      \draw[2morphism,->] (1,0.5) -- (1,-0.5)
+      node[midway, right] {$\be\al$};
+    \end{scope}
+  \end{tikzpicture}
+\end{document}

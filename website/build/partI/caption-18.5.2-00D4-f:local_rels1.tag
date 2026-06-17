@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 18.5.2. Local relations for colored graphs. Here $\varphi \circ \psi $ is defined by (<a href="/tag/00CT" data-tag="00CT">18.4.3</a>). </figcaption>

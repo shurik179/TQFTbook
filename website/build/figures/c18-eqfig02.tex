@@ -1,0 +1,41 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}[baseline=0pt]
+      \node[morphism] (ph) at (0,0) {$\ph$};
+      \draw[->] (ph)-- +(240:1cm) node[pos=0.7, left] {$A_n$} ;
+      \draw[->] (ph)-- +(180:1cm);
+      \draw[->] (ph)-- +(120:1cm);
+      \draw[->] (ph)-- +(60:1cm);
+      \draw[->] (ph)-- +(0:1cm);
+      \draw[->] (ph)-- +(-60:1cm) node[pos=0.7, right] {$A_1$};
+      %
+      \node[morphism] (ph') at (3,0) {$\ph^*$};
+      \draw[->] (ph')-- +(240:1cm) node[pos=0.7, left] {$A_1^*$} ;
+      \draw[->] (ph')-- +(180:1cm);
+      \draw[->] (ph')-- +(120:1cm);
+      \draw[->] (ph')-- +(60:1cm);
+      \draw[->] (ph')-- +(0:1cm);
+      \draw[->] (ph')-- +(-60:1cm) node[pos=0.7, right] {$A_n^*$};
+    \end{tikzpicture}
+    \quad = \sum_\al\quad
+    \begin{tikzpicture}[baseline=0pt]
+      \node[morphism] (ph) at (0,0) {$\ph_\al$};
+      \draw[->] (ph)-- +(240:1cm) node[pos=0.7, left] {$A_n$} ;
+      \draw[->] (ph)-- +(180:1cm);
+      \draw[->] (ph)-- +(120:1cm);
+      \draw[->] (ph)-- +(60:1cm);
+      \draw[->] (ph)-- +(0:1cm);
+      \draw[->] (ph)-- +(-60:1cm) node[pos=0.7, right] {$A_1$};
+      %
+      \node[morphism] (ph') at (3,0) {$\ph^\al$};
+      \draw[->] (ph')-- +(240:1cm) node[pos=0.7, left] {$A_1^*$} ;
+      \draw[->] (ph')-- +(180:1cm);
+      \draw[->] (ph')-- +(120:1cm);
+      \draw[->] (ph')-- +(60:1cm);
+      \draw[->] (ph')-- +(0:1cm);
+      \draw[->] (ph')-- +(-60:1cm) node[pos=0.7, right] {$A_n^*$};
+    \end{tikzpicture}
+$
+\end{document}

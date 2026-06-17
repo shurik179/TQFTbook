@@ -1,0 +1,3 @@
+<article class="env-theorem" id="0016">
+  <p><a class="environment-identifier" href="/tag/0016">Theorem <span data-tag="0016">3.1.1</span>.</a> The smooth structure on $M=M_1\cup _{N_1} M_2$ which agrees with the given smooth structures on $M_1$, $M_2$, is unique up to isomorphism: if $\alpha , \alpha '$ are two different smooth structures on $M$, then $(M,\alpha )$, $(M,\alpha ')$ are isomorphic as cobordisms. </p>
+</article>

@@ -1,0 +1,11 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5, every pic/.style={scale=0.5},baseline=-0.6cm]
+      \pic[nobottom](p) {pants};
+      \pic at (p-bottom1) {cup};
+      \pic[notop,cobheight=0.3cm] at (p-bottom2) {cylinder};
+      \node at (1.6,-0.6) {$\leftrightarrow$};
+      \pic[cobheight=1.5cm] at (2.6,0) {cylinder};
+    \end{tikzpicture}
+\end{document}

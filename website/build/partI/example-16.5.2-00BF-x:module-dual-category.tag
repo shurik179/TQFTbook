@@ -1,0 +1,3 @@
+<article class="env-example" id="00BF">
+  <p><a class="environment-identifier" href="/tag/00BF">Example <span data-tag="00BF">16.5.2</span>.</a> Let $\mathcal{M}$ be a finite left $\mathcal{C}$-module category. Then one has a natural equivalence $\mathcal{C}\boxtimes _\mathcal{C}\mathcal{M}\simeq \mathcal{M}$ (compare with the isomorphism $A\otimes _ A M\simeq M$ for a module $M$ over an algebra $A$). </p>
+</article>

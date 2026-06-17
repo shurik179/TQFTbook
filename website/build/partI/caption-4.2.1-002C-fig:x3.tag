@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 4.2.1. Birth-death of critical points in family $f_ s=x^3+sx$</figcaption>

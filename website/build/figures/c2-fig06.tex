@@ -1,0 +1,18 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzcd}[column sep=huge, row sep=large]
+      (A\otimes B)\otimes C
+      \arrow[r,"\alpha_{A,B,C}"]
+      \arrow[d,"c_{A,B}\otimes \mathrm{id}_C"']
+      & A\otimes(B\otimes C)
+      \arrow[r,"c_{A,B\otimes C}"]
+      & (B\otimes C)\otimes A
+      \arrow[d,"\alpha^{-1}_{B,C,A}"] \\
+      (B\otimes A)\otimes C
+      \arrow[r,"\alpha_{B,A,C}"']
+      & B\otimes(A\otimes C)
+      \arrow[r,"\mathrm{id}_B\otimes c_{A,C}"']
+      & B\otimes(C\otimes A)
+    \end{tikzcd}
+\end{document}

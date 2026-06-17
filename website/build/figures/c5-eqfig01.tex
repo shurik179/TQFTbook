@@ -1,0 +1,28 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}[vcenter]
+    \pic{mult};
+    \pic at (0,-0.5) {comult};
+  \end{tikzpicture}
+  \quad
+  =
+  \quad
+  \begin{tikzpicture}[vcenter]
+    \pic{comult};
+    \pic at (0.25,-0.5) {mult};
+    \draw (0.5,0)-- +(0,0.5);
+    \draw (-0.25,-0.5)-- +(0,-0.5);
+  \end{tikzpicture}
+  \quad
+  =
+  \quad
+  \begin{tikzpicture}[vcenter]
+    \pic{comult};
+    \pic at (-0.25,-0.5) {mult};
+    \draw (-0.5,0)-- +(0,0.5);
+    \draw (0.25,-0.5)-- +(0,-0.5);
+  \end{tikzpicture}
+$
+\end{document}

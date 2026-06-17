@@ -1,0 +1,9 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof of Theorem&#160;<a href="/tag/006L" data-tag="006L">9.3.2</a>.</strong>
+       One direction is easy. Assume that we have adjunctions $\operatorname{ev}_ A\dashv \operatorname{coev}_ A$, $\operatorname{coev}_ A\dashv \operatorname{ev}_ A$. By Theorem&#160;<a href="/tag/006H" data-tag="006H">9.3.1</a>, the first of these adjunctions defines on $A$ a structure of a symmetric Frobenius algebra. By Theorem&#160;<a href="/tag/006M" data-tag="006M">9.3.3</a>, the second adjunction gives an element $\sum \tilde x_ i \otimes C\tilde x^ i$ which is a separability idempotent (see Lemma&#160;<a href="/tag/0068" data-tag="0068">9.2.1</a>); thus, $A$ is separable. 
+    <p>
+      Conversely, let $A$ be a separable symmetric Frobenius algebra. By Theorem&#160;<a href="/tag/006H" data-tag="006H">9.3.1</a>, this gives rise to adjunction $\operatorname{ev}_ A\dashv \operatorname{coev}_ A$, so we only need to construct the second adjunction $\operatorname{coev}_ A\dashv \operatorname{ev}_ A$. To do it, let $C=[w^{-1}]\in A/[A,A]$, where $w$ is the Euler element (see Theorem&#160;<a href="/tag/006P" data-tag="006P">9.3.4</a>) and $\tilde e=e =\sum x_ i \otimes x^ i$; by Theorem&#160;<a href="/tag/006M" data-tag="006M">9.3.3</a> they define an adjunction $\operatorname{coev}_ A\dashv \operatorname{ev}_ A$. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

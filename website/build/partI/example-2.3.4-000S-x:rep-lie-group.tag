@@ -1,0 +1,3 @@
+<article class="env-example" id="000S">
+  <p><a class="environment-identifier" href="/tag/000S">Example <span data-tag="000S">2.3.4</span>.</a> If $G$ is a connected, simply-connected Lie group, then the category of finite-dimensional representations of $G$ is equivalent, as a monoidal category, to the category of finite-dimensional representations of its Lie algebra $\mathfrak {g}$. </p>
+</article>

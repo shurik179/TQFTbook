@@ -1,0 +1,3 @@
+<article class="env-definition" id="0004">
+  <p><a class="environment-identifier" href="/tag/0004">Definition <span data-tag="0004">1.2.1</span>.</a> An abelian category is a category in which for every pair of objects $X,Y$, the set of morphisms $\operatorname{Hom}(X,Y)$ is an abelian group, composition is additive, we have a zero object, the direct sum of two objects, and for every morphism, we have the notion of image and kernel satisfying the usual properties (see [etingof-fusion]*Section&#160;1.3 for details). </p>
+</article>

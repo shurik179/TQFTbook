@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 17.3.1. Left and right traces; pivotal isomorphism $\delta _ X$ and its inverse are not shown.</figcaption>

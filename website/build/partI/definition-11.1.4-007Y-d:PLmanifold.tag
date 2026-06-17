@@ -1,0 +1,3 @@
+<article class="env-definition" id="007Y">
+  <p><a class="environment-identifier" href="/tag/007Y">Definition <span data-tag="007Y">11.1.4</span>.</a> Let $M$ be a polyhedron. We will say that $M$ is a <em>PL manifold</em> of dimension $n$ if, for every point $x \in M$, there exists an open neighborhood $U \subset M$ containing $x$ and a piecewise linear homeomorphism $f\colon U \to U'$ where $U'$ is a neighborhood of 0 in $\mathbb {R}^ n$. </p>
+</article>

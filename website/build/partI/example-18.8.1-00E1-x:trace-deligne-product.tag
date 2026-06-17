@@ -1,0 +1,3 @@
+<article class="env-example" id="00E1">
+  <p><a class="environment-identifier" href="/tag/00E1">Example <span data-tag="00E1">18.8.1</span>.</a> Let $\mathcal{M}_\mathcal{C}$, ${}_\mathcal{C}\mathcal{N}$ be right and left finite module categories over $\mathcal{C}$. Then Deligne's product $\mathcal{M}\boxtimes \mathcal{N}$ is a $\mathcal{C}$-bimodule category, and $\setbox 0\hbox{\large $\circlearrowleft $} \rlap {\hbox to\wd 0{\hss }}$×$\hss $</p>
+</article>

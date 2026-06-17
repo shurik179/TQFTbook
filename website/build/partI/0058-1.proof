@@ -1,0 +1,11 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      (Sketch of proof) 
+    <p>
+      Suppose we are given a functorial isomorphism (<a href="/tag/0059" data-tag="0059">8.1.4</a>). Then for any object $c\in \mathcal{C}$, we have isomorphism $\operatorname{Hom}_{\mathcal{D}}(f(c), f(c))\simeq \operatorname{Hom}_{\mathcal{C}}(c, g(f(c)))$. In particular, applying it to the identity morphism $1_{f(c)}$, we get a canonical element $\eta \in \operatorname{Hom}(c, g(f(c)))$, or equivalently, a functorial morphism $\operatorname{id}_{\mathcal{C}}\to g\circ f$, which can be used as the unit of adjunction as in Definition&#160;<a href="/tag/0053" data-tag="0053">8.1.1</a>. Similarly we get a functorial morphism $\varepsilon \colon fg(d)\to d$, which is the counit of adjunction. The adjunction relations shown in Figure&#160;<a href="/tag/0056" data-tag="0056">8.1.2</a> follow from the functoriality of (<a href="/tag/0059" data-tag="0059">8.1.4</a>). 
+    <p>
+      We leave the construction in the opposite direction as an exercise to the reader. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

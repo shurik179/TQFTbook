@@ -1,0 +1,33 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{aligned}
+&\begin{tikzpicture}[vcenter]
+    \draw[regular] (0,0) circle (0.5);
+   \end{tikzpicture}
+   \quad =\dim\calC\\
+  & %%%%%%%%%%%%%%%
+  \begin{tikzpicture}[vcenter]
+    \node[morphism] (ph) at (0,-0.5) {$\al$};
+    \node[morphism] (psi) at (0,0.5) {$\al^*$};
+    \node at (0,1.3) {$\dots$};
+    \node at (0,-1.3) {$\dots$};
+    \draw[->] (ph)-- +(-110:1cm) node[pos=1.0,left,scale=0.8] {$A_1$};
+    \draw[->] (ph)-- +(-70:1cm) node[pos=1.0,right,scale=0.8] {$A_n$};
+    \draw[<-] (psi)-- +(110:1cm) node[pos=1.0,left,scale=0.8] {$A_1$};
+    \draw[<-] (psi)-- +(70:1cm) node[pos=1.0,right,scale=0.8] {$A_n$};
+    \draw[regular] (ph) -- (psi) node[pos=0.5,left,scale=0.8] {};
+  \end{tikzpicture}
+   %%%%%%%%%%%%%%%%%
+    =
+   %%%%%%%%%%%%%%%%%
+    \begin{tikzpicture}[vcenter]
+     \node at (0,0) {$\dots$};
+     \draw[<-] (-0.3,-1)-- (-0.3,1) node[pos=0.5,left,scale=0.8] {$A_1$};
+     \draw[<-] (0.3,-1)-- (0.3,1) node[pos=0.5,right,scale=0.8] {$A_n$};
+    \end{tikzpicture}
+    %%%%%%%%%%%%%%%%%%
+\end{aligned}
+$
+\end{document}

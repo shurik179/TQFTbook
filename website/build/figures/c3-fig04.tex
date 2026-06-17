@@ -1,0 +1,14 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+      \node at (-1.2,0) {$f^*=$};
+      \node[morphism_sq] (f) at (0,0) {$f$};
+      \draw(f.north)-- +(0, 0.25) arc (180:0:0.25) -- +(0, -1.5) coordinate
+      (X*);
+      \draw(f.south)-- +(0, -0.25) arc (0:-180:0.25) -- +(0, 1.5) coordinate
+      (Y*);
+      \node[above] at (Y*) {$Y^*$};
+      \node[below] at (X*) {$X^*$};
+    \end{tikzpicture}
+\end{document}

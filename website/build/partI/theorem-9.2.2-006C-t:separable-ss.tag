@@ -1,0 +1,3 @@
+<article class="env-theorem" id="006C">
+  <p><a class="environment-identifier" href="/tag/006C">Theorem <span data-tag="006C">9.2.2</span>.</a> If $\mathbf{k}$ has characteristic zero, an algebra $A$ over $\mathbf{k}$ is separable if and only if it is finite-dimensional and semisimple. In this case, for any field extension $\mathbf{k}\subset F$, the algebra $A_ F=A\otimes _\mathbf{k}F$ is also semisimple over $F$. </p>
+</article>

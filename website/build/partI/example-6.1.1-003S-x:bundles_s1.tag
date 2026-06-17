@@ -1,0 +1,3 @@
+<article class="env-example" id="003S">
+  <p><a class="environment-identifier" href="/tag/003S">Example <span data-tag="003S">6.1.1</span>.</a> Let $M=S^1$. Then $\widetilde{\operatorname{Bun}}_ G(S^1)\simeq G$, and $\operatorname{Bun}_ G(S^1)\simeq G/ \!  /G$ (in the second identity, $G$ acts on $G$ by conjugation). In particular, there is a bijection between the set of isomorphism classes of $\operatorname{Bun}_ G(S^1)$ and the set of conjugacy classes in $G$; if we denote by $P_ g$ the bundle corresponding to $g\in G$, then $\operatorname{Aut}(P_ g)$ is the centralizer of $g$: $\operatorname{Aut}(P_ g)\simeq Z_ g=\{ h\in G\;  | \; hgh^{-1}=g\} $. </p>
+</article>

@@ -1,0 +1,10 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+  \node[ellipse, scale=0.8, inner sep=1pt, draw,thin] (ph) at (0,0)
+  {$\coev$};
+  \draw[->] (ph)-- +(180:1cm) node[pos=1.0,above,scale=0.8] {$V$};
+  \draw[->] (ph)-- +(0:1cm) node[pos=1.0,above,scale=0.8] {$V^*$};
+  \end{tikzpicture}
+\end{document}

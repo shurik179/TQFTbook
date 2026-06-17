@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 11.3.3. A sequence of elementary subdivisions of a disk</figcaption>

@@ -1,0 +1,3 @@
+<article class="env-theorem" id="0036">
+  <p><a class="environment-identifier" href="/tag/0036">Theorem <span data-tag="0036">5.1.3</span>.</a> Let $A$ be a finite-dimensional associative algebra and let $\varepsilon \colon A\to \mathbf{k}$ be a linear map such that the bilinear pairing $(a,b) = \varepsilon (ab)$ is non-degenerate. Let $e= \sum x_ i \otimes x^ i\in A\otimes A$, where $x_ i, x^ i$ are dual bases with respect to $(\,  , \, )$: $(x^ i, x_ j)= \delta _{ij}$. Then $e$ is central: $(a\otimes 1)e = e (1\otimes a)$, and $A$ has a canonical Frobenius algebra structure with the comultiplication given by (<a href="/tag/0033" data-tag="0033">5.1.5</a>). </p>
+</article>

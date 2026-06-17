@@ -1,0 +1,26 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\la =
+        \begin{tikzpicture}[vcenter]
+          \begin{scope}
+            \coordinate (a) at (0,0);
+            \node[dotnode] (a1) at (0,-0.7){};
+            \coordinate (b) at (0.5,0);
+            \coordinate (c) at (1,0);
+            \draw (a)--(a1) arc (-180:0:0.5cm) -- (c);
+            \draw (a1) to [out = 45, in =-90] (b);
+          \end{scope}
+          \node at (1.6,-0.6) {$=$};
+          \begin{scope}[xshift=1.8cm]
+            \coordinate (a) at (0,0);
+            \coordinate (b) at (0.5,0);
+            \coordinate (c) at (1,0);
+            \node[dotnode] (c1) at (1,-0.7){};
+            \draw (a)-- (0,-0.7) arc (-180:0:0.5cm) -- (c);
+            \draw (c1) to [out = 135, in =-90] (b);
+          \end{scope}
+        \end{tikzpicture}
+$
+\end{document}

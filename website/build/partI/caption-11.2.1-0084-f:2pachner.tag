@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 11.2.1. Pachner moves in dimension 2</figcaption>

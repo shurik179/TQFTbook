@@ -1,0 +1,3 @@
+<article class="env-theorem" id="00BN">
+  <p><a class="environment-identifier" href="/tag/00BN">Theorem <span data-tag="00BN">17.1.2</span>.</a> Let ${}_\mathcal{C}\mathcal{M}_\mathcal{D}$ be a finite bimodule category considered as 1-morphism between finite tensor categories $\mathcal{D}\to \mathcal{C}$. Then it has both left and right adjoints, given by categories $\mathcal{M}^\vee =\operatorname{Fun}_\mathcal{C}(\mathcal{M}, \mathcal{C})$, ${}^\vee \mathcal{M}=\operatorname{Fun}_{\mathcal{D}^{\mathrm{mp}}}(\mathcal{M}, \mathcal{D})$. </p>
+</article>

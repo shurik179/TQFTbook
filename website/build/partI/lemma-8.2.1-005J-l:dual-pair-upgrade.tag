@@ -1,0 +1,3 @@
+<article class="env-lemma" id="005J">
+  <p><a class="environment-identifier" href="/tag/005J">Lemma <span data-tag="005J">8.2.1</span>.</a> Let $(A, B, \operatorname{ev}, \operatorname{coev}, \alpha , \beta )$ be as in the definition of coherent dual pair, but without the swallowtail relations. Then one can replace $\beta $ by another 2-isomorphism $\tilde\beta $ so that $(A, B, \operatorname{ev}, \operatorname{coev}, \alpha , \tilde\beta )$ is a coherent dual pair. </p>
+</article>

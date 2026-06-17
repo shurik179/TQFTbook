@@ -1,0 +1,14 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    \node (p) at (0,0) {$P$};
+    \node (a1) at (0, -1.5) {$A_1$};
+    \node (a2) at (2, 0) {$A_2$};
+    \node (b) at (2, -1.5) {$B$};
+    \draw[->] (p)--(a1);
+    \draw[->] (p)--(a2);
+    \draw[->] (a1)--(b);
+    \draw[->] (a2)--(b);
+  \end{tikzpicture}
+\end{document}

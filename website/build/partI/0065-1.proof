@@ -1,0 +1,25 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Equivalence (1)$\iff $ (2) is obvious from the definition; the form $(\,  , \, )$ plays the role of evaluation morphism, and $e=\eta (1)$, where $\eta \colon A\to N\otimes M$ is the coevaluation. 
+    <p>
+      To prove (2)$\implies $ (3), assume that we are given such an $e=\sum _{i=1}^ k n_ i\otimes m_ i$. Consider the free $B$-module $F$ of rank $k$: $F=\bigoplus B x_ i$. Define morphisms of $B$-modules $s\colon M\to F$, $p\colon F\to M$ by 
+    <p>
+      <div class="equation">
+  \begin{align*}  s(m)& =\sum (m, n_ i)x_ i\\  p(x_ i)& =m_ i. \end{align*}
+</div>
+    <p>
+       Then it follows from (2) that $p\circ s =\operatorname{id}_{M}$, which implies that $M$ is a direct summand in $F$, so $M$ is projective of finite rank. Thus, (2)$\implies $ (3). 
+    <p>
+      Proof of (3)$\implies $ (2) is similar and is left to the reader. 
+    <p>
+      Finally, to show that in this case, the right adjoint $N$ is isomorphic to $M^\vee $, we construct morphisms $N\to M^\vee $, $M^\vee \to N$ as follows: 
+    <p>
+      <div class="equation">
+  \begin{align*}  N& \to M^\vee \colon n\mapsto (-, n)\\  M^\vee & \to N\colon f\mapsto \sum n_ i f(m_ i) \end{align*}
+</div>
+    <p>
+       We leave it to the reader to verify that the so-defined maps are indeed morphisms of right $A$-modules, and that they are mutually inverse. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

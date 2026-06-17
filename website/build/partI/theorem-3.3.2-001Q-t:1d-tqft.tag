@@ -1,0 +1,3 @@
+<article class="env-theorem" id="001Q">
+  <p><a class="environment-identifier" href="/tag/001Q">Theorem <span data-tag="001Q">3.3.2</span>.</a> If $Z\colon \mathbf{Cob}_1\to \mathcal{C}$ is a $1$-dimensional TQFT with values in a symmetric monoidal category $\mathcal{C}$, then $A=Z(\bullet ^+)$ is a rigid object; its dual is $Z(\bullet ^-)$. Conversely, any rigid object $A\in \mathcal{C}$ defines a one-dimensional TQFT such that $Z(\bullet ^+)=A$. </p>
+</article>

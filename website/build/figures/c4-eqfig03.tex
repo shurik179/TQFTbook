@@ -1,0 +1,46 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{tikzpicture}[vcenter]
+      \draw[blue, fill=black!10] (-1.2, 0) to [out=90, in=180, looseness=1.2]
+                  (-0.7, 0.5) to [out=0, in=180, looseness=1.1]
+                  (0,0.2) to [out=0, in =180, looseness=1.1]
+                  (0.75, 0.41) to [out=0, in =180, looseness=1.1]
+                  (1.5, 0.2) to [out=0, in =180, looseness=1.1]
+                  (2.2, 0.5) to [out=0, in =90, looseness=1.2]
+                  (2.7,0) to [out=-90, in =0, looseness=1.2]
+                  (2.2, -0.5) to [out = 180, in =0, looseness = 1.1]
+                  (1.5,-0.2) to [out = 180, in =0, looseness = 1.1]
+                  (0.75, -0.41) to [out = 180, in =0, looseness = 1.1]
+                  (0, -0.2) to [out = 180, in =0, looseness = 1.1]
+                  (-0.7, -0.5) to [out = 180, in =-90, looseness = 1.2]
+                  (-1.2,0);
+      \draw[red, fill=white]
+                  (-1, 0) to [out=90, in =180]
+                  (-0.7, 0.25) to [out=0, in=90, looseness = 0.7]
+                  (-0.2,0) to [out =-90, in =0, looseness =0.7]
+                  (-0.7, -0.25) to [out=180, in =-90]
+                  (-1,0);
+      \draw[red, fill=white]
+              (0.75, 0) circle(0.6 and 0.21);
+      \draw[red, fill=white]
+                  (2.5, 0) to [out=90, in =0]
+                  (2.2, 0.25) to [out=180, in=90, looseness = 0.7]
+                  (1.7,0) to [out =-90, in =180, looseness =0.7]
+                  (2.2, -0.25) to [out=0, in =-90]
+                  (2.5,0);
+
+      \node[dotnode] (a) at (0,0) {};
+      \node[dotnode]  (b) at (1.5,0) {};
+      \draw[midarrow] (a) to [out =40, in =140](b);
+      \draw[midarrow] (b) to [out =-140, in =-40](a);
+      \draw[midarrow] (a) to [out=140, in = -140, looseness=60] (a);
+      \draw[midarrow] (b) to [out=40, in = -40, looseness=60] (b);
+  \end{tikzpicture}
+  \qquad \qquad
+  \begin{tikzpicture}[vcenter]
+    \pic[cobheight=1.5cm] at (0,0) {triplepants};
+  \end{tikzpicture}
+$
+\end{document}

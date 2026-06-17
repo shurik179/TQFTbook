@@ -1,0 +1,11 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+    \node[label=above:$B$] (B) at (0,0){};
+    \pic[x=-1cm] at (B) {rigidity};
+    \node at (0.5, -1) {$=$};
+    \node[label=above:$B$] (B2) at (1,0){};
+    \draw (B2)-- +(0,-2);
+  \end{tikzpicture}
+\end{document}

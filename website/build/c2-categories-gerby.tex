@@ -1,0 +1,549 @@
+%!TEX root = TQFTnotes.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Algebraic prerequisites: monoidal categories}\label{c:categories}
+
+In this chapter we introduce some of the algebraic language
+necessary for describing TQFTs, most importantly the notion
+of a monoidal category. We only give a very brief introduction,
+referring the reader to books \ocite{mac-lane}, \ocite{etingof-fusion}
+for details.
+
+%%%%%%%%%%%%%%%%%%
+\section{Category theory basics}
+We assume that the reader is familiar with basic notions of categories and
+functors. We will completely ignore all set-theoretic difficulties related
+to the definition of a category; if necessary, the reader can assume that
+all sets of objects, morphisms, etc in all the categories discussed are
+subsets of a large enough universal set $U$.
+
+For a category $\calC$, we will use the notation $X\in \calC$ to show that
+$X$ is an object of $\calC$. For two objects $X,Y\in\calC$, we denote by
+$\Hom_\calC(X,Y)$ the set of morphisms from $X$ to $Y$ (we will drop
+the subscript $\calC$ when there is no ambiguity).
+
+Given categories $\calC, \calD$, we denote by $\Fun(\calC, \calD)$ the
+set of all functors $\calC\to \calD$.
+
+Examples:
+\begin{itemize}
+  \item $\sets$: category of all sets.
+  \item $\smoothman_n$: category of smooth manifolds of dimension $n$.
+    There are different versions: oriented manifolds, framed manifolds, etc.
+  \item $\plman_n$: category of PL manifolds of dimension $n$. Note that
+    in dimensions $n\le 6$, every PL manifold has a canonical smooth structure
+    and vice versa. In general, it is not so: every smooth manifold has
+    a unique PL structure (Whitehead's theorem), but a PL manifold might
+    not have a compatible smooth structure, or if it has one, it might not
+    be unique (Milnor's exotic spheres). We will talk about PL manifolds in
+    more detail later (see \chref{c:PL}).
+  \item $\vect_\kk$: category of vector spaces over a field $\kk$.
+  \item $R\mod$: category of left modules over an associative ring $R$.
+\end{itemize}
+
+One special case of a category, which we will use frequently, is a groupoid.
+\begin{definition}\index{groupoid}
+  A groupoid is a category in which all morphisms are invertible.
+\end{definition}
+\begin{example}
+  Let $X$ be a topological space. Define its \emph{fundamental groupoid}\index{fundamental groupoid}
+  $\pi(X)$ as the category whose objects are points in $X$ and morphisms
+  are homotopy equivalence classes of paths between points, with the obvious
+  composition.
+\end{example}
+
+One common theme in all our constructions is equality vs isomorphism. When
+talking about points in a set (e.g., elements of a ring), we can require them to
+be equal; for example, we can require $a+b=b+a$ for elements of a ring. However,
+while it is technically possible to require two objects in a category to be
+equal, it rarely makes sense to do so. For example, in the category of finite
+sets, sets $A\times B$ and $B\times A$ are not equal. On the other hand,
+requiring two objects to be isomorphic is typically too weak: e.g., any two sets
+with the same number of elements are isomorphic.
+
+The common way to resolve this is the following convention.
+\begin{convention}\label{conv:canonical}
+  A collection of objects $X_\al$ of category $\calC$, together with a
+  collection of isomorphisms $f_{\be\al}\colon X_\al \isoto X_\be$, such that
+  $f_{\al\be}f_{\be\ga}=f_{\al\ga}$, $f_{\al\al}=\id_{X_\al}$, is treated as a
+  single object in $\calC$.
+\end{convention}
+This convention, though rarely stated explicitly, is actually widespread.
+Virtually every math textbook treats sets $A\times B$ and $B\times A$ as the
+same set, even though they are technically not the same object of category
+$\sets$; from the point of view of the convention above, it is justified by
+noting that we have a canonical isomorphism $A\times B\isoto B\times A\colon
+(a,b)\mapsto (b,a)$.
+
+Formally, this convention can be justified by constructing a category
+$\widehat\calC$, whose objects are such collections $(X_\al, f_{\al\be})$, and
+observing that categories $\calC$, $\widehat\calC$ are equivalent; see, e.g.,
+\ocite{bakalov-kirillov}*{Lemma 1.1.12}.
+
+
+%%%%%%%%%%%%%%
+\section{Abelian categories}
+\begin{definition}\label{d:abelian}\index{abelian category}
+  An abelian category is a category in which for every pair of objects $X,Y$,
+  the set of morphisms $\Hom(X,Y)$ is an abelian group, composition is
+  additive, we have a zero object, the direct sum of two objects, and for every
+  morphism, we have the notion of image and kernel satisfying the usual
+  properties (see \ocite{etingof-fusion}*{Section~1.3} for details).
+\end{definition}
+In such a category, we can define the notion of a simple object (which has no
+subobjects other than $0$ and itself), semisimple one (isomorphic to a direct
+sum of simple objects), etc. We can also define the notions of short exact
+sequences, Jordan--H\"older series (which in turn allows one to define the
+notion of length of an object), injective and projective objects, and all
+other usual constructions of homological algebra.
+
+An abelian category is
+\emph{$\kk$-linear}\index{category!kk-linear@$\kk$-linear} if all sets
+$\Hom(X,Y)$ are vector spaces over a field $\kk$, and composition of morphisms
+is linear over $\kk$.
+
+\begin{example}
+  Below are some examples of $\kk$-linear abelian categories.
+  \begin{enumerate}
+    \item $\vect_\kk$;
+    \item category $\Rep_\kk(G)$ of representations of a group $G$;
+    \item category $\Rep_\kk(\g)$ of representations of a Lie algebra $\g$;
+    \item category $A\mod$ of modules over an associative algebra $A$
+      over $\kk$.
+  \end{enumerate}
+\end{example}
+
+Typically, one imposes some finiteness conditions for $\kk$-linear
+categories. We will usually assume that all linear categories, unless
+explicitly stated otherwise, are
+\emph{locally finite}\index{category!locally finite}, i.e.,
+\begin{itemize}
+  \item All spaces $\Hom(X,Y)$ are finite-dimensional
+  \item Every object has finite length
+\end{itemize}
+(see \ocite{etingof-fusion}*{Section 1.8}).
+
+One can also impose stricter requirements, for example semisimplicity (every
+short exact sequence splits), finiteness (there are finitely many isomorphism
+classes of simple objects), and more. We will discuss it in more detail when it
+becomes necessary.
+
+One useful fact about $\kk$-linear categories is the following version of the
+famous Schur's lemma in representation theory.
+
+\begin{lemma}\label{l:schur}
+  Let $\calA$ be a locally finite $\kk$-linear category.
+  \begin{enumerate}
+    \item If $X,Y\in \calA$ are simple objects, then any morphism
+      $f\colon X\to Y$ is either zero or invertible.
+    \item If $\kk$ is algebraically closed, then for any non-zero
+      simple $X\in \calA$, $\Hom_\calA(X,X)=\kk$.
+  \end{enumerate}
+\end{lemma}
+As with the usual Schur's lemma, the proof is immediate from the fact that the
+only  finite-dimensional division algebra over an algebraically closed field
+$\kk$ is $\kk$ itself (see, e.g., \ocite{pierce}*{Lemma 3.5}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Monoidal categories}\label{s:monoidal}
+One of the most important notions is the notion of a monoidal category, which
+informally is described as a category with an associative operation; the model
+example is the category of vector spaces with the operation of tensor product.
+In this section, we review this notion; as before, we refer the reader to
+\ocite{etingof-fusion}*{Chapter 2}; \ocite{leinster}*{Section 1.2} for a more
+in-depth discussion.
+
+Before defining monoidal categories, let us look at simpler notion: a monoid.
+
+A \emph{monoid}\index{monoid} is a set together with an associative
+multiplication operation and a unit:
+\begin{align*}
+  &(a\cdot b)\cdot c = a\cdot (b\cdot c)\\
+  &1\cdot a = a\cdot 1 = a
+\end{align*}
+(if we also add the requirement that every element has an inverse,
+we get the definition of a group).
+
+\begin{theorem}\label{t:coherence-monoids}
+  Let $M$ be a monoid and $a_1, \dots, a_n\in M$. Consider all possible
+  expressions obtained by writing $a_1, \dots, a_n$ (in this order), then
+  inserting some copies of $1$ and then putting parentheses so that
+  multiplications are just binary products, e.g., $(a_1 \cdot 1) \cdot (1 \cdot
+  a_2) $. Then all of them are equal: if $X_1, X_2$ are two such expressions
+  (with the same $a_1, \dots, a_n$), then $X_1=X_2$.
+\end{theorem}
+It may seem obvious, but in fact it is not quite trivial; essentially it is the
+statement that if we construct a graph whose vertices correspond to
+different expressions written above, and edges to application of associativity
+and unit relations, then this graph is connected.
+
+If we only include $a_1, \dots, a_n$ but no 1's, then such expressions are
+naturally described by planar binary trees. For example, the bracketings $((a_1
+a_2)a_3) a_4$ and $((a_1 a_2)(a_3 a_4))$ correspond to the trees below:
+
+\begin{center}
+  %%%%% ((12)3) 4
+  \includegraphics{figures/fig01.svg}
+  \qquad
+  %%%%% ((12)(3 4)
+  \includegraphics{figures/fig02.svg}
+\end{center}
+Adding ones requires a minor modification, adding appropriately
+colored leaves to the tree.
+
+For categories, the analogous structure is that of a monoidal category: a
+category with a functor $\otimes \colon \calC\times \calC\to \calC$ and a unit
+object $\one\in \calC$.
+
+One can try to mimic the definition above.
+\begin{definition}\label{d:strict_monoidal}
+  A \emph{strict monoidal category}\index{monoidal category!strict} is a
+  category $\calC$ together with a functor $\otimes \colon \calC\times \calC\to
+  \calC$ and a unit object $\one\in \calC$ such that
+  \begin{align*}
+    &(A\otimes B)\otimes  C = A\otimes  (B\otimes C),\\
+    &\one \otimes A  = A\otimes \one   = A.
+  \end{align*}
+\end{definition}
+
+However, this definition is too strict: objects in a category are almost never
+equal, just isomorphic. For example, if $V$ is a vector space over $\kk$, then
+$\kk\otimes V\ne V$ (but is canonically isomorphic to $V$).
+
+We can try to replace equality by isomorphism, but then it is too weak: e.g.,
+any two vector spaces of the same dimension are isomorphic.
+
+The proper way is to require the existence of a distinguished (canonical)
+isomorphism which should be made part of the structure. Moreover, these
+``canonical'' isomorphisms should themselves satisfy some compatibility
+conditions, as suggested by Convention~\ref{conv:canonical}.
+
+\begin{definition}\label{d:monoidal}\index{monoidal category}
+  A monoidal category is a category $\calC$ together with the following data:
+  \begin{itemize}
+    \item An object $\one \in \calC$
+    \item a functor $\otimes\colon \calC \times \calC \to \calC$
+    \item functorial isomorphisms
+      \begin{align*}
+        &l_A\colon \one \otimes A \isoto A\\
+        & r_A\colon A\otimes \one \isoto A\\
+        &\al_{A,B,C}\colon (A\otimes B)\otimes C\isoto A\otimes (B\otimes C)
+      \end{align*}
+  \end{itemize}
+  satisfying compatibility conditions below:
+  \begin{enumerate}
+    \item Triangle axiom: for any $A,B\in \calC$, the diagram below commutes
+      \begin{equation}\label{e:triangle}
+        \includegraphics{figures/fig03.svg}
+      \end{equation}
+    \item Pentagon axiom: for any $A,B,C,D \in \calC$, the diagram below
+      commutes
+      \begin{equation}\label{e:pentagon}
+        \includegraphics{figures/fig04.svg}
+      \end{equation}
+      (all arrows are given by the associativity isomorphism $\al$.)
+%      \begin{equation}\label{e:pentagon}
+%        \begin{tikzcd}[column sep=huge,row sep=large]
+%          ((A\otimes B)\otimes C)\otimes D
+%          \arrow[r,"\alpha_{A,B,C}\otimes \mathrm{id}_D"]
+%          \arrow[d,"\alpha_{A\otimes B,C,D}"']
+%          & (A\otimes (B\otimes C))\otimes D
+%          \arrow[r,"\alpha_{A,B\otimes C,D}"]
+%          & A\otimes((B\otimes C)\otimes D)
+%          \arrow[d,"\mathrm{id}_A\otimes \alpha_{B,C,D}"] \\
+%          (A\otimes B)\otimes(C\otimes D)
+%          \arrow[rr,"\alpha_{A,B,C\otimes D}"']
+%          && A\otimes(B\otimes(C\otimes D))
+%        \end{tikzcd}
+%      \end{equation}
+
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+The following are examples of monoidal categories.
+  \begin{enumerate}
+    \item Category $\sets$, with $\otimes$ given by disjoint union and
+      $\one$ being the empty set
+    \item Category $\sets$, with $\otimes$ given by the Cartesian product
+      and $\one$ being a one-point set
+    \item Categories $\smoothman$, $\plman$ with respect to disjoint union
+    \item Category $\vect$ with the usual tensor product, $\one = \kk$
+    \item Category of bimodules over a fixed ring $R$, with respect
+      to $\otimes_R$, and $\one = R$
+
+  \end{enumerate}
+\end{example}
+
+
+\begin{example}\label{x:vecg}
+  Let $G$ be a group. Define the category $\vect_G$ of \emph{$G$-graded vector
+  spaces}\index{G-graded vector spaces@$G$-graded vector spaces} as the category
+  whose objects are finite-dimensional vector spaces $V$ together with
+  decomposition
+  $$
+    V=\bigoplus_{g\in G} V_g.
+  $$
+  This is a monoidal category with tensor product given by
+  $$
+    (V\otimes W)_g = \bigoplus_{h\in G} V_h \otimes W_{h^{-1}g}
+  $$
+  and unit object given by $\kk$ considered as a $G$-graded vector space with
+  grading equal to $1\in G$. The associativity isomorphism is trivial.
+\end{example}
+
+
+
+\begin{theorem}[Mac Lane's coherence theorem]\label{t:maclane}\par
+
+  \noindent
+  Let $\calC$ be a monoidal category. Let $F_1, F_2\colon \calC^n\to \calC$
+  be two functors obtained by compositions of tensor product functor $\otimes$
+  and functors $X\mapsto X\otimes \one$, $X\mapsto \one \otimes X$, e.g.,
+  \begin{align*}
+    F_1(A,B,C)&=(A\otimes B)\otimes (\one\otimes C),\\
+    F_2(A,B,C)&=A\otimes (( B\otimes  C)\otimes \one).
+  \end{align*}
+  Then
+  \begin{enumerate}
+    \item There exists a functorial isomorphism $F_1\simeq F_2$, obtained
+      by composition of associativity isomorphism $\al$, left and right
+      unit isomorphisms $l,r$, and their inverses.
+    \item Any two such isomorphisms $F_1\to F_2$ are equal.
+  \end{enumerate}
+\end{theorem}
+In other words, if we construct a cell complex $X_n$ whose vertices are functors
+$\calC^n\to \calC$ as in the statement of the theorem, edges correspond to
+applications of the associativity and unit isomorphisms, and 2-cells correspond
+to commutative diagrams given by the pentagon axiom, unit axioms, and
+functoriality of $\al, l, r$, then this complex is simply-connected.
+
+This is a natural generalization of coherence theorem for monoids
+(\thref{t:coherence-monoids}); in this language, \thref{t:coherence-monoids}
+is exactly claim (1) of the theorem, i.e., the statement that $X_n$
+is connected.
+
+\begin{remark}\label{r:stasheff}
+  If we only consider functors obtained by composing the tensor product functor
+  (thus, no units), the corresponding complex is a 2-skeleton of a convex
+  polytope $K_n$, called the \emph{associahedron}\index{associahedron}, or the
+  \emph{Stasheff
+  polytope}\index{Stasheff polytope}. The vertices of $K_n$ are indexed by
+  binary trees with $n$ leaves; thus, the number of vertices is the Catalan
+  number $C_{n-1} = \frac{1}{n}\binom{2(n-1)}{n-1}$ (so $K_5$ has
+  $C_4 = 14$ vertices).
+  This polytope was introduced by Jim Stasheff in the 1960s. It can be realized
+  as a convex polytope in Euclidean space; see, e.g.,
+  \ocite{loday}.
+\end{remark}
+
+\begin{exercise}\label{ec:K5}
+  Draw the associahedron $K_5$ (it has 14 vertices) and verify that it is
+  simply-connected (more precisely, its 2-skeleton is topologically a sphere
+  $S^2$). We will return to it later, when talking about monoidal 2-categories.
+\end{exercise}
+
+\begin{definition}\label{d:monoidal_functor}\index{monoidal functor}
+  Let $\calC, \calD$ be monoidal categories. A monoidal functor
+  $\calC\to \calD$ is a functor $F\colon\calC\to\calD$ together
+  with functorial isomorphisms
+  \begin{align*}
+    J&\colon F(X\otimes Y)\to F(X)\otimes F(Y)\\
+    \ph&\colon \one_\calD\to F(\one_\calC)
+  \end{align*}
+  satisfying suitable constraints (see \ocite{etingof-fusion}*{Section 2.4}).
+
+  We say that categories $\calC, \calD$ are monoidally equivalent
+  if there exist monoidal functors $F\colon \calC\to \calD$, $G\colon \calD\to
+  \calC$ such that $F\circ G\simeq \id_\calC$, $G\circ F \simeq \id_\calD$.
+\end{definition}
+
+
+\begin{example}
+  Consider the category of representations of a group $G$. Then the
+  forgetful functor from this category to the category of vector
+  spaces is a monoidal functor. More generally, given
+  a subgroup $H\subset G$, the restriction functor
+  $\Res^G_H\colon \Rep G\to\Rep H$ has an
+  obvious monoidal structure.
+\end{example}
+\begin{example}
+  If $G$ is a connected, simply-connected Lie group, then the category
+  of finite-dimensional representations of $G$ is equivalent, as a
+  monoidal category, to the category of finite-dimensional
+  representations of its Lie
+  algebra $\g$.
+\end{example}
+
+\begin{example}\label{x:vecg-twisted}
+  Recall the category of $G$-graded vector spaces $\vect_G$ defined in
+  \exref{x:vecg}. This category has a generalization. Namely, let
+  $\om\colon G\times G\times G\to \kk^\times$ be a 3-cocycle, i.e., a
+  function satisfying the condition
+  $$
+  \om(g_1g_2, g_3, g_4)\om (g_1, g_2, g_3g_4) = \om(g_1, g_2, g_3)
+     \om(g_1, g_2g_3, g_4)\om (g_2, g_3, g_4).
+  $$
+  Consider the category $\vect^\om_G$ which coincides with $\vect_G$ as an
+  abelian category; moreover, it has the same tensor product functor $\otimes$
+  and unit object $\one=\kk_1$. However, the associativity isomorphism is
+  different: namely, $\al \colon (V\otimes W)\otimes U \to V \otimes (W\otimes
+  U)$ is given by
+  $$
+    \al((v \otimes w) \otimes u )= \om_{g,h,m} v \otimes (w\otimes u),
+    \qquad v\in V_g, w\in W_h, u\in U_m.
+  $$
+  The cocycle condition immediately implies that so defined $\al$ satisfies the
+  pentagon axiom.
+\end{example}
+\begin{exercise}
+  Let $\om\colon G\times G\times G\to \kk^\times$ be a 3-cocycle. Assume that
+  $\om$ is a coboundary, i.e., there exists a function $\be\colon G\times
+  G\to \kk^\times$ such that $\om=d\be$, where the coboundary operator $d$
+  is given by
+  $$
+    (d\be)(g_1, g_2, g_3)=
+    \frac{\be(g_2, g_3)\,\be(g_1, g_2g_3)}{\be(g_1g_2, g_3)\,\be(g_1, g_2)}.
+  $$
+  Show that then category $\vect_G^\om$ is monoidally equivalent to $\vect_G$.
+
+  More generally, categories $\vect_G^\om$ and $\vect_G^{\om'}$ are equivalent,
+  with the equivalence preserving the $G$-graded dimension, if and only if
+  $\om'=\om \cdot d\be$ for some $\be\colon G\times G\to \kk^\times$ (see
+  \ocite{etingof-fusion}*{Section 2.6}).
+\end{exercise}
+
+
+
+We can restate Mac Lane's coherence theorem as follows.
+\begin{theorem}\label{t:strictify}
+  Any monoidal category is monoidally equivalent to a strict monoidal category.
+\end{theorem}
+If one knows the concept of a skeleton of a category, then Mac Lane's coherence
+theorem can be understood as the construction of the skeleton by looking at the
+isomorphism classes of objects in a monoidal category.
+
+
+
+
+
+
+\begin{convention}\label{c:graphical-monoidal}
+We will frequently use graphical presentation of morphisms
+in a monoidal category, representing a morphism
+$\ph \colon A_1\otimes \dots \otimes A_k\to B_1\otimes\dots \otimes B_m$
+by a box with $k$ inputs at the top and $m$ outputs at the bottom:
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/fig05.svg}
+  \caption{Graphical notation for a morphism in a monoidal category.}
+  \label{f:graphical-morphism}
+\end{figure}
+\end{convention}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Symmetric monoidal categories}\label{s:symmetric-monoidal}
+For the category of vector spaces, the tensor product is not only associative,
+but also ``commutative'': one has natural isomorphisms $V\otimes W \simeq
+W\otimes V$. The definition below gives a proper generalization of this to
+arbitrary monoidal categories.
+
+\begin{definition}\label{d:symmetric}\index{monoidal category!symmetric}
+  A symmetric monoidal category is a monoidal category $\calC$ together
+  with a functorial isomorphism
+  $$
+    c_{X,Y}\colon X\otimes Y \isoto Y\otimes X
+  $$
+  such that
+  $$
+  c_{X,Y} c_{Y,X}=\id
+  $$
+  and which satisfies the hexagon axiom:
+  \begin{equation}\label{e:hexagon1}
+    \includegraphics{figures/fig06.svg}
+  \end{equation}
+\end{definition}
+The hexagon axiom looks complicated; to make it easier to understand, one
+can drop all associativity isomorphisms, replacing the hexagon axiom with the
+one below
+\begin{equation}\label{e:hexagon3}
+  \includegraphics{figures/fig07.svg}
+\end{equation}
+
+\begin{example}\par\noindent
+  \begin{enumerate}
+    \item Category $\sets$ with respect to disjoint union is a
+      symmetric monoidal category; same is true for categories
+      $\smoothman$, $\plman$.
+    \item
+      The category of vector spaces over $\kk$ is a symmetric monoidal category.
+      Same is true for categories of representations of a group $G$ or
+      a Lie algebra $\g$.
+    \item (Super vector spaces). Consider the category $\svect$ whose
+      objects are $\Z_2$-graded vector spaces $V=V_0\oplus V_1$. This
+      has an obvious monoidal structure.
+      Define the commutativity isomorphism $c_{V,W}\colon V\otimes W
+      \to W\otimes V$ by
+      $$
+      c(v\otimes w)=(-1)^{pq} w\otimes v, \quad v\in V_p, w\in W_q.
+      $$
+      Then this defines on the category $\svect$ a structure of a
+      symmetric monoidal category.
+  \end{enumerate}
+\end{example}
+Note that one can also define the symmetric structure on $\svect$ without the
+$(-1)^{pq}$ factor; this illustrates the fact that a monoidal category can have
+several different symmetric structures.
+\begin{remark}
+  There are monoidal categories that do not have a natural symmetric structure;
+  for example, the category $\vect_G$ of $G$-graded vector spaces, or a
+  category
+  of bimodules over a ring. There are also ``braided'' categories where we do
+  have isomorphisms $c_{X,Y}\colon X\otimes Y \to Y\otimes X$, but these
+  isomorphisms fail to satisfy condition $c^2=\id$. The  most famous example of
+  a braided  category  is the category of representations of a quantum group. We
+  will discuss braided categories later (see \chref{c:321}).
+\end{remark}
+
+As before, the real importance of the hexagon axiom is the following coherence
+theorem, which is an analog of Mac Lane's coherence theorem, but for
+\textbf{symmetric} monoidal categories.
+
+\begin{theorem}[Mac Lane's coherence theorem for symmetric monoidal
+ categories]\label{t:maclane-symmetric}\par
+
+  \noindent
+  Let $\calC$ be a symmetric monoidal category. Let $F_1, F_2\colon \calC^n\to
+  \calC$ be two functors obtained by compositions of
+  \begin{itemize}
+    \item tensor product functor $\otimes\colon \calC\times \calC\to \calC$
+    \item functors $X\mapsto X\otimes \one$, $X\mapsto \one \otimes X$
+    \item permutation functor $\calC\times \calC \to \calC\times \calC
+          \colon (A, B)\mapsto (B,A)$
+  \end{itemize}
+  e.g.,
+  \begin{align*}
+    F_1(A,B,C)&=(B\otimes A)\otimes (\one\otimes C)\\
+    F_2(A,B,C)&=C\otimes ((B\otimes  A)\otimes \one).
+  \end{align*}
+  Then
+  \begin{enumerate}
+    \item There exists a functorial isomorphism $F_1\simeq F_2$, obtained
+      by composition of associativity isomorphism $\al$, left and right
+      unit isomorphisms $l,r$, commutativity isomorphism $c$, and their
+      inverses.
+    \item Any two such isomorphisms $F_1\to F_2$ are equal.
+  \end{enumerate}
+\end{theorem}
+As before, this theorem can be understood as a statement that a certain cell
+complex is simply connected; if we only use permutations and tensor product
+(i.e., no units), then this complex is called \emph{permutoassociahedron}. (It
+took me 3 tries to spell that correctly; in the end, I had to use copy and
+paste from another source.)
+
+\clearpage

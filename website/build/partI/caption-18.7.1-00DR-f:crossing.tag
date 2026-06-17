@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 18.7.1. Graphical presentation of the half-braiding $\gamma _ A\colon A\otimes Z\to Z\otimes A$, $A\in \mathcal{C}$, $Z\in \mathcal{Z}(\mathcal{C})$ </figcaption>

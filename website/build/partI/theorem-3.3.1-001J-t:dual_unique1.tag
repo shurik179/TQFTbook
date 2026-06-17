@@ -1,0 +1,3 @@
+<article class="env-theorem" id="001J">
+  <p><a class="environment-identifier" href="/tag/001J">Theorem <span data-tag="001J">3.3.1</span>.</a> Let $(A, B, \operatorname{ev}, \operatorname{coev})$ and $(A,B', \operatorname{ev}', \operatorname{coev}')$ be two dual pairs with the same $A$. Then there exists a unique morphism $\varphi \colon B\to B'$ such that $\operatorname{ev}= \operatorname{ev}' \circ (1_ A\otimes \varphi )$, $\operatorname{coev}' =(\varphi \otimes 1_ A) \operatorname{coev}$. </p>
+</article>

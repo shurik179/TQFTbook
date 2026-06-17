@@ -1,0 +1,16 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[vcenter]
+  \node[dotnode] (ph) at (0,0) {};
+  \node[dotnode] (psi) at (1.5,0) {};
+  \node at (-0.7,0.1) {$\vdots$};
+  \node at (2.2,0.1) {$\vdots$};
+  \draw[->] (ph)-- +(220:1cm) node[pos=1.0,below,scale=0.8] {$A_n$};
+  \draw[->] (ph)-- +(140:1cm) node[pos=1.0,above,scale=0.8] {$A_1$};
+  \draw[->] (psi)-- +(40:1cm) node[pos=1.0,above,scale=0.8] {$B_m$};
+  \draw[->] (psi)-- +(-40:1cm) node[pos=1.0,below,scale=0.8] {$B_1$};
+  \draw[ ->] (ph) -- (psi)
+              node[pos=0.5,above,scale=0.8] {$V_1\otimes \dots\otimes V_k$};
+  \end{tikzpicture}
+\end{document}

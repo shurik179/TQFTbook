@@ -1,0 +1,4 @@
+<div class="equation" id="001G">
+    <span class="equation-label"><a href="/tag/001G" data-tag="001G">3.3.1</a></span>
+    <div>\begin{equation} \label{e:rigidity} \begin{aligned} & \Bigl (B\to \mathbf{1}\otimes B \xrightarrow {\operatorname{coev}\otimes 1_ B} (B\otimes A)\otimes B \xrightarrow {\alpha _{B,A,B}} B\otimes (A\otimes B) \xrightarrow {1_ B\otimes \operatorname{ev}} B\otimes \mathbf{1}\to B\Bigr ) = 1_ B\\ & \Bigl (A\to A\otimes \mathbf{1}\xrightarrow {1_ A\otimes \operatorname{coev}} A\otimes (B\otimes A) \xrightarrow {\alpha ^{-1}_{A,B,A}} (A\otimes B)\otimes A \xrightarrow {\operatorname{ev}\otimes 1_ A} \mathbf{1}\otimes A \to A\Bigr ) = 1_ A \end{aligned} \end{equation}</div>
+</div>

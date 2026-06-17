@@ -1,0 +1,33 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Part (1) follows from two observations: 
+    <p>
+      <ul>
+  <li><div class="equation">
+  \[  \sum w^{-1}x_ i\otimes x^ i= \sum x_ i\otimes x^ i w^{-1}= \sum x_ i\otimes w^{-1}x^ i  \]
+</div>
+<p>
+ (the first identity uses the centrality of $e$, the second uses the fact that $w^{-1}$ is central). This shows that replacing a choice of edge $r(v)$ by the same edge but with opposite orientation does not change the vector $w^{-1}_ ve_ M$ and thus, does not change $Z_ A(M,K)$. 
+</p>
+</li><li><p>
+If $r_ i$, $r_{i+1}$ are two edges of the boundary of some cell $F$ both adjacent to vertex $v$, as shown below, then replacing $r(v)=r_ i$ by $r(v)= r_{i+1}$ does not change the composition $\Bigl (\bigotimes _ F \langle  \,  \rangle _ F\Bigr )w^{-1}_ v$ and thus, does not change $Z_ A(M,K)$. Indeed, it follows from $\langle \dots , a_{i}w^{-1}, a_{i+1}, \dots \rangle  = \langle \dots , a_{i}, w^{-1}a_{i+1}, \dots \rangle $. 
+</p>
+<div class="centered"> <img class="includegraphics" src="figures/c12-fig02.svg" /> </div>
+</li>
+</ul>
+    <p>
+       By using these two operations, we can replace any oriented edge adjacent to $v$ by any other edge. This proves part (1) of the theorem. 
+    <p>
+      To prove part (2), we need to verify that $Z_ A(M,K)$ is invariant under elementary moves described in Figure&#160;<a href="/tag/008D" data-tag="008D">11.3.2</a>. 
+    <p>
+      Invariance under subdivision of a 2-cell follows from (<a href="/tag/008K" data-tag="008K">12.1.2</a>). 
+    <p>
+      Invariance under subdivision of a 1-cell follows from 
+    <p>
+      <div class="centered"><img class="includegraphics" src="figures/c12-fig03.svg" /></div>
+    <p>
+       where the red dot stands for the operator of multiplication by $w^{-1}$ (which comes from the operator $w^{-1}_ v$ for the newly added vertex). But this is immediate from the definition: indeed, comultiplication is given by $\Delta (a)=\sum a x_ i \otimes x^ i$, so the composition in the left-hand side is $a\mapsto \sum a x_ i w^{-1}x^ i=a$. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

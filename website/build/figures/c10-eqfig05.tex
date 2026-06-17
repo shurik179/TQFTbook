@@ -1,0 +1,39 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{aligned}
+\text{0d generators:}& \qquad
+  \begin{tikzpicture}
+    \node[dotnode] (plus) at (0, 0) {};
+      \node[above, scale=0.8] at (plus){$+$};
+    \node[dotnode] (minus) at (1, 0) {};
+      \node[above, scale=0.8] at (minus) {$-$};
+  \end{tikzpicture}\\[5pt]
+  \text{1d generators:}& \qquad
+  \begin{tikzpicture}[vcenter]
+      \draw (-6.6, -.5) -- (-6.5, -.5) arc (90: -90: 0.3cm and 0.1cm);
+      \draw (-5.5, -.5) arc (90: 270: 0.3cm and 0.1cm) -- (-5.4, -.7);
+      \node[scale=0.7] at (-6.8, -.5) {$+$};
+      \node at (-6.7, -.7) {-};
+      \node[scale=0.7] at (-5.3, -.5) {$+$};
+      \node at (-5.2, -.7) {-};
+  \end{tikzpicture}\\
+  \text{2d generators: cusps}& \qquad
+  \begin{tikzpicture}[cobheight=0.8cm]
+    \pic {cusp1};
+    \pic at (2,0) {cusp2};
+  \end{tikzpicture}\\
+  \text{2d generators: saddles}& \qquad
+  \begin{tikzpicture}[cobheight=0.8cm]
+    \pic at (0,0) {saddle};
+    \pic at (2,0) {revsaddle};
+  \end{tikzpicture}\\
+  \text{2d generators: cap and cup}& \qquad
+  \begin{tikzpicture}
+    \pic at (0,0) {cap};
+    \pic at (1,0.3) {cup};
+  \end{tikzpicture}
+\end{aligned}
+$
+\end{document}

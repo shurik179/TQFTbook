@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 4.3.2. Cerf moves in dimension 2 and the corresponding algebraic identities</figcaption>

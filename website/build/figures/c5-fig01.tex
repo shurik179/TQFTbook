@@ -1,0 +1,30 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+    % multiplication
+    \node[dotnode] (A) at (0,0){};
+    \draw (-0.3,0.7)--(A);
+    \draw (0.3,0.7)--(A);
+    \draw (A) -- (0,-0.7);
+    \node[scale=0.8] at (0,-1) {$m\colon A\otimes A\to A$};
+    % comultiplication
+    \node[dotnode] (B) at (2.2,0){};
+    \draw (2.2,0.7)--(B);
+    \draw (B)--(1.9,-0.7);
+    \draw (B)--(2.5,-0.7);
+    \node[scale=0.8] at (2.2,-1) {$\Delta\colon A\to A\otimes A$};
+    % unit
+    \node[dotnode] (C) at (3.9,0.4){};
+    \draw (C)--+(0,-1);
+    \node[scale=0.8] at (3.9,-1) {$i\colon \kk \to A$};
+    % counit
+    \node[dotnode] (D) at (5.5,-0.4){};
+    \draw (D)--+(0,1);
+    \node[scale=0.8] at (5.5,-1) {$\eps\colon A\to \kk$};
+    % permutation
+    \draw (7.5,0.7)--(8.3,-0.7);
+    \draw (8.3,0.7)--(7.5,-0.7);
+    \node[scale=0.8] at (7.9, -1) {$P\colon A\otimes A\to A\otimes A$};
+  \end{tikzpicture}
+\end{document}
