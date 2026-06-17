@@ -48,8 +48,12 @@ On the Web tab, **Virtualenv** section, enter:
 ### 6. Set the WSGI file
 On the Web tab, click the **WSGI configuration file** link (opens an editor for
 `/var/www/USERNAME_pythonanywhere_com_wsgi.py`). Delete everything and paste the
-contents of `deploy/pythonanywhere_wsgi.py` from this repo, then change the
-`USERNAME = "USERNAME"` line to your username. Save.
+contents of `deploy/pythonanywhere_wsgi.py` from this repo, then:
+- change the `USERNAME = "USERNAME"` line to your username, and
+- set `GERBY_ADMIN_PASSWORD` to a real password (enables the comment-moderation
+  page; the secret stays in this file, which is outside the repo).
+
+Save.
 
 ### 7. (Optional but recommended) serve static files directly
 Still on the Web tab, **Static files** section, add:
@@ -80,9 +84,12 @@ git-ignored, so updates never overwrite reader comments.
 
 - **Free-tier renewal:** PA disables free web apps every ~3 months unless you
   click the "Run until 3 months from today" button on the Web tab. Set a reminder.
-- **Comment moderation (no SSH on free):** in a PA Bash console,
-  `~/TQFTbook/website/venv/bin/python ~/TQFTbook/website/moderate.py`
-  (list / hide / delete spam — same tool you use locally).
+- **Comment moderation:** browse to `https://USERNAME.pythonanywhere.com/admin/comments`
+  (HTTP Basic auth — user `admin`, the `GERBY_ADMIN_PASSWORD` you set in the WSGI
+  file). Shows every comment with Hide / Show / Delete. If you left the password
+  unset, the page returns 404 (disabled). The console tool still works as a
+  fallback: `~/TQFTbook/website/venv/bin/python ~/TQFTbook/website/moderate.py`.
+  To use the web admin locally: `GERBY_ADMIN_PASSWORD=... ./serve.sh`.
 - **"Recent commits" panel:** the homepage fetches a GitHub feed with a 5 s
   timeout and fails soft — if PA's outbound whitelist blocks it, the page still
   loads, just without that panel.

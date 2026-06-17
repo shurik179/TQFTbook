@@ -7,11 +7,18 @@
 #
 # (The virtualenv is set separately in the Web tab's "Virtualenv" field, not here.)
 
+import os
 import sys
 
 USERNAME = "USERNAME"                                   # <-- edit this
 WEBSITE  = "/home/%s/TQFTbook/website" % USERNAME        # repo cloned at ~/TQFTbook
 GERBY    = WEBSITE + "/repos/gerby-website"
+
+# Comment-moderation page at /admin/comments. Set a password to enable it (this
+# file lives outside the repo, so the secret is not committed). Leave the
+# password blank/unset to disable the admin page entirely.
+os.environ["GERBY_ADMIN_USER"] = "admin"                # optional, defaults to "admin"
+os.environ["GERBY_ADMIN_PASSWORD"] = "CHANGE-ME"        # <-- set a real password
 
 for p in (GERBY, WEBSITE):                               # make `gerby` + website_paths importable
     if p not in sys.path:

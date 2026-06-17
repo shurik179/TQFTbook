@@ -195,6 +195,7 @@ import gerby.views.bibliography
 import gerby.views.comments
 import gerby.views.search
 import gerby.views.tag
+import gerby.views.admin
 
 
 #flask_profiler.init_app(app)

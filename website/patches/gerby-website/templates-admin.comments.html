@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}Comment moderation{% endblock %}
+
+{% block head %}
+<style>
+  table.admin-comments { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+  table.admin-comments th, table.admin-comments td {
+    border: 1px solid #ccc; padding: 0.4em 0.6em; vertical-align: top; text-align: left;
+  }
+  table.admin-comments th { background: #f4f0ea; }
+  table.admin-comments tr.is-hidden { background: #f7e9e9; color: #777; }
+  table.admin-comments td.comment-text { max-width: 28em; white-space: pre-wrap; word-wrap: break-word; }
+  table.admin-comments form { display: inline; margin: 0; }
+  table.admin-comments button { cursor: pointer; margin: 0 0.1em; }
+  .admin-status-hidden { color: #b00; font-weight: bold; }
+</style>
+{% endblock %}
+
+{% block body %}
+  <h1>Comment moderation</h1>
+  <p>{{ comments|length }} comment(s), newest first. Hidden comments are not shown
+     to the public; Delete removes a comment permanently.</p>
+
+  {% if comments %}
+  <table class="admin-comments">
+    <tr>
+      <th>#</th><th>Date</th><th>Tag</th><th>Author</th><th>Comment</th>
+      <th>Status</th><th>Actions</th>
+    </tr>
+    {% for c in comments %}
+    <tr class="{% if not c.active %}is-hidden{% endif %}">
+      <td>{{ c.id }}</td>
+      <td>{{ c.date.strftime("%Y-%m-%d %H:%M") }}</td>
+      <td><a href="/tag/{{ c.tag }}#comment-{{ c.id }}">{{ c.tag }}</a></td>
+      <td>{{ c.author }}{% if c.email %}<br><small>{{ c.email }}</small>{% endif %}
+          {% if c.site %}<br><small>{{ c.site }}</small>{% endif %}</td>
+      <td class="comment-text">{{ c.comment }}</td>
+      <td>{% if c.active %}visible{% else %}<span class="admin-status-hidden">hidden</span>{% endif %}</td>
+      <td>
+        {% if c.active %}
+        <form method="post" action="/admin/comments/{{ c.id }}/hide">
+          <input type="hidden" name="csrf" value="{{ csrf }}"><button>Hide</button></form>
+        {% else %}
+        <form method="post" action="/admin/comments/{{ c.id }}/show">
+          <input type="hidden" name="csrf" value="{{ csrf }}"><button>Show</button></form>
+        {% endif %}
+        <form method="post" action="/admin/comments/{{ c.id }}/delete"
+              onsubmit="return confirm('Permanently delete comment {{ c.id }}?');">
+          <input type="hidden" name="csrf" value="{{ csrf }}"><button>Delete</button></form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p><em>No comments yet.</em></p>
+  {% endif %}
+{% endblock %}
