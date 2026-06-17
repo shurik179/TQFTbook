@@ -6,7 +6,7 @@ Everything lives under `website/`. **No files in `source/` were
 ever modified** — all work is on copies in `website/build/`.
 
 **All locations are configured in one place: `website/config.ini`** (TeX source
-dir, source filenames, the `partI.tex` wrapper, server port, and the machine TeX
+dir, source filenames, the `book.tex` wrapper, server port, and the machine TeX
 toolchain PATH). `website_paths.py` reads it and every script imports from there,
 so there are NO hardcoded absolute paths — the whole `website/` tree is
 relocatable: move it and `python3 build_site.py` / `./serve.sh` still work (the
@@ -42,7 +42,7 @@ python3 build_site.py              # rebuild everything, then (re)start the serv
 python3 build_site.py --no-serve   # rebuild only
 python3 build_site.py --keep-figures  # skip recompiling TikZ (fast; if no figures changed)
 ```
-It reads `build/partI.tex` for the chapter list/order (edit partI.tex to add
+It reads `build/book.tex` for the chapter list/order (edit book.tex to add
 chapters/parts), auto-labels unlabeled sections, converts `\ocite`->`\cite`,
 extracts+builds figures, converts the bibliography, tags (APPEND-only so tag URLs
 stay permanent), renders, post-processes, rebuilds the DB, and serves. It does
@@ -77,8 +77,8 @@ MUST stay separate:
 
 ## Build recipe (multi-chapter — this is the current Part I flow)
 
-The master wrapper is **`build/partI.tex`** (book class + porting stubs + the
-`\part`/`\include`s). Output dir = `build/partI/`. From `website/build/`:
+The master wrapper is **`build/book.tex`** (book class + porting stubs + the
+`\part`/`\include`s). Output dir = `build/book/`. From `website/build/`:
 
 ```bash
 source ../venv-tex/bin/activate
@@ -86,7 +86,7 @@ SRC=../../source
 
 # 1. fresh source copies + labeling fixes (every \section needs a \label;
 #    Gerby splits pages at *labeled* units). e.g. add labels to unlabeled
-#    sections; label the \part in partI.tex.
+#    sections; label the \part in book.tex.
 for f in c1-motivation c2-categories c3-cobordisms; do cp $SRC/$f.tex $f-src.tex; done
 # ...add \label to any unlabeled \section in the -src.tex copies...
 # convert amsrefs citations to plasTeX \cite (in each -src.tex):
@@ -103,35 +103,35 @@ for f in c1-motivation c2-categories c3-cobordisms; do python extract_figs.py $f
 # 3. compile all figures to correctly-sized SVG (pdflatex -> pdftocairo)
 ./build_figs.sh
 
-# 4. assign permanent tags by scanning ALL chapter bodies + partI.tex in order
-#    (tagger.py now takes filenames as args; the \part label lives in partI.tex)
+# 4. assign permanent tags by scanning ALL chapter bodies + book.tex in order
+#    (tagger.py now takes filenames as args; the \part label lives in book.tex)
 rm -f tags
-python tagger.py partI.tex c1-motivation-src-gerby.tex c2-categories-src-gerby.tex c3-cobordisms-src-gerby.tex >> tags
+python tagger.py book.tex c1-motivation-src-gerby.tex c2-categories-src-gerby.tex c3-cobordisms-src-gerby.tex >> tags
 
 # 5. render the whole thing in ONE plasTeX run (correct cross-chapter numbering)
-rm -rf partI partI.paux
-plastex --renderer=Gerby --config=gerby.cfg partI.tex
+rm -rf book book.paux
+plastex --renderer=Gerby --config=gerby.cfg book.tex
 
 # 6. point img src at served location, deploy SVGs, drop the .bib in the output
-sed -i '' 's#src="figures/#src="/static/figures/#g' partI/*.tag
+sed -i '' 's#src="figures/#src="/static/figures/#g' book/*.tag
 cp figures/*.svg ../repos/gerby-website/gerby/static/figures/
-cp tqft.bib partI/          # update.py reads .bib from PATH -> /bibliography + cite links
+cp tqft.bib book/          # update.py reads .bib from PATH -> /bibliography + cite links
 # replace raw cite keys with the PDF's alphabetic labels (e.g. [EGNO2015]),
 # read from the compiled .aux (\bibcite{key}{{LABEL}{}}):
-python apply_cite_labels.py $SRC/TQFTbook.aux partI
+python apply_cite_labels.py $SRC/TQFTbook.aux book
 
-# 7. rebuild SQLite DB (WEBSITE venv) and restart  (config PATH/PAUX -> partI)
+# 7. rebuild SQLite DB (WEBSITE venv) and restart  (config PATH/PAUX -> book)
 cd .. ; source venv/bin/activate
 rm -f site/tqft.sqlite
 python repos/gerby-website/gerby/tools/update.py
 pkill -f "flask run"; ./serve.sh
 ```
 
-**partI.tex render-preamble notes (important, reusable for more parts):**
+**book.tex render-preamble notes (important, reusable for more parts):**
 - Drops mathtools/euscript/amsrefs/imakeidx; stubs `\xRightarrow`, `\coloneqq`,
   `\mathscr`, `\ocite`, `\cite`.
 - **Cross-ref fix:** `definitions.tex`'s `\chref`/`\seref`/`\thref`/... use
-  `\ref*` (hyperref starred), which plasTeX renders empty. partI.tex
+  `\ref*` (hyperref starred), which plasTeX renders empty. book.tex
   `\renewcommand`s them all to plain `\ref` (Gerby turns that into a tag link).
   Also `\eqref` -> `(\ref{#1})` (plasTeX's `\eqref` renders the raw label).
 - **Numbering:** `\numberwithin{equation|table|figure}{section}` matches the
@@ -190,7 +190,7 @@ lost on a reinstall. Copies are in `website/patches/` — re-apply if rebuilt.
 
 ## Open TODOs (for the full book)
 
-1. **Add the remaining parts/chapters** using the same `partI.tex` recipe
+1. **Add the remaining parts/chapters** using the same `book.tex` recipe
    (add `\include`s + `\part{..}\label{..}`, re-run extract/build/tag/render).
    Remember: label every section (Gerby splits pages at labeled units).
 2. **Bibliography for later chapters**: re-run `amsrefs2bib.py` (it converts the
@@ -218,7 +218,7 @@ tweaks, Kerodon restyle, **bibliography (amsrefs->BibTeX) + working citations**.
   all of the below). Run `python3 build_site.py`.
 - `build/amsrefs2bib.py` — converts amsrefs `bibliography.tex` -> `tqft.bib` (BibTeX).
 - `build/apply_cite_labels.py` — rewrites cite display text from raw keys to the
-  PDF's alphabetic labels (from `TQFTbook.aux`); run on `partI/*.tag` post-render.
+  PDF's alphabetic labels (from `TQFTbook.aux`); run on `book/*.tag` post-render.
 - `build/extract_figs.py` — TikZ extractor (comment-aware; swallows equation wrappers).
 - `build/build_figs.sh` — figure → SVG (pdflatex + pdftocairo), then scales each
   SVG's width/height by `FIGSCALE` (=1.25) to match the website text size. Tune

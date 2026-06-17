@@ -13,7 +13,7 @@ It does NOT touch the static/branding parts (logo, About page, GitHub links,
 templates, CSS) -- those are configured once in the website and left alone.
 
 What it does, in order:
-  1. read build/partI.tex to learn the chapter list + order (edit partI.tex to
+  1. read build/book.tex to learn the chapter list + order (edit book.tex to
      add chapters/parts);
   2. copy each chapter from the monograph, auto-label unlabeled sections, turn
      amsrefs \\ocite into \\cite, drop unnumbered \\chapter* headings;
@@ -184,7 +184,7 @@ gerby_chapters = [b + "-src-gerby.tex" for b in includes]
 with open(os.path.join(BUILD, "tags"), "a") as f:
     subprocess.run([VENVTEX_PY, "tagger.py", MASTER] + gerby_chapters,
                    cwd=BUILD, stdout=f, check=True)
-outdir = os.path.splitext(MASTER)[0]                 # partI
+outdir = os.path.splitext(MASTER)[0]                 # book
 shutil.rmtree(os.path.join(BUILD, outdir), ignore_errors=True)
 for p in glob.glob(os.path.join(BUILD, outdir + ".paux")):
     os.remove(p)

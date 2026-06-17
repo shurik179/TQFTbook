@@ -225,10 +225,10 @@ is now the user's own entries.)
 
 ## Multi-chapter conversion: preface + Part I (DONE; preface omitted)
 Scaled from 1 chapter to Part I (c1/c2/c3) rendered in ONE plasTeX run via
-`build/partI.tex`. New machinery & fixes:
+`build/book.tex`. New machinery & fixes:
 - `extract_figs.py` namespaces figures per chapter (`c2-fig01`, `c3-fig01`);
   `build_figs.sh` globs `*-fig*.tex`; `tagger.py` takes filenames as args.
-- Render preamble (`partI.tex`): redefine `\chref/\seref/\thref/...` to plain
+- Render preamble (`book.tex`): redefine `\chref/\seref/\thref/...` to plain
   `\ref` (they used `\ref*` -> empty); add `\numberwithin{equation|table|figure}{section}`.
 - `\part{...}\label{...}` -> proper tagged part page; part-overview `\chapter*`
   heading stripped so its text is the part intro.
@@ -311,7 +311,7 @@ Backup: `patches/gerby-renderer/Math.jinja2s`.
 ## \eqref renders raw label (FIXED)
 plasTeX's `\eqref{x}` output the raw label text (e.g. "e:1d-tqft-rigidity")
 instead of "(3.2.1)". Plain `\ref` works (resolves equation labels too), so
-partI.tex now `\renewcommand{\eqref}[1]{(\ref{#1})}`. Fixes all ~86 `\eqref`
+book.tex now `\renewcommand{\eqref}[1]{(\ref{#1})}`. Fixes all ~86 `\eqref`
 across the book.
 
 ## Bibliography: amsrefs -> BibTeX (DONE)
@@ -325,10 +325,10 @@ Gerby ingests the bibliography with pybtex (BibTeX only); the source was amsrefs
    The monograph's amsrefs `bibliography.tex` is left untouched (PDF still uses it).
 2. Citations: converted `\ocite{k}*{loc}` -> `\cite[loc]{k}` and `\ocite{k}` ->
    `\cite{k}` in the chapter `-src.tex` (perl). Removed the old `[key]` `\ocite`/
-   `\cite` stubs from `partI.tex` so plasTeX's real `\cite` (Gerby cite template)
+   `\cite` stubs from `book.tex` so plasTeX's real `\cite` (Gerby cite template)
    is used -> renders `[<a href="/bibliography/key">key</a>]`, with `*{loc}`
    becoming the postnote.
-3. `build/tqft.bib` is copied into the render output dir (`partI/`) before
+3. `build/tqft.bib` is copied into the render output dir (`book/`) before
    `update.py`, which reads `.bib` from PATH (pybtex) to populate the
    `/bibliography` page and links the in-text citations.
 Result: `/bibliography` lists all 96 (grouped by author, alpha index), entry
@@ -347,7 +347,7 @@ Backup: `patches/gerby-website/templates-bibliography.entry.html`.
 In-text citations showed the raw bibkey ([etingof-fusion]); the PDF shows
 amsrefs alphabetic labels ([EGNO2015]). The exact labels are in the compiled
 `TQFTbook.aux` (`\bibcite{key}{{LABEL}{}}`). `build/apply_cite_labels.py` reads
-that map and rewrites the *display text* of cite anchors in `partI/*.tag`
+that map and rewrites the *display text* of cite anchors in `book/*.tag`
 (`<a href="/bibliography/KEY">KEY</a>` -> `...>LABEL</a>`), leaving the href=key
 intact (so `makeInternalCitations`, which keys off the href, still links). Run
 post-render, pre-`update.py`. No key renaming needed. (Only the in-text display
@@ -413,7 +413,7 @@ heading to expand. Backups in patches/gerby-website-static/.
 
 ## Whole-book build: all 5 parts / 20 chapters (DONE)
 Extended the conversion from Part I to the entire book by rewriting the build
-wrapper `build/partI.tex` to `\part`+`\include` all 5 parts and chapters c1-c20
+wrapper `build/book.tex` to `\part`+`\include` all 5 parts and chapters c1-c20
 (part overviews p1/p2/p3 exist; there is NO p4-overview.tex). `build_site.py`
 drives the rest unchanged. Result: 5 parts, 20 chapters, 479 tags, 122/122
 figures. Part labels: p:basic-definitions, p:2d, p:cobordism-hypothesis,

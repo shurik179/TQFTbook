@@ -32,7 +32,7 @@ PDF     = _cfg["source_files"]["pdf"]
 
 # --- the render wrapper + server settings -------------------------------------
 MASTER  = _cfg["build"]["master"]
-OUTDIR  = os.path.splitext(MASTER)[0]                       # e.g. "partI"
+OUTDIR  = os.path.splitext(MASTER)[0]                       # e.g. "book"
 PORT    = _cfg["server"]["port"]
 TEX_BIN = _cfg.get("tools", "tex_bin", fallback="")
 
