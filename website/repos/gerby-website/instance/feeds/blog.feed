@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Stacks Project Blog</title>
+	<atom:link href="https://www.math.columbia.edu/~dejong/wordpress/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>https://www.math.columbia.edu/~dejong/wordpress</link>
+	<description>Algebraic stacks and open source algebraic geometry</description>
+	<lastBuildDate>Tue, 26 May 2026 11:58:05 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0</generator>
+	<item>
+		<title>Stacks project website slow</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=5022</link>
+					<comments>https://www.math.columbia.edu/~dejong/wordpress/?p=5022#respond</comments>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Fri, 22 May 2026 15:57:16 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=5022</guid>
+
+					<description><![CDATA[We&#8217;re having problems with bots hammering the site. For example since this morning we&#8217;ve got 65 thousand requests for bibliography items (and it isn&#8217;t noon yet). As we have only 700 bibliography entries, this means there are more than 90 &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=5022">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;re having problems with bots hammering the site. For example since this morning we&#8217;ve got 65 thousand requests for bibliography items (and it isn&#8217;t noon yet). As we have only 700 bibliography entries, this means there are more than 90 bots each requesting the entire bibliography &#8212; some kind of botnet that&#8217;s going wild.</p>
+<p>While these idiotic bibliography requests are a new problem, heavy traffic due to bots is not a new problem. It&#8217;s frustrating as any smart web-crawler would understand that all the information could be obtained by downloading the entire stacks project from github in one fell swoop. An example is 36K requests from openai/bot just today; more than 10% of our traffic (although these weren&#8217;t causing the problem we had).</p>
+<p>Meanwhile I apologize to any humans still reading the Stacks Project!</p>
+<p>PS: We had to temporarily block access to the bibliography pages.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://www.math.columbia.edu/~dejong/wordpress/?feed=rss2&#038;p=5022</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Update</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=5018</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Fri, 30 Jan 2026 18:55:48 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=5018</guid>
+
+					<description><![CDATA[OK, I went through all of the comments and we have a brand new version of the Stacks project. Enjoy!]]></description>
+										<content:encoded><![CDATA[<p>OK, I went through all of the comments and we have a brand new version of the Stacks project. Enjoy!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nonflat deformation theory</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=5010</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Sun, 25 Jan 2026 15:00:48 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=5010</guid>
+
+					<description><![CDATA[This is just a quick note so if people google this issue they see that one needs to be careful (I think there are some positive things in the literature in special situations). Let k be a field. Let R &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=5010">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This is just a quick note so if people google this issue they see that one needs to be careful (I think there are some positive things in the literature in special situations).</p>
+<p>Let k be a field. Let R be an algebra over k. Let M be an R-module.</p>
+<p>For an Artinian local k-algebra (A, m) with residue field k denote F(A) the set of isomorphism classes of pairs (M_A, phi) where M_A is an R \otimes_k A module and phi is an isomorphism of M_A/m M_A with M.</p>
+<p>The functor F satisfies condition H1 of Schlessinger&#8217;s paper as one can see by using <a href="https://stacks.math.columbia.edu/tag/07RU">07RU</a>. Details omitted.</p>
+<p>However, the functor F doesn&#8217;t satisfy condition H2 in general. As an example, with notation as in <a href="https://www.ams.org/journals/tran/1968-130-02/S0002-9947-1968-0217093-3/S0002-9947-1968-0217093-3.pdf">Schlessinger</a>&#8216;s Theorem 2.11, take R = k, M = k, A = k, A&#8217; = k[epsilon_1], and A&#8221; = k[epsilon_2] where the epsilon have square zero. Then A&#8217; &times;<sub>A</sub> A&#8221; = k[epsilon_1, epsilon_2]/(epsilon_i epsilon_j) and we see that the modules M(c) = A&#8217; &times;<sub>A</sub> A&#8217;/(epsilon_1 &#8211; c epsilon_2] for any nonzero c in k map to the same elements of F(A&#8217;) and F(A&#8221;) for all c. But these modules are all pairwise nonisomorphic.</p>
+<p>So of course(!) the functor F in the special case doesn&#8217;t have a hull.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>de Rham cohomology of an Artinian ring</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4986</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Sun, 28 Sep 2025 14:37:22 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4986</guid>
+
+					<description><![CDATA[I wanted to just present an explicit example of a nonvanishing higher de Rham cohomology group of the spectrum of an Artinian finite dimensional C-algebra. Consider an element f of C[x, y] where C is the complex numbers. Let &#969; &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4986">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I wanted to just present an explicit example of a nonvanishing higher de Rham cohomology group of the spectrum of an Artinian finite dimensional C-algebra.</p>
+<p>Consider an element f of C[x, y] where C is the complex numbers. Let &omega; be a 1-form in x, y such that</p>
+<blockquote><p>d(&omega;) = f d(x) &wedge; d(y)</p></blockquote>
+<p>Such a form always exists by the Poincare lemma for C[x, y]. The form &omega; will give a nonzero cohomology class in the de Rham complex of A = C[x, y]/(f) unless we can write</p>
+<blockquote><p>&omega; = d(h) + gd(f) + f &eta;</p></blockquote>
+<p>for some h, g in C[x,y] and 1 form &eta;. Taking d of this relation we find that one needs to have a g and &eta; such that</p>
+<blockquote><p>f d(x) &wedge; d(y) = d(g) &wedge; d(f) + f d(&eta;) + d(f) &wedge; &eta;</p></blockquote>
+<p>This means that with &theta; = &eta; &#8211; d(g) we have</p>
+<blockquote><p>f d(x) &wedge; d(y) = f d(&theta;) + d(f) &wedge; &theta; = d(f&theta;)</p></blockquote>
+<p>If we write &theta; = a d(x) + b d(y) then this gives</p>
+<blockquote><p>(*) f = &#8211; &part;(fa)/&part; y + &part;(fb)/&part; x</p></blockquote>
+<p>Now we consider an example due to Reiffen. It is carefully written out in the second appendix of <a href="https://arxiv.org/abs/2505.03978">2505.03978</a> that (*) doesn&#8217;t have a solution if f = x^4 + y^5 + x y^4 (see proof of B.8). In fact, the proof shows that there cannot even be a, b in C[x, y] such that (*) holds modulo the maximal ideal (x, y) to the power 6.</p>
+<p><strong>Artinian Example.</strong> Let B = C[x, y]/(x^4 + y^5 + x y^4, x^100, y^100). Then the de Rham complex &Omega;^*_{B/C} has cohomology in degree 1. Namely, take the form &omega; above. If it maps to zero in H^1(&Omega;^*_{B/C}) then the reader goes through the arguments above and shows that one gets a solution to (*) modulo (x, y)^6 which is a contradiction.</p>
+<p>I would welcome a reference for examples of this type (please email me; I will edit the post and put it here). We already have some references to related material in <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4946">Infinite dimensional de Rham cohomology</a>.</p>
+<p>Enjoy!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Surjective map from affine space</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4980</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Thu, 25 Sep 2025 22:32:07 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4980</guid>
+
+					<description><![CDATA[Recording 2 examples here. The first is to consider for n > 1 the map A^n &#8212;> P^n, (x_1, &#8230;, x_n) maps to (x_1x_2&#8230;x_n : x_1 &#8211; 1 : &#8230; : x_n &#8211; 1) This map is quasi-finite and flat, &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4980">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Recording 2 examples here.</p>
+<p>The first is to consider for n > 1 the map</p>
+<blockquote><p>A^n &#8212;> P^n, (x_1, &#8230;, x_n) maps to (x_1x_2&#8230;x_n : x_1 &#8211; 1 : &#8230; : x_n &#8211; 1)</p></blockquote>
+<p>This map is quasi-finite and flat, but it is not surjective as the points (1:1:0&#8230;0), (1:0:1:0&#8230;0), &#8230;, (1:0&#8230;0:1) are missing in the image. If we take as homogeneous coordinates on P^n the variables T_0, &#8230;, T_n then the inverse image of T_1 + &#8230; + T_n = 0 is the hyperplane x_1 + &#8230; + x_n = n in A^n. Thus we see</p>
+<blockquote><p>There is a surjective quasi-finite flat morphism A^{n &#8211; 1} &#8212;> P^{n &#8211; 1}.</p></blockquote>
+<p>The map we constructed has degree n and that is also the minimum possible.</p>
+<p>The second example is to consider for n > 1 the map</p>
+<blockquote><p>A^n &#8212;> A^n &#8211; {0}, (x_1,&#8230;,x_n) maps to (x_1, &#8230;, x_{n &#8211; 2}, x_{n &#8211; 1}x_n &#8211; 1, f)</p></blockquote>
+<p>where</p>
+<blockquote><p>f = x_1x_{n &#8211; 1}^{n &#8211; 1} + &#8230; + x_{n &#8211; 3}x_{n &#8211; 1}^3 + x_{n &#8211; 2}x_{n &#8211; 1}^2  + x_{n &#8211; 1}(x_{n &#8211; 1}x_n &#8211; 1) + x_n</p></blockquote>
+<p>This map is surjective, quasi-finite flat of degree n (and again that&#8217;s minimal).</p>
+<p>Enjoy!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The theorem on formal functions</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4968</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Fri, 15 Aug 2025 20:32:41 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4968</guid>
+
+					<description><![CDATA[Let A be a ring and let I be an ideal of A. Let (X, O_X) be a space with a sheaf of A-algebras (or X could be a site). Let F be a sheaf of O_X-modules. Set F_n = &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4968">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Let A be a ring and let I be an ideal of A. Let (X, O_X) be a space with a sheaf of A-algebras (or X could be a site). Let F be a sheaf of O_X-modules. Set F_n = F/I^{n + 1}F. Then we can ask whether the theorem on formal functions holds in the naive form that</p>
+<blockquote><p>lim H^p(X, F)/I^nH^p(X, F) = lim H^p(X, F_n)</p></blockquote>
+<p>As is shown in EGA this holds if X is a proper scheme over A, the ring A is Noetherian, and F is coherent. Let me give a proof using derived completion for those who&#8217;ve not encountered this before.</p>
+<p>STEP 1: Cohomology commutes with derived completion. If I is finitely generated, then we have</p>
+<blockquote><p>R&Gamma;(X, F)^ = R&Gamma;(X, F^)</p></blockquote>
+<p>where the wedge means derived I-adic completion on both sides, see <a href="https://stacks.math.columbia.edu/tag/0BLX">Tag 0BLX</a></p>
+<p>STEP 2: Derived completion versus &#8220;usual&#8221; completion. Provided that X has enough opens that look like spectra of Noetherian rings and F is coherent, then we have that F^ = Rlim F_n. See for example <a href="https://stacks.math.columbia.edu/tag/0A0K">Tag 0A0K</a>. Similarly, if A is Noetherian and the cohomology modules H^p(X, F) are finite A-modules, then the cohomology modules of R&Gamma;(X, F)^ are the usual naive I-adic completions of the H^p(X, F), see <a href="https://stacks.math.columbia.edu/tag/0BKH">Tag 0BKH</a>.</p>
+<p>STEP 3: R&Gamma;(X, -) commutes with Rlim. See for example <a href="https://stacks.math.columbia.edu/tag/08U1">Tag 08U1</a> (actually we&#8217;ve already used this result in the first step).</p>
+<p>STEP 4: The pth cohomology of Rlim R&Gamma;(X, F_n) is lim H^p(X, F_n). To see this it suffices to show that the inverse system of modules H^p(X, F_n) has Mittag-Leffler (for all p). By <a href="https://stacks.math.columbia.edu/tag/0GYQ">Tag 0GYQ</a> it suffices to show that</p>
+<blockquote><p>H^p(X, F_1) &oplus; H^p(X, IF_2) &oplus; H^p(X, I^2F_3) &oplus; &#8230;</p></blockquote>
+<p>satisfies the ascending chain condition as a graded module over</p>
+<blockquote><p>Gr_I(A) = A/I &oplus; I/I^2 &oplus; I^2/I^3 &oplus; &#8230;</p></blockquote>
+<p>for all p. This holds as soon as X is proper over A Noetherian and F_0 is a coherent O_X-module (by finiteness of cohomology of coherent modules over proper schemes).</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>Note that if A is Noetherian and complete wrt I and X is a formal scheme proper over Spf(A) and if we have an inverse system (F_n) of coherent O_X-modules with F_{n &#8211; 1} = F_n/I^nF_n giving rise to the coherent O_X-module F = lim F_n then we obtain the same statement with the same proof (in this case completion on the left hand side of the theorem is unnecessary). Of course, it is debatable whether in this case one should really even be interested in the &#8220;usual&#8221; cohomology groups H^p(X, F)&#8230;</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Updated Stacks Project</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4965</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Tue, 05 Aug 2025 19:03:05 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4965</guid>
+
+					<description><![CDATA[OK, I went through all of the comments and we have a brand new version of the Stacks project. The last time we did this was on June 6, 2024. We now have more than 650 contributors. Enjoy!]]></description>
+										<content:encoded><![CDATA[<p>OK, I went through all of the comments and we have a brand new version of the Stacks project. The last time we did this was on June 6, 2024. We now have more than 650 contributors. Enjoy!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Infinite dimensional de Rham cohomology</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4946</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Thu, 17 Apr 2025 18:55:41 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4946</guid>
+
+					<description><![CDATA[Let X be an affine variety over a field k of characteristic 0. Then we have the algebraic de Rham complex Omega* of X over k. The algebraic de Rham cohomology H^*_{dR}(X/k) of X over k is then the cohomology &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4946">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Let X be an affine variety over a field k of characteristic 0. Then we have the algebraic de Rham complex Omega* of X over k. The algebraic de Rham cohomology H^*_{dR}(X/k) of X over k is then the cohomology of the complex of global sections of Omega* (here we are using that X is affine). So if X is the spectrum of the finite type k-algebra A (which is a domain as X is a variety), then we&#8217;re looking at the cohomology of the de Rham complex of A over k.</p>
+<p>If X is smooth over k, then Grothendieck proved that each H^i_{dR}(X/k) has finite dimension. The point of this blog post is to clearly state that this doesn&#8217;t hold for all singular affine varieties X over k. I could not find a paper literally stating this fact with an explicit example, so I decided to find one myself and present it to you. If someone emails me a reference I would be thankful and would add that here.</p>
+<p>A slightly different issue is that if k = C is the complex numbers and X is smooth, then H^i_{dR}(X/C) computes the cohomology of the manifold X(C) with C-coefficients and this is finite dimensional. Googling one easily finds examples where this is false for singular X. Indeed from the work in the references given below it becomes clear that there are many (explicit) examples.</p>
+<p><strong>Our example.</strong> Let k be any characteristic 0 field, let n > 6 be an integer, and let A be the k-algebra<br />
+<code> A = k[x, y, s, t, 1/(st - 1)]/(x^n + y^n + sx^{n - 2}y + t xy^{n - 2}) </code><br />
+Let us denote f the polynomial we&#8217;re dividing by.</p>
+<p>The idea for this came from an example by Brüske mentioned at the very end of Bloom and Herrera, <em>De Rham cohomology of an analytic space</em>, Invent. Math. 7 (1969), 275–296. The purported example is of a singular analytic space where a stalk of the de Rham cohomology sheaf in the analytic topology is infinite dimensional; I didn&#8217;t check the example.</p>
+<p>In Reiffen <em>Das Lemma von Poincaré für holomorphe Differential-formen auf komplexen Räumen</em>, Math. Z. 101 (1967), 269–284 we find a method to calculate a quotient (!) of the degree 3 de Rham cohomology of X = Spec(A). This quotient itself is the quotient of the k-vector space (f) = fA by the elements bf in (f) of the form<br />
+<code> bf = &part;(g_1f)/&part;x + &part;(g_2f)/&part;y + &part;(g_3f)/&part;s + &part;(g_4f)/&part;t. </code><br />
+Here is a link to a pdf with a short, but hopefully readable, proof that this quotient has infinite dimension: <a href="https://www.math.columbia.edu/~dejong/wordpress/wp-content/uploads/2025/04/infinite-de-rham.pdf">infinite-de-rham</a></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Updated Stacks Project</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4941</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Thu, 06 Jun 2024 18:21:06 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4941</guid>
+
+					<description><![CDATA[OK, I went through all of the comments and we have a brand new version of the Stacks project. The last time we did this was on March 3, 2023. We now have more than 600 contributors. Enjoy!]]></description>
+										<content:encoded><![CDATA[<p>OK, I went through all of the comments and we have a brand new version of the Stacks project. The last time we did this was on <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4805">March 3, 2023</a>. We now have more than 600 contributors. Enjoy!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Postdoc position</title>
+		<link>https://www.math.columbia.edu/~dejong/wordpress/?p=4931</link>
+		
+		<dc:creator><![CDATA[Johan]]></dc:creator>
+		<pubDate>Mon, 02 Oct 2023 18:05:13 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.math.columbia.edu/~dejong/wordpress/?p=4931</guid>
+
+					<description><![CDATA[This is to advertise a 2 year research post-doc position with me here in the math dept at Columbia University. We have a very active and strong department and you will get to work with me (I hope that is &#8230; <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=4931">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This is to advertise a 2 year research post-doc position with me here in the math dept at Columbia University. We have a very active and strong department and you will get to work with me (I hope that is a plus for you). We are also close to the CUNY graduate school, NYU Courant institute, Rutgers University, Princeton University, the Institute of Advanced Study, Stony Brook University and the Simons Center, etc. Living in NYC isn&#8217;t bad either. <a href="https://www.mathjobs.org/jobs/list/23035">So apply on mathjobs here!</a></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

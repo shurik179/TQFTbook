@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block breadcrumb %}
+  <li><a href="/about">About</a>
+{% endblock %}
+
+{% block hamburger %}
+  {{ macros.singlePageLinks() }}
+{% endblock %}
+
+{% block body %}
+<h2>About</h2>
+
+<!-- PLACEHOLDER About page — edit freely. Drawn from the book preface. -->
+
+<p><em>Lectures on TQFT</em> is a set of online lecture notes on topological
+quantum field theory and, more generally, extended TQFT. They are based on a
+course taught by Alexander Kirillov at Stony Brook University in Spring 2026.
+<strong>This is a work in progress and is updated frequently.</strong>
+
+<p>A few quick facts:
+<ol>
+  <li><p>The notes aim to be a readable overview rather than a complete
+  treatment: in many places only a sketch of a definition or proof is given,
+  with references to the original papers for full details.
+  <li><p>They survey TQFT from its origins in physics and Atiyah's axioms,
+  through extended TQFT following the work of Lurie, and possibly to recent
+  developments related to factorization homology.
+  <li><p>The emphasis is on examples, including Dijkgraaf&ndash;Witten (finite
+  gauge) theory, 2d TQFT via symmetric Frobenius algebras (both through
+  generators and relations and through state sums), Turaev&ndash;Viro 3d
+  theory, and Crane&ndash;Yetter 4d / Chern&ndash;Simons 3d theory.
+  <li><p>They are meant to be <em>read online</em>: with hyperlinks and the
+  search function you can quickly browse to the definitions, lemmas, and
+  theorems that a given result depends on.
+  <li><p>We use <em>tags</em> as permanent identifiers for results, so that
+  external references stay valid even as the text is reorganized. You can read
+  more on the <a href="/tags">tags explained</a> page.
+</ol>
+
+<h2>Acknowledgements</h2>
+<!-- PLACEHOLDER — add funding / technical acknowledgements, or remove. -->
+<p>To be added.
+{% endblock %}
+
+{% block sidebar %}
+  {{ macros.singlePageLinks() }}
+{% endblock %}

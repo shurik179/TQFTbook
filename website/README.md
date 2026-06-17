@@ -67,6 +67,31 @@ lines), then rebuild.
 > But if you **recreate** Python on this machine or want truly self-contained
 > venvs, recreate the venvs at the new location rather than copying them.
 
+## Vendored forks (`repos/`) and our patches
+
+`repos/` contains two upstream projects, vendored (their `.git` directories were
+removed so they're tracked as plain files of this repo, not nested submodules):
+
+| folder | forked from | exact commit |
+| --- | --- | --- |
+| `repos/plastex` | <https://github.com/gerby-project/plastex> (branch `gerby`) | `a75473f890db3d21e3bf76430c5c1ffc0661a69a` |
+| `repos/gerby-website` | <https://github.com/gerby-project/gerby-website> (branch `master`) | `01b11bbbbd1a910bc997eb3d53bd1cd8c8de8652` |
+
+**Where our patches live:**
+
+- **`repos/gerby-website`** is edited **in place** — our changes to the Flask
+  app, templates, views, CSS/JS, and `configuration.py` are committed directly in
+  that folder.
+- **`repos/plastex` is left pristine.** plasTeX is *installed* into `venv-tex/`
+  (not run from this source tree), and our changes to its Gerby renderer (the
+  `*.jinja2s` templates) were applied to that installed copy. Since venvs are not
+  committed, those renderer edits — plus copies of every gerby-website edit and
+  the build scripts — are backed up in **`website/patches/`**
+  (`patches/gerby-renderer/` for the plasTeX renderer templates,
+  `patches/gerby-website*/` for the app/static files). Treat `patches/` as the
+  canonical record of "what we changed"; re-apply `patches/gerby-renderer/` into
+  `venv-tex/.../plasTeX/Renderers/Gerby/` after recreating that venv.
+
 ## Directory structure
 
 ```

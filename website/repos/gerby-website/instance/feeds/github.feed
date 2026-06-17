@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/shurik179/TQFTbook/commits/main</id>
+  <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commits/main"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/shurik179/TQFTbook/commits/main.atom"/>
+  <title>Recent Commits to TQFTbook:main</title>
+  <updated>2026-06-17T13:07:20Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/fb53d54252220e801c6f0bc6a80300e2badebdbf</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/fb53d54252220e801c6f0bc6a80300e2badebdbf"/>
+    <title>
+        restoring .tex files
+    </title>
+    <updated>2026-06-17T13:07:20Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;restoring .tex files&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/49a4755467c0b2f94cb1a87c99ee14cdc2ec5330</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/49a4755467c0b2f94cb1a87c99ee14cdc2ec5330"/>
+    <title>
+        logo files
+    </title>
+    <updated>2026-06-17T12:56:58Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;logo files&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/74f211c2cca3ff83fad30ad24fd075d738122113</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/74f211c2cca3ff83fad30ad24fd075d738122113"/>
+    <title>
+        Delete Source directory
+    </title>
+    <updated>2026-06-17T12:54:17Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Delete Source directory&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/8312397b57031c01ff4509584571a2ad2f382385</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/8312397b57031c01ff4509584571a2ad2f382385"/>
+    <title>
+        main file rename
+    </title>
+    <updated>2026-06-17T12:42:19Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;main file rename&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/3ce88fcc500da8cd6f931796a49178f28c0be9c5</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/3ce88fcc500da8cd6f931796a49178f28c0be9c5"/>
+    <title>
+        First commit
+    </title>
+    <updated>2026-06-17T12:28:09Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;First commit&lt;/pre&gt;
+    </content>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/c4e0e541829f831451202400a2b210f7606b1d24</id>
+    <link type="text/html" rel="alternate" href="https://github.com/shurik179/TQFTbook/commit/c4e0e541829f831451202400a2b210f7606b1d24"/>
+    <title>
+        Initial commit
+    </title>
+    <updated>2026-06-14T18:08:30Z</updated>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/12883611?s=30&amp;v=4"/>
+    <author>
+      <name>shurik179</name>
+      <uri>https://github.com/shurik179</uri>
+    </author>
+    <content type="html">
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Initial commit&lt;/pre&gt;
+    </content>
+  </entry>
+</feed>

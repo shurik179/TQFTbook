@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Preface{% endblock %}
+
+{% block breadcrumb %}
+  <li><a href="/preface">Preface</a>
+{% endblock %}
+
+{% block hamburger %}
+  {{ macros.singlePageLinks() }}
+{% endblock %}
+
+{% block body %}
+<h2>Preface</h2>
+{# Body is generated from c0-preface.tex by build_site.py and passed in by the
+   /preface route; do not edit by hand. #}
+{{ content | safe }}
+{% endblock %}
+
+{% block sidebar %}
+  {{ macros.singlePageLinks() }}
+{% endblock %}
