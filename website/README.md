@@ -78,6 +78,11 @@ All locations live in **`config.ini`** — edit it (nothing else) if things move
 Anything in the `[site]` section is available in templates as `{{ site.<key> }}`,
 so you can add your own keys and use them without touching template files.
 
+`config.ini` is parsed **once at startup**, not per request — so a change needs a
+server reload to take effect, and reading branding from config (vs hard-coding it
+in templates) adds no meaningful per-request cost (a couple of in-memory dict
+lookups, dwarfed by the SQLite queries).
+
 `website_paths.py` reads `config.ini` and every script imports its locations from
 there, so there are **no hardcoded absolute paths in any script** and the whole
 `website/` tree is relocatable: move it and the commands above still work.
