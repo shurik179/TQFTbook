@@ -8,7 +8,7 @@
 
 {% block body %}
   <div id="index-intro">
-    <p class="byline">by Alexander Kirillov</p>
+    <p class="byline">by {{ site.author }}</p>
 
     <p>This webpage contains lecture notes on Topological Quantum Field Theory
     (TQFT), based on the course given at Stony Brook University in the Spring of
@@ -20,20 +20,20 @@
     <a href="https://gerby-project.github.io/">Gerby project</a>.</p>
 
     <p>If you have any other questions, you can always contact me at
-    <a href="mailto:kirillov@math.stonybrook.edu">kirillov@math.stonybrook.edu</a>.</p>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
 
-    <p>Alexander Kirillov</p>
+    <p>{{ site.author }}</p>
   </div>
 
   <ul id="index-select">
     <li id="index-read"><a href="/browse"><img src="/static/images/list-ordered.svg">Read online</a>
     <li id="index-pdf"><a href="/{{ pdf_file }}"><img src="/static/images/pdf.svg">Get book as PDF</a>
-    <li id="index-source"><a href="https://github.com/shurik179/tqft-lectures"><img src="/static/images/github.svg">Get source on GitHub</a>
+    <li id="index-source"><a href="{{ site.github }}"><img src="/static/images/github.svg">Get source on GitHub</a>
   </ul>
 {% endblock %}
 
 {% block tagline %}
-  <em style="display: block; margin: auto; text-align: center">Lecture notes on extended topological field theory</em>
+  <em style="display: block; margin: auto; text-align: center">{{ site.subtitle }}</em>
 {% endblock %}
 
 {% block sidebar %}

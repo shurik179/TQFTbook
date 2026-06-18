@@ -22,3 +22,6 @@ PDF = ""
 
 # whole-book PDF filename (served at /<PDF_FILE>; the front-page tile links here)
 PDF_FILE = _cfg.PDF
+
+# site branding/text from config.ini [site]; injected into every template as `site`
+SITE_INFO = _cfg.SITE_INFO

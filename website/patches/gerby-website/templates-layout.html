@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 <meta name="theme-color" content="#ffffff">
 
-<title>{% block title %}{% endblock %}&mdash;Lectures on TQFT</title>
+<title>{% block title %}{% endblock %}&mdash;{{ site.title }}</title>
 
-<meta name="description" content="Lecture notes on extended topological field theory">
+<meta name="description" content="{{ site.subtitle }}">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -60,7 +60,7 @@
 <div class="container-fluid bounded">
   <div id="first-bar" class="row topbar inner-top top">
     <header class="col">
-      <h1><a href="/">Lectures on TQFT</a></h1>
+      <h1><a href="/">{{ site.title }}</a></h1>
     </header>
 
     <nav id="header">

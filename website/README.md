@@ -68,11 +68,15 @@ All locations live in **`config.ini`** — edit it (nothing else) if things move
 
 | If you change… | edit in `config.ini` |
 | --- | --- |
+| site title, subtitle, author, email, GitHub link | `[site]` (shown on every page; takes effect on next server reload, no rebuild) |
 | where the LaTeX source tree is | `[paths] source` (relative to `website/`, or absolute) |
 | the main `.aux` / bibliography / preface / PDF filenames | `[source_files]` |
 | the render wrapper (rarely) | `[build] master` |
 | the server port | `[server] port` |
 | location of `pdflatex` / `pdftocairo` on this machine | `[tools] tex_bin` |
+
+Anything in the `[site]` section is available in templates as `{{ site.<key> }}`,
+so you can add your own keys and use them without touching template files.
 
 `website_paths.py` reads `config.ini` and every script imports its locations from
 there, so there are **no hardcoded absolute paths in any script** and the whole

@@ -23,6 +23,11 @@ def _resolve(p):
     return p if os.path.isabs(p) else os.path.normpath(os.path.join(ROOT, p))
 
 
+# --- site branding / text (shown in templates as {{ site.<key> }}) ------------
+_SITE_DEFAULTS = {"title": "", "subtitle": "", "author": "", "email": "", "github": ""}
+SITE_INFO = {**_SITE_DEFAULTS,
+             **(dict(_cfg["site"]) if _cfg.has_section("site") else {})}
+
 # --- external TeX source tree + the files we read from it ---------------------
 SOURCE  = _resolve(_cfg["paths"]["source"])
 AUX     = _cfg["source_files"]["aux"]

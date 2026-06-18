@@ -39,20 +39,20 @@ except Exception as e:
 #    "ignore": ["^/static/.*"]
 #}
 
-feeds = {
-  "github": {
-    "url": "https://github.com/shurik179/tqft-lectures/commits/main.atom",
+# Make the [site] config available in every template as `site`.
+@app.context_processor
+def inject_site():
+  return {"site": SITE_INFO}
+
+# "Recent commits" sidebar feed, derived from the configured GitHub repo URL
+# ([site] github in config.ini). Blank github -> no feed panel.
+feeds = {}
+if SITE_INFO.get("github"):
+  feeds["github"] = {
+    "url": SITE_INFO["github"] + "/commits/main.atom",
     "title": "Recent commits",
-    "link": "https://github.com/shurik179/tqft-lectures/commits",
-  },
-  # "Recent blog posts" feed removed per request (was de Jong's Stacks blog).
-  # To restore the panel, uncomment this entry:
-  # "blog": {
-  #   "url": "https://www.math.columbia.edu/~dejong/wordpress/?feed=rss2",
-  #   "title": "Recent blog posts",
-  #   "link": "https://www.math.columbia.edu/~dejong/wordpress",
-  # },
-}
+    "link": SITE_INFO["github"] + "/commits",
+  }
 
 # set timeout for feed request
 socket.setdefaulttimeout(5)
