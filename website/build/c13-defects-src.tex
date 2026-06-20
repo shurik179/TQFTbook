@@ -9,86 +9,217 @@ FIXME
 
 So far we only considered TQFTs defined on (unstratified) manifolds. Even the manifolds with corners, that we used to motivate the definition of extended TQFT, were meant to be glued back to form an unstratified manifold. Such (extended) TQFTs can be considered as describing physics on a homogenous spacetime. It is then natural to consider more general physical systems, where the different parts of the spacetime are described by different TQFTs. The codimension 1 surface separating the homogenous parts can be thought of as a defect that makes the spacetime non-homogenous. This motivates us to define the notion of TQFT with defects.
 
+\section{Data for TQFT with defects}\label{s:defect-data}
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[scale=0.5]
+		
+		\pgfdeclarelayer{nodelayer}
+		\pgfdeclarelayer{edgelayer}
+		\pgfdeclarelayer{labels}
+		\pgfsetlayers{edgelayer,nodelayer,labels,main}
+		\tikzset{
+			none/.style={},
+			defect/.style={draw=blue, line width=1.2pt},
+			junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
+		}
+		
+		\begin{pgfonlayer}{nodelayer}
+			\node [style=none] (4) at (1, 0) {};
+			\node [style=none] (5) at (3.75, 0) {};
+			\node [style=none] (B) at (1.5, -0.25) {};
+			\node [style=none] (C) at (3.25, -0.25) {};
+			\node [style=none] (8) at (-1.25, -2) {};
+			\node [style=none] (R) at (1, -2) {};
+			\node [style=none] (10) at (-5.25, -1.5) {};
+			\node [style=none] (11) at (-5, 2) {};
+			\node [style=none] (P) at (-1, 1.75) {};
+			\node [style=none] (Q) at (1, 1.75) {};
+			\node [style=none] (14) at (4.75, 1.75) {};
+			\node [style=none] (15) at (5, -1.5) {};
+			\node [style=none] (16) at (-4.5, 0.25) {};
+			\node [style=none] (17) at (-1.75, 0.25) {};
+			\node [style=none] (18) at (-4, 0) {};
+			\node [style=none] (19) at (-2.25, 0) {};
+			\node [style=none] (E) at (0, 1.25) {};
+			\node [style=none] (F) at (-0.05, -1.51) {};
+			\node [style=junction] (A) at (-0.59, -0.25) {};
+			\node [style=none] (D) at (5.38, -0.5) {};
+		\end{pgfonlayer}
+		\begin{pgfonlayer}{edgelayer}
+			\draw [bend right, looseness=1.25] (4.center) to (5.center);
+			\draw [bend left, looseness=1.25] (B.center) to (C.center);
+			\draw [bend left=45] (11.center) to (P.center);
+			\draw [bend right=60] (P.center) to (Q.center);
+			\draw [bend left=45] (Q.center) to (14.center);
+			\draw [bend left=45, looseness=0.75] (14.center) to (15.center);
+			\draw [bend left=45] (15.center) to (R.center);
+			\draw [bend right, looseness=1.50] (R.center) to (8.center);
+			\draw [bend right=315, looseness=0.75] (8.center) to (10.center);
+			\draw [bend left=45] (10.center) to (11.center);
+			\draw [bend right, looseness=1.25] (16.center) to (17.center);
+			\draw [bend left, looseness=1.25] (18.center) to (19.center);
+			\draw [defect,bend right=45] (E.center) to (F.center);
+			\draw [defect,bend left=15] (A.center) to (B.center);
+			\draw [defect,bend left=15] (C.center) to (D.center);
+		\end{pgfonlayer}
+		\begin{pgfonlayer}{labels}
+			\node[above, xshift=2pt, yshift=2pt] at (E) {$ _AM_B$};
+			\node[below, xshift=-2pt, yshift=-2pt ] at (F) {$ _AM_C$};
+			\node[below, xshift=-40pt, yshift=-2pt ] at (P) {$A$};
+			\node[below, xshift=30pt, yshift=-2pt ] at (Q) {$B$};
+			\node[above, xshift=30pt, yshift=2pt ] at (R) {$C$};
+		\end{pgfonlayer}
+	\end{tikzpicture}
+	\caption{A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions. Labelling of defects ( shown in blue ) by bimodules requires a choice of orientation, which is suppressed here for brevity.}
+	\label{f:stratified_pretzel}
+\end{figure}
+
+TQFT with defects can be defined as a functor of symmetric monoidal 2-categories:
+$$ Z^{\mathrm{defect}}\colon \Bord_2(M,\mathrm{Coloring})\to \vect_\kk. $$
+
+Here $\Bord_2(M,\mathrm{Coloring})$ is a 2-bordism decorated with certain extra data given as:
+\begin{enumerate}
+	\item Manfold $M$ with a stratification
+	
+	$M=M_2 \cup M_1 \cup M_0$
+	
+	Here $M_2$ are the 2 dimensional open sets whose boundary constitutes $M_1$.  Stratum $M_1$ is codimension 1 subspace with boundary $M_0$. Similarly, $M_0$ are codimension 2 subspace at the boundary of $M_1$. ( For higher dimensional manifolds, the stratification can have higher codimension strata.)
+	
+	For example, in the Figure \ref{f:stratified_pretzel}, the stratum $M_2$ consists of three regions, labelled as $A$,$B$, and $C$. The stratum $M_1$ consists of blue lines. The red dot at the intersection of blue lines belongs to the stratum $M_0$.
+	
+	\item Coloring
+	\begin{itemize}
+		\item Connected components of $M_2$ are colored by semisimple symmetric Frobenius algebras. In Figure \ref{f:stratified_pretzel}, $A$, $B$, and $C$, are three such algebras.
+		\item Connected components of $M_1$ are colored by bimodules. These 1-dimensional components ( called defects ) come with a orientation. If the regions to the left and to the right of a defect are colored by algebras $A$ and $B$ respectively, the defect is labelled by a bimodule $ _AM_B$. If we change the orientation of defect, it is labelled by $ _BM^{*}_A$ bimodule. $M^*$ is dual to $M$, as expected from orientation reversal.
+		\item The vertices ( also called junctions ) are points where two or more defects meet. For each vertex $u \in M_0$, we need a multilinear map $ \varphi_u$ from cyclic tensor produce of incident bimodules to the field $\kk$. 
+		
+		\begin{figure}[ht]
+			\centering
+			\begin{tikzpicture}[scale=0.3]
+				
+				\pgfdeclarelayer{nodelayer}
+				\pgfdeclarelayer{edgelayer}
+				\pgfdeclarelayer{labels}
+				\pgfsetlayers{edgelayer,nodelayer,labels,main}
+				\tikzset{
+					none/.style={},
+					defect/.style={-{Stealth},draw=blue, line width=1.2pt},
+					junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
+				}
+				
+				\begin{pgfonlayer}{nodelayer}
+					\node [style=junction] (0) at (0, 0) {};
+					\node [style=none] (1) at (2.75, 3.75) {};
+					\node [style=none] (4) at (-3.25, 2.5) {};
+					\node [style=none] (3) at (-3.75, -2) {};
+					\node [style=none] (2) at (3.25, -3.25) {};
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{edgelayer}
+					\draw [defect, bend right=15] (0.center) to (1.center);
+					\draw [defect, bend right=15, looseness=1.25] (0.center) to (2.center);
+					\draw [defect, bend left=15] (0.center) to (3.center);
+					\draw [defect, bend left=15] (0.center) to (4.center);
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{labels}
+					\node[above, xshift=0pt, yshift=0pt ] at (1) {$ M^1 $};
+					\node[below , xshift=0pt, yshift=-0pt ] at (2) {$ M^2 $};
+					\node[left, xshift=0pt, yshift=0pt ] at (3) {$ M^3 $};
+					\node[above , xshift=-0pt, yshift=0pt ] at (4) {$ M^4 $};
+					\node[above, yshift=5pt] at (0) {$A_1$};
+					\node[right, xshift=5pt] at (0) {$A_2$};
+					\node[below, yshift=-5pt] at (0) {$A_3$};
+					\node[left, xshift=-5pt] at (0) {$A_4$};
+				\end{pgfonlayer}
+			\end{tikzpicture}
+			\label{f:junction}
+		\end{figure}
+		
+		For example, if the junction looks like as given above, then it is assigned a map: $\varphi: \circlearrowleft_{A_1} ( M^1 \otimes_{A_2}  M^2 \otimes_{A_3} M^3 \otimes_{A_4} M^4  ) \rightarrow  \kk$. Here, $\circlearrowleft_{A} M$ is the cokernel of the map $A \otimes M \rightarrow M, a \otimes m \mapsto am - ma$. This property of $\varphi$ ensures that the junction has no preferred starting edge. See \cite[Section 2.3]{carqueville} for motivation for this data.
+	\end{itemize}
+\end{enumerate}
+
+
+\section{State sum construction of TQFT with defects}\label{auto:c13-defects-state-sum-construction-of-tqft-with-defe}
+In this section we sketch the construction of the functor $Z^{\mathrm{defect}}$ that maps the (decorated) bordism $M:U\rightarrow V$ to $\vect_{\kk}$ using a cell decomposition. We suppress the superscript $\mathrm{defect}$ for the remainder of the chapter for brevity. We follow the exposition of \cite{dkr}. ( Our $Z \equiv Z^{\mathrm{defect}}$ is equivalent to $T^{\mathrm{cw}}$).
+
+We start by first associating a vector $Q_{p,e,or}$ to each oriented edge, within each polygon $p$. The contribution $Q_{p,e,or}$ of each edge is defined as:
+
+\begin{equation}\label{e:q-definition}
+	Q_{p,e,\mathrm{or}} =
+	\begin{cases}
+		A_a, & \text{if $e$ does not cross a defect line and lies within $M_2$ labelled by algebra $a$ },\\
+		X_x, & \text{if $e$ crosses defect which is labelled $x$  with orientation into the polygon $p$ },\\
+		X_x^*, & \text{if $e$ crosses defect which is labelled $x$  with orientation out of the polygon $p$ }.
+	\end{cases}
+	\end{equation}
+
+We define an intermediate vector space $Q(M)$ by tensoring the contribution of all edges that are not in incoming boundary of $M$.
+
+\begin{equation}
+	Q(M) = \bigotimes_{(p,e,\mathrm{or}),e \notin \partial_{\mathrm{in}} M} Q_{p,e,\mathrm{or}}
+\end{equation}
+
+Note that an internal edge $e$ shared between two polygons $p_1$ and $p_2$ will thus contribute twice, as $Q_{p_1,e,\mathrm{or}} \otimes Q_{p_2,e,\bar{\mathrm{or}}}$.
+
+Consider Figure \ref{f:vectors-on-edges} for example. Edge $e_2$, irrespective of its orientation, lies entirely in algebra $b$, so it is labelled $A_b$. Edge $e_1$, within polygon $p_2$, has defect $x$ crossing it such that the defect is enterin $p_2$.  So the triplet $(p_2,e_1,+)$ is labelled $X_x$. The same edge, within polygon $p_1$, has defect $x$ going out of the polygon. So it is labelled $X_x^*$ for the triplet $(p_1,e_1,+)$.  We only consider those triplets where the orientation matches with that of the polygon. We would have had to consider both orientations of an edge ( i.e. for example $(p_1,e_1,+)$ as well as $(p_1,e_1,-)$ ) only when the polygon closes on itself through that edge. See \cite[Section 3.5]{dkr} for an example.
+
 \begin{figure}[ht]
 	\centering
 \begin{tikzpicture}[scale=0.5]
-	
 	\pgfdeclarelayer{nodelayer}
 	\pgfdeclarelayer{edgelayer}
 	\pgfdeclarelayer{labels}
 	\pgfsetlayers{edgelayer,nodelayer,labels,main}
 	\tikzset{
 		none/.style={},
-		defect/.style={draw=blue, line width=1.2pt},
+		defect/.style={midarrow=0.4,draw=red, line width=1.2pt},
+		1cell/.style={midarrow,draw=green, line width=1.2pt},
 		junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
+		0cell/.style={circle, fill=green, draw=green!80!black, line width=0.4pt, inner sep=1.5pt},
 	}
-	
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (4) at (1, 0) {};
-		\node [style=none] (5) at (3.75, 0) {};
-		\node [style=none] (B) at (1.5, -0.25) {};
-		\node [style=none] (C) at (3.25, -0.25) {};
-		\node [style=none] (8) at (-1.25, -2) {};
-		\node [style=none] (R) at (1, -2) {};
-		\node [style=none] (10) at (-5.25, -1.5) {};
-		\node [style=none] (11) at (-5, 2) {};
-		\node [style=none] (P) at (-1, 1.75) {};
-		\node [style=none] (Q) at (1, 1.75) {};
-		\node [style=none] (14) at (4.75, 1.75) {};
-		\node [style=none] (15) at (5, -1.5) {};
-		\node [style=none] (16) at (-4.5, 0.25) {};
-		\node [style=none] (17) at (-1.75, 0.25) {};
-		\node [style=none] (18) at (-4, 0) {};
-		\node [style=none] (19) at (-2.25, 0) {};
-		\node [style=none] (E) at (0, 1.25) {};
-		\node [style=none] (F) at (-0.05, -1.51) {};
-		\node [style=junction] (A) at (-0.59, -0.25) {};
-		\node [style=none] (D) at (5.38, -0.5) {};
+		\node [style=0cell] (0) at (2.5, 0.75) {};
+		\node [style=0cell] (1) at (1, -2.25) {};
+		\node [style=0cell] (2) at (-2.5, -1.5) {};
+		\node [style=0cell] (3) at (-3, 1) {};
+		\node [style=0cell] (4) at (-0.75, 3.25) {};
+		\node [style=0cell] (5) at (5, 3.5) {};
+		\node [style=0cell] (6) at (1.25, 6.5) {};
+		\node [style=none] (8) at (5, 5.25) {};
+		\node [style=none] (9) at (-0.5, -3) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [bend right, looseness=1.25] (4.center) to (5.center);
-		\draw [bend left, looseness=1.25] (B.center) to (C.center);
-		\draw [bend left=45] (11.center) to (P.center);
-		\draw [bend right=60] (P.center) to (Q.center);
-		\draw [bend left=45] (Q.center) to (14.center);
-		\draw [bend left=45, looseness=0.75] (14.center) to (15.center);
-		\draw [bend left=45] (15.center) to (R.center);
-		\draw [bend right, looseness=1.50] (R.center) to (8.center);
-		\draw [bend right=315, looseness=0.75] (8.center) to (10.center);
-		\draw [bend left=45] (10.center) to (11.center);
-		\draw [bend right, looseness=1.25] (16.center) to (17.center);
-		\draw [bend left, looseness=1.25] (18.center) to (19.center);
-		\draw [defect,bend right=45] (E.center) to (F.center);
-		\draw [defect,bend left=15] (A.center) to (B.center);
-		\draw [defect,bend left=15] (C.center) to (D.center);
+		\draw[1cell] (4.center) to node[midway, above] {$A_b$}
+		node[midway, below] {$e_2$} (3.center) ;
+		\draw[midarrow=0.6,draw=green, line width=1.2pt] (0.center) to node[pos=0.8, below] {$X^*_x$} node[pos=0.7, above] {$X_x$}
+		node[pos=0.6, below] {$e_1$}  (4.center);
+		\draw[1cell] (1.center) to node[midway, right] {$A_a$}
+		node[midway, left] {$e_5$}  (0.center);
+		\draw[1cell] (2.center) to node[midway, above] {$X_x$}
+		node[midway, below] {$e_4$}  (1.center);
+		\draw[1cell] (3.center) to node[midway, right] {$A_b$}
+		node[midway, left] {$e_3$}  (2.center);
+		\draw[1cell] (4.center) to (6.center);
+		\draw[1cell] (6.center) to (5.center);
+		\draw[1cell] (5.center) to (0.center);
+		\draw [defect, bend left] (9.center) to node[pos=0.4, left] {$x$} node[pos=0.4, right] {$a$} node[pos=0.3, left] {$b$}  (8.center);
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{labels}
-		\node[above, xshift=2pt, yshift=2pt] at (E) {$ _AM_B$};
-		\node[below, xshift=-2pt, yshift=-2pt ] at (F) {$ _AM_C$};
-		\node[below, xshift=-40pt, yshift=-2pt ] at (P) {$A$};
-		\node[below, xshift=30pt, yshift=-2pt ] at (Q) {$B$};
-		\node[above, xshift=30pt, yshift=2pt ] at (R) {$C$};
+		\node[above, xshift=10pt, yshift=0pt ] at (2) {$ p_1 $};
+		\node[below , xshift=0pt, yshift=-10pt ] at (6) {$ p_2 $};
 	\end{pgfonlayer}
 \end{tikzpicture}
-  \caption{A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions.}
-\label{f:stratified_pretzel}
+			\caption{Example of vectors assigned to each edge within a 2-cell.}
+			\label{f:vectors-on-edges}
 \end{figure}
 
-\begin{enumerate}
-	\item Manfold $M$ with a stratification
-	
-	$M=M^0 \cup M^1 \cup M^2$
-	
-	Here $M^0$ are the 2 dimensional open sets whose boundary constitutes $M^1$.  Stratum $M^1$ is codimension 1 subspace with boundary $M^2$. Similarly, $M^2$ are codimension 2 subspace at the boundary of $M^1$. ( For higher dimensional manifolds, the stratification can have higher codimension strata.)
-	
-	For example, in the Figure \ref{f:stratified_pretzel}, the stratum $M^0$ consists of three regions, labelled as $A$,$B$, and $C$. The stratum $M^1$ consists of blue lines. The red dot at the intersection of blue lines belongs to the stratum $M^2$.
-	
-	\item Coloring
-	\begin{itemize}
-		\item Connected components of $M^0$ are colored by semisimple symmetric Frobenius algebras. In Figure \ref{f:stratified_pretzel}, $A$, $B$, and $C$, are three such algebras.
-		\item Connected components of $M^1$ are colored by bimodules. These 1-dimensional components ( called defects ) come with a orientation. If the regions to the left and to the right of a defect are colored by algebras $A$ and $B$ respectively, the defect is labelled by a bimodule $ _AM_B$. If we change the orientation of defect, it is labelled by $ _BM^{*}_A$ bimodule. $M^*$ is dual to $M$, as expected from orientation reversal.
-		\item The vertices ( also called junctions ) are points where two or more defects meet. For each vertex $u \in D^2$, we need a multilinear map $\varphi_u: M^1 \otimes_{A_2}  M^2 \otimes_{A_3} M^3 \otimes_{A_4} M^4 \rightarrow  \kk$.
-	\end{itemize}
-\end{enumerate}
+The functor $Z$ is defined as:
+\begin{equation}
+	Z(M) : Z(U) \xto{id_{Z(U)} \otimes P(M)} Z(U) \otimes Q(M) \otimes Z(V) \xto{E(M) \otimes id_{T(V)})} Z(V)
+\end{equation}
+\section{Independence of cell decomposition}\label{s:decomposition-independence}
+Since the cell decomposition is not a part of the actual defect TQFT data, we need to show that the state sum construction is independent of our choice of cell decomposition.
 
 \clearpage

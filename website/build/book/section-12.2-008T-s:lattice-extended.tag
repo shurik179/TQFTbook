@@ -3,8 +3,11 @@
  So far, we have defined $Z_ A(M)$ for a closed 2-manifold $M$. However, we can easily turn it into a fully extended TQFT. 
 </p>
 <p>
-Namely, we define $Z_ A(\bullet )=A$ (regardless of orientation). 
+Namely, we define 
 </p>
+<div class="equation">
+  \[  Z_ A(\bullet ^+)=A, \qquad Z_ A(\bullet ^-)=A^{\mathrm{op}} \]
+</div>
 <p>
 For an oriented 1-manifold $N$ (possibly with boundary), we choose a cell decomposition of it (which for 1-dimensional manifolds just means choosing some points that divide $N$ into intervals) and define 
 </p>
@@ -29,6 +32,9 @@ It is trivial to check that the so-defined vector space does not depend on the c
     <span class="equation-label"><a href="/tag/008V" data-tag="008V">12.2.2</a></span>
     <div>\begin{equation} \label{e:ZAI-ZAS1} \begin{aligned}  Z_ A(I)& =A\otimes _ A A\otimes _ A \dots \otimes _ A A\simeq A\\  Z_ A(S^1)& \simeq A/[A,A]. \end{aligned} \end{equation}</div>
 </div>
+<p>
+If $I$ is an interval, then $Z_ A(I)$ is an $A$-bimodule; thus, if we consider $I$ as a cobordism $\bullet ^+\to \bullet ^+$, then $Z_ A(I)$ is a morphism $A\to A$ in $\mathbf{Alg}$. We can also consider $I$ as a cobordism $\bullet ^+\sqcup \bullet ^-\Rightarrow \varnothing $, and $Z_ A(I)$ as a right module over $A\otimes A^{\mathrm{op}}$, or consider $I$ as a cobordism $\varnothing \Rightarrow \bullet ^+\sqcup \bullet ^-$, and $Z_ A(I)$ as a left module over $A\otimes A^{\mathrm{op}}$. 
+</p>
 <p>
 We can now define $Z_ A$ for a 2-cobordism. First, let $M$ be a 2-manifold with boundary, considered as a cobordism $N\to \varnothing $, where $N=\overline{\partial M}$. Choose a cell decomposition $K$ of $M$; let $E_{\mathrm{bulk}}$ be the set of oriented edges inside $M$ (thus, every internal unoriented edge of $K_1$ appears twice in $E_{\mathrm{bulk}}$) and $E_{N}$ be the set of oriented edges on the boundary (each appearing with orientation inherited from $N=\overline{\partial M}$). 
 </p>
@@ -79,7 +85,7 @@ Since the pairing (<a href="/tag/008Y" data-tag="008Y">12.2.6</a>) is non-degene
 </p>
 <p>
 <article class="env-theorem" id="0090">
-  <p><a class="environment-identifier" href="/tag/0090">Theorem <span data-tag="0090">12.2.2</span>.</a> Formulas (<a href="/tag/008W" data-tag="008W">12.2.5</a>), (<a href="/tag/008Z" data-tag="008Z">12.2.7</a>) define a 2-dimensional TQFT. </p>
+  <p><a class="environment-identifier" href="/tag/0090">Theorem <span data-tag="0090">12.2.2</span>.</a> Formulas (<a href="/tag/008W" data-tag="008W">12.2.5</a>), (<a href="/tag/008Z" data-tag="008Z">12.2.7</a>) define a (non-extended) 2-dimensional TQFT. </p>
 </article> 
 </p>
 <p>
@@ -88,14 +94,38 @@ Since the pairing (<a href="/tag/008Y" data-tag="008Y">12.2.6</a>) is non-degene
 </article> <article class="env-example" id="0092">
   <p><a class="environment-identifier" href="/tag/0092">Example <span data-tag="0092">12.2.2</span>.</a> Let $M=S^1\times I$ be the cylinder considered as a cobordism $S^1\sqcup S^1\to \varnothing $. Choosing a decomposition of the cylinder obtained by gluing together two sides of the rectangle, we see that in this case we have </p>
   <div class="equation">
-  \[  Z_ A(M)(a\otimes b)=\sum \varepsilon (ax_ ibx^ i) =\sum \varepsilon (w^{-1} x_ jax^ jx_ i b x^ i)  \]
+  \[  Z_ A(M)(a\otimes b)=\sum \varepsilon (ax_ ibx^ i) =\sum \varepsilon (w^{-1} x_ jax^ jx_ i b x^ i).  \]
 </div>
 </article> <article class="env-exercise" id="0093">
   <p><a class="environment-identifier" href="/tag/0093">Exercise <span data-tag="0093">12.2.1</span>.</a> Show that <img class="includegraphics" src="/static/figures/c12-eqfig02.svg" />, where $V=Z_ A(S^1)=A/[A,A]$, is given by </p>
   <div class="equation">
-  \[  [a][b]=\sum [a x_ i b x^ i].  \]
+  \[  Z_ A([a]\otimes [b])=\sum [a x_ i b x^ i].  \]
 </div>
-</article> Comparing it with Theorem&#160;<a href="/tag/007Q" data-tag="007Q">10.6.1</a>, which gave an explicit description of the (non-extended) TQFT defined by the algebra $A$, we get the following result. <article class="env-theorem" id="0094">
-  <p><a class="environment-identifier" href="/tag/0094">Theorem <span data-tag="0094">12.2.3</span>.</a> For a separable symmetric Frobenius algebra $A$, the (non-extended) TQFT defined by state-sum formulas (<a href="/tag/008W" data-tag="008W">12.2.5</a>), (<a href="/tag/008Z" data-tag="008Z">12.2.7</a>) coincides with the (non-extended) TQFT defined in Chapter&#160;<a href="/tag/0071" data-tag="0071">10</a>. </p>
 </article> 
 </p>
+<p>
+Comparing it with Theorem&#160;<a href="/tag/007Q" data-tag="007Q">10.6.1</a>, which gave an explicit description of the (non-extended) TQFT constructed using Morse decompositions of cobordisms, we see that these two descriptions match. 
+</p>
+<p>
+Finally, let us define an $Z_ A$ as an extended TQFT. We have already defined $Z$ for 0-dimensional manifolds and 1d cobordisms; thus, to complete the story, we need to define $Z_ A(M)$ for a 2-cobordism, i.e., a 2-manifold with corners (see Definition&#160;<a href="/tag/00FE" data-tag="00FE">10.1.2</a>). 
+</p>
+<div class="centered"> <img class="includegraphics" src="/static/figures/c12-fig05.svg" /> </div>
+<p>
+To do that, note that in this case, boundary $\partial M$ consists of 3 pieces (possibly disconnected): $W_0$ (top), $W_1$ (bottom), and “vertical” boundary $Y\times I$, where $Y=Y_0\sqcup Y_1$. 
+</p>
+<p>
+Choosing a cell decomposition $K$ of $M$ such that each corner is a vertex of that decomposition and using again the formula (<a href="/tag/008W" data-tag="008W">12.2.5</a>), we can define 
+</p>
+<div class="equation">
+  \[  \tilde Z_ A(M,K)\colon A^{\otimes E_{\mathrm{top}}}\otimes A^{\otimes E_{\mathrm{bot}}} \otimes A^{\otimes E_ v} \to \mathbf{k} \]
+</div>
+<p>
+ where $E_{\mathrm{top}}$, $E_{\mathrm{bot}}$, $E_ v$ are oriented edges at top, bottom, and vertical parts of the boundary respectively. 
+</p>
+<p>
+Now, for each vertical edge $e\in E_ v$, take vector $1\in A_ e$. This defines a vector $1_ v\in A^{\otimes E_ v}$. Define 
+</p>
+<div class="equation" id="008Z">
+    <span class="equation-label"><a href="/tag/008Z" data-tag="008Z">12.2.8</a></span>
+    <div>\begin{equation} \label{e:fhk-state-sum3} \begin{aligned}  Z_ A(M,K)\colon A^{\otimes E_{\mathrm{top}}}\otimes A^{\otimes E_{\mathrm{bot}}}& \to \mathbf{k}\\  Z_ A(M,K) (a_{\mathrm{top}}\otimes a_{\mathrm{bot}})& = \tilde Z_ A(a_{\mathrm{top}}\otimes a_{\mathrm{bot}}\otimes 1_ v). \end{aligned} \end{equation}</div>
+</div>

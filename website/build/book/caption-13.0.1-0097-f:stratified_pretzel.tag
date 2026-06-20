@@ -1,1 +1,0 @@
-<figcaption class="figcaption">Figure 13.0.1. A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions.</figcaption>

@@ -1,0 +1,40 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.3]
+				
+				\pgfdeclarelayer{nodelayer}
+				\pgfdeclarelayer{edgelayer}
+				\pgfdeclarelayer{labels}
+				\pgfsetlayers{edgelayer,nodelayer,labels,main}
+				\tikzset{
+					none/.style={},
+					defect/.style={-{Stealth},draw=blue, line width=1.2pt},
+					junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
+				}
+				
+				\begin{pgfonlayer}{nodelayer}
+					\node [style=junction] (0) at (0, 0) {};
+					\node [style=none] (1) at (2.75, 3.75) {};
+					\node [style=none] (4) at (-3.25, 2.5) {};
+					\node [style=none] (3) at (-3.75, -2) {};
+					\node [style=none] (2) at (3.25, -3.25) {};
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{edgelayer}
+					\draw [defect, bend right=15] (0.center) to (1.center);
+					\draw [defect, bend right=15, looseness=1.25] (0.center) to (2.center);
+					\draw [defect, bend left=15] (0.center) to (3.center);
+					\draw [defect, bend left=15] (0.center) to (4.center);
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{labels}
+					\node[above, xshift=0pt, yshift=0pt ] at (1) {$ M^1 $};
+					\node[below , xshift=0pt, yshift=-0pt ] at (2) {$ M^2 $};
+					\node[left, xshift=0pt, yshift=0pt ] at (3) {$ M^3 $};
+					\node[above , xshift=-0pt, yshift=0pt ] at (4) {$ M^4 $};
+					\node[above, yshift=5pt] at (0) {$A_1$};
+					\node[right, xshift=5pt] at (0) {$A_2$};
+					\node[below, yshift=-5pt] at (0) {$A_3$};
+					\node[left, xshift=-5pt] at (0) {$A_4$};
+				\end{pgfonlayer}
+			\end{tikzpicture}
+\end{document}

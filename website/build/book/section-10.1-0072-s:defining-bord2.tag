@@ -27,8 +27,8 @@ For technical reasons, we will impose an additional requirement that each point 
 Using this, we can give a definition of a 2-cobordism. 
 </p>
 <p>
-<article class="env-definition" id="">
-  <p><a class="environment-identifier" href="/tag/">Definition <span data-tag="">10.1.2</span>.</a> Let $Y_0, Y_1$ be closed $(n-2)$-dimensional manifolds, and let $W_0,W_1$ be two $(n-1)$-dimensional cobordisms between $Y_0$ and $Y_1$. A 2-cobordism from $W_0$ to $W_1$ is the following collection of data: </p>
+<article class="env-definition" id="00FE">
+  <p><a class="environment-identifier" href="/tag/00FE">Definition <span data-tag="00FE">10.1.2</span>.</a> Let $Y_0, Y_1$ be closed $(n-2)$-dimensional manifolds, and let $W_0,W_1$ be two $(n-1)$-dimensional cobordisms between $Y_0$ and $Y_1$. A 2-cobordism from $W_0$ to $W_1$ is the following collection of data: </p>
   <p><ul>
   <li><p>
 An $n$-dimensional manifold $S$ with corners of codimension up to 2. 

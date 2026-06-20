@@ -522,3 +522,10 @@
 00FB,e:hexagon-drinfeld
 00FC,r:frobenius-two
 00FD,r:2d-commutative
+00FE,d:2-cobordism
+00FF,s:defect-data
+00FG,f:junction
+00FH,auto:c13-defects-state-sum-construction-of-tqft-with-defe
+00FJ,e:q-definition
+00FK,f:vectors-on-edges
+00FL,s:decomposition-independence

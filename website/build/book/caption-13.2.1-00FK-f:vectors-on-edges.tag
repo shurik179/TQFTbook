@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 13.2.1. Example of vectors assigned to each edge within a 2-cell.</figcaption>

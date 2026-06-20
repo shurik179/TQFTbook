@@ -9,28 +9,81 @@ FIXME
 
 So far we only considered TQFTs defined on (unstratified) manifolds. Even the manifolds with corners, that we used to motivate the definition of extended TQFT, were meant to be glued back to form an unstratified manifold. Such (extended) TQFTs can be considered as describing physics on a homogenous spacetime. It is then natural to consider more general physical systems, where the different parts of the spacetime are described by different TQFTs. The codimension 1 surface separating the homogenous parts can be thought of as a defect that makes the spacetime non-homogenous. This motivates us to define the notion of TQFT with defects.
 
+\section{Data for TQFT with defects}\label{s:defect-data}
+
 \begin{figure}[ht]
 	\centering
-\includegraphics{figures/c13-fig01.svg}
-  \caption{A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions.}
-\label{f:stratified_pretzel}
+	\includegraphics{figures/c13-fig01.svg}
+	\caption{A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions. Labelling of defects ( shown in blue ) by bimodules requires a choice of orientation, which is suppressed here for brevity.}
+	\label{f:stratified_pretzel}
 \end{figure}
 
+TQFT with defects can be defined as a functor of symmetric monoidal 2-categories:
+$$ Z^{\mathrm{defect}}\colon \Bord_2(M,\mathrm{Coloring})\to \vect_\kk. $$
+
+Here $\Bord_2(M,\mathrm{Coloring})$ is a 2-bordism decorated with certain extra data given as:
 \begin{enumerate}
 	\item Manfold $M$ with a stratification
 	
-	$M=M^0 \cup M^1 \cup M^2$
+	$M=M_2 \cup M_1 \cup M_0$
 	
-	Here $M^0$ are the 2 dimensional open sets whose boundary constitutes $M^1$.  Stratum $M^1$ is codimension 1 subspace with boundary $M^2$. Similarly, $M^2$ are codimension 2 subspace at the boundary of $M^1$. ( For higher dimensional manifolds, the stratification can have higher codimension strata.)
+	Here $M_2$ are the 2 dimensional open sets whose boundary constitutes $M_1$.  Stratum $M_1$ is codimension 1 subspace with boundary $M_0$. Similarly, $M_0$ are codimension 2 subspace at the boundary of $M_1$. ( For higher dimensional manifolds, the stratification can have higher codimension strata.)
 	
-	For example, in the Figure \ref{f:stratified_pretzel}, the stratum $M^0$ consists of three regions, labelled as $A$,$B$, and $C$. The stratum $M^1$ consists of blue lines. The red dot at the intersection of blue lines belongs to the stratum $M^2$.
+	For example, in the Figure \ref{f:stratified_pretzel}, the stratum $M_2$ consists of three regions, labelled as $A$,$B$, and $C$. The stratum $M_1$ consists of blue lines. The red dot at the intersection of blue lines belongs to the stratum $M_0$.
 	
 	\item Coloring
 	\begin{itemize}
-		\item Connected components of $M^0$ are colored by semisimple symmetric Frobenius algebras. In Figure \ref{f:stratified_pretzel}, $A$, $B$, and $C$, are three such algebras.
-		\item Connected components of $M^1$ are colored by bimodules. These 1-dimensional components ( called defects ) come with a orientation. If the regions to the left and to the right of a defect are colored by algebras $A$ and $B$ respectively, the defect is labelled by a bimodule $ _AM_B$. If we change the orientation of defect, it is labelled by $ _BM^{*}_A$ bimodule. $M^*$ is dual to $M$, as expected from orientation reversal.
-		\item The vertices ( also called junctions ) are points where two or more defects meet. For each vertex $u \in D^2$, we need a multilinear map $\varphi_u: M^1 \otimes_{A_2}  M^2 \otimes_{A_3} M^3 \otimes_{A_4} M^4 \rightarrow  \kk$.
+		\item Connected components of $M_2$ are colored by semisimple symmetric Frobenius algebras. In Figure \ref{f:stratified_pretzel}, $A$, $B$, and $C$, are three such algebras.
+		\item Connected components of $M_1$ are colored by bimodules. These 1-dimensional components ( called defects ) come with a orientation. If the regions to the left and to the right of a defect are colored by algebras $A$ and $B$ respectively, the defect is labelled by a bimodule $ _AM_B$. If we change the orientation of defect, it is labelled by $ _BM^{*}_A$ bimodule. $M^*$ is dual to $M$, as expected from orientation reversal.
+		\item The vertices ( also called junctions ) are points where two or more defects meet. For each vertex $u \in M_0$, we need a multilinear map $ \varphi_u$ from cyclic tensor produce of incident bimodules to the field $\kk$. 
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics{figures/c13-fig02.svg}
+			\label{f:junction}
+		\end{figure}
+		
+		For example, if the junction looks like as given above, then it is assigned a map: $\varphi: \circlearrowleft_{A_1} ( M^1 \otimes_{A_2}  M^2 \otimes_{A_3} M^3 \otimes_{A_4} M^4  ) \rightarrow  \kk$. Here, $\circlearrowleft_{A} M$ is the cokernel of the map $A \otimes M \rightarrow M, a \otimes m \mapsto am - ma$. This property of $\varphi$ ensures that the junction has no preferred starting edge. See \cite[Section 2.3]{carqueville} for motivation for this data.
 	\end{itemize}
 \end{enumerate}
+
+
+\section{State sum construction of TQFT with defects}\label{auto:c13-defects-state-sum-construction-of-tqft-with-defe}
+In this section we sketch the construction of the functor $Z^{\mathrm{defect}}$ that maps the (decorated) bordism $M:U\rightarrow V$ to $\vect_{\kk}$ using a cell decomposition. We suppress the superscript $\mathrm{defect}$ for the remainder of the chapter for brevity. We follow the exposition of \cite{dkr}. ( Our $Z \equiv Z^{\mathrm{defect}}$ is equivalent to $T^{\mathrm{cw}}$).
+
+We start by first associating a vector $Q_{p,e,or}$ to each oriented edge, within each polygon $p$. The contribution $Q_{p,e,or}$ of each edge is defined as:
+
+\begin{equation}\label{e:q-definition}
+	Q_{p,e,\mathrm{or}} =
+	\begin{cases}
+		A_a, & \text{if $e$ does not cross a defect line and lies within $M_2$ labelled by algebra $a$ },\\
+		X_x, & \text{if $e$ crosses defect which is labelled $x$  with orientation into the polygon $p$ },\\
+		X_x^*, & \text{if $e$ crosses defect which is labelled $x$  with orientation out of the polygon $p$ }.
+	\end{cases}
+	\end{equation}
+
+We define an intermediate vector space $Q(M)$ by tensoring the contribution of all edges that are not in incoming boundary of $M$.
+
+\begin{equation}
+	Q(M) = \bigotimes_{(p,e,\mathrm{or}),e \notin \partial_{\mathrm{in}} M} Q_{p,e,\mathrm{or}}
+\end{equation}
+
+Note that an internal edge $e$ shared between two polygons $p_1$ and $p_2$ will thus contribute twice, as $Q_{p_1,e,\mathrm{or}} \otimes Q_{p_2,e,\bar{\mathrm{or}}}$.
+
+Consider Figure \ref{f:vectors-on-edges} for example. Edge $e_2$, irrespective of its orientation, lies entirely in algebra $b$, so it is labelled $A_b$. Edge $e_1$, within polygon $p_2$, has defect $x$ crossing it such that the defect is enterin $p_2$.  So the triplet $(p_2,e_1,+)$ is labelled $X_x$. The same edge, within polygon $p_1$, has defect $x$ going out of the polygon. So it is labelled $X_x^*$ for the triplet $(p_1,e_1,+)$.  We only consider those triplets where the orientation matches with that of the polygon. We would have had to consider both orientations of an edge ( i.e. for example $(p_1,e_1,+)$ as well as $(p_1,e_1,-)$ ) only when the polygon closes on itself through that edge. See \cite[Section 3.5]{dkr} for an example.
+
+\begin{figure}[ht]
+	\centering
+\includegraphics{figures/c13-fig03.svg}
+			\caption{Example of vectors assigned to each edge within a 2-cell.}
+			\label{f:vectors-on-edges}
+\end{figure}
+
+The functor $Z$ is defined as:
+\begin{equation}
+	Z(M) : Z(U) \xto{id_{Z(U)} \otimes P(M)} Z(U) \otimes Q(M) \otimes Z(V) \xto{E(M) \otimes id_{T(V)})} Z(V)
+\end{equation}
+\section{Independence of cell decomposition}\label{s:decomposition-independence}
+Since the cell decomposition is not a part of the actual defect TQFT data, we need to show that the state sum construction is independent of our choice of cell decomposition.
 
 \clearpage

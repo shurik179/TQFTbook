@@ -1,0 +1,48 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5]
+	\pgfdeclarelayer{nodelayer}
+	\pgfdeclarelayer{edgelayer}
+	\pgfdeclarelayer{labels}
+	\pgfsetlayers{edgelayer,nodelayer,labels,main}
+	\tikzset{
+		none/.style={},
+		defect/.style={midarrow=0.4,draw=red, line width=1.2pt},
+		1cell/.style={midarrow,draw=green, line width=1.2pt},
+		junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
+		0cell/.style={circle, fill=green, draw=green!80!black, line width=0.4pt, inner sep=1.5pt},
+	}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=0cell] (0) at (2.5, 0.75) {};
+		\node [style=0cell] (1) at (1, -2.25) {};
+		\node [style=0cell] (2) at (-2.5, -1.5) {};
+		\node [style=0cell] (3) at (-3, 1) {};
+		\node [style=0cell] (4) at (-0.75, 3.25) {};
+		\node [style=0cell] (5) at (5, 3.5) {};
+		\node [style=0cell] (6) at (1.25, 6.5) {};
+		\node [style=none] (8) at (5, 5.25) {};
+		\node [style=none] (9) at (-0.5, -3) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw[1cell] (4.center) to node[midway, above] {$A_b$}
+		node[midway, below] {$e_2$} (3.center) ;
+		\draw[midarrow=0.6,draw=green, line width=1.2pt] (0.center) to node[pos=0.8, below] {$X^*_x$} node[pos=0.7, above] {$X_x$}
+		node[pos=0.6, below] {$e_1$}  (4.center);
+		\draw[1cell] (1.center) to node[midway, right] {$A_a$}
+		node[midway, left] {$e_5$}  (0.center);
+		\draw[1cell] (2.center) to node[midway, above] {$X_x$}
+		node[midway, below] {$e_4$}  (1.center);
+		\draw[1cell] (3.center) to node[midway, right] {$A_b$}
+		node[midway, left] {$e_3$}  (2.center);
+		\draw[1cell] (4.center) to (6.center);
+		\draw[1cell] (6.center) to (5.center);
+		\draw[1cell] (5.center) to (0.center);
+		\draw [defect, bend left] (9.center) to node[pos=0.4, left] {$x$} node[pos=0.4, right] {$a$} node[pos=0.3, left] {$b$}  (8.center);
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{labels}
+		\node[above, xshift=10pt, yshift=0pt ] at (2) {$ p_1 $};
+		\node[below , xshift=0pt, yshift=-10pt ] at (6) {$ p_2 $};
+	\end{pgfonlayer}
+\end{tikzpicture}
+\end{document}
