@@ -1,6 +1,7 @@
 import os
 import os.path
 import time
+import datetime
 import urllib.request
 import socket
 import feedparser
@@ -121,12 +122,23 @@ def show_index():
   for comment in comments:
     comment.tag = Tag.get(Tag.tag == comment.tag)
 
+  # build date recorded by build_site.py (site/build_date.txt), shown as
+  # "Last updated on ...". Missing/garbled file -> just omit the line.
+  last_updated = ""
+  try:
+    with open(os.path.join(os.path.dirname(DATABASE), "build_date.txt")) as f:
+      last_updated = datetime.datetime.strptime(
+          f.read().strip(), "%Y-%m-%d").strftime("%B %-d, %Y")
+  except Exception:
+    last_updated = ""
+
   return render_template(
       "index.html",
       updates=updates,
       statistics=get_statistics(),
       comments=comments,
       pdf_file=PDF_FILE,
+      last_updated=last_updated,
       )
 
 

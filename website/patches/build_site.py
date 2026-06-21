@@ -248,6 +248,12 @@ if os.path.exists(db): os.remove(db)                  # comments.sqlite is kept
 run([VENV_PY, os.path.join(WEB, "tools", "update.py")],
     cwd=HERE, env={"PYTHONPATH": WEBHOME}, quiet=True)
 
+# Record the build date next to the database; the front page shows it as
+# "Last updated on ..." (read by the index view).
+import datetime
+open(os.path.join(SITE, "build_date.txt"), "w").write(
+    datetime.date.today().isoformat() + "\n")
+
 # ------------------------------------------------------------------ serve -----
 if NO_SERVE:
     step("8/8  done (server not touched)")

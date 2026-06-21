@@ -37,6 +37,10 @@
 {% endblock %}
 
 {% block sidebar %}
+  {% if last_updated %}
+  <p class="last-updated">Last updated on <strong>{{ last_updated }}</strong></p>
+  {% endif %}
+
   <h3><a href="/recent-comments">Recent comments</a></h3>
   <ul>
     {% for comment in comments %}
