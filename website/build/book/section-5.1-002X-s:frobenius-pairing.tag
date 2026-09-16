@@ -29,7 +29,7 @@ We will use “cup” and “cap” graphics to denote the pairing $\varepsilon 
     <div class="centered"><img class="includegraphics" src="/static/figures/c5-eqfig03.svg"></div>
 </div>
     <p>
-       where $x_ i, x^ i$ are defined by $\Delta (1)=\sum x_ i \otimes x^ i$. Thus, by Lemma&#160;<a href="/tag/001D" data-tag="001D">3.2.2</a>, $A$ is finite-dimensional, and $\varepsilon (ab)$ is a non-degenerate pairing. 
+       where $x_ i, x^ i$ are defined by $\Delta (1)=\sum x_ i \otimes x^ i$. Thus, by Lemma&#160;<a href="/tag/001D" data-tag="001D">2.5.1</a>, $A$ is finite-dimensional, and $\varepsilon (ab)$ is a non-degenerate pairing. 
       <span class="qed">$\square$</span>
     </p>
 </article>
@@ -77,6 +77,16 @@ Prove that the comultiplication is also given by the picture below:
     <span class="equation-label"><a href="/tag/00F4" data-tag="00F4">5.1.7</a></span>
     <div class="centered"><img class="includegraphics" src="/static/figures/c5-fig02.svg"></div>
 </div>
+<p>
+ or, equivalently, by 
+</p>
+<div class="equation" >
+    <span class="equation-label">5.1.8</span>
+    <div>\begin{equation}  (a\otimes b, \Delta (c))=(ab,c), \end{equation}</div>
+</div>
+<p>
+ where we extend the pairing $(\,  , \, )$ to $A\otimes A$ by $(a_1\otimes a_2, b_2\otimes b_1)=(a_1, b_1)\cdot (a_2, b_2)$ (note the order!). 
+</p>
 </li>
 </ol></p>
 </article> 
@@ -87,7 +97,7 @@ Prove that the comultiplication is also given by the picture below:
 </article> 
 </p>
 <p>
-Conversely, one can recover the structure of a Frobenius lagebra from the pairing $(, \,  \, )$. 
+Conversely, one can recover the structure of a Frobenius algebra from the pairing $(, \,  \, )$. 
 </p>
 <p>
 <article class="env-theorem" id="0036">
@@ -100,7 +110,7 @@ Conversely, one can recover the structure of a Frobenius lagebra from the pairin
       The sequence of pictures below gives a graphical proof that $e$ is central; we leave it to the reader to rewrite it algebraically: 
     <p>
       <div class="equation" id="00F5">
-    <span class="equation-label"><a href="/tag/00F5" data-tag="00F5">5.1.8</a></span>
+    <span class="equation-label"><a href="/tag/00F5" data-tag="00F5">5.1.9</a></span>
     <div class="centered"><img class="includegraphics" src="/static/figures/c5-fig03.svg"></div>
 </div>
     <p>
@@ -112,7 +122,7 @@ Conversely, one can recover the structure of a Frobenius lagebra from the pairin
  Thus, we could give an alternative definition of a Frobenius algebra. <article class="env-definition" id="0037">
   <p><a class="environment-identifier" href="/tag/0037">Definition <span data-tag="0037">5.1.1</span>.</a> A Frobenius algebra is a finite-dimensional associative algebra $A$ together with a map $\varepsilon \colon A\to \mathbf{k}$ such that the bilinear pairing </p>
   <div class="equation" id="00EL">
-    <span class="equation-label"><a href="/tag/00EL" data-tag="00EL">5.1.9</a></span>
+    <span class="equation-label"><a href="/tag/00EL" data-tag="00EL">5.1.10</a></span>
     <div>\begin{equation} \label{e:frob-pairing} (a,b) = \varepsilon (ab) \end{equation}</div>
 </div>
   <p> is non-degenerate. </p>

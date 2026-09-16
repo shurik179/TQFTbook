@@ -13,7 +13,7 @@ The tensor product functor $\otimes \colon \mathcal{C}\times \mathcal{C}\to \mat
 $\operatorname{Hom}(\mathbf{1}, \mathbf{1})=\mathbf{k}$. 
 </p>
 </li><li><p>
-$\mathcal{C}$ is rigid: every $X\in \mathcal{C}$ has left and right dual (see Definition&#160;<a href="/tag/001K" data-tag="001K">3.3.2</a>). 
+$\mathcal{C}$ is rigid: every $X\in \mathcal{C}$ has left and right dual (see Definition&#160;<a href="/tag/001K" data-tag="001K">2.5.2</a>). 
 </p>
 </li>
 </ol></p>
@@ -67,7 +67,7 @@ Below are some examples of finite tensor categories.
 </p>
 <p>
 <article class="env-example" id="00AY">
-  <p><a class="environment-identifier" href="/tag/00AY">Example <span data-tag="00AY">16.3.4</span>.</a> Let $G$ be a finite group. Let $\mathbf{Vec}_ G$ be the category of finite-dimensional $G$-graded vector spaces as defined in Example&#160;<a href="/tag/000L" data-tag="000L">2.3.2</a>. Then $\mathbf{Vec}_ G$ is a finite tensor category. </p>
+  <p><a class="environment-identifier" href="/tag/00AY">Example <span data-tag="00AY">16.3.4</span>.</a> Let $G$ be a finite group. Let $\mathbf{Vec}_ G$ be the category of finite-dimensional $G$-graded vector spaces as defined in Example&#160;<a href="/tag/000L" data-tag="000L">2.3.3</a>. Then $\mathbf{Vec}_ G$ is a finite tensor category. </p>
 </article> 
 </p>
 <p>

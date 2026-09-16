@@ -1,0 +1,22 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[baseline=0pt]
+		\tikzstyle revmidarrow=[fill, dart, dart tail angle=112,
+		dart tip angle=53,inner sep=0.55pt,sloped,
+		allow upside down,rotate=180];
+		\tikzstyle midarrow=[fill, dart, dart tail angle=112,
+		dart tip angle=53,inner sep=0.55pt,sloped,allow upside down];
+		\node[morphism] (ph) at (0,0) {$\ph_C$};
+		\draw[semithick,>=stealth] (ph) -- node[revmidarrow,pos=0.8]{} (36:1.5cm)
+		node [pos=0.8,auto=right] {$X_1^*$};
+		\draw[semithick,>=stealth] (ph) -- node[midarrow,pos=0.8]{} (108:1.5cm)
+		node [pos=0.8,auto=right] {$X_5$};
+		\draw[semithick,>=stealth] (ph) -- node[midarrow,pos=0.8]{} (180:1.5cm)
+		node [pos=0.8,auto=right] {$X_4^*$};
+		\draw[semithick,>=stealth] (ph) -- node[revmidarrow,pos=0.8]{} (252:1.5cm)
+		node [pos=0.8,auto=right] {$X_3$};
+		\draw[semithick,>=stealth] (ph) -- node[midarrow,pos=0.8]{} (324:1.5cm)
+		node [pos=0.8,auto=right] {$X_2$};
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,15 @@
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Proof of the first two parts is an easy modification of the proof of Theorem&#160;<a href="/tag/008Q" data-tag="008Q">12.1.2</a> and is left to the reader. 
+    <p>
+      For the last part, it suffices to consider $M=S^1\times I$ considered as a cobordism $S^1\sqcup S^1\to \varnothing $. In this case, taking the cell decomposition of the cylinder obtained by gluing two opposite sides of rectangle together, we see that the corresponding map $Z(M)$ is given by 
+    <p>
+      <div class="equation">
+  \begin{align*}  Z_ A(M)\colon V\otimes V & \to \mathbf{k}, \qquad V=A/[A,A]\\  [a_1]\otimes [a_2]& \mapsto \varepsilon (\sum a_1 x_ i a_2x^ i) \end{align*}
+</div>
+    <p>
+       where $x_ i, x^ i$, as usual, are the dual bases with respect to Frobenius pairing. The fact that this pairing is non-degenerate follows from Exercise&#160;<a href="/tag/00GB" data-tag="00GB">9.4.1</a>. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>

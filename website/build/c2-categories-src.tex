@@ -1,4 +1,4 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Algebraic prerequisites: monoidal categories}\label{c:categories}
 
@@ -22,19 +22,20 @@ $\Hom_\calC(X,Y)$ the set of morphisms from $X$ to $Y$ (we will drop
 the subscript $\calC$ when there is no ambiguity).
 
 Given categories $\calC, \calD$, we denote by $\Fun(\calC, \calD)$ the
-set of all functors $\calC\to \calD$.
+category of all functors $\calC\to \calD$.
 
 Examples:
 \begin{itemize}
   \item $\sets$: category of all sets.
   \item $\smoothman_n$: category of smooth manifolds of dimension $n$.
     There are different versions: oriented manifolds, framed manifolds, etc.
-  \item $\plman_n$: category of PL manifolds of dimension $n$. Note that
+  \item $\plman_n$: category of piecewise-linear (PL) manifolds of dimension $n$.
+     Note that
     in dimensions $n\le 6$, every PL manifold has a canonical smooth structure
     and vice versa. In general, it is not so: every smooth manifold has
     a unique PL structure (Whitehead's theorem), but a PL manifold might
     not have a compatible smooth structure, or if it has one, it might not
-    be unique (Milnor's exotic spheres). We will talk about PL manifolds in
+    be unique (Milnor's exotic spheres). We will discuss PL manifolds in
     more detail later (see \chref{c:PL}).
   \item $\vect_\kk$: category of vector spaces over a field $\kk$.
   \item $R\mod$: category of left modules over an associative ring $R$.
@@ -46,8 +47,8 @@ One special case of a category, which we will use frequently, is a groupoid.
 \end{definition}
 \begin{example}\label{x:fundamental-groupoid}
   Let $X$ be a topological space. Define its \emph{fundamental groupoid}\index{fundamental groupoid}
-  $\pi(X)$ as the category whose objects are points in $X$ and morphisms
-  are homotopy equivalence classes of paths between points, with the obvious
+  $\Pi_1(X)$ as the category whose objects are points in $X$ and morphisms
+  are homotopy classes of paths between points, with the obvious
   composition.
 \end{example}
 
@@ -101,8 +102,12 @@ An abelian category is
 $\Hom(X,Y)$ are vector spaces over a field $\kk$, and composition of morphisms
 is linear over $\kk$.
 
+Unless explicitly stated otherwise,  functors between abelian categories are assumed to be additive,
+and functors between $\kk$-linear categories are in addiiton assumet to be $\kk$-linear on morphisms.
+
+
 \begin{example}\label{x:linear-abelian-cats}
-  Below are some examples of $\kk$-linear abelian categories.
+  Below are some examples of $\kk$-linear abelian categories. In all cases, the morphisms are trivial to define.
   \begin{enumerate}
     \item $\vect_\kk$;
     \item category $\Rep_\kk(G)$ of representations of a group $G$;
@@ -264,7 +269,7 @@ isomorphism which should be made part of the structure. Moreover, these
 conditions, as suggested by Convention~\ref{conv:canonical}.
 
 \begin{definition}\label{d:monoidal}\index{monoidal category}
-  A monoidal category is a category $\calC$ together with the following data:
+  A \emph{monoidal category} is a category $\calC$ together with the following data:
   \begin{itemize}
     \item An object $\one \in \calC$
     \item a functor $\otimes\colon \calC \times \calC \to \calC$
@@ -341,6 +346,12 @@ The following are examples of monoidal categories.
       to $\otimes_R$, and $\one = R$
 
   \end{enumerate}
+\end{example}
+
+\begin{example}\label{x:fund-group}
+  Let $G$ be a topological group. Let $\Pi_1(G)$ be its fundamental groupoid,
+  as defined in \deref{x:fundamental-groupoid}. Then multiplication on $G$
+  defines on $\Pi_1(G)$ a structure of a monoidal category.
 \end{example}
 
 
@@ -426,6 +437,14 @@ is connected.
   \calC$ such that $F\circ G\simeq \id_\calC$, $G\circ F \simeq \id_\calD$.
 \end{definition}
 
+\begin{remark}\label{r:lax}
+  In many references, monoidal functors as defined above are called \emph{weak
+  monoidal functors}. One can also consider variations of this definition:
+  instead of requiring $J$ to be an isomorphism, one requires $J$ to be a
+  functorial morphism (not necessarily invertible). This gives the definition
+  of \emph{lax monoidal functor}, see \cite[Definition 1.2.10]{leinster}.
+\end{remark}
+
 
 \begin{example}\label{x:rep-group-monoidal}
   Consider the category of representations of a group $G$. Then the
@@ -458,7 +477,7 @@ is connected.
   different: namely, $\al \colon (V\otimes W)\otimes U \to V \otimes (W\otimes
   U)$ is given by
   $$
-    \al((v \otimes w) \otimes u )= \om_{g,h,m} v \otimes (w\otimes u),
+    \al((v \otimes w) \otimes u )= \om (g,h,m) v \otimes (w\otimes u),
     \qquad v\in V_g, w\in W_h, u\in U_m.
   $$
   The cocycle condition immediately implies that so defined $\al$ satisfies the
@@ -497,10 +516,11 @@ isomorphism classes of objects in a monoidal category.
 
 
 \begin{convention}\label{c:graphical-monoidal}
-We will frequently use graphical presentation of morphisms
-in a monoidal category, representing a morphism
-$\ph \colon A_1\otimes \dots \otimes A_k\to B_1\otimes\dots \otimes B_m$
-by a box with $k$ inputs at the top and $m$ outputs at the bottom:
+  We will frequently use graphical presentation of morphisms
+  in a monoidal category, representing a morphism
+  $\ph \colon A_1\otimes \dots \otimes A_k\to B_1\otimes\dots \otimes B_m$
+  by a box with $k$ inputs at the top and $m$ outputs at the bottom as shown in
+  \firef{f:graphical-morphism}.
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -540,7 +560,7 @@ W\otimes V$. The definition below gives a proper generalization of this to
 arbitrary monoidal categories.
 
 \begin{definition}\label{d:symmetric}\index{monoidal category!symmetric}
-  A symmetric monoidal category is a monoidal category $\calC$ together
+  A \emph{symmetric monoidal category} is a monoidal category $\calC$ together
   with a functorial isomorphism
   $$
     c_{X,Y}\colon X\otimes Y \isoto Y\otimes X
@@ -646,10 +666,215 @@ theorem, which is an analog of Mac Lane's coherence theorem, but for
     \item Any two such isomorphisms $F_1\to F_2$ are equal.
   \end{enumerate}
 \end{theorem}
-As before, this theorem can be understood as a statement that a certain cell
-complex is simply connected; if we only use permutations and tensor product
-(i.e., no units), then this complex is called \emph{permutoassociahedron}. (It
-took me 3 tries to spell that correctly; in the end, I had to use copy and
-paste from another source.)
+Similar to \thref{t:maclane}, this theorem can be understood as a statement
+that a certain cell complex is simply connected; if we only use
+permutations and tensor product (i.e., no units), then this complex is
+called \emph{permutoassociahedron}. (Yes, we know, it is long and
+impossible to spell.)
 
-\clearpage
+
+As before, we skip the proof of this theorem, referring the reader to
+\cite[Section XI.1]{mac-lane}.
+
+\begin{corollary}\label{c:AS}
+  Let $\calC$ be a symmetric monoidal category and let $A_s$, $s\in S$ be a
+  collection of objects in $\calC$ indexed by a finite set $S$. Then we  have a
+  well-defined (up to a canonical isomorphism) object $  \bigotimes_{s\in S}
+  A_s$.
+\end{corollary}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rigid monoidal categories}\label{s:rigid}
+In many monoidal categories, cuch as the category of finite-dimensional vector
+spaces or the category of finitd-eimensional representations of a group $G$, in
+addition ot the tensor product we also have the operation of taking duals: for
+every representation $V$, we also have the dual representation $V^*$. The
+following definition allows one to talk about duals in any monoidal category.
+\begin{definition}\label{d:dual-object}
+  Let $\calC$ be a monoidal category.
+  A \emph{dual pair}\index{dual pair} is a pair of objects $A,B\in \calC$
+  together with morphisms
+  \begin{align*}
+    \ev&\colon A\otimes B\to \one \qquad \text{(evaluation morphism),}\\
+    \coev&\colon \one \to B\otimes A \qquad \text{(coevaluation morphism)},
+  \end{align*}
+  satisfying the \emph{rigidity}\index{rigidity} condition below.
+  \begin{equation}\label{e:rigidity}
+    \begin{aligned}
+      &\Bigl(B\to \one\otimes B \xto{\coev\otimes 1_B}
+                       (B\otimes A)\otimes B \xto{\al_{B,A,B}}
+                       B\otimes (A\otimes B) \xto{1_B\otimes \ev}
+                       B\otimes \one \to
+                       B\Bigr) = 1_B\\
+      &\Bigl(A\to  A\otimes \one  \xto{1_A\otimes \coev}
+                       A\otimes (B\otimes A) \xto{\al^{-1}_{A,B,A}}
+                       (A\otimes B)\otimes A \xto{\ev\otimes 1_A}
+                       \one\otimes A \to
+                       A\Bigr) = 1_A
+    \end{aligned}
+  \end{equation}
+  In this situation we say that $A$ is a
+  \emph{left dual}\index{dual object!left} of $B$, and
+  $B$ is a \emph{right dual}\index{dual object!right} of $A$.
+\end{definition}
+Note that in this definition we do not assume that $\calC$ is symmetric.
+
+
+It is common to represent the evaluation and coevaluation graphically:
+\begin{equation}\label{e:ev-coev-graphical}
+  \begin{tikzpicture}
+  \node at (0.3,0) {$\ev =$};
+  \node[label=above:$A$] (A) at (1,0) {};
+  \node[label=above:$B$] (B) at (1.5,0) {};
+  \pic at (A) {ev};
+  \node at (3.3,0) {$\coev =$};
+  \node[label=below:$B$] (B) at (4,0) {};
+  \node[label=below:$A$] (A) at (4.5,0) {};
+  \pic at (B) {coev};
+  \end{tikzpicture}
+\end{equation}
+
+Then the rigidity equations \eqref{e:rigidity} are illustrated by
+\begin{equation}\label{e:rigidity2}
+  \begin{tikzpicture}[vcenter]
+    \node[label=above:$A$] (A) at (0,0){};
+    \pic at (A) {rigidity};
+    \node at (1.5, -1) {$=$};
+    \node[label=above:$A$] (A2) at (2,0){};
+    \draw (A2)-- +(0,-2);
+  \end{tikzpicture}
+  \qquad\qquad
+  \begin{tikzpicture}[vcenter]
+    \node[label=above:$B$] (B) at (0,0){};
+    \pic[x=-1cm] at (B) {rigidity};
+    \node at (0.5, -1) {$=$};
+    \node[label=above:$B$] (B2) at (1,0){};
+    \draw (B2)-- +(0,-2);
+  \end{tikzpicture}
+\end{equation}
+
+The following example provides the motivation for this definition.
+
+\begin{example}\label{x:dual-vector}
+  Let $V$ be a finite-dimensional vector space and let $V^*$ be the dual vector
+  space. Let $\ev\colon V^*\otimes V\to \kk$ be the natural pairing. Define
+  coevaluation
+  \begin{equation}\label{e:dual-vector}
+      \begin{aligned}
+      \coev\colon \kk &\to V\otimes V^*\\
+                  1&\mapsto \sum v_i\otimes v^i
+      \end{aligned}
+  \end{equation}
+  where $v_i, v^i$ are dual bases in $V, V^*$ respectively. Then so defined
+  $\ev$ and $\coev$ satisfy rigidity equations  \eqref{e:rigidity}; thus,
+  $(V^*, V, \ev, \coev)$ for a dual pair.
+
+  Indeed, one easily sees that the rigidiry equations are equivalent to
+  requiring that for any $v in V, f\in V^*$, we have
+  \begin{equation}
+   \begin{aligned}
+    \sum \<v^i, v\>v_i &= v\\
+    \sum \<f, v_i\>v^i &= f
+   \end{aligned}
+  \end{equation}
+\end{example}
+
+\begin{lemma}\label{l:rigidity_vect}
+  A vector space $V$, considered as an object in monoidal category $\vect$, has
+  a left dual if and only if it is finite-dimensional. In this case, the left
+  dual is given by $V^*$, with evaluation and coevaluation defined as in
+  \exref{x:dual-vector}
+\end{lemma}
+
+We now return to dual objects in arbitrary monoidal categoires.
+
+It turns out that right dual, if exists, is unique up to unique isomorphism.
+\begin{theorem}\label{t:dual_unique1}
+  Let $(A, B, \ev, \coev)$ and $(A,B', \ev', \coev')$ be two dual pairs with
+  the same $A$. Then there exists a unique morphism $\ph\colon B\to B'$ such
+  that $\ev = \ev' \circ (1_A\otimes \ph)$, $\coev' =(\ph\otimes 1_A) \coev$.
+\end{theorem}
+The proof is a standard snake-diagram argument: the required $\ph$ is given by
+the composition
+$$
+  B \xto{1_B\otimes \coev'} B\otimes A\otimes B'
+    \xto{\ev\otimes 1_{B'}} B',
+$$
+and uniqueness follows by chasing the rigidity equations.
+A similar statement holds for left dual.
+
+This allows us to talk about the right dual of $A$ as a well-defined object in
+$\calC$. We will denote the right dual of $A$ by ${}^*A$; similarly we will use
+notation $B^*$ for left dual of $B$. In this notation, evaluation and
+coevaluation morphisms become
+\begin{equation}
+  \begin{aligned}
+    \ev_b&\colon B^*\otimes B\to\one\\
+    \coev_B&\colon \one \to B\otimes B^*.
+  \end{aligned}
+\end{equation}
+
+Clearly, in a symmetric monoidal
+category, the left dual is also a right dual.
+
+\begin{definition}\label{d:rigid}
+  An object $A$ in a monoidal category $\calC$ is
+  \emph{rigid}\index{rigid object} if
+  it has both left and right duals.
+
+  A monoidal category is \emph{rigid}\index{monoidal category!rigid}
+  if every object is rigid.
+\end{definition}
+
+\begin{example}\label{x:vector-rigid}
+  By \leref{l:rigidity_vect}, a vector space $V$ is rigid as an object of
+  $\vect$ if and only if it is finite-dimensional.
+\end{example}
+
+
+\begin{exercise}\label{ec:coev-unique}
+  Show that in a dual pair, the coevaluation is uniquely determined by
+  the remaining data: if $(A, B, \ev, \coev)$ and $(A,B, \ev, \coev')$
+  are dual pairs, then $\coev = \coev'$.
+
+  Similarly, $\ev$ is uniquely determined by $(A,B, \coev)$.
+\end{exercise}
+
+\begin{exercise}\label{ec:dual-of-tensor}
+  Let $X^*$, $Y^*$ be left duals of objects $X, Y$. Show that then $X\otimes Y$
+  also has a right dual, and there is a canonical isomorphism $(X\otimes
+  Y)^*\simeq Y^* \otimes X^*$.
+\end{exercise}
+
+\begin{exercise}\label{ec:dual-morphism}
+  Let $\calC$ be a rigid monoidal category. For a morphism $f\colon X\to Y$,
+  define a morphism $f^*\colon Y^*\to X^*$ by the picture below.
+
+  \begin{equation}\label{e:dual-morphism}
+    \begin{tikzpicture}[vcenter]
+      \node at (-1.2,0) {$f^*=$};
+      \node[morphism_sq] (f) at (0,0) {$f$};
+      \draw(f.north)-- +(0, 0.25) arc (180:0:0.25) -- +(0, -1.5) coordinate
+      (X*);
+      \draw(f.south)-- +(0, -0.25) arc (0:-180:0.25) -- +(0, 1.5) coordinate
+      (Y*);
+      \node[above] at (Y*) {$Y^*$};
+      \node[below] at (X*) {$X^*$};
+    \end{tikzpicture}
+  \end{equation}
+
+
+  Prove that then
+  $(fg)^*=g^* f^*$; thus, $*$ is a contravariant functor $\calC\to \calC$.
+\end{exercise}
+
+
+\begin{exercise}\label{ec:dual-morphism2}
+  Let $\calC$ be a rigid monoidal category. Show that then one has
+  canonical functorial isomorphisms
+  \begin{align*}
+    \Hom(X,Y)&\simeq \Hom(\one, Y\otimes X^*)\simeq \Hom(\one, {}^*X\otimes Y)\\
+    \Hom(X\otimes Z, Y)&\simeq \Hom(Z, {}^*X\otimes Y)\simeq \Hom(X, Y\otimes
+    Z^*).
+  \end{align*}
+\end{exercise}
+

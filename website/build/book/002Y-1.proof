@@ -8,7 +8,7 @@
     <div class="centered"><img class="includegraphics" src="/static/figures/c5-eqfig03.svg"></div>
 </div>
     <p>
-       where $x_ i, x^ i$ are defined by $\Delta (1)=\sum x_ i \otimes x^ i$. Thus, by Lemma&#160;<a href="/tag/001D" data-tag="001D">3.2.2</a>, $A$ is finite-dimensional, and $\varepsilon (ab)$ is a non-degenerate pairing. 
+       where $x_ i, x^ i$ are defined by $\Delta (1)=\sum x_ i \otimes x^ i$. Thus, by Lemma&#160;<a href="/tag/001D" data-tag="001D">2.5.1</a>, $A$ is finite-dimensional, and $\varepsilon (ab)$ is a non-degenerate pairing. 
       <span class="qed">$\square$</span>
     </p>
 </article>

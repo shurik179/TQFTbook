@@ -1,0 +1,3 @@
+<article class="env-theorem" id="00H2">
+  <p><a class="environment-identifier" href="/tag/00H2">Theorem <span data-tag="00H2">19.3.1</span>.</a> If $M$ is a PL manifold without boundary, then the number $Z(M) \in \mathbf{k}$ defined in Definition&#160;<a href="/tag/00H1" data-tag="00H1">19.3.1</a> does not depend on the choice of PLCW decomposition of $M$: for any two choices of PLCW decomposition, the resulting invariants are equal. </p>
+</article>

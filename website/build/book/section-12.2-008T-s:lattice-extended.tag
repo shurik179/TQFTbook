@@ -33,13 +33,13 @@ It is trivial to check that the so-defined vector space does not depend on the c
     <div>\begin{equation} \label{e:ZAI-ZAS1} \begin{aligned}  Z_ A(I)& =A\otimes _ A A\otimes _ A \dots \otimes _ A A\simeq A\\  Z_ A(S^1)& \simeq A/[A,A]. \end{aligned} \end{equation}</div>
 </div>
 <p>
-If $I$ is an interval, then $Z_ A(I)$ is an $A$-bimodule; thus, if we consider $I$ as a cobordism $\bullet ^+\to \bullet ^+$, then $Z_ A(I)$ is a morphism $A\to A$ in $\mathbf{Alg}$. We can also consider $I$ as a cobordism $\bullet ^+\sqcup \bullet ^-\Rightarrow \varnothing $, and $Z_ A(I)$ as a right module over $A\otimes A^{\mathrm{op}}$, or consider $I$ as a cobordism $\varnothing \Rightarrow \bullet ^+\sqcup \bullet ^-$, and $Z_ A(I)$ as a left module over $A\otimes A^{\mathrm{op}}$. 
+If $I$ is an interval, then $Z_ A(I)\simeq A$ is an $A$-bimodule; thus, if we consider $I$ as a cobordism $\bullet ^+\to \bullet ^+$, then $Z_ A(I)$ is a morphism $A\to A$ in $\mathbf{Alg}$. We can also consider $I$ as a cobordism $\bullet ^+\sqcup \bullet ^-\Rightarrow \varnothing $, and $Z_ A(I)$ as a right module over $A\otimes A^{\mathrm{op}}$, or consider $I$ as a cobordism $\varnothing \Rightarrow \bullet ^+\sqcup \bullet ^-$, and $Z_ A(I)$ as a left module over $A\otimes A^{\mathrm{op}}$. 
 </p>
 <p>
 We can now define $Z_ A$ for a 2-cobordism. First, let $M$ be a 2-manifold with boundary, considered as a cobordism $N\to \varnothing $, where $N=\overline{\partial M}$. Choose a cell decomposition $K$ of $M$; let $E_{\mathrm{bulk}}$ be the set of oriented edges inside $M$ (thus, every internal unoriented edge of $K_1$ appears twice in $E_{\mathrm{bulk}}$) and $E_{N}$ be the set of oriented edges on the boundary (each appearing with orientation inherited from $N=\overline{\partial M}$). 
 </p>
 <p>
-Let us modify (<a href="/tag/008P" data-tag="008P">12.1.6</a>) and define 
+Let us modify (<a href="/tag/008P" data-tag="008P">12.1.10</a>) and define 
 </p>
 <div class="equation" id="008W">
     <span class="equation-label"><a href="/tag/008W" data-tag="008W">12.2.5</a></span>
@@ -71,8 +71,23 @@ For a closed oriented one-dimensional manifold $N$, let $M=N\times I$ considered
 </p>
 </li>
 </ol></p>
-</article> We leave the proof of this theorem to the reader; it is an easy modification of the proof of Theorem&#160;<a href="/tag/008Q" data-tag="008Q">12.1.2</a>. 
+</article> 
 </p>
+<article class="env-proof">
+    <p>
+      <strong>Proof.</strong>
+      Proof of the first two parts is an easy modification of the proof of Theorem&#160;<a href="/tag/008Q" data-tag="008Q">12.1.2</a> and is left to the reader. 
+    <p>
+      For the last part, it suffices to consider $M=S^1\times I$ considered as a cobordism $S^1\sqcup S^1\to \varnothing $. In this case, taking the cell decomposition of the cylinder obtained by gluing two opposite sides of rectangle together, we see that the corresponding map $Z(M)$ is given by 
+    <p>
+      <div class="equation">
+  \begin{align*}  Z_ A(M)\colon V\otimes V & \to \mathbf{k}, \qquad V=A/[A,A]\\  [a_1]\otimes [a_2]& \mapsto \varepsilon (\sum a_1 x_ i a_2x^ i) \end{align*}
+</div>
+    <p>
+       where $x_ i, x^ i$, as usual, are the dual bases with respect to Frobenius pairing. The fact that this pairing is non-degenerate follows from Exercise&#160;<a href="/tag/00GB" data-tag="00GB">9.4.1</a>. 
+      <span class="qed">$\square$</span>
+    </p>
+</article>
 <p>
 Since the pairing (<a href="/tag/008Y" data-tag="008Y">12.2.6</a>) is non-degenerate, it can be used to identify $Z_ A(\overline{N})\simeq (Z_ A(N))^*$. In particular, it shows that if $M$ is a cobordism $N_1\Rightarrow N_2$ — which can also be considered as a cobordism $N_1\sqcup \overline{N_2}\Rightarrow  \varnothing $ — then $Z_ A(M)\colon Z_ A(N_1)\otimes Z_ A(\overline{N_2}) \to \mathbf{k}$ can also be considered as an operator $Z_ A(N_1)\otimes Z_ A(N_2)^*\to \mathbf{k}$, or equivalently, as an operator $Z_ A(N_1)\to Z_ A(N_2)$; more formally, for such a cobordism we define $Z_ A(M)\colon Z_ A(N_1)\to Z_ A(N_2)$ by 
 </p>
@@ -91,11 +106,6 @@ Since the pairing (<a href="/tag/008Y" data-tag="008Y">12.2.6</a>) is non-degene
 <p>
 <article class="env-example" id="0091">
   <p><a class="environment-identifier" href="/tag/0091">Example <span data-tag="0091">12.2.1</span>.</a> Let $D$ be a disk considered as a cobordism $S^1\to \varnothing $. Then $Z_ A\colon A/[A,A]\to \mathbf{k}$ is given by the counit of the Frobenius algebra: $Z_ A(x)=\varepsilon (x)$. </p>
-</article> <article class="env-example" id="0092">
-  <p><a class="environment-identifier" href="/tag/0092">Example <span data-tag="0092">12.2.2</span>.</a> Let $M=S^1\times I$ be the cylinder considered as a cobordism $S^1\sqcup S^1\to \varnothing $. Choosing a decomposition of the cylinder obtained by gluing together two sides of the rectangle, we see that in this case we have </p>
-  <div class="equation">
-  \[  Z_ A(M)(a\otimes b)=\sum \varepsilon (ax_ ibx^ i) =\sum \varepsilon (w^{-1} x_ jax^ jx_ i b x^ i).  \]
-</div>
 </article> <article class="env-exercise" id="0093">
   <p><a class="environment-identifier" href="/tag/0093">Exercise <span data-tag="0093">12.2.1</span>.</a> Show that <img class="includegraphics" src="/static/figures/c12-eqfig02.svg" />, where $V=Z_ A(S^1)=A/[A,A]$, is given by </p>
   <div class="equation">
@@ -125,7 +135,10 @@ Choosing a cell decomposition $K$ of $M$ such that each corner is a vertex of th
 <p>
 Now, for each vertical edge $e\in E_ v$, take vector $1\in A_ e$. This defines a vector $1_ v\in A^{\otimes E_ v}$. Define 
 </p>
-<div class="equation" id="008Z">
-    <span class="equation-label"><a href="/tag/008Z" data-tag="008Z">12.2.8</a></span>
-    <div>\begin{equation} \label{e:fhk-state-sum3} \begin{aligned}  Z_ A(M,K)\colon A^{\otimes E_{\mathrm{top}}}\otimes A^{\otimes E_{\mathrm{bot}}}& \to \mathbf{k}\\  Z_ A(M,K) (a_{\mathrm{top}}\otimes a_{\mathrm{bot}})& = \tilde Z_ A(a_{\mathrm{top}}\otimes a_{\mathrm{bot}}\otimes 1_ v). \end{aligned} \end{equation}</div>
+<div class="equation" id="00GE">
+    <span class="equation-label"><a href="/tag/00GE" data-tag="00GE">12.2.8</a></span>
+    <div>\begin{equation} \label{e:fhk-state-sum4} \begin{aligned}  Z_ A(M,K)\colon A^{\otimes E_{\mathrm{top}}}\otimes A^{\otimes E_{\mathrm{bot}}}& \to \mathbf{k}\\  Z_ A(M,K) (a_{\mathrm{top}}\otimes a_{\mathrm{bot}})& = \tilde Z_ A(a_{\mathrm{top}}\otimes a_{\mathrm{bot}}\otimes 1_ v). \end{aligned} \end{equation}</div>
 </div>
+<p>
+FIXME 
+</p>

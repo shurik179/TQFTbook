@@ -1,9 +1,103 @@
 \documentclass[border=3pt]{standalone}
 \input{figpre.tex}
 \begin{document}
-\begin{tikzpicture}
-    \pic at (0,0) {pants};
-    \pic at (2,0) {cylinder};
-    \pic at (3, -0.5) {cup};
-  \end{tikzpicture}
+\begin{tikzpicture}[scale=0.25]
+    		\begin{scope}[xshift=0cm]
+    			% first diagram code
+    			\node (31) at (-9.5, -1.75) {};
+    			\node (33) at (3.25, 0.75) {};
+    			\node (34) at (-7.5, 1) {};
+    			\node (35) at (-4.25, 1.25) {};
+    			\node (36) at (-7, 0.75) {};
+    			\node (37) at (-4.75, 1) {};
+    			\node (38) at (5.5, 0.25) {};
+    			\node (41) at (5.5, -2.75) {};
+    			\node (42) at (2.75, -2) {};
+    			\node (43) at (-2, -1.75) {};
+    			\node (45) at (-5.75, 1.5) {};
+    			\node (46) at (5.25, 5) {};
+    			\node (47) at (5.25, 2.5) {};
+    			\node (48) at (3.5, 2.25) {};
+    			\node (49) at (1, 3.5) {};
+    			\node (50) at (-2.25, 3.5) {};
+    			\node (51) at (-9.5, 3) {};
+    			\node (52) at (-5.5, 4.5) {};
+    			\node (53) at (-0.75, 2.83) {};
+    			\node (54) at (-0.75, -1.22) {};
+    			\draw [bend right, looseness=1.25] (34.center) to (35.center);
+    			\draw [bend left=60, looseness=1.25] (36.center) to (37.center);
+    			\draw [bend right, looseness=0.75] (33.center) to (38.center);
+    			\draw [bend left=15, looseness=1.25] (38.center) to (41.center);
+    			\draw [bend right, looseness=1.25] (31.center) to (43.center);
+    			\draw [bend left=45, looseness=0.75] (43.center) to (42.center);
+    			\draw [bend right, looseness=0.75] (42.center) to (41.center);
+    			\draw [bend right=15, looseness=1.25] (38.center) to (41.center);
+    			\draw [bend left=15, looseness=1.25] (46.center) to (47.center);
+    			\draw [bend right=15, looseness=1.25] (46.center) to (47.center);
+    			\draw [bend left=330, looseness=0.75] (47.center) to (48.center);
+    			\draw [bend right=45] (48.center) to (33.center);
+    			\draw [bend left=345, looseness=1.25] (46.center) to (49.center);
+    			\draw [bend right=315] (49.center) to (50.center);
+    			\draw [bend left=15] (52.center) to (50.center);
+    			\draw [bend left=15, looseness=0.75] (51.center) to (52.center);
+    			\draw [bend right=45, looseness=0.50] (51.center) to (31.center);
+    			\draw [bend left=60, looseness=0.50] (51.center) to (31.center);
+    			\node[left] at ($(45.center)+(+5.00,-0.00)$) {$M$};
+    			\node[left] at ($(45.center)+(+12.50,-0.50)$) {$N_0$};
+    			\node[left] at ($(45.center)+(-4.00,-0.50)$) {$N_1$};
+    			
+    			
+    		\end{scope}
+    		
+    		\begin{scope}[xshift=20cm]
+    			% second diagram code
+    			\node (31) at (-9.5, -1.75) {};
+    			\node (33) at (3.25, 0.75) {};
+    			\node (34) at (-7.5, 1) {};
+    			\node (35) at (-4.25, 1.25) {};
+    			\node (36) at (-7, 0.75) {};
+    			\node (37) at (-4.75, 1) {};
+    			\node (38) at (5.5, 0.25) {};
+    			\node (41) at (5.5, -2.75) {};
+    			\node (42) at (2.75, -2) {};
+    			\node (43) at (-2, -1.75) {};
+    			\node (45) at (-5.75, 1.5) {};
+    			\node (46) at (5.25, 5) {};
+    			\node (47) at (5.25, 2.5) {};
+    			\node (48) at (3.5, 2.25) {};
+    			\node (49) at (1, 3.5) {};
+    			\node (50) at (-2.25, 3.5) {};
+    			\node (51) at (-9.5, 3) {};
+    			\node (52) at (-5.5, 4.5) {};
+    			\node (53) at (-0.75, 2.83) {};
+    			\node (54) at (-0.75, -1.22) {};
+    			\draw [bend right, looseness=1.25] (34.center) to (35.center);
+    			\draw [bend left=60, looseness=1.25] (36.center) to (37.center);
+    			\draw [bend right, looseness=0.75] (33.center) to (38.center);
+    			\draw [bend left=15, looseness=1.25] (38.center) to (41.center);
+    			\draw [bend right, looseness=1.25] (31.center) to (43.center);
+    			\draw [bend left=45, looseness=0.75] (43.center) to (42.center);
+    			\draw [bend right, looseness=0.75] (42.center) to (41.center);
+    			\draw [bend right=15, looseness=1.25] (38.center) to (41.center);
+    			\draw [bend left=15, looseness=1.25] (46.center) to (47.center);
+    			\draw [bend right=15, looseness=1.25] (46.center) to (47.center);
+    			\draw [bend left=330, looseness=0.75] (47.center) to (48.center);
+    			\draw [bend right=45] (48.center) to (33.center);
+    			\draw [bend left=345, looseness=1.25] (46.center) to (49.center);
+    			\draw [bend right=315] (49.center) to (50.center);
+    			\draw [bend left=15] (52.center) to (50.center);
+    			\draw [bend left=15, looseness=0.75] (51.center) to (52.center);
+    			\draw [bend right=45, looseness=0.50] (51.center) to (31.center);
+    			\draw [bend left=60, looseness=0.50] (51.center) to (31.center);
+    			\draw [bend right=15] (53.center) to (54.center);
+    			\draw [dashed, bend left=15] (53.center) to (54.center);
+    			\node[left] at ($(45.center)+(9.00,0.80)$) {$M_1$};
+    			\node[right] at ($(45.center)+(+0.00,0.90)$) {$M_2$};
+    			\node[left] at ($(45.center)+(+5.00,-0.50)$) {$N$};
+    			\node[left] at ($(45.center)+(+12.50,-0.50)$) {$N_0$};
+    			\node[left] at ($(45.center)+(-4.00,-0.50)$) {$N_1$};
+    			
+    		\end{scope}
+    		
+    	\end{tikzpicture}
 \end{document}

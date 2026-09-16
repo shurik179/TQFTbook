@@ -1,10 +1,9 @@
 <h1 id="c:2d-defects" class="tex-chapter"><span data-tag="0096">13</span> 2d TQFT with defects</h1>
+
 <p>
- References: <span class="cite">[<a href="/bibliography/cdr">CDZR2025</a>]</span>: review article; <span class="cite">[<a href="/bibliography/dkr">DKR2011</a>]</span> one of first constructions; <span class="cite">[<a href="/bibliography/carqueville">Car2016</a>]</span> 
+So far we only considered TQFTs defined on homogeneous spacetimes, where the local structure of the theory is the same at every point of the spacetime. However, one can also consider theories where different parts of the spacetime carry different TQFTs. The codimension-one locus separating the homogeneous parts should describe interface between different TQFTs; moreover, one can continue, introducing a codimension 2 stratum separating different codimension 1 interfaces. In physics, all these positive codimension strata are thought of as a <em>defects</em> in the structure of spacetime, and the corresponding formalism is referred to as <em>TQFT with defects</em>. As we will show later, this approach is very closely related to fully extended TQFT (see section FIXME below). 
 </p>
 <p>
-FIXME 
+This idea has a long history in physics. Our exposition follows <span class="cite">[<a href="/bibliography/dkr">DKR2011</a>]</span>, which gives a detailed description of 2D TQFT with defects. See also review articles <span class="cite">[<a href="/bibliography/carqueville">Car2016</a>]</span> and <span class="cite">[<a href="/bibliography/cdr">CDZR2025</a>]</span>. Very closely related formalism in the context of extended TQFTs is also described in <span class="cite">[<a href="/bibliography/lurie">lurie</a>, <span class="postnote">Section 4.3</span>]</span> under the name <em>TQFT for manifolds with singularity</em>. For simplicity, we restrict ourselves to the 2-dimensional case. 
 </p>
-<p>
-So far we only considered TQFTs defined on (unstratified) manifolds. Even the manifolds with corners, that we used to motivate the definition of extended TQFT, were meant to be glued back to form an unstratified manifold. Such (extended) TQFTs can be considered as describing physics on a homogenous spacetime. It is then natural to consider more general physical systems, where the different parts of the spacetime are described by different TQFTs. The codimension 1 surface separating the homogenous parts can be thought of as a defect that makes the spacetime non-homogenous. This motivates us to define the notion of TQFT with defects. 
-</p>
+

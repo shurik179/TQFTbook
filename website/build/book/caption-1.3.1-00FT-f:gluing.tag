@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 1.3.1. Cutting of a manifold $M$ into two manifolds $M_1$ and $M_2$, along a codimension one submanifold $N$. Gluing axiom asserts that $Z_ M=Z_{M_2} \circ Z_{M_1}$. </figcaption>

@@ -68,6 +68,16 @@ This category has a natural structure of a symmetric monoidal category with resp
 </article> This definition was first given in <span class="cite">[<a href="/bibliography/atiyah">Ati1988</a>]</span> in slightly different language. 
 </p>
 <p>
+In particular, this definition implies that 
+</p>
+<div class="equation" id="00G4">
+    <span class="equation-label"><a href="/tag/00G4" data-tag="00G4">3.1.2</a></span>
+    <div>\begin{equation} \label{e:tqft-gluing0} Z( M_1\cup _{N_1} M_2) = Z(M_2) Z(M_1) \end{equation}</div>
+</div>
+<p>
+ which is one of the forms of the <em>gluing axiom</em>. An equivalent formulation of the gluing axiom will be given below, see Lemma&#160;<a href="/tag/00G6" data-tag="00G6">3.3.2</a>. 
+</p>
+<p>
 One can also generalize this definition, allowing the TQFT to take values in other categories. 
 </p>
 <p>

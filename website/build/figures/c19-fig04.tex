@@ -1,0 +1,32 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[baseline=0pt]
+		\tikzstyle revmidarrow=[fill, dart, dart tail angle=112,
+		dart tip angle=53,inner sep=0.55pt,sloped,
+		allow upside down,rotate=180];
+		\tikzstyle midarrow=[fill, dart, dart tail angle=112,
+		dart tip angle=53,inner sep=0.55pt,sloped,allow upside down];
+		\coordinate (a1) at (0:1.2cm);
+		\coordinate (a0) at (72:1.2cm);
+		\coordinate (a4) at (144:1.2cm);
+		\coordinate (a3) at (216:1.2cm);
+		\coordinate (a2) at (288:1.2cm);
+		\fill[fill=yellow!35,draw, very thin] (a0)--(a1)--(a2)--(a3)--(a4)--(a0);
+		\draw[semithick,>=stealth,->] (a0)--(a1) node [pos=0.1,right] {$X_1$};
+		\draw[semithick,>=stealth,->] (a1)--(a2) node [pos=0.2,right] {$X_2$};
+		\draw[semithick,>=stealth,->] (a2)--(a3) node [pos=0.2,below] {$X_3$};
+		\draw[semithick,>=stealth,->] (a3)--(a4) node [pos=0.2,left] {$X_4$};
+		\draw[semithick,>=stealth,->] (a4)--(a0) node [pos=0.2,above] {$X_5$};
+		\draw[semithick,>=stealth,red] (0,0) -- node[revmidarrow,pos=0.8]{} (36:3cm)
+		node [pos=0.8,auto=right] {$X_1^*$};
+		\draw[semithick,>=stealth,red] (0,0) -- node[midarrow,pos=0.8]{} (108:3cm)
+		node [pos=0.8,auto=right] {$X_5$};
+		\draw[semithick,>=stealth,red] (0,0) -- node[midarrow,pos=0.8]{} (180:3cm)
+		node [pos=0.8,auto=right] {$X_4^*$};
+		\draw[semithick,>=stealth,red] (0,0) -- node[revmidarrow,pos=0.8]{} (252:3cm)
+		node [pos=0.8,auto=right] {$X_3$};
+		\draw[semithick,>=stealth,red] (0,0) -- node[midarrow,pos=0.8]{} (324:3cm)
+		node [pos=0.8,auto=right] {$X_2$};
+	\end{tikzpicture}
+\end{document}

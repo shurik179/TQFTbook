@@ -8,8 +8,11 @@
 An abelian category is <em>$\mathbf{k}$-linear</em> if all sets $\operatorname{Hom}(X,Y)$ are vector spaces over a field $\mathbf{k}$, and composition of morphisms is linear over $\mathbf{k}$. 
 </p>
 <p>
+Unless explicitly stated otherwise, functors between abelian categories are assumed to be additive, and functors between $\mathbf{k}$-linear categories are in addiiton assumet to be $\mathbf{k}$-linear on morphisms. 
+</p>
+<p>
 <article class="env-example" id="000D">
-  <p><a class="environment-identifier" href="/tag/000D">Example <span data-tag="000D">2.2.1</span>.</a> Below are some examples of $\mathbf{k}$-linear abelian categories. </p>
+  <p><a class="environment-identifier" href="/tag/000D">Example <span data-tag="000D">2.2.1</span>.</a> Below are some examples of $\mathbf{k}$-linear abelian categories. In all cases, the morphisms are trivial to define. </p>
   <p><ol>
   <li><p>
 $\mathbf{Vec}_\mathbf{k}$; 

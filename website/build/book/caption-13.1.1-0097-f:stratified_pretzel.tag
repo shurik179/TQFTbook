@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Figure 13.1.1. A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions. Labelling of defects ( shown in blue ) by bimodules requires a choice of orientation, which is suppressed here for brevity.</figcaption>
+<figcaption class="figcaption">Figure 13.1.1. A stratified manifold decorated with algebras $A$, $B$ and $C$ on different regions. Defects are shown in red, and are labelled by bimodules. Defects require a choice of orientation, which is suppressed here for brevity.</figcaption>

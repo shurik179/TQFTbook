@@ -27,6 +27,16 @@ Prove that the comultiplication is also given by the picture below:
     <span class="equation-label"><a href="/tag/00F4" data-tag="00F4">5.1.7</a></span>
     <div class="centered"><img class="includegraphics" src="/static/figures/c5-fig02.svg"></div>
 </div>
+<p>
+ or, equivalently, by 
+</p>
+<div class="equation" >
+    <span class="equation-label">5.1.8</span>
+    <div>\begin{equation}  (a\otimes b, \Delta (c))=(ab,c), \end{equation}</div>
+</div>
+<p>
+ where we extend the pairing $(\,  , \, )$ to $A\otimes A$ by $(a_1\otimes a_2, b_2\otimes b_1)=(a_1, b_1)\cdot (a_2, b_2)$ (note the order!). 
+</p>
 </li>
 </ol></p>
 </article>

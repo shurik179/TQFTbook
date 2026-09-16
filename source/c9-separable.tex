@@ -1,4 +1,4 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Separable Frobenius algebras}\label{c:separable-frobenius}
 
@@ -702,4 +702,30 @@ $M\otimes N$; the second is a subspace. As an immediate corollary of
 algebra, we have a canonical isomorphism $M \otimes_A N \simeq M\otimes^A
 N$.
 
+
+\begin{exercise}\label{ec:invariants-dual}
+  Let $A$ be an algebra, and let $M$ be a finite-dimensional $A$-bimodule.
+  Recall that in this case, the dual vector space $M^*$ also has a canonical
+  structure of $A$-bimodule, see \ecref{ec:dual-module-frob}.
+  \begin{enumerate}
+    \item Show that we have canonical isomorphisms
+      $(M^*)_A\simeq (M^A)^*$, $(M^*)^A\simeq (M^A)_*$.
+    \item Assume in addition that $A$ is a symmetric Frobenius algebra.
+      Show that the following formula defines a non-degenerate bilinear
+      pairing
+        \begin{align*}
+          z(A)\otimes A/[A,A]&\to \kk\\
+           z\otimes [a]&\mapsto \eps(za).
+        \end{align*}
+        Deduce from this that the following formula defines a non-degenerate
+        symmetric bilinear form on $A/[A,A]$:
+        $$
+        ([a],[b])=\eps(\sum ax_ibx^i)
+        $$
+        where $x_i, x^i$ are dual bases in $A$ with respect to Frobenius
+        pairing.
+    \item Show that if $A$ is a  symmetric Frobenius algebra, then $z(A)$ is
+      automatically  a commutative Frobenius algebra with the same counit.
+  \end{enumerate}
+\end{exercise}
 

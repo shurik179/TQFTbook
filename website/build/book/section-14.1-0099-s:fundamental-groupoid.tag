@@ -28,19 +28,19 @@ Objects of $\Pi _{\infty }(X)$ are points of $X$.
 </li>
 </ul>
 <p>
- This defines an “infinity groupoid”, which has morphisms of all orders. We can also define the fundamental $n$-groupoid $\Pi _{\leq n}(X)=\tau _{\leq n}(\Pi _\infty (X))$, which only has morphisms up to order $n$: namely, $n$-morphisms in $\Pi _{\leq n}(X)$ are homotopy classes of $n$-morphisms in $\Pi _{\infty }(X)$ (two $n$-morphisms are homotopic if there exists an $(n+1)$-morphism between them in $\Pi _\infty (X)$). 
+ This defines an “infinity groupoid”, which has morphisms of all orders. We can also define the fundamental $n$-groupoid $\Pi _{\leq n}(X)=\tau _{\leq n}(\Pi _\infty (X))$, which only has morphisms up to order $n$: namely, $n$-morphisms in $\Pi _{\leq n}(X)$ are homotopy classes of $n$-morphisms in $\Pi _{\infty }(X)$ (two $n$-morphisms are homotopic if there exists an $(n+1)$-morphism between them in $\Pi _\infty (X)$). For $n=1$, this coincides with the previous definition of the fundamental groupoid: $\Pi _{\le 1}(X)=\Pi (X)$. 
 </p>
 <p>
 Note that we have not yet discussed composition in $\Pi _\infty (X)$. It is easy to define composition in the same way as it is done in the usual fundamental groupoid $\Pi _{\le 1}(X)$; however, so defined composition is not associative in $\Pi _\infty $. For example, for $1$-morphisms $\gamma _1, \gamma _2, \gamma _3$, the compositions $\gamma _3 (\gamma _2 \gamma _1)$ and $(\gamma _3 \gamma _2)\gamma _1$ are not equal as maps $I\to X$: in the first case, $\gamma _1$ is traveled over $t\in [0, 1/4]$, $\gamma _2$ over $t\in [1/4, 1/2]$, and $\gamma _3$ over $[1/2,1]$. For the second composition, the intervals are $[0, 1/2]$, $[1/2, 3/4]$, and $[3/4,1]$ respectively, so these compositions are not equal; however, they are homotopic to each other. Thus, any definition of an $n$-category should allow for compositions “associative up to homotopy”. 
 </p>
 <p>
 Fundamental $n$-groupoids $\Pi _{\leq n}(X)$ were suggested by Grothendieck in <span class="cite">[<a href="/bibliography/grothendieck">Gro1983</a>]</span>. He also proposed the following hypothesis. <article class="env-conjecture" id="">
-  <p><a class="environment-identifier" href="/tag/">Conjecture <span data-tag="">14.1.1</span> <span class="named">(Homotopy hypothesis)</span>.</a> Homotopy $n$-types up to weak equivalence are classified by $\Pi _{\leq n}(X)$ up to equivalence. </p>
-</article> (Recall that a topological space $X$ is called an <em>$n$-type</em> if its homotopy groups $\pi _ k(X)$ are trivial for $k&gt;n$.) 
+  <p><a class="environment-identifier" href="/tag/">Conjecture <span data-tag="">14.1.1</span> <span class="named">(Homotopy hypothesis)</span>.</a> Homotopy $n$-types up to weak equivalence are classified by $\Pi _{\leq n}(X)$ up to (suitable) equivalence. </p>
+</article> (Recall that a topological space $X$ is called an <em>$n$-type</em> if its homotopy groups $\pi _ k(X)$ are trivial for all $k&gt;n$, and a continuous function $f\colon X\to Y$ is a weak equivalence if for every $k\ge 0$, $f$ induces an isomorphism of homotopy groups $\pi _ k(X)\cong \pi _ k(Y)$.) 
 </p>
 <p>
 Of course, in order to discuss this hypothesis, one needs first to give a definition of $n$-categories and equivalences between them; thus, we should consider this hypothesis as a natural requirement which should be satisfied by any definition of an $n$-category. 
 </p>
 <p>
-One can also state an $\infty $ version of the homotopy hypothesis; namely, it says that topological spaces up to weak equivalence are classified by their $\infty $ fundamental groupoids up to equivalence. 
+One can also state an infinity version of the homotopy hypothesis; namely, it says that topological spaces up to weak equivalence are classified by their fundamental infinity groupoids up to equivalence. 
 </p>

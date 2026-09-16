@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Figure 13.2.1. Example of vectors assigned to each edge within a 2-cell.</figcaption>
+<figcaption class="figcaption">Figure 13.2.1. Example of vector spaces assigned to the edges of 2-cell $p_1$. Regions to the left and right of defect $x$ are labelled by algebras $b$ and $a$ respectively.</figcaption>

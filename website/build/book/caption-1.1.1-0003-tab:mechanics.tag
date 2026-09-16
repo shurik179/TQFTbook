@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Table 1.1.1. FIXME</figcaption>
+<figcaption class="figcaption">Table 1.1.1. Summary of the main structures in classical and quantum mechanics</figcaption>

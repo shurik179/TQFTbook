@@ -1,4 +1,4 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Dijkgraaf--Witten theory}\label{c:DW}
 In this chapter we discuss the fundamental example of a TQFT:
@@ -52,14 +52,14 @@ with the right action of $G$. In particular, this gives us the monodromy map
 where $\Aut(P_x)$ is the group of all bijections $P_x\to P_x$ which commute with
 the right action of $G$.
 
-If we choose a point $\tilde x\in P_x$, we can identify $P_x$ with $G$;
-this gives an identification $\Aut(P_x)\isoto G$ (since any bijection $G\to G$
-which commutes with the right action of $G$ is given by left multiplication
-by some element of $G$). Thus, a pair $(P, \tilde x)$ gives rise to a
-monodromy map $\rho \colon \pi_1(M,x)\to G$. It is easy to see that
-conversely, for connected $M$, any group homomorphism $\pi_1(M,x)\to G$
-defines a $G$-bundle $P$ together with a choice of a base point $\tilde x
-\in P_x$. In other words, we have the following lemma.
+If we choose a point $\tilde x\in P_x$, we can identify $P_x$ with $G$ by
+$g\mapsto \tilde x g$; this gives an identification $\Aut(P_x)\isoto G$
+(since any bijection $G\to G$ which commutes with the right action of $G$
+is given by left multiplication by some element of $G$). Thus, a pair $(P,
+\tilde x)$ gives rise to a monodromy map $\rho \colon \pi_1(M,x)\to G$. It
+is easy to see that conversely, for connected $M$, any group homomorphism
+$\pi_1(M,x)\to G$ defines a $G$-bundle $P$ together with a choice of a base
+point $\tilde x \in P_x$. In other words, we have the following lemma.
 
 \begin{lemma}\label{l:monodromy1}
   Let $M$ be a connected manifold; fix a choice of base point $x\in M$.
@@ -75,10 +75,10 @@ defines a $G$-bundle $P$ together with a choice of a base point $\tilde x
 
 We will refer to a pair $(P, \tilde x)$ as in the lemma as a
 \emph{based $G$-bundle}\index{G-bundle@$G$-bundle!based}. One can restate
-this lemma as follows: the groupoid $\tBun_G$
+this lemma as follows: for connected $M$, the groupoid $\tBun_G$
 of based $G$-bundles is equivalent as a groupoid to the set
 $\Hom(\pi_1(M,x), G)$ (considered as a trivial groupoid: the only morphisms
-are identity morphisms).
+are identity morphisms). 
 
 If we change the choice of $\tilde x$, replacing it by $\tilde x g$ (for
 the same $P$), then it is easy to see that the monodromy map
@@ -108,8 +108,8 @@ $\Bun_G(M)$ is equivalent to $\Hom(\pi_1(M,x),G)\q G$.
 
 
 \begin{example}\label{x:bundles_s1}
-  Let $M=S^1$. Then $\tBun_G(S^1)\simeq G$, and $\Bun_G(S^1)\simeq G\q G$ (in
-  the second identity, $G$ acts on $G$ by conjugation). In particular, there is
+  Let $M=S^1$. Then $\tBun_G(S^1)\simeq G$, and $\Bun_G(S^1)\simeq G\q G$,
+  where $G$ acts on itself by conjugation. In particular, there is
   a bijection between the set of isomorphism classes of $\Bun_G(S^1)$ and the
   set of conjugacy classes in $G$; if we denote by $P_g$ the bundle
   corresponding to $g\in G$, then $\Aut(P_g)$ is the centralizer of $g$:
@@ -134,7 +134,8 @@ where the sum is over all isomorphism classes of bundles $P$ on $M$ such that
 $P|_{N_0}=P_0$. The gluing axiom follows immediately.
 
 This, however, needs further work. First, the requirement $P|_{N_0}=P_0$
-is meaningless: two objects in a category (in this case, two bundles) are never
+is meaningless: as discussed in \chref{c:categories}, 
+two objects in a category (in this case, two bundles) are rarely
 equal; instead, we should talk about them being isomorphic. But even if $M$ is
 closed, so we do not have this problem, just counting isomorphism classes gives
 the wrong answer, as we completely ignore the fact that some of these bundles
@@ -175,9 +176,9 @@ where $\Stab(x)=\{g\in G\st g(x)=x\}=\Aut_{X\q G}(x)$.
   For an element $g\in G$, the automorphism group of the corresponding bundle
   is the centralizer of $g$: $\Aut(P_g)=Z_g$; thus,
   $$
-  \frac{1}{|\Aut(P_g)|}= \frac{|C_g|}{|G|}
+  \frac{1}{|\Aut(P_g)|}= \frac{|[g]|}{|G|}
   $$
-  where $C_g\subset G$ is the conjugacy class containing $g$.
+  where $[g]\subset G$ is the conjugacy class containing $g$.
 \end{example}
 
 More generally, we see that for a connected manifold $M$, we have
@@ -205,15 +206,14 @@ can be used for any groupoid (in particular, for $\Bun_G(M)$ for general $M$).
 The above formulas for counting elements in ``sets with automorphisms'' (aka
 groupoids) have a long history; in particular, they have been extensively used
 in physics, when discussing Feynman diagrams. For a nice discussion of this see
-\cite{baez-dolan-finite-sets}. In particular, we can count how many finite sets
+\cite{baez-dolan-finite-sets}, or the blog post \cite{baez-counting} by John Baez. 
+In particular, we can count how many finite sets
 there are --- try doing this yourself!
-
-See also the blog post \cite{baez-counting} by John Baez.
 
 
 Similar ideas can also be used, e.g., to define the Euler characteristic of
-an orbifold (see \cite[Section 2.4]{caramello}). Note: there are several
-different definitions of the orbifold Euler characteristic.
+an orbifold (see \cite[Section 2.4]{caramello}). (Note that there are several
+different definitions of the orbifold Euler characteristic.)
 
 Now that we have discussed the proper way of counting, we can return to the
 definition of DW theory.
@@ -230,9 +230,9 @@ definition of DW theory.
 
   For a cobordism $N_0\cob{M}N_1$, we define the linear map
   $Z_G(M)\colon Z_G(N_0)\to Z_G(N_1)$ by
-  $$
+  \begin{equation}\label{e:DWmain}
     Z_G(M)([P_0])=\sum_{(P, \ph)} \frac{1}{|\Aut(P,\ph)|} [P|_{N_1}]
-  $$
+  \end{equation}
   where the sum is over all isomorphism classes of pairs $(P, \ph)$, where
   $P$ is a $G$-bundle on $M$, $\ph$ is an isomorphism of
   bundles $P_0\to P|_{N_0}$, and $\Aut(P, \ph)$ is the group of
@@ -343,7 +343,7 @@ $e_i|_{V_j}=\de_{ij}\id_{V_i}$; thus, $e_i e_j = \de_{ij}e_i$.
   scalars) exactly the orthogonal idempotents. In fact, this is how characters
   were first introduced in \cite{frobenius-characters}: in modern terminology,
   they were defined as elements of the center of the group algebra such that
-  $\chi_i\chi_j = \de_{ij}c_i$. The statement that they are traces in
+  $\chi_i\chi_j = \de_{ij}c_i\chi_i$. The statement that they are traces in
   irreducible representations (and indeed the notion of irreducible
   representation itself) appeared later.
 \end{remark}
@@ -363,11 +363,11 @@ On the other hand, by \eqref{e:dw-closed},
 $$
   Z_G(\Si_g) =\frac{|\Hom(\pi_1(\Si_g), G)|}{|G|}.
 $$
-The structure of the fundamental group $\pi_1(\Si_g)$ is well-known. For $g=0$
-it is trivial, and for $g\ge 1$ it is generated by elements $a_i, b_i$ with a
-single relation $\prod_i [a_i,b_i]=1$, where $[a_i,b_i] =
-a_ib_ia_i^{-1}b_i^{-1}$ is the group commutator. Thus, for $g\ge 1$,
-we  we get the following identity
+The structure of the fundamental group $\pi_1(\Si_g)$ is well-known. For
+$g=0$ this group is trivial, and for $g\ge 1$ it is generated by elements
+$a_i, b_i$, $i=1, \dots, g$,  with a single relation $\prod_i [a_i,b_i]=1$,
+where $[a_i,b_i] = a_ib_ia_i^{-1}b_i^{-1}$ is the group commutator. Thus,
+for $g\ge 1$, we  we get the following identity
 \begin{equation}\label{e:dw-genusg}
   |G|^{2g-1} \sum_i (\dim V_i)^{2-2g}
   =\bigl|
@@ -421,9 +421,9 @@ define the pullback class $\ga^*(\om)\in H^n(M, U(1))$, and pairing it with
 $[M]$ gives a number. Since $\om$ is a cohomology class, the pullback
 $\ga^*(\om)$ depends only on the homotopy class $[\ga]$, so the pairing
 $\<\ga^* \om, [M]\>$ is a well-defined function on $[M, BG]$. Thus, we define
-$$
+\begin{equation}\label{e:DW-integral}
   Z_G^\om (M)= \int_{[M, BG]}\<\ga^* \om, [M]\> D\ga.
-$$
+\end{equation}
 One should think of $\<\ga^* \om, [M]\>$ as an analogue of the term
 $e^{iS(\phi)}$ in the path integral.
 

@@ -20,6 +20,8 @@ Throughout this chapter, we fix a separable symmetric Frobenius algebra
 $A$. As before, we assume that the ground field $\kk$ has characteristic 0.
 We denote by $\eps \colon A\to \kk$ the counit. We also denote by
 $(a,b)=\eps(ab)$ the corresponding bilinear pairing.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definition of TQFT via state sum}\label{s:state-sum}
 As before, let $x_i$, $x^i$ be dual bases in $A$ with respect to the
 Frobenius pairing. We denote by $g_{ij}$ the matrix of the pairing in
@@ -76,10 +78,10 @@ to $r$.
 
 \subsubsection*{\textbf{Algebraic data determined by edges}}
 Define, for each unoriented edge $r\in K_1$, an element
-$$
+\begin{equation}\label{e:er}
  e_r = \sum x_i\otimes x^i
      =\sum g^{ij} x_i \otimes x_j\in A_{r'}\otimes A_{r''}
-$$
+\end{equation}
 where $r', r''$ are two possible orientations of $r$. Since $g^{ij}=g^{ji}$
 (which follows from the symmetry of the form $(\, , \,)$), $e_r$ does not
 depend on which of two possible orientations was denoted by $r'$ and which
@@ -120,10 +122,13 @@ are oriented clockwise and taken in the natural clockwise order:
 \begin{center}\includegraphics{figures/c12-fig01.svg}\end{center}
 
 Define the map
-\begin{align*}
-\<\, \>_F\colon A^{\otimes \ov{\del F}}&\to \kk\\
-                a_1\otimes \dots\otimes a_k&\mapsto \<a_1, \dots, a_k\>.
-\end{align*}
+\begin{equation}\label{e:epsF}
+  \begin{aligned}
+    \eps_F\colon A^{\otimes \ov{\del F}}&\to \kk\\
+                a_1\otimes \dots\otimes a_k&\mapsto \<a_1, \dots,
+                a_k\>=\eps(a_1\dots a_k).
+  \end{aligned}
+\end{equation}
 \leref{l:k-pairing} implies that this map does not depend on which edge we
 denote by $r_1$ and thus is well-defined.
 
@@ -134,15 +139,15 @@ denote by $r_1$ and thus is well-defined.
 
 Since $M$ is a manifold, every unoriented edge appears twice as a boundary
 edge of a 2-cell, and every oriented edge appears once as part of $\del F$.
-Thus, by taking the tensor product of $\<\, \>_F$ over all 2-cells $F$, we
+Thus, by taking the tensor product of $\eps_F$ over all 2-cells $F$, we
 get a linear map
 $$
-  \bigotimes_F \< \, \>_F \colon A^E\to \kk.
+  \eps_M = \bigotimes_F \eps_F \colon A^E\to \kk.
 $$
 
 Let us now put it all together and define a number $Z_A(M,K)\in \kk$ by
 \begin{equation}\label{e:fhk-state-sum}
-  Z_A(M,K)= \Bigl(\bigotimes_F \< \, \>_F\Bigr)
+  Z_A(M,K)= \eps_M
           \Bigl(\prod_v(w^{-1}_v) \Bigr)e_M\in \kk
 \end{equation}
 where $e_M$ is defined by \eqref{e:eM} and $w_v$ is defined by \eqref{e:wv}.
@@ -176,7 +181,7 @@ where $e_M$ is defined by \eqref{e:eM} and $w_v$ is defined by \eqref{e:wv}.
       If $r_i$, $r_{i+1}$ are two edges of the boundary of some cell $F$ both
       adjacent to vertex $v$, as shown below, then replacing
       $r(v)=r_i$ by $r(v)= r_{i+1}$ does not change the composition
-      $\Bigl(\bigotimes_F \< \, \>_F\Bigr)w^{-1}_v$ and thus, does not
+      $\eps_F w^{-1}_v$ and thus, does not
       change $Z_A(M,K)$. Indeed, it follows from
       $\<\dots, a_{i}w^{-1}, a_{i+1}, \dots\> =
       \<\dots, a_{i}, w^{-1}a_{i+1}, \dots\>$.
@@ -275,9 +280,9 @@ choice of cell decomposition (up to a canonical isomorphism); namely,
   \end{aligned}
 \end{equation}
 
-If $I$ is an interval, then $Z_A(I)$ is an $A$-bimodule; thus, if we consider
-$I$ as a cobordism $\bullet^+\to \bullet^+$, then $Z_A(I)$ is a morphism $A\to
-A$ in $\Alg$. We can also consider $I$ as a cobordism
+If $I$ is an interval, then $Z_A(I)\simeq A$ is an $A$-bimodule; thus, if we
+consider $I$ as a cobordism $\bullet^+\to \bullet^+$, then $Z_A(I)$ is a
+morphism $A\to A$ in $\Alg$. We can also consider $I$ as a cobordism
 $\bullet^+\sqcup\bullet^-\cob{}\varnothing$, and $Z_A(I)$ as a right module
 over $A\otimes A^\op$, or consider $I$ as a cobordism
 $\varnothing\cob{}\bullet^+\sqcup\bullet^-$, and $Z_A(I)$ as a left module over
@@ -319,8 +324,23 @@ not include the vertices on the boundary.
     defined by \eqref{e:fhk-state-sum2}, is a non-degenerate bilinear pairing.
   \end{enumerate}
 \end{theorem}
-We leave the proof of this theorem to the reader; it is an easy
-modification of the proof of \thref{t:fhk1}.
+\begin{proof}
+  Proof of the first two parts is an easy
+  modification of the proof of \thref{t:fhk1} and is left to the reader.
+
+  For the last part, it suffices to consider $M=S^1\times I$ considered as a
+  cobordism $S^1\sqcup S^1\to \varnothing$. In this case, taking the cell
+  decomposition of the cylinder obtained by gluing two opposite sides of
+  rectangle together, we see that the corresponding map $Z(M)$ is given by
+  \begin{align*}
+    Z_A(M)\colon V\otimes V &\to \kk, \qquad V=A/[A,A]\\
+    [a_1]\otimes [a_2]&\mapsto \eps(\sum a_1 x_i a_2x^i)
+  \end{align*}
+  where $x_i, x^i$, as usual, are the dual bases with respect to Frobenius
+  pairing. The fact that this pairing is non-degenerate follows from
+  \ecref{ec:invariants-dual}.
+\end{proof}
+
 
 Since the pairing \eqref{e:fhk-pairing} is non-degenerate, it can be used to
 identify $Z_A(\ov{N})\simeq (Z_A(N))^*$. In particular, it shows that if $M$ is
@@ -337,7 +357,7 @@ where $\<\, , \,\>$ is the pairing \eqref{e:fhk-pairing}.
 
 \begin{theorem}\label{t:latticeTQFT}
   Formulas \eqref{e:fhk-state-sum2}, \eqref{e:fhk-state-sum3} define a
-  (non-extended) 2-dimensional TQFT.
+  (non-extended) 2-dimen\-sional TQFT.
 \end{theorem}
 
 \begin{example}\label{x:lattice-disk}
@@ -345,16 +365,16 @@ where $\<\, , \,\>$ is the pairing \eqref{e:fhk-pairing}.
   $Z_A\colon A/[A,A]\to \kk$ is given by the counit of the Frobenius algebra:
   $Z_A(x)=\eps(x)$.
 \end{example}
-\begin{example}\label{x:lattice-cylinder}
-  Let $M=S^1\times I$ be the cylinder considered as a cobordism
-  $S^1\sqcup S^1\to \varnothing$. Choosing a decomposition of the cylinder
-  obtained by gluing together two sides of the rectangle, we see that in
-  this case we have
-  $$
-    Z_A(M)(a\otimes b)=\sum \eps (ax_ibx^i)
-    =\sum \eps(w^{-1} x_jax^jx_i b x^i).
-  $$
-\end{example}
+%\begin{example}\label{x:lattice-cylinder}
+%  Let $M=S^1\times I$ be the cylinder considered as a cobordism
+%  $S^1\sqcup S^1\to \varnothing$. Choosing a decomposition of the cylinder
+%  obtained by gluing together two sides of the rectangle, we see that in
+%  this case we have
+%  $$
+%    Z_A(M)(a\otimes b)=\sum \eps (ax_ibx^i)
+%    =\sum \eps(w^{-1} x_jax^jx_i b x^i).
+%  $$
+%\end{example}
 \begin{exercise}\label{ec:lattice-pants}
   Show that \includegraphics{figures/c12-eqfig02.svg}, where $V=Z_A(S^1)=A/[A,A]$,
   is given by
@@ -394,13 +414,15 @@ vertical parts of the boundary respectively.
 
 Now, for each vertical edge $e\in E_v$, take vector $1\in A_e$. This
 defines a vector $1_v\in A^{\otimes E_v}$. Define
-\begin{equation}\label{e:fhk-state-sum3}
+\begin{equation}\label{e:fhk-state-sum4}
   \begin{aligned}
     Z_A(M,K)\colon A^{\otimes E_\ttop}\otimes A^{\otimes E_\bbot}&\to \kk\\
     Z_A(M,K) (a_\ttop\otimes a_\bbot)&=
             \tilde Z_A(a_\ttop\otimes a_\bbot \otimes 1_v).
   \end{aligned}
 \end{equation}
+
+FIXME
 
 % we get the following result.
 %\begin{theorem}\label{t:latticeTQFT2}
@@ -409,7 +431,6 @@ defines a vector $1_v\in A^{\otimes E_v}$. Define
 % \eqref{e:fhk-state-sum2}, \eqref{e:fhk-state-sum3} coincides with the
 % \textup{(}non-extended\textup{)} TQFT defined in \chref{c:2d-extended}.
 %\end{theorem}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Finite group gauge theory as lattice theory}\label{s:lattice-gauge}
@@ -429,15 +450,15 @@ so that $w=|G|$.
 
 In this case, the map $\<\, , \,\>$ is given by
 $$
-\<g_1, \dots, g_k\>=\begin{cases}
-                     1, & g_1\dots g_k=1\\
-                     0, & \text{otherwise}
+  \<g_1, \dots, g_k\>=\begin{cases}
+                 1, & g_1\dots g_k=1\\
+               0, & \text{otherwise}
                    \end{cases}
 $$
 Thus, one easily sees that for a closed 2-manifold $M$
 the state-sum \eqref{e:fhk-state-sum} becomes
 $$
-Z_A(M,K)=\frac{1}{|G|^V} \sum_{c} 1
+  Z_A(M,K)=\frac{1}{|G|^V} \sum_{c} 1
 $$
 where $V$ is the number of vertices of $K$ and  the sum is over all
 ``colorings'' of edges, i.e., ways of assigning a group element $g_r$ to each
@@ -445,9 +466,9 @@ oriented edge $r$ so that for two opposite orientations of the same edge,
 $g_{r'}=g_{r''}^{-1}$ and such that the product of colors over the boundary of
 any 2-cell is equal to 1.
 
-One easily sees that it is a discrete version of a connection in $G$-bundles:
+One easily sees that it is a discrete version of connections in $G$-bundles:
 without the factor $\frac{1}{|G|^V}$, this counts $G$-bundles on $M$ together
-with trivializations at every vertex. Thus, dividing by $|G|^V$ exactly gives
+with trivializations at every vertex. Thus, dividing by $|G|^V$ gives
 the number of $G$-bundles on $M$ counted as in \chref{c:DW}; in other words,
 this recovers the Dijkgraaf--Witten TQFT.
 

@@ -1,6 +1,6 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Classification of 2d TQFT}\label{c:2d-classification}
+\chapter{Classification of 2d TQFTs}\label{c:2d-classification}
 In this chapter, we present a full classification of 2-dimensional TQFTs; the
 final answer, given in \thref{t:2d-classification2}, states that such theories
 are classified by commutative Frobenius algebras. This is a relatively simple
@@ -92,11 +92,11 @@ or to cobordisms $N_0\cob{M} N_1$.
   \begin{itemize}
     \item $f$ is constant on both in-boundary and out-boundary:
       $f|_{N_0}=a_0=\min_M f$, $f|_{N_1}=a_1=\max_M f$
-    \item All critical points of $f$ are in the interior
-      $M\setminus (N_0\cup N_1)$, and all critical points are non-degnerate.
+    \item all critical points of $f$ are in the interior
+      $M\setminus (N_0\cup N_1)$, and all critical points are non-degenerate.
   \end{itemize}
-  If, in addition, all critical values of $f$ are distinct, then $f$ is called
-  \emph{excellent}.
+  If, in addition, all critical values of $f$ are distinct and different from $a_0$, $a_1$, 
+  then $f$ is called \emph{excellent}.
 \end{definition}
  Again, one can prove
 that such functions exist and form an open dense subset of all functions
@@ -116,7 +116,7 @@ $M$ is a cylinder: $M\isoto N\times I$.
 Therefore, one can use Morse functions to decompose a cobordism as a
 composition of ``elementary'' cobordisms.
 \begin{definition}\label{d:elem-cobordism}\index{elementary cobordism}
-  An elementary cobordism is a cobordism that admits a Morse  function
+  An \emph{elementary cobordism} is a cobordism that admits a Morse  function
   with a single  critical point.
 \end{definition}
 
@@ -132,11 +132,14 @@ isomorphism, $M_i$ does not depend on the choice of $a_i$. We will refer to
 \eqref{e:morse-decomposition} as a
 \emph{Morse decomposition}\index{Morse decomposition} of a cobordism.
 
-In particular, for $n=2$, each connected elementary cobordism is isomorphic to
-one of the four cobordisms shown in Table~\ref{tab:elementary-2cob}. Note that
-here we follow our convention that cobordisms go ``top to bottom''; thus, the
-$y$-axis is directed downward, so that the minimal value of $f$ is at the top,
-and the maximal, at the bottom.
+In particular, for $n=2$, for an excellent  Morse function $f$ each
+non-critical level set is a smooth one-dimensional manifold (and thus a
+finite union of circles). Using Morse lemma, it is easy to see that  each
+connected elementary cobordism is isomorphic to one of the four cobordisms
+shown in Table~\ref{tab:elementary-2cob}. Note that here we follow our
+convention that cobordisms go ``top to bottom''; thus, the $y$-axis is
+directed downward, so that the minimal value of $f$ is at the top, and the
+maximal, at the bottom.
 \begin{table}[ht]
   \centering
   \setlength{\extrarowheight}{8pt}%
@@ -191,11 +194,11 @@ theory}.
   Consider the one-parameter family of functions $f_s= x^3+sx$ on a neighborhood
   of the origin in $\R$, with local coordinate $x$, shown in \firef{fig:x3}.
 
-  Then for $s<0$, the function is Morse with two critical points of indices
-  $0$ and $1$ respectively; for $s>0$, it is also Morse, with no critical
+  Then for $s<0$, the function is excellent with two critical points of indices
+  $0$ and $1$ respectively; for $s>0$, it is also excellent, with no critical
   points; and for $s=0$, $f_0(x)=x^3$ is not a Morse function: zero is a
   degenerate critical point. Thus, in this case, $f_s$, considered as a path in
-  the function space, connects two Morse functions but goes through a non-Morse
+  the function space, connects two excellent Morse functions but goes through a non-Morse
   function $f_0=x^3$. This path describes annihilation of a pair of critical
   points (or, going in the opposite direction, birth of a pair of critical
   points).
@@ -215,9 +218,10 @@ theory}.
 \end{example}
 
 \begin{example}\label{x:morse-crossing}
-  Consider the family of  functions $f_s(x)=x^2-x^4+sx$. Then for values of $s$
-  close to 0, it has three  critical points, all of them non-degenerate: local
-  minimum at $p_0$ close to 0, and local maxima at points $p_1<0$, $p_2>0$.
+  Consider the family of  functions $f_s(x)=x^2-x^4+sx$ on $\R$. Then for
+  values of $s$ close to 0, $f_s$ has three  critical points, all of them
+  non-degenerate: local minimum at $p_0$ close to 0, and local maxima at
+  points $p_1<0$, $p_2>0$.
 
   For $s<0$, we have $c_1>c_2$; for $s>0$, $c_1<c_2$, and for $s=0$, $c_1 = c_2$
   as shown below, so for $s=0$ this function is Morse but not excellent. Thus,
@@ -258,10 +262,10 @@ following.
       all critical values are distinct except for one pair: $c_i = c_j$
       for some $i\ne j$.
   \end{itemize}
-  In a similar way one defines good function on a cobordism $M$.
+  In a similar way one defines good functions on a cobordism $M$.
 \end{definition}
 
-(The name ``good'' is not standard.)
+(Note that the name ``good'' is not standard.)
 
 It was shown by Cerf that this is the beginning of a stratification of the
 space $\calF=C^\infty(M)$: we can write
@@ -305,8 +309,8 @@ Crossing a component corresponding to a type-$\beta$ function produces a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Generators and relations of $\twoCob$}\label{s:2cob-relations}
 
-Now let us apply the general theory above to the question of classification
-of 2d TQFTs.
+Now let us apply the general theory of hte previous section to the question
+of classification of 2d TQFTs.
 
 First, choosing an excellent Morse function on a 2d cobordism $M$, we get a
 decomposition of $M$ into a composition of elementary cobordisms. Each elementary
@@ -322,13 +326,8 @@ cobordisms as shown below.
 \begin{equation}\label{e:frobenius-data}\includegraphics{figures/c4-eqfig01.svg}\end{equation}
 
 
-Then a choice of an excellent Morse function $f$ on $M$, together with a choice
-of isomorphism $\ph_i$ of each of the connected elementary cobordisms defined by
-$f$ with one of the ``standard'' ones, gives us a presentation of $Z(M)$ as a
-composition of tensor products of operators $m, i, \Delta, \eps$
-(and the identity operator $\id_A$).
-Therefore, the structure of TQFT is completely determined by these 4 operators.
-Note also that $m$ and $\Delta$ are symmetric: $m\circ P= m$, where
+
+Note  that $m$ and $\Delta$ are symmetric: $m\circ P= m$, where
 $P\colon A\otimes A\to A\otimes A$ is the permutation
 $P(a\otimes b)= b\otimes a$. Indeed, this follows from the isomorphism of
 cobordisms shown below: the standard copants surface admits a self-diffeomorphism
@@ -337,6 +336,16 @@ input boundary circles and fixes the output boundary circle.
 \begin{equation}\label{e:m-symmetric}\includegraphics{figures/c4-fig13.svg}\end{equation}
 The analogous argument applied to the pants surface (turn the picture upside
 down) gives $P\circ\Delta = \Delta$.
+
+Thus, a choice of an excellent Morse function $f$ on $M$, together with a
+choice of isomorphism $\ph_i$ of each of the connected elementary
+cobordisms defined by $f$ with one of the ``standard'' ones, gives us a
+presentation of $Z(M)$ as a composition of tensor products of operators $m,
+i, \Delta, \eps$ shown in \eqref{e:frobenius-data}, and the identity
+operator $\id_A$. Therefore, the structure of TQFT is completely determined
+by these 4 operators.
+
+
 
 Next, observe that the choice of isomorphisms $\ph_i$ is in fact irrelevant.
 Indeed, since any orientation-preserving diffeomorphism $\ph$ of $S^1$ is
@@ -371,7 +380,7 @@ Now let us consider the crossing move. Assume that we have a family of Morse
 functions $f_s$ and two critical points $p_1, p_2$ such that for $s<0$,
 $c_1<c_2$, for $s>0$, $c_1>c_2$, and for $s=0$, $c_1=c_2=c$. Choose some
 $a_0<c$, $a_1>c$ and consider the (non-elementary) cobordism
-$M=f_{0}^{-1}[a_0, a_1]$.
+$M=f_{0}^{-1}([a_0, a_1])$.
 
 Since operators of the form $X\otimes 1$ and $1\otimes Y$ commute anyway, if
 the points $p_1, p_2$ are in different connected components of the cobordism
@@ -400,7 +409,8 @@ near each critical points $S$ looks as shown below:
    \firef{f:critical-level}, and their orientation reversals.
 \end{lemma}
 The proof of this lemma is an  elementary combinatorics argument; we leave
-details  to the reader.
+details  to the reader. Note that this lemma is about abstract graphs (directed, 
+with cyclis order at vertices, not about their embeddings in the plane).
 
 
 \begin{figure}[ht]
@@ -443,7 +453,9 @@ and thus the corresponding Cerf move gives no new conditions on $m,\Delta$.
 Summarising, we see that the non-trivial Cerf moves (both birth-death and
 crossings) for $n=2$ are shown in \firef{f:cerf-dim2}. In this table, we also
 include the algebraic identities on the operators $m, i, \Delta, \eps$ (defined
-by \eqref{e:frobenius-data}) corresponding to each of the moves.
+by \eqref{e:frobenius-data}) corresponding to each of the moves. For the 
+last move (Frobenius), we included two versions; this is not necessary, 
+as any one of them implies the other, but will become useful later. 
 
 \begin{figure}[ht]
 \centering
@@ -480,7 +492,7 @@ by \eqref{e:frobenius-data}) corresponding to each of the moves.
   \hline
 \end{tabular}
 \caption{Cerf moves in dimension 2 and
-         the corresponding algebraic identities}\label{f:cerf-dim2}
+         the corresponding algebraic identities.}\label{f:cerf-dim2}
 \end{figure}
 
 It is easy to see that the identities given by the  unit and associativity moves
@@ -512,10 +524,13 @@ following theorem.
   \end{itemize}
 \end{theorem}
 
+
 \begin{remark}\label{r:frobenius-two}
   Since $\Delta, m$ are symmetric, any one of the two Frobenius relations
   implies the other; we include both for use in the more general case.
 \end{remark}
+
+
 
 
 \begin{remark}\label{r:2d-commutative}
@@ -524,6 +539,7 @@ following theorem.
   symmetric-pants argument \eqref{e:m-symmetric} (and its mirror image), which
   in turn reflects the symmetric monoidal structure of $\twoCob$.
 \end{remark}
+
 
 
 A standard way to restate the above theorem is using the notion of Frobenius
@@ -550,4 +566,10 @@ commutativity, so it is enough to require $A$ to be commutative; see
 \coref{c:frobenius-commutative}.
 
 
-\clearpage
+\begin{example}\label{x:trivial-2d}
+  Consider the trivial example $A=\kk$, with the obvious Frobenius algebra
+structure. Then it is easy to see that for any  1-manifold $N$, including
+the empty one, the corresponding TQFT gives $Z(N)=\kk$ (to be precise,
+$Z(N)$ is canonically isomorphic to $\kk$), and for any 2-cobordism $M$,
+$Z(M)=\id$.
+\end{example}

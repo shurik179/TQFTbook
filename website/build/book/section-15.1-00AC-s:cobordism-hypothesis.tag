@@ -3,10 +3,10 @@
  In this section, we finally give a definition of an extended TQFT in any dimension $n$. 
 </p>
 <p>
-Recall that in Section&#160;<a href="/tag/00A9" data-tag="00A9">14.9</a> we have defined the $(\infty ,n)$ category $\mathbf{Bord}_ n$ of $n$ bordisms with corners; to be precise, we have defined two versions: framed bordism category $\mathbf{Bord^{fr}}_ n$ and oriented bordism category $\mathbf{Bord^{or}}_ n$. Moreover, each of these categories has a structure of symmetric monoidal $(\infty ,n)$ category, with the monoidal structure given by the disjoint union. 
+Recall that in Section&#160;<a href="/tag/00A9" data-tag="00A9">14.5</a> we have defined the $(\infty ,n)$ category $\mathbf{Bord}_ n$ of $n$ bordisms with corners; to be precise, we have defined two versions: framed bordism category $\mathbf{Bord^{fr}}_ n$ and oriented bordism category $\mathbf{Bord^{or}}_ n$. Moreover, each of these categories has a structure of symmetric monoidal $(\infty ,n)$ category, with the monoidal structure given by the disjoint union. 
 </p>
 <p>
-We can now give the key definition of these lectures. 
+We can now give the key definition of this book. 
 </p>
 <p>
 <article class="env-definition" id="00AD">
@@ -42,9 +42,9 @@ A fundamental result in this area is the following result.
 Note that here it is crucial that we use the framed version of bordism category. 
 </p>
 <p>
-Before discussing the proof, let us note that it immediately implies the following. <article class="env-corollary" id="">
+Before discussing the proof, let us note that it immediately implies the following corollary. <article class="env-corollary" id="">
   <p><a class="environment-identifier" href="/tag/">Corollary <span data-tag="">15.1.2</span>.</a>An $n$-dimensional framed extended TQFT is determined uniquely up to isomorphism by the object $Z(\bullet )\in \mathcal{C}$ which must be fully dualizable. </p>
-</article> This is a very far-reaching generalization of Theorem&#160;<a href="/tag/001Q" data-tag="001Q">3.3.2</a> which proved a similar statement for 1-dimensional TQFTs. 
+</article> This is a very far-reaching generalization of Theorem&#160;<a href="/tag/001Q" data-tag="001Q">3.2.3</a> which proved a similar statement for 1-dimensional TQFTs. 
 </p>
 <p>
 The cobordism hypothesis has a very long history. It was first stated as a conjecture by Baez and Dolan <span class="cite">[<a href="/bibliography/baez-dolan-tqft">BD1995</a>]</span> in 1995. In 2008, Jacob Lurie published a famous paper <span class="cite">[<a href="/bibliography/lurie-cobordism">Lur2009a</a>]</span>, where he restated this conjecture in the language of $(\infty , n)$ categories and outlined the proof. The crucial ingredient of the proof is result of Igusa on framed Morse functions <span class="cite">[<a href="/bibliography/igusa">Igu1987</a>]</span>. Since then, many people worked on filling the details of the proof and extending it to other situations, such as <span class="cite">[<a href="/bibliography/ayala-francis2017">AF</a>]</span>. 

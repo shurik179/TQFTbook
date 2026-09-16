@@ -48,7 +48,7 @@ The proper way is to require the existence of a distinguished (canonical) isomor
 </p>
 <p>
 <article class="env-definition" id="000J">
-  <p><a class="environment-identifier" href="/tag/000J">Definition <span data-tag="000J">2.3.2</span>.</a> A monoidal category is a category $\mathcal{C}$ together with the following data: </p>
+  <p><a class="environment-identifier" href="/tag/000J">Definition <span data-tag="000J">2.3.2</span>.</a> A <em>monoidal category</em> is a category $\mathcal{C}$ together with the following data: </p>
   <p><ul>
   <li><p>
 An object $\mathbf{1}\in \mathcal{C}$ 
@@ -111,8 +111,13 @@ Category of bimodules over a fixed ring $R$, with respect to $\otimes _ R$, and 
 </article> 
 </p>
 <p>
+<article class="env-example" id="00FX">
+  <p><a class="environment-identifier" href="/tag/00FX">Example <span data-tag="00FX">2.3.2</span>.</a> Let $G$ be a topological group. Let $\Pi _1(G)$ be its fundamental groupoid, as defined in Definition&#160;<a href="/tag/0009" data-tag="0009">2.1.1</a>. Then multiplication on $G$ defines on $\Pi _1(G)$ a structure of a monoidal category. </p>
+</article> 
+</p>
+<p>
 <article class="env-example" id="000L">
-  <p><a class="environment-identifier" href="/tag/000L">Example <span data-tag="000L">2.3.2</span>.</a> Let $G$ be a group. Define the category $\mathbf{Vec}_ G$ of <em>$G$-graded vector spaces</em> as the category whose objects are finite-dimensional vector spaces $V$ together with decomposition </p>
+  <p><a class="environment-identifier" href="/tag/000L">Example <span data-tag="000L">2.3.3</span>.</a> Let $G$ be a group. Define the category $\mathbf{Vec}_ G$ of <em>$G$-graded vector spaces</em> as the category whose objects are finite-dimensional vector spaces $V$ together with decomposition </p>
   <div class="equation">
   \[  V=\bigoplus _{g\in G} V_ g.  \]
 </div>
@@ -166,21 +171,26 @@ This is a natural generalization of coherence theorem for monoids (Theorem&#160;
 </article> 
 </p>
 <p>
+<article class="env-remark" id="00FY">
+  <p><a class="environment-identifier" href="/tag/00FY">Remark <span data-tag="00FY">2.3.2</span>.</a> In many references, monoidal functors as defined above are called <em>weak monoidal functors</em>. One can also consider variations of this definition: instead of requiring $J$ to be an isomorphism, one requires $J$ to be a functorial morphism (not necessarily invertible). This gives the definition of <em>lax monoidal functor</em>, see <span class="cite">[<a href="/bibliography/leinster">Lei2004</a>, <span class="postnote">Definition 1.2.10</span>]</span>. </p>
+</article> 
+</p>
+<p>
 <article class="env-example" id="000R">
-  <p><a class="environment-identifier" href="/tag/000R">Example <span data-tag="000R">2.3.3</span>.</a> Consider the category of representations of a group $G$. Then the forgetful functor from this category to the category of vector spaces is a monoidal functor. More generally, given a subgroup $H\subset G$, the restriction functor $\operatorname{Res}^ G_ H\colon \operatorname{Rep}G\to \operatorname{Rep}H$ has an obvious monoidal structure. </p>
+  <p><a class="environment-identifier" href="/tag/000R">Example <span data-tag="000R">2.3.4</span>.</a> Consider the category of representations of a group $G$. Then the forgetful functor from this category to the category of vector spaces is a monoidal functor. More generally, given a subgroup $H\subset G$, the restriction functor $\operatorname{Res}^ G_ H\colon \operatorname{Rep}G\to \operatorname{Rep}H$ has an obvious monoidal structure. </p>
 </article> <article class="env-example" id="000S">
-  <p><a class="environment-identifier" href="/tag/000S">Example <span data-tag="000S">2.3.4</span>.</a> If $G$ is a connected, simply-connected Lie group, then the category of finite-dimensional representations of $G$ is equivalent, as a monoidal category, to the category of finite-dimensional representations of its Lie algebra $\mathfrak {g}$. </p>
+  <p><a class="environment-identifier" href="/tag/000S">Example <span data-tag="000S">2.3.5</span>.</a> If $G$ is a connected, simply-connected Lie group, then the category of finite-dimensional representations of $G$ is equivalent, as a monoidal category, to the category of finite-dimensional representations of its Lie algebra $\mathfrak {g}$. </p>
 </article> 
 </p>
 <p>
 <article class="env-example" id="000T">
-  <p><a class="environment-identifier" href="/tag/000T">Example <span data-tag="000T">2.3.5</span>.</a> Recall the category of $G$-graded vector spaces $\mathbf{Vec}_ G$ defined in Example&#160;<a href="/tag/000L" data-tag="000L">2.3.2</a>. This category has a generalization. Namely, let $\omega \colon G\times G\times G\to \mathbf{k}^\times $ be a 3-cocycle, i.e., a function satisfying the condition </p>
+  <p><a class="environment-identifier" href="/tag/000T">Example <span data-tag="000T">2.3.6</span>.</a> Recall the category of $G$-graded vector spaces $\mathbf{Vec}_ G$ defined in Example&#160;<a href="/tag/000L" data-tag="000L">2.3.3</a>. This category has a generalization. Namely, let $\omega \colon G\times G\times G\to \mathbf{k}^\times $ be a 3-cocycle, i.e., a function satisfying the condition </p>
   <div class="equation">
   \[  \omega (g_1g_2, g_3, g_4)\omega (g_1, g_2, g_3g_4) = \omega (g_1, g_2, g_3) \omega (g_1, g_2g_3, g_4)\omega (g_2, g_3, g_4).  \]
 </div>
   <p> Consider the category $\mathbf{Vec}^\omega _ G$ which coincides with $\mathbf{Vec}_ G$ as an abelian category; moreover, it has the same tensor product functor $\otimes $ and unit object $\mathbf{1}=\mathbf{k}_1$. However, the associativity isomorphism is different: namely, $\alpha \colon (V\otimes W)\otimes U \to V \otimes (W\otimes U)$ is given by </p>
   <div class="equation">
-  \[  \alpha ((v \otimes w) \otimes u )= \omega _{g,h,m} v \otimes (w\otimes u), \qquad v\in V_ g, w\in W_ h, u\in U_ m.  \]
+  \[  \alpha ((v \otimes w) \otimes u )= \omega (g,h,m) v \otimes (w\otimes u), \qquad v\in V_ g, w\in W_ h, u\in U_ m.  \]
 </div>
   <p> The cocycle condition immediately implies that so defined $\alpha $ satisfies the pentagon axiom. </p>
 </article> <article class="env-exercise" id="000U">
@@ -199,7 +209,7 @@ We can restate Mac Lane's coherence theorem as follows. <article class="env-theo
 </p>
 <p>
 <article class="env-convention" id="000W">
-  <p><a class="environment-identifier" href="/tag/000W">Convention <span data-tag="000W">2.3.1</span>.</a> We will frequently use graphical presentation of morphisms in a monoidal category, representing a morphism $\varphi \colon A_1\otimes \dots \otimes A_ k\to B_1\otimes \dots \otimes B_ m$ by a box with $k$ inputs at the top and $m$ outputs at the bottom: </p>
+  <p><a class="environment-identifier" href="/tag/000W">Convention <span data-tag="000W">2.3.1</span>.</a> We will frequently use graphical presentation of morphisms in a monoidal category, representing a morphism $\varphi \colon A_1\otimes \dots \otimes A_ k\to B_1\otimes \dots \otimes B_ m$ by a box with $k$ inputs at the top and $m$ outputs at the bottom as shown in Figure&#160;<a href="/tag/" data-tag="">1.1</a>. </p>
   <p><figure class="figure">
   <div class="centered"><img class="includegraphics" src="/static/figures/c2-fig05.svg" /> <figcaption class="figcaption">Figure 2.3.1. Graphical notation for a morphism in a monoidal category.</figcaption>  </div>
 

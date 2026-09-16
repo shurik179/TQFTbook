@@ -11,7 +11,7 @@
  (the first identity uses the centrality of $e$, the second uses the fact that $w^{-1}$ is central). This shows that replacing a choice of edge $r(v)$ by the same edge but with opposite orientation does not change the vector $w^{-1}_ ve_ M$ and thus, does not change $Z_ A(M,K)$. 
 </p>
 </li><li><p>
-If $r_ i$, $r_{i+1}$ are two edges of the boundary of some cell $F$ both adjacent to vertex $v$, as shown below, then replacing $r(v)=r_ i$ by $r(v)= r_{i+1}$ does not change the composition $\Bigl (\bigotimes _ F \langle  \,  \rangle _ F\Bigr )w^{-1}_ v$ and thus, does not change $Z_ A(M,K)$. Indeed, it follows from $\langle \dots , a_{i}w^{-1}, a_{i+1}, \dots \rangle  = \langle \dots , a_{i}, w^{-1}a_{i+1}, \dots \rangle $. 
+If $r_ i$, $r_{i+1}$ are two edges of the boundary of some cell $F$ both adjacent to vertex $v$, as shown below, then replacing $r(v)=r_ i$ by $r(v)= r_{i+1}$ does not change the composition $\varepsilon _ F w^{-1}_ v$ and thus, does not change $Z_ A(M,K)$. Indeed, it follows from $\langle \dots , a_{i}w^{-1}, a_{i+1}, \dots \rangle  = \langle \dots , a_{i}, w^{-1}a_{i+1}, \dots \rangle $. 
 </p>
 <div class="centered"> <img class="includegraphics" src="figures/c12-fig02.svg" /> </div>
 </li>

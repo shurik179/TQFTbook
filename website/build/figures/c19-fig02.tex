@@ -1,0 +1,17 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[baseline=0pt]
+		\coordinate (a1) at (0:1.2cm);
+		\coordinate (a0) at (72:1.2cm);
+		\coordinate (a4) at (144:1.2cm);
+		\coordinate (a3) at (216:1.2cm);
+		\coordinate (a2) at (288:1.2cm);
+		\fill[fill=yellow!35,draw, very thin] (a0)--(a1)--(a2)--(a3)--(a4)--(a0);
+		\draw[semithick,>=stealth,->] (a0)--(a1) node [pos=0.5,auto=left] {$X_1$};
+		\draw[semithick,>=stealth,->] (a1)--(a2) node [pos=0.5,auto=left] {$X_2$};
+		\draw[semithick,>=stealth,->] (a2)--(a3) node [pos=0.5,auto=left] {$X_3$};
+		\draw[semithick,>=stealth,->] (a3)--(a4) node [pos=0.5,auto=left] {$X_4$};
+		\draw[semithick,>=stealth,->] (a4)--(a0) node [pos=0.5,auto=left] {$X_5$};
+	\end{tikzpicture}
+\end{document}

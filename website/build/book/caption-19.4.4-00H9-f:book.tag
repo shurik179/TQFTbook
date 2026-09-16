@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 19.4.4. Decomposing an open book into a single page book</figcaption>

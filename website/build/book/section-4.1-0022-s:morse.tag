@@ -43,11 +43,11 @@ We can generalize the notion of excellent functions to manifolds with boundary, 
 $f$ is constant on both in-boundary and out-boundary: $f|_{N_0}=a_0=\min _ M f$, $f|_{N_1}=a_1=\max _ M f$ 
 </p>
 </li><li><p>
-All critical points of $f$ are in the interior $M\setminus (N_0\cup N_1)$, and all critical points are non-degnerate. 
+all critical points of $f$ are in the interior $M\setminus (N_0\cup N_1)$, and all critical points are non-degenerate. 
 </p>
 </li>
 </ul></p>
-  <p> If, in addition, all critical values of $f$ are distinct, then $f$ is called <em>excellent</em>. </p>
+  <p> If, in addition, all critical values of $f$ are distinct and different from $a_0$, $a_1$, then $f$ is called <em>excellent</em>. </p>
 </article> Again, one can prove that such functions exist and form an open dense subset of all functions satisfying $f|_{N_0}=a_0$, $f|_{N_1}=a_1$. 
 </p>
 <p>
@@ -55,7 +55,7 @@ The main result of Morse theory is that given an excellent function $f$, the top
 </p>
 <p>
 Therefore, one can use Morse functions to decompose a cobordism as a composition of “elementary” cobordisms. <article class="env-definition" id="0027">
-  <p><a class="environment-identifier" href="/tag/0027">Definition <span data-tag="0027">4.1.4</span>.</a> An elementary cobordism is a cobordism that admits a Morse function with a single critical point. </p>
+  <p><a class="environment-identifier" href="/tag/0027">Definition <span data-tag="0027">4.1.4</span>.</a> An <em>elementary cobordism</em> is a cobordism that admits a Morse function with a single critical point. </p>
 </article> 
 </p>
 <p>
@@ -69,7 +69,7 @@ Thus, given an excellent function with critical values $c_1&lt;\dots &lt;c_ k$, 
  where $M_ i=f^{-1}([a_{i-1}, a_ i])$ is the elementary cobordism containing critical point $p_ i$. It follows from the result above that up to isomorphism, $M_ i$ does not depend on the choice of $a_ i$. We will refer to (<a href="/tag/00EJ" data-tag="00EJ">4.1.2</a>) as a <em>Morse decomposition</em> of a cobordism. 
 </p>
 <p>
-In particular, for $n=2$, each connected elementary cobordism is isomorphic to one of the four cobordisms shown in Table&#160;<a href="/tag/0029" data-tag="0029">4.1.1</a>. Note that here we follow our convention that cobordisms go “top to bottom”; thus, the $y$-axis is directed downward, so that the minimal value of $f$ is at the top, and the maximal, at the bottom. 
+In particular, for $n=2$, for an excellent Morse function $f$ each non-critical level set is a smooth one-dimensional manifold (and thus a finite union of circles). Using Morse lemma, it is easy to see that each connected elementary cobordism is isomorphic to one of the four cobordisms shown in Table&#160;<a href="/tag/0029" data-tag="0029">4.1.1</a>. Note that here we follow our convention that cobordisms go “top to bottom”; thus, the $y$-axis is directed downward, so that the minimal value of $f$ is at the top, and the maximal, at the bottom. 
 </p>
  <div class="centered"><table class="tabular">
   <tr>

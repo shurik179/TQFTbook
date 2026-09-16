@@ -1,5 +1,5 @@
 <article class="env-definition" id="000J">
-  <p><a class="environment-identifier" href="/tag/000J">Definition <span data-tag="000J">2.3.2</span>.</a> A monoidal category is a category $\mathcal{C}$ together with the following data: </p>
+  <p><a class="environment-identifier" href="/tag/000J">Definition <span data-tag="000J">2.3.2</span>.</a> A <em>monoidal category</em> is a category $\mathcal{C}$ together with the following data: </p>
   <p><ul>
   <li><p>
 An object $\mathbf{1}\in \mathcal{C}$ 

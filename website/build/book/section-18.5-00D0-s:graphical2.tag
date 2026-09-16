@@ -7,8 +7,8 @@ Lemma&#160;<a href="/tag/00CQ" data-tag="00CQ">18.4.1</a> shows that in a pivota
   \[  \operatorname{Hom}(A_1\otimes \dots A_ k, B_1\otimes \dots \otimes B_ m)\simeq \langle B_1, \dots , B_ m, A_ k^*,\dots , A_1^*\rangle .  \]
 </div>
 <p>
- This makes it possible to modify our graphical calculus discussed in Section&#160;<a href="/tag/00C5" data-tag="00C5">18.1</a>, replacing all rectangular boxes by small disks, or even easier, just by vertices; orientation of the plane gives a counterclockwise cyclic order on the set of edges meeting at this vertex. Thus, we make the following definition, which is a minor modification of the notion of $\mathcal{C}$-colored diagram discussed in Section&#160;<a href="/tag/00C5" data-tag="00C5">18.1</a>. <article class="env-definition" id="">
-  <p><a class="environment-identifier" href="/tag/">Definition <span data-tag="">18.5.1</span>.</a>Let $M$ be an oriented 2-manifold with boundary (not necessarily compact), and let $\mathcal{C}$ be a spherical fusion category. </p>
+ This makes it possible to modify our graphical calculus discussed in Section&#160;<a href="/tag/00C5" data-tag="00C5">18.1</a>, replacing all rectangular boxes by small disks, or even easier, just by vertices; orientation of the plane gives a counterclockwise cyclic order on the set of edges meeting at this vertex. Thus, we make the following definition, which is a minor modification of the notion of $\mathcal{C}$-colored diagram discussed in Section&#160;<a href="/tag/00C5" data-tag="00C5">18.1</a>. <article class="env-definition" id="00GV">
+  <p><a class="environment-identifier" href="/tag/00GV">Definition <span data-tag="00GV">18.5.1</span>.</a> Let $M$ be an oriented 2-manifold with boundary (not necessarily compact), and let $\mathcal{C}$ be a spherical fusion category. </p>
   <p>A $\mathcal{C}$-colored graph on $M$ is the following collection of data: </p>
   <p><ul>
   <li><p>

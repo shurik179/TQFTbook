@@ -1,30 +1,88 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%
 \chapter{2d TQFT with defects}\label{c:2d-defects}
-References: \ocite{cdr}: review article; 
-\ocite{dkr} one of first constructions;
-\ocite{carqueville}
 
-FIXME
 
-So far we only considered TQFTs defined on (unstratified) manifolds. Even the manifolds with corners, that we used to motivate the definition of extended TQFT, were meant to be glued back to form an unstratified manifold. Such (extended) TQFTs can be considered as describing physics on a homogenous spacetime. It is then natural to consider more general physical systems, where the different parts of the spacetime are described by different TQFTs. The codimension 1 surface separating the homogenous parts can be thought of as a defect that makes the spacetime non-homogenous. This motivates us to define the notion of TQFT with defects.
+So far we only considered TQFTs defined on homogeneous spacetimes, where the
+local structure of the theory is the same at every point of the spacetime.
+However, one can also consider theories where different parts of the spacetime
+carry different TQFTs. The codimension-one locus separating the homogeneous
+parts should describe interface between different TQFTs; moreover, one can
+continue, introducing a codimension 2 stratum separating different codimension
+1 interfaces. In physics, all these positive codimension strata are thought of
+as a \emph{defects}\index{defect} in the structure of spacetime, and the
+corresponding formalism is referred to as \emph{TQFT with
+defects}\index{TQFT!with defects}. As we will show later, this approach
+is very closely related to fully extended TQFT (see section FIXME below).
 
+This idea has a long history in physics. Our exposition follows  \ocite{dkr},
+which gives a detailed description of 2D TQFT with defects. See also review
+articles \ocite{carqueville} and \ocite{cdr}. Very closely related formalism in
+the context of extended TQFTs is also described in \ocite{lurie}*{Section 4.3}
+under the name \emph{TQFT for manifolds with singularity}. For simplicity, we
+restrict ourselves to the 2-dimensional case.
+
+% Wrapping the Tikz commands in an environment so that they don't interefere with other chapters.
+\begin{defectfiguresetup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data for TQFT with defects}\label{s:defect-data}
+Recall that we have defined a two-dimensional extended TQFT as a symmetric
+monoidal functor $Z\colon \Bord_2\to \calC$, where $\calC$ is a (weak)
+2-category; such a theory is uniquely determined by a fully dualizable object
+$A\in \calC$. In particular, it assigns an invariant $Z_A(M)\in
+\End_\calC(\one)$ to every closed manifold $M$; equivalently, we can say that
+it assigns an invariant $Z(M,A)$ to every pair $(M, A)$, where $M$ is a closed
+2-manifold and $A\in \calC$ is a fully dualizable object. We can think of pair
+$(M,A)$ as a \emph{colored manifold}, i.e. a manifold together with some extra
+data (coloring), which in this case consists of choosing an object $A$.
 
-\begin{figure}[ht]
+For theory with defects, we need to modify this definition in two ways. First,
+instead of usual bordisms, we need to define bordisms with defects,  as
+outlined in introduction to this chapter. Second, we neeed to define the notion
+of coloring, i.e. assignign appropriate alegbraic data to different strata.
+Aftre that, we will be able to define an extended TQFY with defects as a
+symmetric monoidal functor
+$$
+Z^{\mathrm{defect}}\colon \Bord_2(\calC)\to \calC.
+$$
+where $\Bord_2(\calC)$ is the 2-category of $\calC$-colored stratified oriented
+2-bordisms.
+
+
+We begin by defining closed manifolds
+with defects, or \emph{stratified manifolds}.
+
+\begin{definition}\label{d:stratified_manifold}
+  A \emph{stratified 2-manifold}\index{stratified manifold} is an
+  oriented closed 2-manifold $M$ together with  decomposition
+  $$
+    M=M_2\sqcup M_1\sqcup M_0
+  $$
+  where each $M_i$ is a (not necessarily compact) locally closed submanifold
+  of dimension $i$ in $M$ such that:
+  \begin{itemize}
+    \item $M_2$ is open and dense in $M$
+    \item Every point $x\in M_1$ has a neighborhood which looks like shown in
+    FIXME
+    \item Every point $x\in M_0$ has a neighborhood which looks like shown in
+    FIXME
+  \end{itemize}
+\end{definition}
+We will refer to $M_1$ and $M_0$ as strata of dimension 1 (respectively, 0);
+physicists would also call them defect lines and point defects respectively.
+
+An example of a stratified manifold is shown in
+\firef{f:stratified_pretzel} below.
+
+In a similar way one can define the notion of a stratifed manifold with boundary
+or a stratified cobordism; in this case, we need to require additionally that
+the stratification meets the boundary transversally (in particular, it means
+that the codimesion 2 strata should not be on the boundary).
+
+
+	\begin{figure}[ht]
 	\centering
-	\begin{tikzpicture}[scale=0.5]
-		
-		\pgfdeclarelayer{nodelayer}
-		\pgfdeclarelayer{edgelayer}
-		\pgfdeclarelayer{labels}
-		\pgfsetlayers{edgelayer,nodelayer,labels,main}
-		\tikzset{
-			none/.style={},
-			defect/.style={draw=blue, line width=1.2pt},
-			junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
-		}
-		
+	\begin{tikzpicture}[scale=0.4]
 		\begin{pgfonlayer}{nodelayer}
 			\node [style=none] (4) at (1, 0) {};
 			\node [style=none] (5) at (3.75, 0) {};
@@ -65,120 +123,177 @@ So far we only considered TQFTs defined on (unstratified) manifolds. Even the ma
 			\draw [defect,bend left=15] (C.center) to (D.center);
 		\end{pgfonlayer}
 		\begin{pgfonlayer}{labels}
-			\node[above, xshift=2pt, yshift=2pt] at (E) {$ _AM_B$};
-			\node[below, xshift=-2pt, yshift=-2pt ] at (F) {$ _AM_C$};
-			\node[below, xshift=-40pt, yshift=-2pt ] at (P) {$A$};
-			\node[below, xshift=30pt, yshift=-2pt ] at (Q) {$B$};
-			\node[above, xshift=30pt, yshift=2pt ] at (R) {$C$};
+			\node[above] at ($(E.center)+(0.07,0.55)$) {${}_A M_B$};
+			\node[below] at ($(F.center)+(-0.07,-0.07)$) {${}_A M_C$};
+			\node[below] at ($(P.center)+(-1.41,-0.07)$) {$A$};
+			\node[below] at ($(Q.center)+(1.05,-0.07)$) {$B$};
+			\node[above] at ($(R.center)+(1.05,0.07)$) {$C$};
+			\node[right] at ($(D.center)+(0.00,0.00)$) {${}_B M_C$};
 		\end{pgfonlayer}
 	\end{tikzpicture}
-	\caption{A stratified manfold decorated with algebras $A$,$B$ and $C$ on different regions. Labelling of defects ( shown in blue ) by bimodules requires a choice of orientation, which is suppressed here for brevity.}
+	\caption{A stratified manifold decorated with algebras $A$, $B$ and $C$ on
+	different regions. Defects are shown in red, and are labelled by bimodules.
+	Defects require a choice of orientation, which is suppressed here for
+	brevity.}
 	\label{f:stratified_pretzel}
 \end{figure}
 
-TQFT with defects can be defined as a functor of symmetric monoidal 2-categories:
-$$ Z^{\mathrm{defect}}\colon \Bord_2(M,\mathrm{Coloring})\to \vect_\kk. $$
+Next, we should define the notion of coloring. We do it first in a very special
+case, namely when the manifodl $M$ is closed and the target category $\calC$ is
+the category of associative algebras. As was previously discussed, fully
+dualizable objects in this category are finite-dimensional semisimple algebras,
+and for construction of an extended TQFT one needs a semisimple algebra with
+extra data, namely with the structure of a symmetric Frobenius algebra.
 
-Here $\Bord_2(M,\mathrm{Coloring})$ is a 2-bordism decorated with certain extra data given as:
-\begin{enumerate}
-	\item Manfold $M$ with a stratification
-	
-	$M=M_2 \cup M_1 \cup M_0$
-	
-	Here $M_2$ are the 2 dimensional open sets whose boundary constitutes $M_1$.  Stratum $M_1$ is codimension 1 subspace with boundary $M_0$. Similarly, $M_0$ are codimension 2 subspace at the boundary of $M_1$. ( For higher dimensional manifolds, the stratification can have higher codimension strata.)
-	
-	For example, in the Figure \ref{f:stratified_pretzel}, the stratum $M_2$ consists of three regions, labelled as $A$,$B$, and $C$. The stratum $M_1$ consists of blue lines. The red dot at the intersection of blue lines belongs to the stratum $M_0$.
-	
-	\item Coloring
-	\begin{itemize}
-		\item Connected components of $M_2$ are colored by semisimple symmetric Frobenius algebras. In Figure \ref{f:stratified_pretzel}, $A$, $B$, and $C$, are three such algebras.
-		\item Connected components of $M_1$ are colored by bimodules. These 1-dimensional components ( called defects ) come with a orientation. If the regions to the left and to the right of a defect are colored by algebras $A$ and $B$ respectively, the defect is labelled by a bimodule $ _AM_B$. If we change the orientation of defect, it is labelled by $ _BM^{*}_A$ bimodule. $M^*$ is dual to $M$, as expected from orientation reversal.
-		\item The vertices ( also called junctions ) are points where two or more defects meet. For each vertex $u \in M_0$, we need a multilinear map $ \varphi_u$ from cyclic tensor produce of incident bimodules to the field $\kk$. 
-		
-		\begin{figure}[ht]
-			\centering
-			\begin{tikzpicture}[scale=0.3]
-				
-				\pgfdeclarelayer{nodelayer}
-				\pgfdeclarelayer{edgelayer}
-				\pgfdeclarelayer{labels}
-				\pgfsetlayers{edgelayer,nodelayer,labels,main}
-				\tikzset{
-					none/.style={},
-					defect/.style={-{Stealth},draw=blue, line width=1.2pt},
-					junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
-				}
-				
-				\begin{pgfonlayer}{nodelayer}
-					\node [style=junction] (0) at (0, 0) {};
-					\node [style=none] (1) at (2.75, 3.75) {};
-					\node [style=none] (4) at (-3.25, 2.5) {};
-					\node [style=none] (3) at (-3.75, -2) {};
-					\node [style=none] (2) at (3.25, -3.25) {};
-				\end{pgfonlayer}
-				\begin{pgfonlayer}{edgelayer}
-					\draw [defect, bend right=15] (0.center) to (1.center);
-					\draw [defect, bend right=15, looseness=1.25] (0.center) to (2.center);
-					\draw [defect, bend left=15] (0.center) to (3.center);
-					\draw [defect, bend left=15] (0.center) to (4.center);
-				\end{pgfonlayer}
-				\begin{pgfonlayer}{labels}
-					\node[above, xshift=0pt, yshift=0pt ] at (1) {$ M^1 $};
-					\node[below , xshift=0pt, yshift=-0pt ] at (2) {$ M^2 $};
-					\node[left, xshift=0pt, yshift=0pt ] at (3) {$ M^3 $};
-					\node[above , xshift=-0pt, yshift=0pt ] at (4) {$ M^4 $};
-					\node[above, yshift=5pt] at (0) {$A_1$};
-					\node[right, xshift=5pt] at (0) {$A_2$};
-					\node[below, yshift=-5pt] at (0) {$A_3$};
-					\node[left, xshift=-5pt] at (0) {$A_4$};
-				\end{pgfonlayer}
-			\end{tikzpicture}
-			\label{f:junction}
-		\end{figure}
-		
-		For example, if the junction looks like as given above, then it is assigned a map: $\varphi: \circlearrowleft_{A_1} ( M^1 \otimes_{A_2}  M^2 \otimes_{A_3} M^3 \otimes_{A_4} M^4  ) \rightarrow  \kk$. Here, $\circlearrowleft_{A} M$ is the cokernel of the map $A \otimes M \rightarrow M, a \otimes m \mapsto am - ma$. This property of $\varphi$ ensures that the junction has no preferred starting edge. See \ocite{carqueville}*{Section 2.3} for motivation for this data.
-	\end{itemize}
-\end{enumerate}
+Before the continuing, let us note that we assume that $M$ is oriented;
+however, we do not assume any choice of orientation on defect lines (that is,
+connected components of $M_1$). Note that since $M$ is oriented, choosing an
+orientation of $M_1$ is equivalent to chooisng orientation of the normal bundle
+to $M_1$
+
+\begin{definition}\label{d:defect-coloring}
+  Let $M$ be a closed oriented stratified 2-manifold, and let $\calC=\Alg$ be
+  the 2-category of alegbras and bimodules as defined in \exref{x:alg}. A
+  $\calC$-coloring of $M$ is the following data:
+  \begin{itemize}
+    \item A choice of a semisimple symmetric Frobeinus algebra $C(U)$ for each
+    connected component $U$ of the open strata $M_2$
+
+    \item A choice of a 1-morphism (that is, a bimodule) $M=C(Y)$ for every
+    connected component $Y$ of $M$ together with orientation of $Y$. More
+    precisely, if $Y$ separates regions colored by algebras $A$ and $B$ as
+    shown below, then it should be colored by a finite-dimensional  $B$-$A$
+    bimodule $M$.
+
+    Moreover, we require that the bimodules corresponding to opposite choice of
+    orientation are duals (in the sense of vectro spaces) of each other. FIXME:
+    better wording.
+
+    \item
+        For each vertex $u \in M_0$, we need a multilinear map $\ph_u$ from
+        cyclic tensor product of incident bimodules to the field $\kk$.
+
+    		\begin{figure}[ht]
+    			\centering
+    			\begin{tikzpicture}[scale=0.3]
+    				\begin{pgfonlayer}{nodelayer}
+    					\node [style=junction] (O) at (0, 0) {};
+    					\node [style=none] (M1) at (2.75, 3.75) {};
+    					\node [style=none] (M4) at (-3.25, 2.5) {};
+    					\node [style=none] (M3) at (-3.75, -2) {};
+    					\node [style=none] (M2) at (3.25, -3.25) {};
+    				\end{pgfonlayer}
+    				\begin{pgfonlayer}{edgelayer}
+    					\draw [defect, bend right=15] (O.center) to (M1.center);
+    					\draw [defect, bend right=15, looseness=1.25] (O.center) to
+    					(M2.center);
+    					\draw [defect, bend left=15] (O.center) to (M3.center);
+    					\draw [defect, bend left=15] (O.center) to (M4.center);
+    				\end{pgfonlayer}
+    				\begin{pgfonlayer}{labels}
+    					\node[above, xshift=0pt, yshift=0pt ] at (M1) {$ M^1 $};
+    					\node[below , xshift=0pt, yshift=-0pt ] at (M2) {$ M^2 $};
+    					\node[left, xshift=0pt, yshift=0pt ] at (M3) {$ M^3 $};
+    					\node[above , xshift=-0pt, yshift=0pt ] at (M4) {$ M^4 $};
+    					\node[above, yshift=5pt] at (O) {$A_1$};
+    					\node[right, xshift=5pt] at (O) {$A_2$};
+    					\node[below, yshift=-5pt] at (O) {$A_3$};
+    					\node[left, xshift=-5pt] at (O) {$A_4$};
+    				\end{pgfonlayer}
+    			\end{tikzpicture}
+    			\label{f:junction}
+    		\end{figure}
+
+    		For example, if the junction looks like as given above, then it is
+    		assigned a map:
+
+    		\begin{equation}\label{e:junction-data}
+    			\varphi: \circlearrowleft_{A_1} ( M^1 \otimes_{A_2}  M^2
+    			\otimes_{A_3} M^3 \otimes_{A_4} M^4  ) \rightarrow  \kk
+    		\end{equation}
+
+    		 Here, $\circlearrowleft_{A} M$ is the cokernel of the map $A \otimes M
+    		 \rightarrow M, a \otimes m \mapsto am - ma$. This property of
+    		 $\varphi$ ensures that the junction has no preferred starting edge.
+    		 See \ocite{carqueville}*{Section 2.3} for another motivation behind
+    		 this data.
+  \end{itemize}
+  We will refer to a pair $(M, C)$, where $M$ is an oriented manifold and $C$
+  is $\calC$-coloirng of $M$ as a \emph{$\calC$-colored
+  manifold}.\index{stratified manifold!$\calC$-colored}
+\end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State sum construction of TQFT with defects}\label{s:defect-statesum}
+
+In this section we sketch the construction of the TQFT with defects, i.e., a
+functor $Z^{\mathrm{defect}}\colon \Bord_2(\calC)\to \calC$, using state sum
+approach.  As before, we only consider the target category $\calC=\Alg$. For
+simplicity, in this section we only explain how one defines $Z(M,C)$ for a
+colored stratified closed 2-manifold $M$; generalization of this to cobordisms
+will be explained in the next section. Our exposition follows \ocite{dkr} with
+minor changes, though their notation differs from ours (in particular, they use
+$T^{\mathrm{cw}}$ for what we denote by $Z\equiv Z^{\mathrm{defect}}$).
+
+The state sum construction below is a generalization of construction in
+\chref{c:2d-lattice}. Thus, given $\calC$-colored stratified closed 2-manifold
+$M$, we begin by choosing a PLCW decomposition $K$ of it; we require that this
+PLCW decomposition is transversal to the stratification.
 
 
-\section{State sum construction of TQFT with defects}
-In this section we sketch the construction of the functor $Z^{\mathrm{defect}}$ that maps the (decorated) bordism $M:U\rightarrow V$ to $\vect_{\kk}$ using a cell decomposition. We suppress the superscript $\mathrm{defect}$ for the remainder of the chapter for brevity. We follow the exposition of \ocite{dkr}. ( Our $Z \equiv Z^{\mathrm{defect}}$ is equivalent to $T^{\mathrm{cw}}$).
+As in \seref{s:state-sum}, we denote by $K_2$ the set of 2-cells of $K$, by
+$K_1$ the set of 1-cells (edges), and by  $K_0$, the set of vertices. Further,
+we assume that every edge $r\in K_1$ has at most one intersection with the
+defect lines, i.e. stratum $M_1$, and each 2-cell $F$ of the decopmosition
+contains at most one point from $M_0$. An examples of such PLCW decomposition
+of a stratified manifold is shown in \firef{f:vectors-on-edges}.
 
-We start by first associating a vector $Q_{p,e,or}$ to each oriented edge, within each polygon $p$. The contribution $Q_{p,e,or}$ of each edge is defined as:
 
+
+As in \seref{s:state-sum}, we will denote by $E$ the set of \emph{oriented}
+edges of $K$, i.e., pairs consisting of an edge $r\in K_1$ and an orientation
+of $r$. Thus, every (unoriented) edge $r\in K_1$ gives rise to two oriented
+edges $r', r''\in E$. To every oriented edge $r\in E$, we assign a vector space
+$Q_r$ s follows:
 \begin{equation}\label{e:q-definition}
-	Q_{p,e,\mathrm{or}} =
+	Q_{r} =
 	\begin{cases}
-		A_a, & \text{if $e$ does not cross a defect line and lies within $M_2$ labelled by algebra $a$ },\\
-		X_x, & \text{if $e$ crosses defect which is labelled $x$  with orientation into the polygon $p$ },\\
-		X_x^*, & \text{if $e$ crosses defect which is labelled $x$  with orientation out of the polygon $p$ }.
+		A, & \text{if $r$ does not cross a defect line and lies within component of
+		$M_2$ colored by algebra $A$ },\\
+		X, & \text{if $r$ crosses defect line which is colored by bimodule $X$,
+    with orientation as shown below FIXME}
 	\end{cases}
 	\end{equation}
 
-We define an intermediate vector space $Q(M)$ by tensoring the contribution of all edges that are not in incoming boundary of $M$.
-
-\begin{equation}
-	Q(M) = \bigotimes_{(p,e,\mathrm{or}),e \notin \partial_{\mathrm{in}} M} Q_{p,e,\mathrm{or}}
+We define an intermediate vector space $Q(M)$ by tensoring the contribution of
+\begin{equation}\label{e:Qr}
+	Q(M) = \bigotimes_{r\in E} Q_r.
 \end{equation}
+Note that in the special case of a manifold without stratification, this
+coincides with vector space $A^E$ as defined in \eqref{e:AE}.
 
-Note that an internal edge $e$ shared between two polygons $p_1$ and $p_2$ will thus contribute twice, as $Q_{p_1,e,\mathrm{or}} \otimes Q_{p_2,e,\bar{\mathrm{or}}}$.
+Note that each (unoriented) edge $r\in K_1$ gives two factors in $Q(M)$: either
+two copies of $A$ (if $r$ does not intersect defect lines) or $X\otimes X^*$,
+where $X, X^*$ are the colors of of the defect line crossing $r$ (one
+orientation gives $X$, the other, $X^*$).
 
-Consider Figure \ref{f:vectors-on-edges} for example. Edge $e_2$, irrespective of its orientation, lies entirely in algebra $b$, so it is labelled $A_b$. Edge $e_1$, within polygon $p_2$, has defect $x$ crossing it such that the defect is enterin $p_2$.  So the triplet $(p_2,e_1,+)$ is labelled $X_x$. The same edge, within polygon $p_1$, has defect $x$ going out of the polygon. So it is labelled $X_x^*$ for the triplet $(p_1,e_1,+)$.  We only consider those triplets where the orientation matches with that of the polygon. We would have had to consider both orientations of an edge ( i.e. for example $(p_1,e_1,+)$ as well as $(p_1,e_1,-)$ ) only when the polygon closes on itself through that edge. See \ocite{dkr}*{Section 3.5} for an example.
+
+FIXME
+
+Consider  \firef{f:vectors-on-edges} for example. Edge $e_2$, irrespective of
+its orientation, lies entirely in algebra $b$, so it is labelled $A_b$. Edge
+$e_1$, within polygon $p_2$, has defect $x$ crossing it such that the defect is
+entering $p_2$.  So the triplet $(p_2,e_1,+)$ is labelled $X_x$. The same edge,
+within polygon $p_1$, has defect $x$ going out of the polygon. So it is
+labelled $X_x^*$ for the triplet $(p_1,e_1,+)$.  We only consider those
+triplets where the orientation matches with that of the polygon. We would have
+to consider both orientations of an edge ( i.e. for example $(p_1,e_1,+)$ as
+well as $(p_1,e_1,-)$ ) only when the polygon closes on itself through that
+edge. See \ocite{dkr}*{Section 3.5} for an example.
 
 \begin{figure}[ht]
 	\centering
 \begin{tikzpicture}[scale=0.5]
-	\pgfdeclarelayer{nodelayer}
-	\pgfdeclarelayer{edgelayer}
-	\pgfdeclarelayer{labels}
-	\pgfsetlayers{edgelayer,nodelayer,labels,main}
-	\tikzset{
-		none/.style={},
-		defect/.style={midarrow=0.4,draw=red, line width=1.2pt},
-		1cell/.style={midarrow,draw=green, line width=1.2pt},
-		junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
-		0cell/.style={circle, fill=green, draw=green!80!black, line width=0.4pt, inner sep=1.5pt},
-	}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=0cell] (0) at (2.5, 0.75) {};
 		\node [style=0cell] (1) at (1, -2.25) {};
@@ -191,35 +306,679 @@ Consider Figure \ref{f:vectors-on-edges} for example. Edge $e_2$, irrespective o
 		\node [style=none] (9) at (-0.5, -3) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw[1cell] (4.center) to node[midway, above] {$A_b$}
-		node[midway, below] {$e_2$} (3.center) ;
-		\draw[midarrow=0.6,draw=green, line width=1.2pt] (0.center) to node[pos=0.8, below] {$X^*_x$} node[pos=0.7, above] {$X_x$}
-		node[pos=0.6, below] {$e_1$}  (4.center);
-		\draw[1cell] (1.center) to node[midway, right] {$A_a$}
-		node[midway, left] {$e_5$}  (0.center);
-		\draw[1cell] (2.center) to node[midway, above] {$X_x$}
-		node[midway, below] {$e_4$}  (1.center);
+		\draw[1cell] (4.center) to node[midway, below] {$A_b$}
+		node[midway, above] {$e_2$} (3.center) ;
+		\draw[midarrow=0.3,draw=green, line width=1.2pt] (0.center) to node[pos=0.8, below] {$X^*_x$} node[pos=0.7, above] {$X_x$}
+		node[pos=0.3, below] {$e_1$}  (4.center);
+		\draw[midarrow=0.7,draw=green, line width=1.2pt] (1.center) to node[pos=0.6, left] {$A_a$}
+		node[pos=0.6, right] {$e_5$}  (0.center);
+		\draw[1cell] (2.center) to node[pos=0.40, above] {$X_x$}
+		node[pos=0.40, below] {$e_4$}  (1.center);
 		\draw[1cell] (3.center) to node[midway, right] {$A_b$}
 		node[midway, left] {$e_3$}  (2.center);
 		\draw[1cell] (4.center) to (6.center);
 		\draw[1cell] (6.center) to (5.center);
 		\draw[1cell] (5.center) to (0.center);
-		\draw [defect, bend left] (9.center) to node[pos=0.4, left] {$x$} node[pos=0.4, right] {$a$} node[pos=0.3, left] {$b$}  (8.center);
+		\draw [midarrow=0.7, draw=red, line width=1.2pt, bend left] (9.center) to node[pos=0.7, right] {$x$}  (8.center);
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{labels}
-		\node[above, xshift=10pt, yshift=0pt ] at (2) {$ p_1 $};
-		\node[below , xshift=0pt, yshift=-10pt ] at (6) {$ p_2 $};
+		\node[above] at ($(1.center)+(-1.25,+2.15)$) {$ p_1 $};
+		\node[below] at ($(6.center)+(+0.25,-2.15)$) {$ p_2 $};
+		\node[right] at ($(0.center)+(+2.05,-0.60)$) {$ a $};
+		\node[left] at ($(4.center)+(-2.05,0.95)$) {$ b $};
 	\end{pgfonlayer}
 \end{tikzpicture}
-			\caption{Example of vectors assigned to each edge within a 2-cell.}
+			\caption{Example of vector spaces assigned to the edges of 2-cell $p_1$. Regions to the left and right of defect $x$ are labelled by algebras $b$ and $a$ respectively.}
 			\label{f:vectors-on-edges}
 \end{figure}
 
-The functor $Z$ is defined as:
-\begin{equation}
-	Z(M) : Z(U) \xto{id_{Z(U)} \otimes P(M)} Z(U) \otimes Q(M) \otimes Z(V) \xto{E(M) \otimes id_{T(V)})} Z(V)
-\end{equation}
-\section{Independence of cell decomposition}\label{s:decomposition-independence}
-Since the cell decomposition is not a part of the actual defect TQFT data, we need to show that the state sum construction is independent of our choice of cell decomposition.
+Next, for every (unoriented) edge $r$ we define a vector
+$$
+e_r = \sum x_i \otimes x^i\in Q_{r'}\otimes Q_{r''}
+$$
+where $r'$, $r''$ are two orientations of $r$. Namely,
+\begin{itemize}
+  \item If $r$ doesn't intersect defect lines so that $Q_{r'}\otimes
+  Q_{r''}=A\otimes A$, then $x_i, x^i$ are dual bases in $A$ with respect to
+  Frobenius pairing (compare with \eqref{e:er}).
+  \item If $r$ intersects a defect line labelled by bimodule $X$ or $X^*$
+  (depending on orientation), then $x_i, x^i$ are dual bases in $X$, $X^*$.
+\end{itemize}
 
+Taking product over all unoriented edges $r\in K_1$, we get a vector
+$$
+e_M=\bigotimes_{r\in K_1} e_r\in Q(M)
+$$
+(compare with \eqref{e:eM}).
+
+
+FIXME: algebraic data defined by vertices??
+
+
+Finally, for a 2-cell $F$ of $K$, we define the space
+$$
+Q_F=\bigotimes_{r\in \ov{\del F}}Q_r
+$$
+where the tensor product is taken in clockwise order, and
+a map
+$$
+\eps_F \colon Q_F\to \kk
+$$
+as follows.
+
+\begin{enumerate}
+	\item[I.]
+    If the 2-cell contains a single vertex $v\in M_0$, and for each edge $r$ of
+    $F$ there is a unique defect line passing through that edge, then we
+    define
+    \begin{equation}
+      \eps_F=\ph_v\colon X_1\otimes_{A}\dots \otimes X_k\to \kk
+		\end{equation}
+    (the product is taken in clockwise order).
+
+    If $F$ contains a vertex, but certain edges don't intersect any defect
+    lines, we multiply the colors of these edges and the color of the adjacent
+    bimodule elements, as illustrated by the figure below.
+
+FIXME
+
+  \item[II.]
+    If the cell $F$ has no vertex and contains a unique defect line, colored by
+    $X$ and crossing two edges of $F$, then we add on this line a single vertex
+    $v$ colored by $\ph_v=\ev_X\colon X^*\otimes X\to \kk$, and then use the
+    previous construction.
+
+	\item[III.] If no defect line passes through $F$, and $F$ lies in region
+    labelled by algebra $A$, then
+    $$
+    \eps_F(a_1 \otimes \cdots\otimes  a_k) = \eps_{A}(a_1 \cdots a_k)
+    $$
+    (compare with \eqref{e:epsF}).
+\end{enumerate}
+
+Note that case  III can be considered as special case of I, if we allow
+ourselves adding ``trivial'' defect lines, colored by ${}_AA_A$,  in any region
+colored by algebra $A$.
+
+As before, taking the tensor product over all 2-cells  $F\in K_2$ and observing
+that $\bigotimes_F Q_F=Q(M)$ (which follows from the fact that every unoriented
+edge of $K$ appears exactly twice as a boundary of some 2-cell, with opposite
+orientations), we can define the map
+$$
+\eps_M=\bigotimes_{F\in K_2} \eps_F \colon Q(M)\to \kk.
+$$
+
+We now define the invariant of a $\calC$-colored stratified manifold $M$
+with a given cell decomposition $K$ by
+\begin{equation}\label{e:defect-state-sum}
+  Z(M,C,K)=\eps_M (e_M)
+\end{equation}
+(compare with \eqref{e:fhk-state-sum}). FIXME: $w^{-1}$??
+
+
+The functor $Z$ for a bordism $M:U\rightarrow V$ is defined as:
+\begin{equation}
+	Z(M) : Z(U) \xto{id_{Z(U)} \otimes P(M)} Z(U) \otimes Q(M) \otimes Z(V) \xto{E(M) \otimes id_{Z(V)}} Z(V)
+\end{equation}
+
+We explain $Z(U), Z(V), P(M), E(M)$ next.
+
+
+Let's define the functor on a (decorated) circle $O$ first. For a more general object $U=O_1 \sqcup O_2 \sqcup \cdots \sqcup O_n$, we then have $Z(U)=Z(O_1)\otimes Z(O_2) \otimes \cdots \otimes Z(O_n)$. As a 1-dimensional space, a circle doesn't need 2-cells for its decomposition.  \ocite{dkr}*{Section 2.3} provides a construction using collars to assign a vector space to decorated circles with just this data. But we will reuse the following equivalent boundary convention. For a circle $O$ lying on $\partial_{in} M$, we assign the same vector space to each edge as was defined in \eqref{e:q-definition}. For a circle lying on $\partial_{out} M$, we still use the \eqref{e:q-definition}, but dualize the $X$ type vector spaces.
+
+The map $P(M): \kk \rightarrow Q(M) \otimes Z(V)$ is defined as:
+\begin{equation}
+	P(M) = \bigotimes_{e \in C_1(M), e \notin \partial_{\mathrm{in}} M} P_e
+\end{equation}
+
+For an edge $e$ intersecting a defect $x$, the propagator map $P_e: \kk \rightarrow Q_{p(e)_1,e,\mathrm{or}_1} \otimes Q_{p(e)_2,e,\mathrm{or}_2}$ comes from a basis $\sum_{i} u_i \otimes u_i^* \in X_x \otimes X_x^*$. For an edge that does not intersect any defect, and is contained in Frobenius algebra $a$, the map $P_e$ comes from the coevaluation map $\beta_{A_a}$ of the algebra $a$.
+
+We then define the evaluation map $E_p: \bigotimes_{(e,\mathrm{or}) \in \partial p} Q_{p,e,\mathrm{or}} \rightarrow \kk $ for each polygon $p$ as:
+\begin{enumerate}
+	\item[I.] If no defect line passes through $p$, and $p$ lies in region labelled by algebra $a$, then $E_p(q_1 \otimes \cdots q_m) = \eps_{A_a}(q_1 \cdots q_m)$. This is the same map which was used for TQFT without defects ( see  \eqref{e:k-pairing} ).
+	\item[II.] Let's say a defect line $x$  passes through two edges such that $q_1 \in X_x^*$ ( outgoing ) and $q_i \in X_x$ ( incoming) , then $E_p(q_1 \otimes \cdots q_m) = q_1 ( (q_2 \cdots q_{i-1}).q_i.(q_{i+1}\cdots q_m))$. Recall that $q_i$ is a bimodule on which appropriate algebra elements can act from right or left sides, and $q_1$ lives in the dual bimodule space.
+	\item[III.] If the 2-cell contains a junction such that one domain wall passes through each edge of the 2-cell, we use the map $\varphi_p$, defined in \eqref{e:junction-data}, to assign an element of $\kk$ as:
+	\begin{equation}
+		E_p(q_1 \otimes \cdots \otimes q_m)=\varphi_p \circ \pi_\otimes(q_1 \otimes \cdots \otimes q_m)
+	\end{equation}
+	$\pi_\otimes: X_{x_1}^{\epsilon_1} \otimes_{A_2} \cdots \otimes_{A_m}  X_{x_m}^{\epsilon_m} \rightarrow \circlearrowleft_{A_1} (X_{x_1}^{\epsilon_1} \otimes_{A_2} \cdots \otimes_{A_m}  X_{x_m}^{\epsilon_m}) $ is a projection to the cylic tensor product on which $\varphi_p$ acts. If $p$ contains a junction, but certain edges don't intersect any domain wall, we can still use this definition of $E_p$ by multiplying its algebra elements with an adjacent bimodule.
+\end{enumerate}
+
+%This image is floating into the next section. So I decided to insert it directly instead of inserting as an image
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=0cell] (0) at (-3.25, 1.25) {};
+		\node [style=0cell] (1) at (-2.25, 2.5) {};
+		\node [style=0cell] (2) at (1.75, 2.5) {};
+		\node [style=0cell] (3) at (4, 0.5) {};
+		\node [style=0cell] (4) at (2.25, -1.5) {};
+		\node [style=0cell] (5) at (-1, -1.5) {};
+		\node [style=0cell] (6) at (-3.25, 3.75) {};
+		\node [style=0cell] (7) at (2.75, 6.25) {};
+		\node [style=junction] (8) at (0, 0.5) {};
+		\node [style=none] (9) at (-1.75, 4.75) {};
+		\node [style=none] (10) at (-4.25, -2.5) {};
+		\node [style=none] (11) at (1, -2.5) {};
+		\node [style=none] (12) at (-4, 8.25) {};
+		\node [style=none] (13) at (-8.5, -5) {};
+		\node [style=none] (14) at (3, -6.5) {};
+		\node [style=0cell] (15) at (7.25, 2.25) {};
+		\node [style=0cell] (16) at (4.25, -3.75) {};
+		\node [style=0cell] (17) at (-3.5, -4) {};
+		\node [style=0cell] (18) at (-0.5, -5.5) {};
+		\node [style=0cell] (19) at (-6.25, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [1cell] (1.center) to (0.center);
+		\draw [1cell] (0.center) to (5.center);
+		\draw [1cell] (5.center) to (4.center);
+		\draw [1cell] (4.center) to (3.center);
+		\draw [1cell] (3.center) to (2.center);
+		\draw [1cell] (2.center) to (1.center);
+		\draw [1cell] (6.center) to (1.center);
+		\draw [1cell] (6.center) to (7.center);
+		\draw [1cell] (7.center) to (2.center);
+		\draw [1cell] (7.center) to (15.center);
+		\draw [1cell] (3.center) to (15.center);
+		\draw [1cell] (19.center) to (0.center);
+		\draw [1cell] (19.center) to (17.center);
+		\draw [1cell] (17.center) to (5.center);
+		\draw [1cell] (17.center) to (18.center);
+		\draw [1cell] (18.center) to (16.center);
+		\draw [1cell] (16.center) to (4.center);
+		\draw [1cell] (19.center) to (6.center);
+		\draw [1cell] (16.center) to (15.center);
+		\draw [defect, bend left=15] (9.center) to (8.center);
+		\draw [defect, bend right=15, looseness=1.25] (8.center) to (10.center);
+		\draw [defect, bend left=15] (8.center) to (11.center);
+		\draw [defect, bend right=15] (12.center) to (9.center);
+		\draw [defect, bend right=15] (13.center) to (10.center);
+		\draw [defect, bend right=15] (11.center) to (14.center);
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{labels}
+		\node[above] at ($(1.center)+(2.50,0.35)$) {$E_p^{II}$};
+		\node[above] at ($(2.center)+(2.05,-0.95)$) {$E_p^{I}$};
+		\node[above] at ($(3.center)+(-2.40,-0.45)$) {$E_p^{III}$};
+		\node[above] at ($(4.center)+(2.11,-1.05)$) {$E_p^{I}$};
+		\node[above] at ($(4.center)+(-6.50,-0.50)$) {$E_p^{II}$};
+		\node[above] at ($(5.center)+(0.95,-2.81)$) {$E_p^{II}$};
+		\node[above] at ($(6.center)+(-0.35,-2.40)$) {$E_p^{I}$};
+	\end{pgfonlayer}
+\end{tikzpicture}
+\end{center}
+
+For example, for the defect network shown above, we indicate by subscripts as to which definition of $E_p$ will be used in different polygons. Altogether, the evaluation map $E(M)$ is then defined as:
+
+\begin{equation}
+	E(M) = \bigotimes_{p \in C_2(M)} E_p
+\end{equation}
+
+This completes the definition of the functor $Z$. In the special case where the bordism has no boundary, we have $\partial_{\mathrm{in}} = \partial_{\mathrm{out}} = \emptyset$. Then $Z$ is just a map from $\kk$ to $\kk$, which is just an element of $\kk$.
+
+\section{Independence of cell decomposition}\label{s:decomposition-independence}
+We had to use a cell decomposition in the last section to define the functor $Z$. Since cell decomposition is not a part of the actual defect TQFT data, we need to prove that the state sum construction is independent of our choice of cell decomposition. The key part of the proof is the following lemma.
+
+\begin{lemma}\label{l:invariance-under-local-moves}
+	For two colored bordisms $M$ and $M'$, $Z(M) = Z(M')$ if the cell decompositions of $M$ and $M'$ are related by one of the following classes:
+	\begin{enumerate}
+		\item Addition of an edge with a vertex to a 2-gon
+
+		\newcommand{\twogonA}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.20]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (left) at (-4, 0) {};
+							\node [0cell] (right) at (5, 0) {};
+							\node [style=none] (bottom) at (0.25, -2.85) {};
+							\node [style=none] (top) at (0.5, 2.85) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell, bend left=60, looseness=1.25] (left.center) to (right.center);
+							\draw [1cell, bend right=60, looseness=1.25] (left.center) to (right.center);
+							\draw [midarrow=0.75, defect, bend right=15] (bottom.center) to (top.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\newcommand{\twogonB}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.20]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (left) at (-4, 0) {};
+							\node [0cell] (right) at (5, 0) {};
+							\node [style=none] (bottom) at (0.25, -2.85) {};
+							\node [style=none] (top) at (0.5, 2.85) {};
+							\node [0cell] (middle) at (2, 0) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell, bend left=60, looseness=1.25] (left.center) to (right.center);
+							\draw [1cell, bend right=60, looseness=1.25] (left.center) to (right.center);
+							\draw [1cell, ](left.center) to (right.center);
+							\draw [midarrow=0.75, defect, bend right=15] (bottom.center) to (top.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\newcommand{\twogonC}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.20]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (left) at (-4, 0) {};
+							\node [0cell] (right) at (5, 0) {};
+							\node [style=none] (bottom) at (0.25, -2.85) {};
+							\node [style=none] (top) at (0.5, 2.85) {};
+							\node [0cell] (middle) at (-1, 0) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell, bend left=60, looseness=1.25] (left.center) to (right.center);
+							\draw [1cell, bend right=60, looseness=1.25] (left.center) to (right.center);
+							\draw [1cell, ](left.center) to (right.center);
+							\draw [midarrow=0.75, defect, bend right=15] (bottom.center) to (top.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\begin{align*}
+			\twogonA \leftrightarrow \twogonB \leftrightarrow \twogonC
+		\end{align*}
+
+		\item Addition of an edge inside an n-gon
+
+		\newcommand{\pentagonA}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.30]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (north) at (0, 3) {};
+							\node [0cell] (northWest) at (-3.25, 1.5) {};
+							\node [0cell] (southWest) at (-3, -1) {};
+							\node [0cell] (south) at (0.25, -2.25) {};
+							\node [0cell] (east) at (2.25, 0.75) {};
+							\node [style=none] (defectStart) at (-1.25, -1.67) {};
+							\node [style=none] (defectEnd) at (1, 2) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell] (north.center) to (northWest.center);
+							\draw [1cell] (southWest.center) to (south.center);
+							\draw [1cell] (south.center) to (east.center);
+							\draw [1cell] (east.center) to (north.center);
+							\draw [1cell] (southWest.center) to (northWest.center);
+							\draw [midarrow=0.65, defect, bend left] (defectStart.center) to (defectEnd.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\newcommand{\pentagonB}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.30]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (north) at (0, 3) {};
+							\node [0cell] (northWest) at (-3.25, 1.5) {};
+							\node [0cell] (southWest) at (-3, -1) {};
+							\node [0cell] (south) at (0.25, -2.25) {};
+							\node [0cell] (east) at (2.25, 0.75) {};
+							\node [style=none] (defectStart) at (-1.25, -1.67) {};
+							\node [style=none] (defectEnd) at (1, 2) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell] (north.center) to (northWest.center);
+							\draw [1cell] [bend left=60, looseness=1.50] (southWest.center) to (south.center);
+							\draw [1cell] (southWest.center) to (south.center);
+							\draw [1cell] (south.center) to (east.center);
+							\draw [1cell] (east.center) to (north.center);
+							\draw [1cell] (southWest.center) to (northWest.center);
+							\draw [midarrow=0.65, defect, bend left] (defectStart.center) to (defectEnd.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\newcommand{\pentagonC}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.30]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (north) at (0, 3) {};
+							\node [0cell] (northWest) at (-3.25, 1.5) {};
+							\node [0cell] (southWest) at (-3, -1) {};
+							\node [0cell] (south) at (0.25, -2.25) {};
+							\node [0cell] (east) at (2.25, 0.75) {};
+							\node [style=none] (defectStart) at (-1.25, -1.67) {};
+							\node [style=none] (defectEnd) at (1, 2) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell] (north.center) to (northWest.center);
+							\draw [1cell] (east.center) to (southWest.center);
+							\draw [1cell] (southWest.center) to (south.center);
+							\draw [1cell] (south.center) to (east.center);
+							\draw [1cell] (east.center) to (north.center);
+							\draw [1cell] (southWest.center) to (northWest.center);
+							\draw [midarrow=0.65, defect, bend left] (defectStart.center) to (defectEnd.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\newcommand{\pentagonD}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.30]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (north) at (0, 3) {};
+							\node [0cell] (northWest) at (-3.25, 1.5) {};
+							\node [0cell] (southWest) at (-3, -1) {};
+							\node [0cell] (south) at (0.25, -2.25) {};
+							\node [0cell] (east) at (2.25, 0.75) {};
+							\node [style=none] (defectStart) at (-1.25, -1.67) {};
+							\node [style=none] (defectEnd) at (1, 2) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell] (north.center) to (northWest.center);
+							\draw [1cell] (north.center) to (southWest.center);
+							\draw [1cell] (southWest.center) to (south.center);
+							\draw [1cell] (south.center) to (east.center);
+							\draw [1cell] (east.center) to (north.center);
+							\draw [1cell] (southWest.center) to (northWest.center);
+							\draw [midarrow=0.65, defect, bend left] (defectStart.center) to (defectEnd.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+
+		\newcommand{\pentagonE}{%
+			\vcenter{\hbox{%
+					\begin{tikzpicture}[scale=0.30]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (north) at (0, 3) {};
+							\node [0cell] (northWest) at (-3.25, 1.5) {};
+							\node [0cell] (southWest) at (-3, -1) {};
+							\node [0cell] (south) at (0.25, -2.25) {};
+							\node [0cell] (east) at (2.25, 0.75) {};
+							\node [style=none] (defectStart) at (-1.25, -1.67) {};
+							\node [style=none] (defectEnd) at (1, 2) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell] (north.center) to (northWest.center);
+							\draw [1cell] [bend left=60, looseness=1.50] (northWest.center) to (southWest.center);
+							\draw [1cell] (southWest.center) to (south.center);
+							\draw [1cell] (south.center) to (east.center);
+							\draw [1cell] (east.center) to (north.center);
+							\draw [1cell] (southWest.center) to (northWest.center);
+							\draw [midarrow=0.65, defect, bend left] (defectStart.center) to (defectEnd.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}%
+			}}%
+		}
+
+		\begin{align*}
+			 \pentagonA \leftrightarrow \pentagonB \leftrightarrow \pentagonC \leftrightarrow \pentagonD \leftrightarrow \pentagonE
+		\end{align*}
+
+		Apart from the pentagons shown above, the other diagrams included in this local move are all the n-gons with $n \ge 3$. The domain wall can run between any two edges.
+	\end{enumerate}
+\end{lemma}
+
+Note that the defect can also be $A$ itself, which is the same as having no defect at all in the diagrams shown above. We sketch here proofs for two of these moves. Let's first consider a move that inserts an edge and a vertex in a 2-gon, as given in \firef{f:example1-local-modification}.
+
+\begin{figure}[ht]
+	\centering
+
+	\begin{tikzpicture}[scale=0.5]
+		\begin{scope}[xshift=0cm]
+			% first diagram code
+			\begin{pgfonlayer}{nodelayer}
+				\node [0cell] (left) at (-4, 0) {};
+				\node [0cell] (right) at (5, 0) {};
+				\node [style=none] (bottom) at (1.25, -4) {};
+				\node [style=none] (top) at (1.25, 4) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend left=60, looseness=1.25] (left.center) to node[pos=0.4, above] {$e_1$} (right.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend right=60, looseness=1.25] (left.center) to node[pos=0.4, below] {$e_2$} (right.center);
+				\draw [defect, bend right] (bottom.center) to node[pos=0.50, left] {$b$} node[pos=0.50, right] {$a$} (top.center);
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{labels}
+				\node[above] at ($(left.center)+(+3.05,-0.50)$) {$p$};
+				\node[below] at ($(bottom.center)+(+0.00,-0.00)$) {$x$};
+				\node[above] at ($(bottom.center)+(+2.00,+1.00)$) {$X_x$};
+				\node[below] at ($(top.center)+(+2.00,-1.00)$) {$X_x^*$};
+			\end{pgfonlayer}
+
+			\node[below] at (0,-4) {(a)};
+		\end{scope}
+
+		\begin{scope}[xshift=11cm]
+			% second diagram code
+			\begin{pgfonlayer}{nodelayer}
+				\node [0cell] (left) at (-4, 0) {};
+				\node [0cell] (right) at (5, 0) {};
+				\node [0cell] (middle) at (0, 0) {};
+				\node [style=none] (bottom) at (1.25, -4) {};
+				\node [style=none] (top) at (1.25, 4) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend left=60, looseness=1.25] (left.center) to node[pos=0.4, above] {$e_1$} (right.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend right=60, looseness=1.25] (left.center) to node[pos=0.4, below] {$e_2$} (right.center);
+				\draw [midarrow=0.8,draw=green, line width=1.2pt, 1cell ] (left.center) to node[pos=0.4, below] {$A_b$} node[pos=0.4, above] {$A_b$} node[pos=0.8, below] {$e_3$} (middle.center);
+				\draw [midarrow=0.3,draw=green, line width=1.2pt, 1cell ] (middle.center) to node[pos=0.6, below] {$X_x^*$} node[pos=0.6, above] {$X_x$} node[pos=0.3, below] {$e_4$} (right.center);
+				\draw [defect, bend right] (bottom.center) to node[pos=0.97, left] {$b$} node[pos=0.97, right] {$a$} (top.center);
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{labels}
+				\node[below] at ($(top.center)+(+0.05,-1.50)$) {$p_1$};
+				\node[above] at ($(bottom.center)+(+0.05,+1.50)$) {$p_2$};
+				\node[below] at ($(bottom.center)+(+0.00,-0.00)$) {$x$};
+				\node[above] at ($(bottom.center)+(+2.00,+1.00)$) {$X_x$};
+				\node[below] at ($(top.center)+(+2.00,-1.00)$) {$X_x^*$};
+			\end{pgfonlayer}
+
+			\node[below] at (0,-4) {(b)};
+		\end{scope}
+
+	\end{tikzpicture}
+
+	\caption{Example(I) of a local modification of cell decomposition used in \leref{l:invariance-under-local-moves}}
+	\label{f:example1-local-modification}
+\end{figure}
+
+
+The contribution to projector $P$ coming from the new edges $e_3$ and $e_4$ is:
+\begin{align*}
+	P_{e_3} \otimes P_{e_4}: \kk &\rightarrow (A_b \otimes A_b) \otimes (X_x \otimes X_x^*)\\
+												 1 &\mapsto  \sum_i (b_i' \otimes b_i) \otimes \sum_j (u_j \otimes u_j^*)\\
+\end{align*}
+
+The total contribution of cells $p_1$ and $p_2$ from the right picture is
+\begin{align*}
+	& \sum_{i,j} \varphi(b_i'.u_j)\ u_j^{*}(b_i.x)\\
+	& =\sum_{i,j} \varphi(b_i'.u_j  (u_j^{*}(b_i.x) ))\\
+	& =\sum_{i} \varphi\left(b_i'.\sum_{j}u_j  (u_j^{*}(b_i.x)) \right)\\
+	& =\sum_{i} \varphi(b_i'.b_i.x )\\
+	& =\varphi(x)
+\end{align*}
+In the intermediate step, the $\sum_j u_j $ basis has been used to express the bimodule $b_i.x$ as $b_i.x= \sum_j u_j u_j^*(b_i.x)$. The original contribution of cell $p$, shown in the left part of the figure, is also $\varphi(x)$. Similarly we can show that the other local move that divides the 2-gon also leaves the functor $Z$ invariant.
+
+
+Now, let's consider another example of a local move, given in \firef{f:example2-local-modification}.
+
+\begin{figure}[ht]
+	\centering
+
+	\begin{tikzpicture}[scale=0.7]
+		\begin{scope}[xshift=0cm]
+			% first diagram code
+			\begin{pgfonlayer}{nodelayer}
+				\node [0cell] (north) at (0, 3) {};
+				\node [0cell] (northWest) at (-3.25, 1.5) {};
+				\node [0cell] (southWest) at (-3, -1) {};
+				\node [0cell] (south) at (0.25, -2.25) {};
+				\node [0cell] (east) at (2.25, 0.75) {};
+				\node [style=none] (defectStart) at (-1.75, -3) {};
+				\node [style=none] (defectEnd) at (2.5, 3) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [midarrow=0.5,draw=green, line width=1.2pt, 1cell] (north.center) to node[pos=0.4, above] {$e_2$} node[pos=0.5, below] {$A_b$} (northWest.center);
+				\draw [midarrow=0.5,draw=green, line width=1.2pt, 1cell] (northWest.center) to node[pos=0.5, left] {$e_3$} node[pos=0.5, right] {$A_b$} (southWest.center);
+				\draw [midarrow=0.70,draw=green, line width=1.2pt, 1cell] (southWest.center) to node[pos=0.7, above] {$e_4$} node[pos=0.7, below] {$X_x$} (south.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell] (south.center) to node[pos=0.4, right] {$e_5$} node[pos=0.4, left] {$A_a$} (east.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell] (east.center) to node[pos=0.4, below] {$e_1$} node[pos=0.15, above] {$X_x^*$} (north.center);
+				\draw [midarrow=0.6, defect, bend left] (defectStart.center) to node[pos=0.38, left] {$b$} node[pos=0.35, right] {$a$}  (defectEnd.center);
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{labels}
+				\node[below] at ($(defectStart.center)+(+0.00,+0.00)$) {$x$};
+				\node[right] at ($(northWest.center)+(+1.60,-0.75)$) {$p$};
+			\end{pgfonlayer}
+			\node[below] at (0,-4) {(a)};
+		\end{scope}
+
+		\begin{scope}[xshift=9cm]
+			% second diagram code
+			\begin{pgfonlayer}{nodelayer}
+				\node [0cell] (north) at (0, 3) {};
+				\node [0cell] (northWest) at (-3.25, 1.5) {};
+				\node [0cell] (southWest) at (-3, -1) {};
+				\node [0cell] (south) at (0.25, -2.25) {};
+				\node [0cell] (east) at (2.25, 0.75) {};
+				\node [style=none] (defectStart) at (-1.75, -3) {};
+				\node [style=none] (defectEnd) at (2.5, 3) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [midarrow=0.5,draw=green, line width=1.2pt, 1cell] (north.center) to node[pos=0.4, above] {$e_2$} node[pos=0.5, below] {$A_b$} (northWest.center);
+				\draw [midarrow=0.5,draw=green, line width=1.2pt, 1cell] (northWest.center) to node[pos=0.5, left] {$e_3$} node[pos=0.5, right] {$A_b$} (southWest.center);
+				\draw [midarrow=0.70,draw=green, line width=1.2pt, 1cell] (southWest.center) to node[pos=0.7, above] {$e_4$} node[pos=0.7, below] {$X_x$} (south.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell] (south.center) to node[pos=0.4, right] {$e_5$} node[pos=0.4, left] {$A_a$} (east.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell] (east.center) to node[pos=0.4, below] {$e_1$} node[pos=0.15, above] {$X_x^*$} (north.center);
+				\draw [midarrow=0.5,draw=green, line width=1.2pt, 1cell] (southWest.center) to node[pos=0.5, below] {$e_6$} node[pos=0.65, above] {$X_x$} node[pos=0.65, below] {$X_x^*$}(east.center);
+				\draw [midarrow=0.6, defect, bend left] (defectStart.center) to (defectEnd.center);
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{labels}
+				\node[below] at ($(defectStart.center)+(+0.00,+0.00)$) {$x$};
+				\node[right] at ($(east.center)+(+1.00,+0.00)$) {$a$};
+				\node[left] at ($(northWest.center)+(-1.00,+0.00)$) {$b$};
+				\node[right] at ($(southWest.center)+(+0.80,+0.00)$) {$p_2$};
+				\node[right] at ($(northWest.center)+(+1.75,-0.75)$) {$p_1$};
+			\end{pgfonlayer}
+			\node[below] at (0,-4) {(b)};
+		\end{scope}
+
+	\end{tikzpicture}
+
+	\caption{Example(II) of a local modification of cell decomposition used in \leref{l:invariance-under-local-moves}}
+	\label{f:example2-local-modification}
+\end{figure}
+
+
+The contribution to projector $P$ coming from the new edge $e_6$ is:
+\begin{align*}
+	P_{e_6}: \kk &\rightarrow X_x \otimes X_x^*\\
+	1 &\mapsto  \sum_j u_j \otimes u_j^*\\
+\end{align*}
+
+The total contribution of cells $p_1$ and $p_2$ from the right picture is
+\begin{align*}
+	& \sum_{j} \varphi(b_1.b_2.u_j)\ u_j^{*}(x.a)\\
+	& =\sum_{j} \varphi(b_1.b_2.u_j u_j^{*}(x.a) )\\
+	& =\varphi(b_1.b_2.x.a)
+\end{align*}
+This contribution is the same as that of the original pentagon shown in the left part of the figure. The proof for the invariance of functor $Z$ under the remaining local moves can be constructed similarly.
+
+
+\section{TQFT as special case of defect TQFT}\label{s:tqft-as-dtqft}
+A TQFT ( without defect ), with or without boundary, can be thought of as a special case of defect TQFT on a closed manifold. A TQFT without a boundary can be simply obtained by choosing a coloring which contains no defects.
+
+\begin{equation}
+	Z^{\mathrm{without\ defect}}_{A} (M) = Z^{\mathrm{defect}} (M; \mathrm{Coloring}={\{A\} ,M_1= \emptyset,M_0=\emptyset})
+\end{equation}
+
+We can also get a TQFT, described by separable symmetric Frobenius algebra $A$, on manifold $M$ with a boundary $\partial M$, by choosing appropriate coloring in a defect TQFT. This time, the coloring consists of a defect line $X_{\partial M}$ that runs along the boundary of $M$. This defect TQFT is defined on a closed manifold $\widetilde{M}$ that is an extension of $M$. The region of $\widetilde{M}$ lying outside $M$ is colored by the algebra $\kk$. The region $M$ is colored by algebra $A$. The defect $X_{\partial M}$ is thus an A-module, and in physics language, it separates the ``non-trivial phase'' $A$ from the ``trivial'' phase. For example, the following figure shows a defect TQFT equivalent to a TQFT with a boundary.
+
+
+\newcommand{\picone}{%
+	\vcenter{\hbox{%
+			\begin{tikzpicture}[scale=0.40]
+				\begin{pgfonlayer}{nodelayer}
+					\node [style=none] (29) at (-1.25, -3.25) {};
+					\node [style=none] (30) at (0, -2.75) {};
+					\node [style=none] (31) at (-5.25, -2.75) {};
+					\node [style=none] (32) at (-5, 0.75) {};
+					\node [style=none] (33) at (-1, 0.5) {};
+					\node [style=none] (34) at (-4.5, -1) {};
+					\node [style=none] (35) at (-1.75, -1) {};
+					\node [style=none] (36) at (-4, -1.25) {};
+					\node [style=none] (37) at (-2.25, -1.25) {};
+					\node [style=none] (38) at (0, 0) {};
+					\node [style=none] (39) at (0, -2.75) {};
+					\node [style=none] (41) at (0, -2.75) {};
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{edgelayer}
+					\draw [bend left=45] (32.center) to (33.center);
+					\draw [bend right=315, looseness=0.75] (29.center) to (31.center);
+					\draw [bend left=45] (31.center) to (32.center);
+					\draw [bend right, looseness=1.25] (34.center) to (35.center);
+					\draw [bend left, looseness=1.25] (36.center) to (37.center);
+					\draw [bend right=45] (38.center) to (39.center);
+					\draw [bend right, looseness=0.75] (33.center) to (38.center);
+					\draw [bend left, looseness=0.75] (29.center) to (41.center);
+					\draw [bend left, looseness=1.25] (38.center) to (41.center);
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{labels}
+					\node[above] at ($(30.center)+(-2.05,-0.35)$) {$A$};
+				\end{pgfonlayer}
+			\end{tikzpicture}%
+	}}%
+}
+
+\newcommand{\pictwo}{%
+	\vcenter{\hbox{%
+			\begin{tikzpicture}[scale=0.4]
+				\begin{pgfonlayer}{nodelayer}
+					\node [style=none] (8) at (-1.25, -3.25) {};
+					\node [style=none] (9) at (0, -2.75) {};
+					\node [style=none] (10) at (-5.25, -2.75) {};
+					\node [style=none] (11) at (-5, 0.75) {};
+					\node [style=none] (12) at (-1, 0.5) {};
+					\node [style=none] (16) at (-4.5, -1) {};
+					\node [style=none] (17) at (-1.75, -1) {};
+					\node [style=none] (18) at (-4, -1.25) {};
+					\node [style=none] (19) at (-2.25, -1.25) {};
+					\node [style=none] (20) at (0, 0) {};
+					\node [style=none] (21) at (0, -2.75) {};
+					\node [style=none] (24) at (0, -2.75) {};
+					\node [style=none] (25) at (1.25, 0.25) {};
+					\node [style=none] (26) at (1.25, -3) {};
+					\node [style=none] (27) at (4.5, -0.5) {};
+					\node [style=none] (28) at (4.5, -1.75) {};
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{edgelayer}
+					\draw [bend left=45] (11.center) to (12.center);
+					\draw [bend right=315, looseness=0.75] (8.center) to (10.center);
+					\draw [bend left=45] (10.center) to (11.center);
+					\draw [bend right, looseness=1.25] (16.center) to (17.center);
+					\draw [bend left, looseness=1.25] (18.center) to (19.center);
+					\draw [defect, bend right=45] (20.center) to (21.center);
+					\draw [bend right, looseness=0.75] (12.center) to (20.center);
+					\draw [bend left, looseness=0.75] (8.center) to (24.center);
+					\draw [bend right, looseness=0.50] (20.center) to (25.center);
+					\draw [bend left=45, looseness=1.25] (25.center) to (27.center);
+					\draw [bend left=15] (27.center) to (28.center);
+					\draw [bend left=60] (28.center) to (26.center);
+					\draw [bend right=15, looseness=0.75] (26.center) to (24.center);
+					\draw [defect, dashed, bend left, looseness=1.25] (20.center) to (24.center);
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{labels}
+					\node[above] at ($(9.center)+(2.50,0.35)$) {$\mathbf{k}$};
+					\node[above] at ($(8.center)+(-1.05,0.35)$) {$A$};
+				\end{pgfonlayer}
+			\end{tikzpicture}%
+	}}%
+}
+
+\begin{equation}
+\picone=U\left(\pictwo\right),
+\end{equation}
+where $U$ is a forgetful functor that erases the phase labelled by $\kk$, and removes all defect lines. See \cite{carqueville} for detailed construction of a TQFT ( with or without boundary ) from a defect TQFT.
+
+\end{defectfiguresetup}
 \clearpage

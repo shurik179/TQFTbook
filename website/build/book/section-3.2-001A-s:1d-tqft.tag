@@ -57,17 +57,15 @@ the <em>cap</em> $\varnothing \to \bullet ^-\sqcup \bullet ^+$, on which $Z$ is 
     </p>
 </article>
 <p>
-<article class="env-lemma" id="001D">
-  <p><a class="environment-identifier" href="/tag/001D">Lemma <span data-tag="001D">3.2.2</span>.</a> Let $V_+, V_-$, $\operatorname{ev}, \operatorname{coev}$ be as in Theorem&#160;<a href="/tag/001B" data-tag="001B">3.2.1</a>. Then $V_+, V_-$ are finite-dimensional, and one can identify $V_-=V_+^*$ so that $\operatorname{ev}, \operatorname{coev}$ become the usual evaluation and coevaluation maps $V\otimes V^*\to \mathbf{k}$, $\mathbf{k}\to V\otimes V^*\colon 1\mapsto \sum e_ i\otimes e^ i$. </p>
+Comparing this with definition of dual pair given in Section&#160;<a href="/tag/00G0" data-tag="00G0">2.5</a>, we see that this data is exactly the data of a dual pair $V_+, V_-$. Therefore, by Lemma&#160;<a href="/tag/001D" data-tag="001D">2.5.1</a> $V_+$, $V_-$ must be finite-dimensional, and $V_-\simeq (V_+)^*$, so we get the following result. 
+</p>
+<p>
+<article class="env-theorem" id="00G5">
+  <p><a class="environment-identifier" href="/tag/00G5">Theorem <span data-tag="00G5">3.2.2</span>.</a> A one-dimensional TQFT is completely determined by the vector space $V=Z(\bullet ^+)$ which must be <em>finite-dimensional</em>. Conversely, every finite-dimensional vector space $V$ uniquely defines 1-dimensional TQFT. For such a TQFT, $Z(S^1)=\dim V$. </p>
 </article> 
 </p>
-<article class="env-proof">
-    <p>
-      <strong>Proof.</strong>
-      Consider the map $V_-\to (V_+)^*$, given by $y\mapsto \operatorname{ev}(-,y)$; and a map $V_+^*\to V_-$ given by $f\mapsto \operatorname{id}\otimes f (\operatorname{coev}(1))$ (thus, if $\operatorname{coev}(1)=\sum y_ i \otimes x_ i$, then $f\mapsto \sum f(x_ i) y_ i$). Then the rigidity conditions say that these two maps are inverse to each other; thus, we have $V_-\simeq V_+^*$. Finite-dimensionality follows from the fact that the elements $y_ i$ generate $V_-$. 
-      <span class="qed">$\square$</span>
-    </p>
-</article>
 <p>
- Thus, a one-dimensional TQFT is completely determined by a <em>finite-dimensional</em> vector space $V=Z(\bullet ^+)$; in such a TQFT, $Z(S^1)=\dim V$. 
+This result easily generalizes to TQFTs with values in an arbitrary symmetric monoidal category. <article class="env-theorem" id="001Q">
+  <p><a class="environment-identifier" href="/tag/001Q">Theorem <span data-tag="001Q">3.2.3</span>.</a> If $Z\colon \mathbf{Cob}_1\to \mathcal{C}$ is a $1$-dimensional TQFT with values in a symmetric monoidal category $\mathcal{C}$, then $A=Z(\bullet ^+)$ is a rigid object; its dual is $Z(\bullet ^-)$. Conversely, any rigid object $A\in \mathcal{C}$ defines a one-dimensional TQFT such that $Z(\bullet ^+)=A$. </p>
+</article> 
 </p>

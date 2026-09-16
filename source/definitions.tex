@@ -29,6 +29,8 @@
 \newcommand{\exref}[1]{\hyperref[#1]{Example~{\rm\ref*{#1}}}}
 \newcommand{\ecref}[1]{\hyperref[#1]{Exercise~{\rm\ref*{#1}}}}
 \newcommand{\reref}[1]{\hyperref[#1]{Remark~{\rm\ref*{#1}}}}
+%\newcommand{\conref}[1]{\hyperref[#1]{Convention~{\rm\ref*{#1}}}}
+
 
 %%%%%%%%% Greek letters
 \newcommand{\al}{\alpha}
@@ -145,6 +147,12 @@ to\wd0{\hss$\times$\hss}}\box0}
 \newcommand{\sss}{{\mathrm{ss}}}
 \newcommand{\tauzero}{\tau_{\leq 0}}
 \newcommand{\tauone}{\tau_{\leq 1}}
+\newcommand{\figscale}[2] 						%  used in figures for proof of 
+{\raisebox{-0.5\height}%							%  invariance of TV in chapter 19
+	{\includegraphics[scale=#1]{#2}}}
+\newcommand{\xxto}{\xrightarrow}            % long arrow, used in chapter 19
+\newcommand{\DD}{\dim(\calC)}      % dimension of category, use in chapter 19
+\newcommand{\ccc}[1]{\underset{\scriptstyle #1}{\bullet}} %used in chapter 19
 
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\tr}{tr}

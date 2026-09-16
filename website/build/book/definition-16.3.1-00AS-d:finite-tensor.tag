@@ -8,7 +8,7 @@ The tensor product functor $\otimes \colon \mathcal{C}\times \mathcal{C}\to \mat
 $\operatorname{Hom}(\mathbf{1}, \mathbf{1})=\mathbf{k}$. 
 </p>
 </li><li><p>
-$\mathcal{C}$ is rigid: every $X\in \mathcal{C}$ has left and right dual (see Definition&#160;<a href="/tag/001K" data-tag="001K">3.3.2</a>). 
+$\mathcal{C}$ is rigid: every $X\in \mathcal{C}$ has left and right dual (see Definition&#160;<a href="/tag/001K" data-tag="001K">2.5.2</a>). 
 </p>
 </li>
 </ol></p>

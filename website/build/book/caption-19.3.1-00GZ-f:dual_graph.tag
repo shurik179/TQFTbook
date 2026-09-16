@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 19.3.1. The dual graph on the boundary of a 3-cell</figcaption>

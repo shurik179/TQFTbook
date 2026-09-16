@@ -1,18 +1,7 @@
 \documentclass[border=3pt]{standalone}
 \input{figpre.tex}
 \begin{document}
-\begin{tikzpicture}[scale=0.5]
-		
-		\pgfdeclarelayer{nodelayer}
-		\pgfdeclarelayer{edgelayer}
-		\pgfdeclarelayer{labels}
-		\pgfsetlayers{edgelayer,nodelayer,labels,main}
-		\tikzset{
-			none/.style={},
-			defect/.style={draw=blue, line width=1.2pt},
-			junction/.style={circle, fill=red, draw=red!80!black, line width=0.4pt, inner sep=1.8pt},
-		}
-		
+\begin{tikzpicture}[scale=0.4]
 		\begin{pgfonlayer}{nodelayer}
 			\node [style=none] (4) at (1, 0) {};
 			\node [style=none] (5) at (3.75, 0) {};
@@ -53,11 +42,12 @@
 			\draw [defect,bend left=15] (C.center) to (D.center);
 		\end{pgfonlayer}
 		\begin{pgfonlayer}{labels}
-			\node[above, xshift=2pt, yshift=2pt] at (E) {$ _AM_B$};
-			\node[below, xshift=-2pt, yshift=-2pt ] at (F) {$ _AM_C$};
-			\node[below, xshift=-40pt, yshift=-2pt ] at (P) {$A$};
-			\node[below, xshift=30pt, yshift=-2pt ] at (Q) {$B$};
-			\node[above, xshift=30pt, yshift=2pt ] at (R) {$C$};
+			\node[above] at ($(E.center)+(0.07,0.55)$) {${}_A M_B$};
+			\node[below] at ($(F.center)+(-0.07,-0.07)$) {${}_A M_C$};
+			\node[below] at ($(P.center)+(-1.41,-0.07)$) {$A$};
+			\node[below] at ($(Q.center)+(1.05,-0.07)$) {$B$};
+			\node[above] at ($(R.center)+(1.05,0.07)$) {$C$};
+			\node[right] at ($(D.center)+(0.00,0.00)$) {${}_B M_C$};
 		\end{pgfonlayer}
 	\end{tikzpicture}
 \end{document}

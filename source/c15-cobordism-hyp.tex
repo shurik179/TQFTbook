@@ -1,9 +1,18 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Cobordism hypothesis}\label{c:cob-hyp}
-Main reference: \ocite{lurie-cobordism}; short review paper:
-\ocite{freed-cobordism}.
 
+In this chapter, we give a definition of fully extended TQFT in
+any dimension, using the language of $(\infty,n)$ categories, and
+present one of the key results of this theory, the cobordism hypothesis,
+which classifies such $n$-dimensional extended theories in terms of
+\emph{fully dualizable} objects.
+
+Our exposition follows the foundational paper
+\ocite{lurie-cobordism} by Jacob Lurie; a short exposition can also be
+found in \ocite{freed-cobordism}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definition of extended TQFT and cobordism hypothesis}\label{s:cobordism-hypothesis}
 In this section, we finally give a definition of an extended TQFT in any
 dimension $n$.
@@ -15,7 +24,7 @@ $\Bordor_n$. Moreover, each of these categories has a structure of symmetric
 monoidal $(\infty,n)$ category, with the monoidal structure given by the
 disjoint union.
 
-We can now give the key definition of these lectures.
+We can now give the key definition of this book.
 
 \begin{definition}\label{d:xtqft-infty}\index{TQFT!extended framed}
   Let $\calC$ be a symmetric monoidal $(\infty, n)$ category. A framed extended
@@ -54,7 +63,7 @@ definition, $\cfd$ is an $(\infty,0)$ category.
 Note that here it is crucial that we use the framed version of bordism category.
 
 Before discussing the proof, let us note that it immediately implies the
-following.
+following corollary.
 \begin{corollary}
   An $n$-dimensional framed extended  TQFT is  determined uniquely up to
   isomorphism by the object $Z(\bullet)\in \calC$ which must be fully
@@ -73,7 +82,8 @@ proof and extending it to other situations, such as \ocite{ayala-francis2017}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{$SO(n)$ action and oriented cobordism hypothesis}\label{s:oriented-cobordism-hypothesis}
+\section{$SO(n)$ action and oriented cobordism hypothesis}
+\label{s:oriented-cobordism-hypothesis}
 The cobordism hypothesis gives a description of framed extended TQFTs. Now, let
 us discuss other versions of extended TQFT  --- most importantly, oriented
 TQFTs.
@@ -135,14 +145,65 @@ taste of this, here is the simplest example.
   category of finite-dimensional representations of $G$.
 \end{example}
 
-In a similar fashion, one can write explicitly a definition of an action of a
-group $G$ on a 2-category and definition of $\calC^G$ in this case; one can find
-all details in \ocite{hesse}. However, in the case of interest to us, there is
-a way around it. Namely, we are only interested in the action of a group on the
-$(\infty,0)$ category $\tilde \calC$. By FIXME, every $(\infty, 0)$ category is
-a fundamental groupoid of a  topological space: $\calC=\pi_{\le \infty}(X)$.
-Thus, it is natural to define the action of $G$ on $\pi_{\le \infty}(X)$ as the
-action induced by an action of $G$ on $X$.
+
+
+%In a similar fashion, one can write explicitly a definition of an action of a
+%(not necessarily discrete) group $G$ on a 2-category and definition of
+%$\calC^G$ in this case. Unfortunately, this gives a much longer list of
+%consistency conditions; one can find all details in \ocite{hesse}.
+
+
+If we go to arbitrary dimension and want to define topological group actions on
+$n$-categories (or $(\infty,n)$ categories), writing it algebraically is not an
+option: we must use topology of the group. Informally, action of $G$ on the
+category $\calC$ should be decribed by as follows (borrowed from
+\ocite{schommer-pries-category}*{Section 16})
+
+\begin{itemize}
+  \item Every element $g\in G$ should define an invertible functor
+    $\rho(g)\colon \calC\to \calC$, i.e., a point in $\Aut(\calC)$
+  \item A path $\ga$ in $G$, connecting $g_1$ and $g_2$, should define
+    an isomorphism of functors $\rho(g_1)\to \rho(g_2)$, or equivalently, an
+    invertible 1-morphism in $\Aut(\calC)$
+  \item \dots
+\end{itemize}
+This data has to satisfy consistency relations: for example, one should require
+existence of functorial isomorphisms $\rho(g_1g_2)\simeq \rho(g_1)\rho(g_2)$,
+which themselves should satisfy consistency relations.
+
+The easiest way to state all the consistency relations is by requiring that
+$\rho$ is a monoidal functor between monoidal $(\infty, n)$-categories
+$$
+  \rho\colon \Pi_\infty(G)\to \Aut(\calC)
+$$
+Equivalently, using FIXME, we can rewrite it as weak functor between
+$\infty$-categories
+$$
+\rho\colon \calB(\Pi_\infty(G) )\to \calB(\Aut(\calC))
+$$
+or as (topological) map $BG\to B(\Aut(\calC))$
+(this is the point of view taken in \ocite{schommer-pries-category}).
+
+
+\begin{remark}\label{r:Ainfty}
+  For comparison, it is known that  for  topological groups $G,H$,
+  pointed maps $BG\to BH$ correspond to $A_\infty$ morphisms $G\to H$, see
+  \ocite{boardman-vogt}*{Propositions 1.15, 1.16}.
+\end{remark}
+
+
+For $n=2$, one can unpack this definition and write all the required data
+and consistency relations explicitly; see \ocite{hesse}*{Remark 2.16}.
+For $n=3$, see \ocite{schommer-pries-category}.
+
+
+
+In the case of interest to us, there is a shortcut.  Namely, we are only
+interested in the action of a group on the $(\infty,0)$ category $\cfd$. By
+FIXME, every $(\infty, 0)$ category is a fundamental groupoid of a topological
+space: $\calC=\pi_{\le \infty}(X)$. Thus, we can instead  define the action of
+$G$ on $\pi_{\le \infty}(X)$ as the action induced by an action of $G$ on $X$.
+
 
 Now, we need to define the notion of fixed points. The naive definition of fixed
 points of action of $G$ on $X$ is not homotopy invariant, so we cannot use it.
@@ -154,9 +215,10 @@ $G$; the quotient $BG=EG/G$ is called the classifying space of $G$. The name is
 justified by the fact that for any space $X$, isomorphism classes of $G$-bundles
 on $X$ are in bijection with homotopy equivalence classes of maps $X\to BG$.
 
-\begin{definition}
-  Let $X$ be a topological space with a continuous action of a topological group
-  $G$. The \emph{homotopy fixed point set} is defined by
+\begin{definition}\label{d:homotopy-fixed}
+  Let $X$ be a topological space with a continuous action of a topological
+  group $G$. The \emph{homotopy fixed point set}\index{homotopy fixed point} is
+  defined by
   $$
     X^{hG} =\Hom_G(EG, X)
   $$
@@ -191,7 +253,7 @@ details can be found in \ocite{lurie-cobordism}.
 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cobordism hypothesis for $n=2$}\label{s:cobordism-hypothesis-dim2}
 
 Reference: \ocite{hesse}.

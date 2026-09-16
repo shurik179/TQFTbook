@@ -1,0 +1,37 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.6]
+		\node (leftTop) at (-3, 3) {};
+		\node (rightTop) at (3, 3) {};
+		\node (NETop) at (5, 4) {};
+		\node (SETop) at (5, 2.25) {};
+		\node (NWTop) at (-5, 4) {};
+		\node (SWTop) at (-5, 2) {};
+		\node (leftBottom) at (-3, -3) {};
+		\node (rightBottom) at (3, -3) {};
+		\node (NEBottom) at (5, -2) {};
+		\node (SEBottom) at (5, -3.75) {};
+		\node (NWBottom) at (-5, -2) {};
+		\node (SWBottom) at (-5, -4) {};
+		\draw[midarrow=0.5, semithick,>=stealth]  (rightTop.center) to node[pos=0.5, above] {$b_e=h_s^{-1} a_e h_t$} (leftTop.center);
+		\draw[>=stealth,->] (rightTop.center) to (NETop.center);
+		\draw[>=stealth,->] (rightTop.center) to (SETop.center);
+		\draw[>=stealth,<-] (SWTop.center) to (leftTop.center);
+		\draw[>=stealth,<-] (NWTop.center) to (leftTop.center);
+		\draw[midarrow=0.5, semithick,>=stealth] (rightBottom.center) to node[pos=0.5, below] {$a_e$} (leftBottom.center) ;
+		\draw[>=stealth,->] (rightBottom.center) to (NEBottom.center);
+		\draw[>=stealth,->] (rightBottom.center) to (SEBottom.center);
+		\draw[>=stealth,<-] (SWBottom.center) to (leftBottom.center);
+		\draw[>=stealth,<-] (NWBottom.center) to (leftBottom.center);
+		\draw[midarrow=0.5, >=stealth] (leftBottom.center) to node[pos=0.5, left] {$h_t$}(leftTop.center);
+		\draw[midarrow=0.5, >=stealth] (rightBottom.center) to node[pos=0.5, right] {$h_s$}(rightTop.center) ;
+		\node[below ] at ($(leftBottom.center)+(+0.00,0.00)$) {$t$};
+		\node[below ] at ($(rightBottom.center)+(+0.00,0.00)$) {$s$};
+		\node[above ] at ($(leftTop.center)+(+0.00,0.00)$) {$t'$};
+		\node[above ] at ($(rightTop.center)+(+0.00,0.00)$) {$s'$};
+		\node[right ] at ($(rightBottom.center)+(+3.00,0.00)$) {$|a \rangle \in H(N)$};
+		\node[right ] at ($(rightTop.center)+(+3.00,0.00)$) {$|b \rangle \in H(N)$};
+		\draw[decorate,decoration={brace, amplitude=5pt, mirror}] (7,-2.5) -- (7,2.5) node[midway, right=7pt] {$I$};
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+$\displaystyle
+\begin{aligned}
+Z( 	\begin{tikzpicture}[scale=0.3, baseline=-5.0pt]
+		\coordinate (a0) at (0:1.2cm);
+		\coordinate (a1) at (72:1.2cm);
+		\coordinate (a2) at (144:1.2cm);
+		\coordinate (a3) at (216:1.2cm);
+		\coordinate (a4) at (288:1.2cm);
+		\path[lightyellow] (a1)--(a2)--(a3)--(a4)--(a0)--(a1);
+		\draw[>=stealth,->] (a1)--(a0) node [pos=0.5,auto=left,font=\scriptsize,inner sep=1pt] {${g_1}$};
+		\draw[>=stealth,->] (a2)--(a1) node [pos=0.7,auto=left,font=\scriptsize,inner sep=1pt] {${g_n}$};
+		\draw[>=stealth,->] (a3)--(a2) node [pos=0.5,sloped, above] {$...$};
+		\draw[>=stealth,->] (a4)--(a3) node [pos=0.5,sloped, below] {$...$};
+		\draw[>=stealth,->] (a0)--(a4) node [pos=0.4,auto=left,font=\scriptsize,inner sep=1pt] {${g_2}$};
+	\end{tikzpicture}) &= \mathrm{Hom} ( 1 ,\C_{g_1} \otimes \cdots \otimes \C_{g_n} )\\
+	&=  \begin{cases}
+		\C,\quad g_1 g_2 \cdots g_n = 1 \nonumber \\
+		0,\quad \text{otherwise} \nonumber 
+	\end{cases}
+\end{aligned}
+$
+\end{document}

@@ -24,7 +24,7 @@ In this case, the map $\langle \,  , \, \rangle $ is given by
   \[  \langle g_1, \dots , g_ k\rangle =\begin{cases}  1, &  g_1\dots g_ k=1\\  0, &  \text{otherwise} \end{cases}  \]
 </div>
 <p>
- Thus, one easily sees that for a closed 2-manifold $M$ the state-sum (<a href="/tag/008P" data-tag="008P">12.1.6</a>) becomes 
+ Thus, one easily sees that for a closed 2-manifold $M$ the state-sum (<a href="/tag/008P" data-tag="008P">12.1.10</a>) becomes 
 </p>
 <div class="equation">
   \[  Z_ A(M,K)=\frac{1}{|G|^ V} \sum _{c} 1  \]
@@ -33,6 +33,6 @@ In this case, the map $\langle \,  , \, \rangle $ is given by
  where $V$ is the number of vertices of $K$ and the sum is over all “colorings” of edges, i.e., ways of assigning a group element $g_ r$ to each oriented edge $r$ so that for two opposite orientations of the same edge, $g_{r'}=g_{r''}^{-1}$ and such that the product of colors over the boundary of any 2-cell is equal to 1. 
 </p>
 <p>
-One easily sees that it is a discrete version of a connection in $G$-bundles: without the factor $\frac{1}{|G|^ V}$, this counts $G$-bundles on $M$ together with trivializations at every vertex. Thus, dividing by $|G|^ V$ exactly gives the number of $G$-bundles on $M$ counted as in Chapter&#160;<a href="/tag/003K" data-tag="003K">6</a>; in other words, this recovers the Dijkgraaf–Witten TQFT. 
+One easily sees that it is a discrete version of connections in $G$-bundles: without the factor $\frac{1}{|G|^ V}$, this counts $G$-bundles on $M$ together with trivializations at every vertex. Thus, dividing by $|G|^ V$ gives the number of $G$-bundles on $M$ counted as in Chapter&#160;<a href="/tag/003K" data-tag="003K">6</a>; in other words, this recovers the Dijkgraaf–Witten TQFT. 
 </p>
 

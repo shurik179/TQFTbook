@@ -1,0 +1,56 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5]
+		\begin{scope}[xshift=0cm]
+			% first diagram code
+			\begin{pgfonlayer}{nodelayer}
+				\node [0cell] (left) at (-4, 0) {};
+				\node [0cell] (right) at (5, 0) {};
+				\node [style=none] (bottom) at (1.25, -4) {};
+				\node [style=none] (top) at (1.25, 4) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend left=60, looseness=1.25] (left.center) to node[pos=0.4, above] {$e_1$} (right.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend right=60, looseness=1.25] (left.center) to node[pos=0.4, below] {$e_2$} (right.center);
+				\draw [defect, bend right] (bottom.center) to node[pos=0.50, left] {$b$} node[pos=0.50, right] {$a$} (top.center);
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{labels}
+				\node[above] at ($(left.center)+(+3.05,-0.50)$) {$p$};
+				\node[below] at ($(bottom.center)+(+0.00,-0.00)$) {$x$};
+				\node[above] at ($(bottom.center)+(+2.00,+1.00)$) {$X_x$};
+				\node[below] at ($(top.center)+(+2.00,-1.00)$) {$X_x^*$};
+			\end{pgfonlayer}
+
+			\node[below] at (0,-4) {(a)};
+		\end{scope}
+
+		\begin{scope}[xshift=11cm]
+			% second diagram code
+			\begin{pgfonlayer}{nodelayer}
+				\node [0cell] (left) at (-4, 0) {};
+				\node [0cell] (right) at (5, 0) {};
+				\node [0cell] (middle) at (0, 0) {};
+				\node [style=none] (bottom) at (1.25, -4) {};
+				\node [style=none] (top) at (1.25, 4) {};
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{edgelayer}
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend left=60, looseness=1.25] (left.center) to node[pos=0.4, above] {$e_1$} (right.center);
+				\draw [midarrow=0.4,draw=green, line width=1.2pt, 1cell, bend right=60, looseness=1.25] (left.center) to node[pos=0.4, below] {$e_2$} (right.center);
+				\draw [midarrow=0.8,draw=green, line width=1.2pt, 1cell ] (left.center) to node[pos=0.4, below] {$A_b$} node[pos=0.4, above] {$A_b$} node[pos=0.8, below] {$e_3$} (middle.center);
+				\draw [midarrow=0.3,draw=green, line width=1.2pt, 1cell ] (middle.center) to node[pos=0.6, below] {$X_x^*$} node[pos=0.6, above] {$X_x$} node[pos=0.3, below] {$e_4$} (right.center);
+				\draw [defect, bend right] (bottom.center) to node[pos=0.97, left] {$b$} node[pos=0.97, right] {$a$} (top.center);
+			\end{pgfonlayer}
+			\begin{pgfonlayer}{labels}
+				\node[below] at ($(top.center)+(+0.05,-1.50)$) {$p_1$};
+				\node[above] at ($(bottom.center)+(+0.05,+1.50)$) {$p_2$};
+				\node[below] at ($(bottom.center)+(+0.00,-0.00)$) {$x$};
+				\node[above] at ($(bottom.center)+(+2.00,+1.00)$) {$X_x$};
+				\node[below] at ($(top.center)+(+2.00,-1.00)$) {$X_x^*$};
+			\end{pgfonlayer}
+
+			\node[below] at (0,-4) {(b)};
+		\end{scope}
+
+	\end{tikzpicture}
+\end{document}

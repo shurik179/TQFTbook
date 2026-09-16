@@ -1,4 +1,4 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{2-categories}\label{c:2categories}
 
@@ -396,6 +396,14 @@ monoidal categories.
 The pentagon and triangle axioms are similar to those for a monoidal category;
 details can be found, e.g., in \cite[Section 1.5]{leinster}.
 
+
+One can also define the notion of functor between (weak) 2-categories, which we
+skip, referring the reader to \cite[Definition 1.5.8]{leinster}. (Note: what
+we will be using is called ``weak functors'' in \cite{leinster}; compare with
+\deref{d:monoidal_functor}). This allows one to define the notion of equivalence
+of weak 2-categories.
+
+
 \begin{example}\label{x:weak-2cat-examples}\par\noindent
   \begin{enumerate}
     \item The 2-category $\Alg$ of algebras and bimodules,
@@ -413,10 +421,13 @@ details can be found, e.g., in \cite[Section 1.5]{leinster}.
 \begin{example}\label{x:BC}
   Let $\calC$ be a monoidal category. Define the 2-category $\calB\calC$ as the
   2-category with one object $*$ and morphisms given by $\Hom_{\calB\calC}(*,*)
-  =\calC$, with horizontal composition given by tensor product.
-  It is easy to see that this is indeed a 2-category;
-  conversely, every 2-category with only one object is obtained in this
-  way. This is sometimes called \emph{delooping}\index{delooping} of $\calC$.
+  =\calC$, with horizontal composition given by tensor product. It is easy to
+  see that this is indeed a 2-category; conversely, every 2-category with only
+  one object is obtained in this way. This category is called the
+  \emph{delooping}\index{delooping} of $\calC$. Moreover, given monoidal
+  categories $\calC$, $\calD$, a monoidal functor $F\colon \calC\to\calD$ is the
+  same as a weak functor between weak 2-categories $F\colon \calB\calC\to
+  \calB\calD$, see \cite[Example 1.5.9]{leinster}.
 \end{example}
 
 \begin{remark}\label{r:BG}
@@ -433,13 +444,22 @@ details can be found, e.g., in \cite[Section 1.5]{leinster}.
   loops in $X$. Then we have a homotopy equivalence $\Omega BG \simeq G$; thus,
   in some sense $B$ is the inverse operation to $\Omega$, hence the name
   ``delooping''.
-\end{remark}
 
-One can also define the notion of functor between (weak) 2-categories,
-which we skip, referring the reader to \cite[Definition 1.5.8]{leinster}.
-(Note: what we will be using is called ``weak lax functors'' in
-\cite{leinster}.) This allows one to define the notion of equivalence of weak
-2-categories.
+  The relation $\calB G\simeq \Pi_1(BG)$ above is just the beginning of a chain
+  of relations. For example, let $G$ be a topological
+  group (which we assume to be nice enough, e.g. having the topology of a CW
+  complex); by \exref{x:fund-group}, its fundamental groupoid $\Pi_1(G)$ is a
+  monoidal category, so we can define its delooping $\calB (\Pi_1(G))$ which is
+  a weak 2-category. Then we have an equivalence of weak 2-categories
+  \begin{equation}
+    \calB (\Pi_1(G))\cong \Pi_{\le 2}(BG)
+  \end{equation}
+  where $BG$ is the classifying space, and $\Pi_{\le 2}$ is the fundamental
+  2-groupoid (see \exref{x:2groupoid}).
+
+  This statement has a natural generalization for any $k$, which we will
+  discuss in FIXME.
+\end{remark}
 
 \begin{theorem}\label{t:strictify-bicategories}
   Any weak 2-category is equivalent to a strict 2-category.

@@ -1,5 +1,5 @@
 <article class="env-example" id="000D">
-  <p><a class="environment-identifier" href="/tag/000D">Example <span data-tag="000D">2.2.1</span>.</a> Below are some examples of $\mathbf{k}$-linear abelian categories. </p>
+  <p><a class="environment-identifier" href="/tag/000D">Example <span data-tag="000D">2.2.1</span>.</a> Below are some examples of $\mathbf{k}$-linear abelian categories. In all cases, the morphisms are trivial to define. </p>
   <p><ol>
   <li><p>
 $\mathbf{Vec}_\mathbf{k}$; 

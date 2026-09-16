@@ -1,7 +1,7 @@
 <article class="env-exercise" id="003J">
   <p><a class="environment-identifier" href="/tag/003J">Exercise <span data-tag="003J">5.2.1</span>.</a> Recall that for an $A$-$B$-bimodule $M$, the dual vector space $M^*$ is naturally a $B$-$A$-bimodule, with action given by </p>
   <div class="equation">
-  \begin{align*}  (b\lambda ) (m) &  = \lambda (mb),\\  (\lambda a) (m) & = \lambda (am). \end{align*}
+  \begin{align*}  (b\lambda ) (m) &  = \lambda (mb),\qquad \lambda \in M^*, m\in M\\  (\lambda a) (m) & = \lambda (am). \end{align*}
 </div>
   <p> In particular, the dual of an $A$-bimodule is again an $A$-bimodule. </p>
   <p>Let $A$ be a symmetric Frobenius algebra. </p>

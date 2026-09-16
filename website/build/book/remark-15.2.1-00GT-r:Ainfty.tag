@@ -1,0 +1,3 @@
+<article class="env-remark" id="00GT">
+  <p><a class="environment-identifier" href="/tag/00GT">Remark <span data-tag="00GT">15.2.1</span>.</a> For comparison, it is known that for topological groups $G,H$, pointed maps $BG\to BH$ correspond to $A_\infty $ morphisms $G\to H$, see <span class="cite">[<a href="/bibliography/boardman-vogt">BV1973</a>, <span class="postnote">Propositions 1.15, 1.16</span>]</span>. </p>
+</article>

@@ -1,0 +1,3 @@
+<article class="env-corollary" id="00FZ">
+  <p><a class="environment-identifier" href="/tag/00FZ">Corollary <span data-tag="00FZ">2.4.2</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal category and let $A_ s$, $s\in S$ be a collection of objects in $\mathcal{C}$ indexed by a finite set $S$. Then we have a well-defined (up to a canonical isomorphism) object $ \bigotimes _{s\in S} A_ s$. </p>
+</article>

@@ -1,0 +1,44 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.4]
+				\begin{pgfonlayer}{nodelayer}
+					\node [style=none] (8) at (-1.25, -3.25) {};
+					\node [style=none] (9) at (0, -2.75) {};
+					\node [style=none] (10) at (-5.25, -2.75) {};
+					\node [style=none] (11) at (-5, 0.75) {};
+					\node [style=none] (12) at (-1, 0.5) {};
+					\node [style=none] (16) at (-4.5, -1) {};
+					\node [style=none] (17) at (-1.75, -1) {};
+					\node [style=none] (18) at (-4, -1.25) {};
+					\node [style=none] (19) at (-2.25, -1.25) {};
+					\node [style=none] (20) at (0, 0) {};
+					\node [style=none] (21) at (0, -2.75) {};
+					\node [style=none] (24) at (0, -2.75) {};
+					\node [style=none] (25) at (1.25, 0.25) {};
+					\node [style=none] (26) at (1.25, -3) {};
+					\node [style=none] (27) at (4.5, -0.5) {};
+					\node [style=none] (28) at (4.5, -1.75) {};
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{edgelayer}
+					\draw [bend left=45] (11.center) to (12.center);
+					\draw [bend right=315, looseness=0.75] (8.center) to (10.center);
+					\draw [bend left=45] (10.center) to (11.center);
+					\draw [bend right, looseness=1.25] (16.center) to (17.center);
+					\draw [bend left, looseness=1.25] (18.center) to (19.center);
+					\draw [defect, bend right=45] (20.center) to (21.center);
+					\draw [bend right, looseness=0.75] (12.center) to (20.center);
+					\draw [bend left, looseness=0.75] (8.center) to (24.center);
+					\draw [bend right, looseness=0.50] (20.center) to (25.center);
+					\draw [bend left=45, looseness=1.25] (25.center) to (27.center);
+					\draw [bend left=15] (27.center) to (28.center);
+					\draw [bend left=60] (28.center) to (26.center);
+					\draw [bend right=15, looseness=0.75] (26.center) to (24.center);
+					\draw [defect, dashed, bend left, looseness=1.25] (20.center) to (24.center);
+				\end{pgfonlayer}
+				\begin{pgfonlayer}{labels}
+					\node[above] at ($(9.center)+(2.50,0.35)$) {$\mathbf{k}$};
+					\node[above] at ($(8.center)+(-1.05,0.35)$) {$A$};
+				\end{pgfonlayer}
+			\end{tikzpicture}
+\end{document}

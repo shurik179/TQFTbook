@@ -1,0 +1,96 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.5]
+		\begin{scope}[xshift=0cm]
+			% first diagram code
+			\node  (top) at (0, 6) {};
+			\node  (bottom) at (0, -5) {};
+			\node  (left) at (-4, 1) {};
+			\node  (right) at (4, 1) {};
+			\node  (out) at (1, -1) {};
+			\node  (A) at (-1.25, 2.25) {};
+			\node  (C) at (-0.25, 2.75) {};
+			\node  (B) at (1.75, 2.5) {};
+			\node  (D) at (-1.75, -1.25) {};
+			\node  (F) at (0, -1) {};
+			\node  (E) at (1, -2.5) {};
+			\node  (11) at (-2, -2) {};
+			\node  (12) at (-2, 3.5) {};
+			\node  (13) at (2, 3.5) {};
+			\node  (14) at (2.75, 0.17) {};
+			\node  (15) at (1.67, -2.5) {};
+			\node  (16) at (0.5, -3) {};
+			\node  (17) at (-2.25, 0.30) {};
+			\node  (18) at (0.57, 2) {};
+			\node  (19) at (-1, 1) {};
+			\draw[thin] (top.center) to (left.center);
+			\draw[thin] (left.center) to (bottom.center);
+			\draw[thin] (bottom.center) to (right.center);
+			\draw[thin] (right.center) to (top.center);
+			\draw[thin] (left.center) to (right.center);
+			\draw[thin] (left.center) to (out.center);
+			\draw[thin] (out.center) to (right.center);
+			\draw[thin] (top.center) to (out.center);
+			\draw[thin] (out.center) to (bottom.center);
+			\draw[red, thick] (A.center) to (18.center);
+			\draw[red, thick] (18.center) to (B.center);
+			\draw[red, thick] (B.center) to (13.center);
+			\draw[red, thick, densely dotted] (13.center) to (C.center);
+			\draw[red, thick, densely dotted] (C.center) to (12.center);
+			\draw[red, thick] (12.center) to (A.center);
+			\draw[red, thick] (A.center) to (17.center);
+			\draw[red, thick] (17.center) to (D.center);
+			\draw[red, thick] (D.center) to (11.center);
+			\draw[red, thick, densely dotted] (11.center) to (F.center);
+			\draw[red, thick, densely dotted] (F.center) to (15.center);
+			\draw[red, thick] (15.center) to (E.center);
+			\draw[red, thick] (E.center) to (16.center);
+			\draw[red, thick] (16.center) to (D.center);
+			\draw[red, thick] (14.center) to (B.center);
+			\draw[red, thick, densely dotted] (C.center) to (19.center);
+			\draw[red, thick, densely dotted] (19.center) to (F.center);
+			\draw[red, thick] (E.center) to (14.center);
+			\node[left, font=\scriptsize] at ($(A.center)+(+0.00,0.00)$) {$A$};
+			\node[right, font=\scriptsize] at ($(B.center)+(+0.00,0.00)$) {$B$};
+			\node[above, font=\scriptsize] at ($(C.center)+(+0.00,0.00)$) {$C$};
+			\node[left, font=\scriptsize] at ($(D.center)+(+0.0,0.00)$) {$D$};
+			\node[below, font=\scriptsize] at ($(E.center)+(-0.0,0.00)$) {$E$};
+			\node[below, font=\scriptsize] at ($(F.center)+(+0.0,0.00)$) {$F$};
+			\node[right] at ($(right.center)+(+1.0,0.00)$) {$\rightarrow$};
+		\end{scope}
+		
+		\begin{scope}[xshift=12cm]
+			% second diagram code
+			\node  (cancerLeft) at (-4.15, 3) {};
+			\node  (cancerRight) at (4.15, 3) {};
+			\node  (equatorLeft) at (-5, 0) {};
+			\node  (equatorRight) at (5, 0) {};
+			\node (capricornLeft) at (-4, -2.75) {};
+			\node  (capricornRight) at (4, -2.75) {};
+			\node[fill=red, circle, inner sep = 1.5pt]   (firstTop) at (-2.25, 2.5) {};
+			\node[fill=red, circle, inner sep = 1.5pt]  (firstBottom) at (-2.25, -3.25) {};
+			\node[fill=red, circle, inner sep = 1.5pt]  (secondTop) at (2.75, 2.53) {};
+			\node[fill=red, circle, inner sep = 1.5pt]  (secondBottom) at (2.5, -3.22) {};
+			\node[fill=red, circle, inner sep = 1.5pt]  (thirdTop) at (0, 3.53) {};
+			\node[fill=red, circle, inner sep = 1.5pt]  (thirdBottom) at (0, -2.20) {};
+			\draw [red, thick, bend right=90, looseness=0.25] (cancerLeft.center) to (cancerRight.center);
+			\draw [dashed, red, thick, bend left=60, looseness=0.25] (cancerLeft.center) to (cancerRight.center);
+			\draw [thin, bend right=90, looseness=1.50] (equatorLeft.center) to (equatorRight.center);
+			\draw [thin, bend left=90, looseness=1.75] (equatorLeft.center) to (equatorRight.center);
+			\draw [red, thick, bend right=75, looseness=0.25] (capricornLeft.center) to (capricornRight.center);
+			\draw [dashed, red, thick, bend left=90, looseness=0.25] (capricornLeft.center) to (capricornRight.center);
+			\draw [thin, bend right=90, looseness=0.50] (equatorLeft.center) to (equatorRight.center);
+			\draw [thin, dashed, bend left=90, looseness=0.50] (equatorLeft.center) to (equatorRight.center);
+			\draw [red, thick, bend right=15, looseness=1.25] (firstTop.center) to (firstBottom.center);
+			\draw [red, thick, bend left=15] (secondTop.center) to (secondBottom.center);
+			\draw[dashed, red, thick] (thirdTop.center) to (thirdBottom.center);
+			\node[above, font=\scriptsize] at ($(firstTop.center)+(+0.00,0.00)$) {$A$};
+			\node[above, font=\scriptsize] at ($(secondTop.center)+(+0.00,0.00)$) {$B$};
+			\node[above, font=\scriptsize] at ($(thirdTop.center)+(+0.00,0.00)$) {$C$};
+			\node[above, font=\scriptsize] at ($(firstBottom.center)+(+0.20,0.00)$) {$D$};
+			\node[above, font=\scriptsize] at ($(secondBottom.center)+(-0.20,0.00)$) {$E$};
+			\node[above, font=\scriptsize] at ($(thirdBottom.center)+(+0.35,0.00)$) {$F$};
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

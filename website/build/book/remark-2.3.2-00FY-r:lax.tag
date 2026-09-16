@@ -1,0 +1,3 @@
+<article class="env-remark" id="00FY">
+  <p><a class="environment-identifier" href="/tag/00FY">Remark <span data-tag="00FY">2.3.2</span>.</a> In many references, monoidal functors as defined above are called <em>weak monoidal functors</em>. One can also consider variations of this definition: instead of requiring $J$ to be an isomorphism, one requires $J$ to be a functorial morphism (not necessarily invertible). This gives the definition of <em>lax monoidal functor</em>, see <span class="cite">[<a href="/bibliography/leinster">Lei2004</a>, <span class="postnote">Definition 1.2.10</span>]</span>. </p>
+</article>

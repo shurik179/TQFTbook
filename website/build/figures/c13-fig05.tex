@@ -1,0 +1,17 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}[scale=0.20]
+						\begin{pgfonlayer}{nodelayer}
+							\node [0cell] (left) at (-4, 0) {};
+							\node [0cell] (right) at (5, 0) {};
+							\node [style=none] (bottom) at (0.25, -2.85) {};
+							\node [style=none] (top) at (0.5, 2.85) {};
+						\end{pgfonlayer}
+						\begin{pgfonlayer}{edgelayer}
+							\draw [1cell, bend left=60, looseness=1.25] (left.center) to (right.center);
+							\draw [1cell, bend right=60, looseness=1.25] (left.center) to (right.center);
+							\draw [midarrow=0.75, defect, bend right=15] (bottom.center) to (top.center);
+						\end{pgfonlayer}
+					\end{tikzpicture}
+\end{document}

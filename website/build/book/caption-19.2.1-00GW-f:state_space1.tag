@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 19.2.1. Defining the state space for a 2-cell</figcaption>

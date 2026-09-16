@@ -1,7 +1,7 @@
 <h2 id="s:frobenius-ss" class="tex-section"><span data-tag="003D">5.2</span> Semisimple Frobenius algebras</h2>
 
 <p>
-Recall that an associative algebra is semisimple if it is a direct sum of simple algebras. As we will see later, semisimple algebras play a special role in the construction of TQFTs, so in this section, we study <strong>semisimple</strong> Frobenius algebras. We have already seen one example: the Frobenius algebra $A=\operatorname{Mat}_ n(\mathbf{k})$ given in Example&#160;<a href="/tag/003B" data-tag="003B">5.1.2</a>. In fact, over an algebraically closed field, it is the most general example of a semisimple symmetric Frobenius algebra. Namely, we have the following lemma. 
+Recall that an associative algebra is semisimple if it is semisimple as a left module over itself. As we will see later, semisimple algebras play a special role in the construction of TQFTs, so in this section, we study <strong>semisimple</strong> Frobenius algebras. We have already seen one example: the Frobenius algebra $A=\operatorname{Mat}_ n(\mathbf{k})$ given in Example&#160;<a href="/tag/003B" data-tag="003B">5.1.2</a>. In fact, over an algebraically closed field, it is the most general example of a semisimple symmetric Frobenius algebra. Namely, we have the following lemma. 
 </p>
 <p>
 <article class="env-lemma" id="003E">
@@ -44,10 +44,10 @@ It is an easy exercise to show that for an algebra described in Theorem&#160;<a 
   \[  \Delta (e_ i)=\lambda _ i^{-1}e_ i\otimes e_ i.  \]
 </div>
 <p>
- In particular, it implies that for the corresponding TQFT, we have 
+ In particular, it implies that for the corresponding TQFT $Z_ A$, we have 
 </p>
 <div class="equation">
-  \begin{align*}  Z(S^2)& =\varepsilon (1)=\sum \lambda _ i\\  Z(T)& =\dim A \end{align*}
+  \begin{align*}  Z_ A(S^2)& =\varepsilon (1)=\sum \lambda _ i\\  Z_ A(T)& =\dim A \end{align*}
 </div>
 <p>
  where $T=\Sigma _1$ is the two-dimensional torus. 
@@ -78,14 +78,14 @@ It is an easy exercise to show that for an algebra described in Theorem&#160;<a 
     <span class="equation-label"><a href="/tag/003H" data-tag="003H">5.2.1</a></span>
     <div>\begin{equation} \label{e:euler} w=\sum x_ ix^ i \in A, \end{equation}</div>
 </div>
-  <p> where $x_ i$, $x^ i$ are dual bases in $A$ with respect to the pairing. This element is sometimes called the <em>Euler element</em> and will play an important role later, see Theorem&#160;<a href="/tag/006P" data-tag="006P">9.3.4</a>. (In <span class="cite">[<a href="/bibliography/lauda-pfeiffer">LP2007</a>]</span>, $w$ is called the “window element”.) </p>
+  <p> where $x_ i$, $x^ i$ are dual bases in $A$ with respect to the pairing. This element is sometimes called the <em>Euler element</em> and will play an important role later, see Theorem&#160;<a href="/tag/006P" data-tag="006P">9.3.4</a>. (In <span class="cite">[<a href="/bibliography/lauda-pfeiffer">LP2007</a>]</span>, $w$ is called the “window element”.) Note also that it easily follows from centrality of $e$ thta $w$ is central. </p>
 </article> 
 </p>
 <p>
 <article class="env-exercise" id="003J">
   <p><a class="environment-identifier" href="/tag/003J">Exercise <span data-tag="003J">5.2.1</span>.</a> Recall that for an $A$-$B$-bimodule $M$, the dual vector space $M^*$ is naturally a $B$-$A$-bimodule, with action given by </p>
   <div class="equation">
-  \begin{align*}  (b\lambda ) (m) &  = \lambda (mb),\\  (\lambda a) (m) & = \lambda (am). \end{align*}
+  \begin{align*}  (b\lambda ) (m) &  = \lambda (mb),\qquad \lambda \in M^*, m\in M\\  (\lambda a) (m) & = \lambda (am). \end{align*}
 </div>
   <p> In particular, the dual of an $A$-bimodule is again an $A$-bimodule. </p>
   <p>Let $A$ be a symmetric Frobenius algebra. </p>

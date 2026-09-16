@@ -11,7 +11,7 @@ Recall that in a (usual) monoidal category, we defined a dual pair as the data $
     <div>\begin{equation} \label{e:zigzags} \begin{aligned}  z_ A& = (A\xrightarrow {1_ A\otimes \operatorname{coev}} A\otimes B \otimes A \xrightarrow {\operatorname{ev}\otimes 1_ A} A)\\  z_ B & = (B \xrightarrow {\operatorname{coev}\otimes 1_ B} B\otimes A \otimes B \xrightarrow {1_ B\otimes \operatorname{ev}} B) \end{aligned} \end{equation}</div>
 </div>
 <p>
- (see Definition&#160;<a href="/tag/001F" data-tag="001F">3.3.1</a>). 
+ (see Definition&#160;<a href="/tag/001F" data-tag="001F">2.5.1</a>). 
 </p>
 <p>
 We now want to upgrade this definition, defining the notion of a dual pair in a monoidal weak 2-category. In this case, it makes no sense to require $z_ A=1_ A$, $z_ B=1_ B$; instead, we need isomorphisms $\alpha \colon z_ A\to 1_ A$, $\beta \colon z_ B\to 1_ B$. Moreover, it is natural to expect that these isomorphisms themselves should satisfy some compatibility relations. Following <span class="cite">[<a href="/bibliography/pstragowski">Pst2022</a>]</span>, we will impose the following relations. 

@@ -1,14 +1,79 @@
 \documentclass[border=3pt]{standalone}
 \input{figpre.tex}
 \begin{document}
-\begin{tikzpicture}
-  \node at (0.3,0) {$\ev =$};
-  \node[label=above:$A$] (A) at (1,0) {};
-  \node[label=above:$B$] (B) at (1.5,0) {};
-  \pic at (A) {ev};
-  \node at (3.3,0) {$\coev =$};
-  \node[label=below:$B$] (B) at (4,0) {};
-  \node[label=below:$A$] (A) at (4.5,0) {};
-  \pic at (B) {coev};
+\begin{tikzpicture}[scale=0.5]
+    \begin{scope}[xshift=0cm]
+      % first diagram code
+      \node (31) at (-3.75, -1.5) {};
+      \node (32) at (-3.75, 0.5) {};
+      \node (33) at (3, 1.25) {};
+      \node (34) at (-1.75, 0.5) {};
+      \node (35) at (1.5, 0.75) {};
+      \node (36) at (-1.25, 0.27) {};
+      \node (37) at (1, 0.43) {};
+      \node (38) at (5.5, 0.25) {};
+      \node (41) at (5.5, -2.25) {};
+      \node (42) at (3, -2.75) {};
+      \node (43) at (-1.25, -2.75) {};
+      \node (44) at (0, 2.62) {};
+      \node (45) at (0, 1.07) {};
+      \draw [bend left=60] (32.center) to (33.center);
+      \draw [bend left, looseness=0.75] (31.center) to (32.center);
+      \draw [bend right, looseness=1.25] (34.center) to (35.center);
+      \draw [bend left=60, looseness=1.25] (36.center) to (37.center);
+      \draw [bend right, looseness=0.75] (33.center) to (38.center);
+      \draw [bend left=15, looseness=1.25] (38.center) to (41.center);
+      \draw [bend right] (31.center) to (43.center);
+      \draw [bend left=15, looseness=1.25] (43.center) to (42.center);
+      \draw [bend right, looseness=0.75] (42.center) to (41.center);
+      \draw [bend right=15, looseness=1.25] (38.center) to (41.center);
+      \draw [dashed, bend right, looseness=0.50] (44.center) to (45.center);
+      \draw [dashed, bend left=15] (44.center) to (45.center);
+      \node[left] at ($(45.center)+(-0.20,0.60)$) {$N$};
+      \node[left] at ($(45.center)+(+5.50,-1.50)$) {$\del M$};
+      \node[below] at ($(45.center)+(0.50,-4.00)$) {$M$};
+
+    \end{scope}
+
+    \begin{scope}[xshift=11cm]
+      % second diagram code
+      \node (31) at (-3.5, -1.5) {};
+      \node (32) at (-3.5, 0.5) {};
+      \node (33) at (3.25, 1.25) {};
+      \node (34) at (-1.5, 0.5) {};
+      \node (35) at (1.75, 0.75) {};
+      \node (36) at (-1, 0.27) {};
+      \node (37) at (1.25, 0.43) {};
+      \node (38) at (5.75, 0.25) {};
+      \node (41) at (5.75, -2.25) {};
+      \node (42) at (3.25, -2.75) {};
+      \node (43) at (-1, -2.75) {};
+      \node (44) at (0, 2.75) {};
+      \node (45) at (0, 1) {};
+      \node (46) at (0.5, 2.75) {};
+      \node (47) at (0.5, 1) {};
+      \draw [bend left, looseness=0.75] (31.center) to (32.center);
+      \draw [bend right, looseness=1.25] (34.center) to (35.center);
+      \draw [bend right, looseness=0.75] (33.center) to (38.center);
+      \draw [bend left=15, looseness=1.25] (38.center) to (41.center);
+      \draw [bend right] (31.center) to (43.center);
+      \draw [bend left=15, looseness=1.25] (43.center) to (42.center);
+      \draw [bend right, looseness=0.75] (42.center) to (41.center);
+      \draw [bend right=15, looseness=1.25] (38.center) to (41.center);
+      \draw [bend right, looseness=0.75] (44.center) to (45.center);
+      \draw [bend left=15] (44.center) to (45.center);
+      \draw [bend right] (33.center) to (46.center);
+      \draw [bend left=45, looseness=0.75] (32.center) to (44.center);
+      \draw [bend left, looseness=1.25] (36.center) to (45.center);
+      \draw [bend right, looseness=1.25] (37.center) to (47.center);
+      \draw [bend left=15, looseness=1.25] (46.center) to (47.center);
+      \draw [bend right=15] (46.center) to (47.center);
+      \node[left] at ($(45.center)+(-0.10,0.60)$) {$N$};
+      \node[right] at ($(45.center)+(+0.50,0.60)$) {$N$};
+      \node[left] at ($(45.center)+(+5.50,-1.50)$) {$\del M$};
+      \node[below] at ($(45.center)+(0.50,-4.00)$) {$M_{cut}$};
+
+    \end{scope}
+
   \end{tikzpicture}
 \end{document}

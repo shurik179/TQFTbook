@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 19.3.2. Coloring of the dual graph</figcaption>

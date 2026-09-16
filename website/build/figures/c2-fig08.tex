@@ -1,0 +1,14 @@
+\documentclass[border=3pt]{standalone}
+\input{figpre.tex}
+\begin{document}
+\begin{tikzpicture}
+  \node at (0.3,0) {$\ev =$};
+  \node[label=above:$A$] (A) at (1,0) {};
+  \node[label=above:$B$] (B) at (1.5,0) {};
+  \pic at (A) {ev};
+  \node at (3.3,0) {$\coev =$};
+  \node[label=below:$B$] (B) at (4,0) {};
+  \node[label=below:$A$] (A) at (4.5,0) {};
+  \pic at (B) {coev};
+  \end{tikzpicture}
+\end{document}

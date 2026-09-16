@@ -1,0 +1,3 @@
+<article class="env-example" id="00G8">
+  <p><a class="environment-identifier" href="/tag/00G8">Example <span data-tag="00G8">4.3.1</span>.</a> Consider the trivial example $A=\mathbf{k}$, with the obvious Frobenius algebra structure. Then it is easy to see that for any 1-manifold $N$, including the empty one, the corresponding TQFT gives $Z(N)=\mathbf{k}$ (to be precise, $Z(N)$ is canonically isomorphic to $\mathbf{k}$), and for any 2-cobordism $M$, $Z(M)=\operatorname{id}$. </p>
+</article>

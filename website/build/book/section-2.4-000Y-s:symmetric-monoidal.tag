@@ -4,7 +4,7 @@
 </p>
 <p>
 <article class="env-definition" id="000Z">
-  <p><a class="environment-identifier" href="/tag/000Z">Definition <span data-tag="000Z">2.4.1</span>.</a> A symmetric monoidal category is a monoidal category $\mathcal{C}$ together with a functorial isomorphism </p>
+  <p><a class="environment-identifier" href="/tag/000Z">Definition <span data-tag="000Z">2.4.1</span>.</a> A <em>symmetric monoidal category</em> is a monoidal category $\mathcal{C}$ together with a functorial isomorphism </p>
   <div class="equation">
   \[  c_{X,Y}\colon X\otimes Y \xrightarrow {\sim }Y\otimes X  \]
 </div>
@@ -82,8 +82,13 @@ Any two such isomorphisms $F_1\to F_2$ are equal.
 </p>
 </li>
 </ol></p>
-</article> As before, this theorem can be understood as a statement that a certain cell complex is simply connected; if we only use permutations and tensor product (i.e., no units), then this complex is called <em>permutoassociahedron</em>. (It took me 3 tries to spell that correctly; in the end, I had to use copy and paste from another source.) 
+</article> Similar to Theorem&#160;<a href="/tag/000M" data-tag="000M">2.3.2</a>, this theorem can be understood as a statement that a certain cell complex is simply connected; if we only use permutations and tensor product (i.e., no units), then this complex is called <em>permutoassociahedron</em>. (Yes, we know, it is long and impossible to spell.) 
 </p>
 <p>
-<br /> 
+As before, we skip the proof of this theorem, referring the reader to <span class="cite">[<a href="/bibliography/mac-lane">ML1998</a>, <span class="postnote">Section XI.1</span>]</span>. 
+</p>
+<p>
+<article class="env-corollary" id="00FZ">
+  <p><a class="environment-identifier" href="/tag/00FZ">Corollary <span data-tag="00FZ">2.4.2</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal category and let $A_ s$, $s\in S$ be a collection of objects in $\mathcal{C}$ indexed by a finite set $S$. Then we have a well-defined (up to a canonical isomorphism) object $ \bigotimes _{s\in S} A_ s$. </p>
+</article> 
 </p>

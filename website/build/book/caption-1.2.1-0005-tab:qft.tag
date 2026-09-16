@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Table 1.2.1. FIXME</figcaption>
+<figcaption class="figcaption">Table 1.2.1. A schematic comparison of main structures in classical and quantum field theory. See main text for details.</figcaption>

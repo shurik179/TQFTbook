@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 19.4.3. Move M3</figcaption>

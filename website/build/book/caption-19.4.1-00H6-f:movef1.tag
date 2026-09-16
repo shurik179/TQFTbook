@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 19.4.1. Move M1</figcaption>

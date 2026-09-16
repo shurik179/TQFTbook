@@ -1,0 +1,3 @@
+<article class="env-theorem" id="00G5">
+  <p><a class="environment-identifier" href="/tag/00G5">Theorem <span data-tag="00G5">3.2.2</span>.</a> A one-dimensional TQFT is completely determined by the vector space $V=Z(\bullet ^+)$ which must be <em>finite-dimensional</em>. Conversely, every finite-dimensional vector space $V$ uniquely defines 1-dimensional TQFT. For such a TQFT, $Z(S^1)=\dim V$. </p>
+</article>

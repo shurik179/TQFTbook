@@ -60,7 +60,7 @@ Note that pivotal structure is extra data: the same monoidal category can have m
 </article> 
 </p>
 <p>
-The pivotal structure allows us to define a trace of an endomorphism. Recall that rigidity provides evaluation and coevaluation morphisms (see Section&#160;<a href="/tag/001E" data-tag="001E">3.3</a>) 
+The pivotal structure allows us to define a trace of an endomorphism. Recall that rigidity provides evaluation and coevaluation morphisms (see Section&#160;<a href="/tag/001A" data-tag="001A">3.2</a>) 
 </p>
 <div class="equation">
   \[  \operatorname{ev}_ X\colon X^*\otimes X\to \mathbf{1},\qquad \operatorname{coev}_ X\colon \mathbf{1}\to X\otimes X^*,  \]
@@ -102,7 +102,7 @@ The pivotal structure allows us to define a trace of an endomorphism. Recall tha
 (Additivity) If $\mathcal{C}$ is an abelian category, and $0\to X'\to X\to X''\to 0$ is a short exact sequence and $f\in \operatorname{End}(X)$ preserves $X'$, inducing $f'\in \operatorname{End}(X')$ and $f''\in \operatorname{End}(X'')$, then $\operatorname{tr}^ L(f)=\operatorname{tr}^ L(f')+\operatorname{tr}^ L(f'')$; in particular, $\dim ^ L(X)=\dim ^ L(X')+\dim ^ L(X'')$. 
 </p>
 </li><li><p>
-(Duality) $\operatorname{tr}^ L(f)=\operatorname{tr}^ R(f^*)$, where $f^*\in \operatorname{End}(X^*)$ is the dual morphism (see Exercise&#160;<a href="/tag/001P" data-tag="001P">3.3.3</a>); in particular, $\dim ^ L(X)=\dim ^ R(X^*)$. 
+(Duality) $\operatorname{tr}^ L(f)=\operatorname{tr}^ R(f^*)$, where $f^*\in \operatorname{End}(X^*)$ is the dual morphism (see Exercise&#160;<a href="/tag/001P" data-tag="001P">2.5.3</a>); in particular, $\dim ^ L(X)=\dim ^ R(X^*)$. 
 </p>
 </li>
 </ol></p>

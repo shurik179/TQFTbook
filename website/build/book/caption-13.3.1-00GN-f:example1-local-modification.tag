@@ -1,0 +1,1 @@
+<figcaption class="figcaption">Figure 13.3.1. Example(I) of a local modification of cell decomposition used in Lemma&#160;<a href="/tag/00GM" data-tag="00GM">13.3.1</a></figcaption>

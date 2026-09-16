@@ -1,6 +1,6 @@
 <h2 id="s:oriented-cobordism-hypothesis" class="tex-section"><span data-tag="00AF">15.2</span> $SO(n)$ action and oriented cobordism hypothesis</h2>
 <p>
- The cobordism hypothesis gives a description of framed extended TQFTs. Now, let us discuss other versions of extended TQFT — most importantly, oriented TQFTs. 
+  The cobordism hypothesis gives a description of framed extended TQFTs. Now, let us discuss other versions of extended TQFT — most importantly, oriented TQFTs. 
 </p>
 <p>
 Since we have an obvious action of the group $\mathrm{GL}(n,\mathbb {R})$ on $\mathbb {R}^ n$, it gives an action of $\mathrm{GL}(n,\mathbb {R})$ on the set of all framings of a given manifold and thus on the set (or rather $\infty $ category) $\operatorname{Fun}^{\otimes }(\mathbf{Bord^{fr}}, \mathcal{C})$ of all framed TQFTs. By cobordism hypothesis, $\operatorname{Fun}^{\otimes }(\mathbf{Bord^{fr}}, \mathcal{C})\simeq \widetilde{\mathcal{C}^{{\mathrm{fd}}}}$; thus, we get an action of $\mathrm{GL}(n,\mathbb {R})$ on the $(\infty , 0)$ category $\widetilde{\mathcal{C}^{{\mathrm{fd}}}}$. 
@@ -42,7 +42,48 @@ Morphisms:
 </article> 
 </p>
 <p>
-In a similar fashion, one can write explicitly a definition of an action of a group $G$ on a 2-category and definition of $\mathcal{C}^ G$ in this case; one can find all details in <span class="cite">[<a href="/bibliography/hesse">Hes2017</a>]</span>. However, in the case of interest to us, there is a way around it. Namely, we are only interested in the action of a group on the $(\infty ,0)$ category $\tilde\mathcal{C}$. By FIXME, every $(\infty , 0)$ category is a fundamental groupoid of a topological space: $\mathcal{C}=\pi _{\le \infty }(X)$. Thus, it is natural to define the action of $G$ on $\pi _{\le \infty }(X)$ as the action induced by an action of $G$ on $X$. 
+If we go to arbitrary dimension and want to define topological group actions on $n$-categories (or $(\infty ,n)$ categories), writing it algebraically is not an option: we must use topology of the group. Informally, action of $G$ on the category $\mathcal{C}$ should be decribed by as follows (borrowed from <span class="cite">[<a href="/bibliography/schommer-pries-category">SP2014</a>, <span class="postnote">Section 16</span>]</span>) 
+</p>
+<ul>
+  <li><p>
+Every element $g\in G$ should define an invertible functor $\rho (g)\colon \mathcal{C}\to \mathcal{C}$, i.e., a point in $\operatorname{Aut}(\mathcal{C})$ 
+</p>
+</li><li><p>
+A path $\gamma $ in $G$, connecting $g_1$ and $g_2$, should define an isomorphism of functors $\rho (g_1)\to \rho (g_2)$, or equivalently, an invertible 1-morphism in $\operatorname{Aut}(\mathcal{C})$ 
+</p>
+</li><li><p>
+…
+</p>
+</li>
+</ul>
+<p>
+ This data has to satisfy consistency relations: for example, one should require existence of functorial isomorphisms $\rho (g_1g_2)\simeq \rho (g_1)\rho (g_2)$, which themselves should satisfy consistency relations. 
+</p>
+<p>
+The easiest way to state all the consistency relations is by requiring that $\rho $ is a monoidal functor between monoidal $(\infty , n)$-categories 
+</p>
+<div class="equation">
+  \[  \rho \colon \Pi _\infty (G)\to \operatorname{Aut}(\mathcal{C})  \]
+</div>
+<p>
+ Equivalently, using FIXME, we can rewrite it as weak functor between $\infty $-categories 
+</p>
+<div class="equation">
+  \[  \rho \colon \mathcal{B}(\Pi _\infty (G) )\to \mathcal{B}(\operatorname{Aut}(\mathcal{C}))  \]
+</div>
+<p>
+ or as (topological) map $BG\to B(\operatorname{Aut}(\mathcal{C}))$ (this is the point of view taken in <span class="cite">[<a href="/bibliography/schommer-pries-category">SP2014</a>]</span>). 
+</p>
+<p>
+<article class="env-remark" id="00GT">
+  <p><a class="environment-identifier" href="/tag/00GT">Remark <span data-tag="00GT">15.2.1</span>.</a> For comparison, it is known that for topological groups $G,H$, pointed maps $BG\to BH$ correspond to $A_\infty $ morphisms $G\to H$, see <span class="cite">[<a href="/bibliography/boardman-vogt">BV1973</a>, <span class="postnote">Propositions 1.15, 1.16</span>]</span>. </p>
+</article> 
+</p>
+<p>
+For $n=2$, one can unpack this definition and write all the required data and consistency relations explicitly; see <span class="cite">[<a href="/bibliography/hesse">Hes2017</a>, <span class="postnote">Remark 2.16</span>]</span>. For $n=3$, see <span class="cite">[<a href="/bibliography/schommer-pries-category">SP2014</a>]</span>. 
+</p>
+<p>
+In the case of interest to us, there is a shortcut. Namely, we are only interested in the action of a group on the $(\infty ,0)$ category $\widetilde{\mathcal{C}^{{\mathrm{fd}}}}$. By FIXME, every $(\infty , 0)$ category is a fundamental groupoid of a topological space: $\mathcal{C}=\pi _{\le \infty }(X)$. Thus, we can instead define the action of $G$ on $\pi _{\le \infty }(X)$ as the action induced by an action of $G$ on $X$. 
 </p>
 <p>
 Now, we need to define the notion of fixed points. The naive definition of fixed points of action of $G$ on $X$ is not homotopy invariant, so we cannot use it. Instead, we will use the notion of <em>homotopy fixed point</em>. 
@@ -51,8 +92,8 @@ Now, we need to define the notion of fixed points. The naive definition of fixed
 Let $G$ be a topological group (for example, a Lie group). Recall that then one can define a contractible space $EG$ with a free action of $G$; the quotient $BG=EG/G$ is called the classifying space of $G$. The name is justified by the fact that for any space $X$, isomorphism classes of $G$-bundles on $X$ are in bijection with homotopy equivalence classes of maps $X\to BG$. 
 </p>
 <p>
-<article class="env-definition" id="">
-  <p><a class="environment-identifier" href="/tag/">Definition <span data-tag="">15.2.1</span>.</a>Let $X$ be a topological space with a continuous action of a topological group $G$. The <em>homotopy fixed point set</em> is defined by </p>
+<article class="env-definition" id="00GU">
+  <p><a class="environment-identifier" href="/tag/00GU">Definition <span data-tag="00GU">15.2.1</span>.</a> Let $X$ be a topological space with a continuous action of a topological group $G$. The <em>homotopy fixed point set</em> is defined by </p>
   <div class="equation">
   \[  X^{hG} =\operatorname{Hom}_ G(EG, X)  \]
 </div>
@@ -75,6 +116,6 @@ Now we can formulate the oriented version of the cobordism hypothesis.
 </p>
 <p>
 <article class="env-remark" id="">
-  <p><a class="environment-identifier" href="/tag/">Remark <span data-tag="">15.2.1</span>.</a>One might wonder why we use $\mathrm{SO}(n)$ instead of $\mathrm{GL}_+(n)$. In fact, it does not matter: inclusion $\mathrm{SO}(n)\subset \mathrm{GL}_+(n)$ is homotopy equivalence, so the set of homotopy fixed points for both actions is the same. However, it is more convenient to work with compact groups, hence the use of $\mathrm{SO}(n)$. </p>
+  <p><a class="environment-identifier" href="/tag/">Remark <span data-tag="">15.2.2</span>.</a>One might wonder why we use $\mathrm{SO}(n)$ instead of $\mathrm{GL}_+(n)$. In fact, it does not matter: inclusion $\mathrm{SO}(n)\subset \mathrm{GL}_+(n)$ is homotopy equivalence, so the set of homotopy fixed points for both actions is the same. However, it is more convenient to work with compact groups, hence the use of $\mathrm{SO}(n)$. </p>
 </article> 
 </p>

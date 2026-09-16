@@ -1,36 +1,107 @@
-<h2 id="s:field-theory" class="tex-section"><span data-tag="0004">1.2</span> Classical/quantum field theory</h2>
+<h2 id="s:field-theory" class="tex-section"><span data-tag="0004">1.2</span> Classical and quantum field theory</h2>
 <p>
- In field theory, a point $x\in N$ is replaced by the field $\varphi $, which is typically either a function on $N$ (with values in some target space $V$) or a section of a vector bundle or a connection. We will denote by $\mathcal{F}_ N$ the space of all fields on $N$. 
+ Let us now move from mechanics to field theory. In field theory, the position variable $x\in N$ is replaced by a field $\varphi $, which is typically either a function on $N$ (with values in some target space $V$), a section of a vector bundle, or a connection. For simplicity, let us assume that the field $\varphi $ (at a given time) takes values in $V$: 
+</p>
+<div class="equation">
+  \begin{equation*}  \varphi \colon N \rightarrow V. \end{equation*}
+</div>
+<p>
+ As is common in the physics literature, we will assume that the field $\varphi $ is smooth enough for all purposes. We denote by $\mathcal{F}_ N$ the space of all fields (at fixed moment of time); in the simplest example above, $\mathcal{F}_ N=C^\infty (N,V)$. This space is the analog of configuration space $N$ in classical mechanics. 
+</p>
+<p>
+The analog of a trajectory is now a field $\varphi (x,t)$ on spacetime $M = N \times [t_0,t_1]$. If the space $N$ is $(n-1)$-dimensional, then spacetime $M$ is $n$-dimensional; the corresponding field theory is referred to as $n$-dimensional field theory. 
+</p>
+<p>
+Note that the space $N$ plays a different role here than in the mechanics. In a field theory, $N$ is the domain of field $\varphi $, whereas in mechanics, the configuration space $N$, was the target of “position field” $x$. From this perspective, we can think of the discussion in the previous section as a 0+1 dimensional field theory of the position field $x\colon \text{point} \to N$. 
+</p>
+<p>
+As in mechanics, equations of motion come from the stationary action principle. Namely, for a field $\varphi $ defined on spacetime $M=N\times [t_0, t_1]$, we define the action functional by 
+</p>
+<div class="equation" >
+    <span class="equation-label">1.2.1</span>
+    <div>\begin{equation}  S[\varphi ] = \int _{t_0}^{t_1} L(\varphi , \partial _{\mu } \varphi ) dt = \int _{t_0}^{t_1} \left( \int _ N \mathcal{L}(\varphi , \partial _{\mu } \varphi ) d^{n-1} x \right) dt \end{equation}</div>
+</div>
+<p>
+ $\mathcal{L}$ is called the Lagrangian density; it depends on the values of field $\varphi $ at point $(x,t)$, its first derivatives $\partial _\mu \varphi $, and on metric $g$ on spacetime. 
+</p>
+<p>
+The classical equations of motion again follow from the stationary action principle: $\delta S[\varphi ]=0$. This is equivalent to a system of PDE's on $\varphi $, called the <em>Euler–Lagrange equations</em>. 
+</p>
+<p>
+Similar to how we moved from classical to quantum mechanics, it is natural to expect that in quantum field theory, the state of the system is described by a functional $\psi \in L^2(\mathcal{F}_ N)$. The space $\mathcal{F}_ N$ is infinite-dimensional, and there is no canonical Lebesgue measure that we can define for it, so exact meaning of $L^2$ is not well-defined, but for the moment, let us ignore that. 
+</p>
+<p>
+The time evolution operator $U_{t_0,t_1}\colon \mathcal{H}_ N \rightarrow \mathcal{H}_ N$ can again be defined using the path integral. Given a state $\psi $ at time $t_0$, the final state $U\psi $ at time $t_1$ can be written as: 
+</p>
+<div class="equation" id="00FP">
+    <span class="equation-label"><a href="/tag/00FP" data-tag="00FP">1.2.2</a></span>
+    <div>\begin{equation} \label{e:time-evolution} \begin{aligned}  (U \psi )[\varphi _1] & = \int _{\mathcal{F}_ N} K(\varphi _1,\varphi _0) \psi [\varphi _0] D \varphi _0\\  K(\varphi _1,\varphi _0) & = \int _{\substack {\Phi |_{t_0} =\varphi _0 \\ \begin{bgroup}  \Phi |_{t_1}=\varphi _1
+
+\end{bgroup}}} e^{\frac{i}{\hbar } S[\Phi ]} D\Phi . \end{aligned} \end{equation}</div>
+</div>
+<p>
+ Here $\Phi =\Phi (x,t)$ is a field on spacetime $M=N\times [t_0,t_1]$ with given values at $t=t_0$, $t=t_1$; it is an analog of path $\gamma $ in mechanics, and $D\Phi $ is some (not yet defined) measure on the space of fields. 
+</p>
+<p>
+Note that the integral in (<a href="/tag/00FP" data-tag="00FP">1.2.2</a>) does not explicitly use the decomposition of spacetime $M$ as a product of space $N$ and time interval $[t_0, t_1]$: it only uses the metric on $M$ (which is used in the Lagrangian density) and the fact that $M$ has two boundary components, $N_0=N\times \{ t_0\} $ and $N_1 = N\times \{ t_1\} $. The same integral makes perfect sense if we allow spacetime $M$ to have a different topology: for any $n$-dimensional manifold $M$ whose boundary is presented as $\partial M=\overline{N_0}\sqcup N_1$ (where bar stands for orientation reversal), formula (<a href="/tag/00FP" data-tag="00FP">1.2.2</a>) defines an operator $U\colon \mathcal{H}_{N_0}\to \mathcal{H}_{N_1}$. 
+</p>
+<p>
+The above formulas freely use integrals over infinite-dimensional spaces of paths/fields, which are very hard to define rigorously; there are many continuum quantum field theories for which a complete rigorous construction of the path integral is not currently available. Usually the best one can do is to write the asymptotic formulas, expanding the operator $U$ or the kernel $K$ as a series in powers of $\hbar $, and even that requires a lot of work. 
+</p>
+<p>
+However, if one is willing to ignore these problems for now, then we can use path integral formula (<a href="/tag/00FP" data-tag="00FP">1.2.2</a>) for showing various properties of QFT. For example, it is easy to show the composition property 
+</p>
+<div class="equation">
+  \[  U_{t_0,t_2}= U_{t_1,t_2} U_{t_0,t_1}  \]
+</div>
+<p>
+ Indeed, since a field $\Phi \in \mathcal{F}_{N\times [t_0,t_2]}$ is the same as a pair of fields $\Phi _1\in \mathcal{F}_{N\times [t_0,t_1]}$, $\Phi _2\in \mathcal{F}_{N\times [t_1,t_2]}$ whose values at the common boundary $N\times \{ t_1\} $ coincide, we get 
+</p>
+<div class="equation" id="00FQ">
+    <span class="equation-label"><a href="/tag/00FQ" data-tag="00FQ">1.2.6</a></span>
+    <div>\begin{equation} \label{e:gluing} K_ M(\varphi _2,\varphi _0) = \int _{\mathcal{F}_ N} K_{M_2}( \varphi _2,\varphi _1) K_{M_1}(\varphi _1, \varphi _0) D \varphi _1 \end{equation}</div>
+</div>
+<p>
+ where $M_1=N\times [t_0,t_1]$, $M_2=N\times [t_1,t_2]$. 
+</p>
+<p>
+More generally, the same (non-rigorous) argument shows that for more general spacetimes $M$, we can choose an arbitrary codimension one slice $N$, and split the path integral into two components of $M$ that share $N$ as a common boundary. 
+</p>
+<p>
+In the next section, we will try to bypass these rigor-related problems by approaching QFT in a more axiomatic manner. The main structures appearing in classical and quantum field theories are summarized in Table <a href="/tag/0005" data-tag="0005">1.2.1</a>. 
 </p>
  <div class="centered"><table class="tabular">
   <tr>
-    <td  style="text-align:right; border-right:1px solid black"
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right; border-right:1px solid black; border-left:1px solid black"
         rowspan=""
         colspan="">
       
+
     </td>
-    <td  style="text-align:left; border-right:1px solid black"
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"
         rowspan=""
         colspan="">
       <p>
-Classical field theory 
+<strong>Classical field theory</strong> 
 </p>
 
     </td>
-    <td  style="text-align:left"
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"
         rowspan=""
         colspan="">
       <p>
- QFT 
+ <strong>QFT</strong> 
 </p>
 
     </td>
   </tr>
   <tr>
-    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right; border-right:1px solid black"
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:right; border-right:1px solid black; border-left:1px solid black"
         rowspan=""
         colspan="">
-      
+      <p>
+ Field/State 
+</p>
 
     </td>
     <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"
@@ -41,17 +112,17 @@ $\varphi \in \mathcal{F}_ N$
 </p>
 
     </td>
-    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left"
+    <td  style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"
         rowspan=""
         colspan="">
       <p>
- $\psi \in \mathcal{H}_ N=L^2(\mathcal{F}_ N)$ 
+ $\psi \in \mathcal{H}_ N \cong L^2(\mathcal{F}_ N)$ 
 </p>
 
     </td>
   </tr>
   <tr>
-    <td  style="text-align:right; border-right:1px solid black"
+    <td  style="text-align:right; border-right:1px solid black; border-left:1px solid black"
         rowspan=""
         colspan="">
       <p>
@@ -67,7 +138,7 @@ $\varphi \in \mathcal{F}_{M}$, $M=N\times [t_0, t_1]$
 </p>
 
     </td>
-    <td  style="text-align:left"
+    <td  style="text-align:left; border-right:1px solid black"
         rowspan=""
         colspan="">
       <p>
@@ -77,7 +148,7 @@ $U_{t_0,t_1}\colon \mathcal{H}_ N\to \mathcal{H}_ N$
     </td>
   </tr>
   <tr>
-    <td  style="text-align:right; border-right:1px solid black"
+    <td  style="text-align:right; border-right:1px solid black; border-left:1px solid black"
         rowspan=""
         colspan="">
       <p>
@@ -85,22 +156,17 @@ $U_{t_0,t_1}\colon \mathcal{H}_ N\to \mathcal{H}_ N$
 </p>
 
     </td>
-    <td  style="text-align:left; border-right:1px solid black"
+    <td  style="text-align:center; border-right:1px solid black"
         rowspan=""
-        colspan="">
+        colspan="2">
       <p>
- $S[\varphi ]=\int _ M L(\varphi , \partial _\mu \varphi ) d^{n}x$ 
+ $S[\varphi ]=\int _ M \mathcal{L}(\varphi , \partial _\mu \varphi ) d^{n}x$ 
 </p>
 
     </td>
-    <td  style="text-align:left"
-        rowspan=""
-        colspan="">
-      
-    </td>
   </tr>
   <tr>
-    <td  style="text-align:right; border-right:1px solid black"
+    <td  style="text-align:right; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"
         rowspan=""
         colspan="">
       <p>
@@ -108,100 +174,23 @@ $U_{t_0,t_1}\colon \mathcal{H}_ N\to \mathcal{H}_ N$
 </p>
 
     </td>
-    <td  style="text-align:left; border-right:1px solid black"
+    <td  style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"
         rowspan=""
         colspan="">
       <p>
-Least action principle
-&#8195;$\delta S[\varphi ]=0$ (fixed restriction to $t=t_0$,$t=t_1$)  
+Euler-Lagrange equations
+&#8195;$\delta S[\varphi (t)]=0$  
 </p>
 
     </td>
-    <td  style="text-align:left"
+    <td  style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"
         rowspan=""
         colspan="">
       <p>
-  $(U\psi )(\varphi _1) = \int _ N (K(\varphi _0, \varphi _1) \psi (\varphi _0) D\varphi _0$
-$K(\varphi _0,\varphi _1) = \int _ P e^{\frac{i}{\hbar } S[\varphi ]} D\varphi $
-$P=\{ \varphi \in \mathcal{F}_ M: \varphi (t_0)=\varphi _0, \varphi (t_1)=\varphi _1$} 
+  $(U \psi )[\varphi _1] = \int _{\mathcal{F}_ N} K(\varphi _1,\varphi _0) \psi [\varphi _0] D \varphi _0$
+$K(\varphi _1,\varphi _0) = \int e^{\frac{i}{\hbar } S[\Phi ]} D\Phi $ 
 </p>
 
     </td>
   </tr>
-</table> <figcaption class="figcaption">Table 1.2.1. FIXME</figcaption>  </div>
-<p>
- The above formulas freely use integrals over infinite-dimensional spaces of paths/fields, which are very hard to define rigorously; as of now, QFT cannot be defined rigorously as a mathematical theory except very few special cases. Usually the best one can do is to write the asymptotics formulas, expanding the operator $U$ or the kernel $K$ as a series in powers of $\hbar $, and even that requires a lot of work. 
-</p>
-<p>
-However, if we ignore that and assume that all the above makes sense, we get the following structure (again, at the moment we choose to ignore details) 
-</p>
-<ol>
-  <li><p>
-For every $n-1$-dimensional manifold $N$, we have a Hilbert space $\mathcal{H}_ N$. Moreover, since $\mathcal{F}_{N_1\sqcup N_2} = \mathcal{F}_{N_1}\times \mathcal{F}_{N_2}$, we get 
-</p>
-<div class="equation" id="00EG">
-    <span class="equation-label"><a href="/tag/00EG" data-tag="00EG">1.2.1</a></span>
-    <div>\begin{equation} \label{e:qft-axiom1} \mathcal{H}_{N_1\sqcup N_2} = \mathcal{H}_{N_1}\otimes \mathcal{H}_{N_2} \end{equation}</div>
-</div>
-</li><li><p>
-The definition of operator $U_{t_0, t_1}$ immediately generalizes, using the same formulas, to arbitrary $n$-dimensional manifold $M$ and not only the cylinder $N\times [t_0, t_1]$: if $\partial M= N_0\sqcup N_1$ (with appropriate orientations), then $U_ M$ is an operator 
-</p>
-<div class="equation" >
-    <span class="equation-label">1.2.2</span>
-    <div>\begin{equation}  U_ M\colon \mathcal{H}_{N_0}\to \mathcal{H}_{N_1} \end{equation}</div>
-</div>
-<p>
- In particular, for a closed spacetime (i.e. $\partial M=\varnothing $), we get $U_ M\in \mathbb {C}$ is a number; in physics it is usually called the <em>partition function</em> and denoted by $Z(M)$. 
-</p>
-</li><li><p>
-So defined operators satisfy the gluing axiom: (FIXME) 
-</p>
-</li>
-</ol>
-<p>
-So far we haven't specified what we mean by “manifold”. Usually in physics the spacetime is an oriented pseudo-Riemannian manifold, with metric of signature $(1, n-1)$. However, we will be interested in a very special case, namely when all the structures above do not use the metric on the space; thus, we only require $M$ to be an oriented smooth manifold. Such theories are called <em>topological</em>. The most famous example of such a theory is Chern–Simons theory (see <span class="cite">[<a href="/bibliography/witten-jones">Wit1989</a>]</span>), in which the spacetime $M$ must be 3-dimensional, fields are $\mathrm{SU}(n)$ connections on $M$ (which, after choosing a trivialization of the bundle, can be described by one-forms with values in the Lie algebra $\mathfrak {su}(n)$) and the action is given by 
-</p>
-<div class="equation" >
-    <span class="equation-label">1.2.3</span>
-    <div>\begin{equation}  S[A] = g \int _ M \operatorname{tr}(A\wedge dA + \tfrac {2}{3}A\wedge A\wedge A) \end{equation}</div>
-</div>
-<p>
-We can take properties above as axioms. <article class="env-predefinition" id="">
-  <p><a class="environment-identifier" href="/tag/">Preliminary Definition <span data-tag="">1.2.1</span>.</a>An $n$-dimensional topological field theory (TQFT) is the following collection of data </p>
-  <p><ul>
-  <li><p>
-For every $(n-1)$-dimensional oriented smooth manifold $N$, a vector space $Z(N)$ 
-</p>
-</li><li><p>
-For every $n$-dimensional oriented manifold $M$ such that $\partial M=N_0\sqcup N_1$, a linear operator $Z_ M\colon Z_{N_0}\to Z_{N_1}$, 
-</p>
-</li>
-</ul></p>
-  <p> This data has to satisfy the properties above (gluing axiom, disjoint union). </p>
-</article> 
-</p>
-<p>
-(Clearly, there is a lot more detail to be filled in, which we will do later). 
-</p>
-<p>
-This definition is due to Atiyah (<span class="cite">[<a href="/bibliography/atiyah">Ati1988</a>]</span>). 
-</p>
-<p>
-Having this definition, instead of defining a TQFT by a path integral or other global construction (which can be very hard to do), we can try to construct TQFTs by defining $Z(M)$ for “elementary blocks” and gluing every manifold from them. For $n=2$, these blocks are disk, cylinder, and pair of pants. 
-</p>
-<div class="centered"> <img class="includegraphics" src="/static/figures/c1-fig01.svg" /> </div>
-<p>
-Of course, we need to have some compatibility conditions to ensure that different ways of gluing the manifold from pieces give the same result; essentially, we are trying to define manifolds by “generators and relations”. For $n=2$ it is not too hard (we will do so next week); for larger $n$, it is harder — e.g. for $n=3$ we can consider so-called Heegard decomposition (which already requires infinitely many blocks, all handlebodies of arbitrary genus) or use surgery along knots (again, to be discussed later). 
-</p>
-<p>
-However, there is another idea: why stop at manifolds with boundary? If we allow manifold with corners of any codimension, the set of “elementary blocks” is greatly simplified: any manifold can be glued together from just one block, an $n$-dimensional simplex. Such theories are called fully extended (or sometimes local) TQFTs; see <span class="cite">[<a href="/bibliography/lurie-cobordism">Lur2009a</a>]</span>. 
-</p>
-<p>
-But the price you pay is algebraic complexity: for closed $n$-manifold, the theory gives you a number; for a codimension 1 manifold, a vector space. What is the next level? 
-</p>
-<p>
-One way to answer is that codimension 2 should give you a category, and so on; thus, doing it properly requires a notion of $n$-categories (or a variation of that, called $(\infty , n)$ categories). This gets confusing quite fast…
-</p>
-<p>
-<br /> 
-</p>
+</table> <figcaption class="figcaption">Table 1.2.1. A schematic comparison of main structures in classical and quantum field theory. See main text for details.</figcaption>  </div>

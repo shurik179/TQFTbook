@@ -1,4 +1,4 @@
-%!TEX root = TQFTnotes.tex
+%!TEX root = TQFTbook.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Frobenius algebras}\label{c:frobenius}
 
@@ -172,6 +172,13 @@ relation that
     \item
       Prove that the comultiplication is also given by the picture below:
       \begin{equation}\label{e:fr-comultiplication}\includegraphics{figures/c5-fig02.svg}\end{equation}
+    or, equivalently, by 
+    \begin{equation}
+      (a\otimes b, \De(c))=(ab,c),
+    \end{equation}
+    where we extend the pairing $(\, , \,)$ to $A\otimes A$ by 
+    $(a_1\otimes a_2, b_2\otimes b_1)=(a_1, b_1)\cdot (a_2, b_2)$ 
+    (note the order!).
   \end{enumerate}
 \end{exercise}
 
@@ -179,7 +186,7 @@ relation that
   If a Frobenius algebra  $A$ is commutative, it is also cocommutative.
 \end{corollary}
 
-Conversely, one can recover the structure of a Frobenius lagebra from the
+Conversely, one can recover the structure of a Frobenius algebra from the
 pairing $(, \, \,)$.
 
 \begin{theorem}\label{t:frobenius2}
@@ -258,8 +265,9 @@ The following lemma is immediate from the definition.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Semisimple Frobenius algebras}\label{s:frobenius-ss}
 
-Recall that an associative algebra is semisimple if it is a direct sum of simple
-algebras.  As we will see later, semisimple algebras play a special role in the
+Recall that an associative algebra is semisimple if it is semisimple 
+as a left module over itself.  As we will see later, semisimple 
+algebras play a special role in the
 construction of TQFTs, so in this section, we study \textbf{semisimple}
 Frobenius algebras. We have already seen one example: the Frobenius algebra
 $A=\Mat_n(\kk)$ given in \exref{x:frobenius2}. In fact, over an algebraically
@@ -309,10 +317,10 @@ and the comultiplication is given by
 $$
 \De(e_i)=\la_i^{-1}e_i\otimes e_i.
 $$
-In particular, it implies that for the corresponding TQFT, we have
+In particular, it implies that for the corresponding TQFT $Z_A$, we have
 \begin{align*}
-  Z(S^2)&=\eps(1)=\sum \la_i\\
-  Z(T)&=\dim A
+  Z_A(S^2)&=\eps(1)=\sum \la_i\\
+  Z_A(T)&=\dim A
 \end{align*}
 where $T=\Si_1$ is the two-dimensional torus.
 
@@ -344,14 +352,15 @@ where $T=\Si_1$ is the two-dimensional torus.
   where $x_i$, $x^i$ are dual bases in $A$ with respect to the pairing. This
   element is sometimes called the \emph{Euler element}\index{Euler element}
   and will play an important role later, see \thref{t:separable-frobenius}.
-  (In \cite{lauda-pfeiffer}, $w$ is called the ``window element''.)
+  (In \cite{lauda-pfeiffer}, $w$ is called the ``window element''.) 
+  Note also that it easily follows from centrality of $e$ thta $w$ is central. 
 \end{remark}
 
 \begin{exercise}\label{ec:dual-module-frob}
   Recall that for an $A$-$B$-bimodule $M$, the dual vector space $M^*$
   is naturally a $B$-$A$-bimodule, with action given by
   \begin{align*}
-    (b\la) (m) & = \la (mb),\\
+    (b\la) (m) & = \la (mb),\qquad \la\in M^*, m\in M\\
     (\la a) (m) &= \la (am).
   \end{align*}
   In particular, the dual of an $A$-bimodule is again an $A$-bimodule.

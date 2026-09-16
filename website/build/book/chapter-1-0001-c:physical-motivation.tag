@@ -1,4 +1,10 @@
 <h1 id="c:physical-motivation" class="tex-chapter"><span data-tag="0001">1</span> Physical motivation</h1>
 <p>
- Overview of classical and quantum field theory. $N$ is the configuration space of the theory, $\dim N = n-1$; $M= N\times [t_0, t_1]$ is the spacetime. 
+ In this chapter we provide a motivation for the mathematical study of topological quantum field theories (TQFTs). These theories arise as a special case of more general Quantum Field Theory (QFT), so we first look at the physics definition of QFT. This definition is notoriously non-rigorous, and as of now, there is no mathematically rigorous definition of QFT in full generality. Despite this, one can use the non-rigorous physical definition to try to axiomatize the bare minimum requirements that any sensible QFT should fulfill. 
+</p>
+<p>
+We start with a heuristic introduction to classical and quantum field theories. Since our purpose is just to motivate the connection to TQFT, we suppress here many technical details to keep the exposition simple. Interested readers can find details in numerous textbooks on QFT, such as physics classic <span class="cite">[<a href="/bibliography/peskin-schroeder">PS1995</a>]</span> or a recent book <span class="cite">[<a href="/bibliography/etingof-qft">Eti2026</a>]</span>, written for mathematicians. 
+</p>
+<p>
+This chapter is used as a motivation only; no results in the remaining chapters rely on the material of this chapter. 
 </p>

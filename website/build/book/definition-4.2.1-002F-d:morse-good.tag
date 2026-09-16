@@ -12,5 +12,5 @@
 </p>
 </li>
 </ul></p>
-  <p> In a similar way one defines good function on a cobordism $M$. </p>
+  <p> In a similar way one defines good functions on a cobordism $M$. </p>
 </article>

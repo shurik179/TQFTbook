@@ -1,4 +1,4 @@
-<h1 id="c:2d-classification" class="tex-chapter"><span data-tag="0021">4</span> Classification of 2d TQFT</h1>
+<h1 id="c:2d-classification" class="tex-chapter"><span data-tag="0021">4</span> Classification of 2d TQFTs</h1>
 <p>
  In this chapter, we present a full classification of 2-dimensional TQFTs; the final answer, given in Theorem&#160;<a href="/tag/002S" data-tag="002S">4.3.3</a>, states that such theories are classified by commutative Frobenius algebras. This is a relatively simple result; it goes back to at least 1989, see Dijkgraaf's thesis <span class="cite">[<a href="/bibliography/dijkgraaf-thesis">Dij1989</a>]</span>, but was probably known to experts much earlier. For us, it will serve as a model example for all future constructions. 
 </p>

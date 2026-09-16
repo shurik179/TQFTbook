@@ -32,6 +32,7 @@ dsps-dualizable,DSPS2020
 dsps-balanced,DSPS2019
 eno,ENO2005
 etingof-fusion,EGNO2015
+etingof-qft,Eti2026
 freed-cobordism,Fre2013
 freed-bordism,Fre2012
 freed-higher-algebraic,Fre1994
@@ -54,6 +55,7 @@ joyal-street2,JS1995
 kauffman,Kau1987
 PLCW,Kir2012
 kirillov-stringnet,Kir2011
+kitaev,Kit2003
 kock,Koc2004
 lack-paoli,LP2008
 lauda-pfeiffer,LP2007
@@ -69,6 +71,7 @@ mac-lane,ML1998
 matsumoto,Mat2002
 may,May1992
 may-loops,May1972
+may-thomason,MT1978
 milnor-morse-theory,Mil1963
 milnor-h-cobordism,Mil1965
 milnor-review,Mil2011
@@ -77,6 +80,8 @@ nikolaus-sagave,NS2017
 oeckl,Oec2005
 pachner,Pac1987
 paoli,Pao2019
+petit,Pet2006
+peskin-schroeder,PS1995
 pierce,Pie1982
 power-pasting,Pow1990
 pstragowski,Pst2022
@@ -86,6 +91,7 @@ riehl-verity,RV2022
 rourke,RS1982
 schommer-pries,SP2009
 schommer-pries-category,SP2014
+segal-gamma,Seg1974
 shulman,Shu2010
 simpson,Sim2012
 tamsamani,Tam1999

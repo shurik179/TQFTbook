@@ -19,7 +19,7 @@ Since $G$ is discrete, any $G$-bundle comes with a flat connection: given a path
  where $\operatorname{Aut}(P_ x)$ is the group of all bijections $P_ x\to P_ x$ which commute with the right action of $G$. 
 </p>
 <p>
-If we choose a point $\tilde x\in P_ x$, we can identify $P_ x$ with $G$; this gives an identification $\operatorname{Aut}(P_ x)\xrightarrow {\sim }G$ (since any bijection $G\to G$ which commutes with the right action of $G$ is given by left multiplication by some element of $G$). Thus, a pair $(P, \tilde x)$ gives rise to a monodromy map $\rho \colon \pi _1(M,x)\to G$. It is easy to see that conversely, for connected $M$, any group homomorphism $\pi _1(M,x)\to G$ defines a $G$-bundle $P$ together with a choice of a base point $\tilde x \in P_ x$. In other words, we have the following lemma. 
+If we choose a point $\tilde x\in P_ x$, we can identify $P_ x$ with $G$ by $g\mapsto \tilde x g$; this gives an identification $\operatorname{Aut}(P_ x)\xrightarrow {\sim }G$ (since any bijection $G\to G$ which commutes with the right action of $G$ is given by left multiplication by some element of $G$). Thus, a pair $(P, \tilde x)$ gives rise to a monodromy map $\rho \colon \pi _1(M,x)\to G$. It is easy to see that conversely, for connected $M$, any group homomorphism $\pi _1(M,x)\to G$ defines a $G$-bundle $P$ together with a choice of a base point $\tilde x \in P_ x$. In other words, we have the following lemma. 
 </p>
 <p>
 <article class="env-lemma" id="003P">
@@ -31,7 +31,7 @@ If we choose a point $\tilde x\in P_ x$, we can identify $P_ x$ with $G$; this g
 </article> 
 </p>
 <p>
-We will refer to a pair $(P, \tilde x)$ as in the lemma as a <em>based $G$-bundle</em>. One can restate this lemma as follows: the groupoid $\widetilde{\operatorname{Bun}}_ G$ of based $G$-bundles is equivalent as a groupoid to the set $\operatorname{Hom}(\pi _1(M,x), G)$ (considered as a trivial groupoid: the only morphisms are identity morphisms). 
+We will refer to a pair $(P, \tilde x)$ as in the lemma as a <em>based $G$-bundle</em>. One can restate this lemma as follows: for connected $M$, the groupoid $\widetilde{\operatorname{Bun}}_ G$ of based $G$-bundles is equivalent as a groupoid to the set $\operatorname{Hom}(\pi _1(M,x), G)$ (considered as a trivial groupoid: the only morphisms are identity morphisms). 
 </p>
 <p>
 If we change the choice of $\tilde x$, replacing it by $\tilde x g$ (for the same $P$), then it is easy to see that the monodromy map (<a href="/tag/003N" data-tag="003N">6.1.1</a>) is conjugated by $g^{-1}$. Thus, we get the following result. 
@@ -53,6 +53,6 @@ If we change the choice of $\tilde x$, replacing it by $\tilde x g$ (for the sam
 </p>
 <p>
 <article class="env-example" id="003S">
-  <p><a class="environment-identifier" href="/tag/003S">Example <span data-tag="003S">6.1.1</span>.</a> Let $M=S^1$. Then $\widetilde{\operatorname{Bun}}_ G(S^1)\simeq G$, and $\operatorname{Bun}_ G(S^1)\simeq G/ \!  /G$ (in the second identity, $G$ acts on $G$ by conjugation). In particular, there is a bijection between the set of isomorphism classes of $\operatorname{Bun}_ G(S^1)$ and the set of conjugacy classes in $G$; if we denote by $P_ g$ the bundle corresponding to $g\in G$, then $\operatorname{Aut}(P_ g)$ is the centralizer of $g$: $\operatorname{Aut}(P_ g)\simeq Z_ g=\{ h\in G\;  | \; hgh^{-1}=g\} $. </p>
+  <p><a class="environment-identifier" href="/tag/003S">Example <span data-tag="003S">6.1.1</span>.</a> Let $M=S^1$. Then $\widetilde{\operatorname{Bun}}_ G(S^1)\simeq G$, and $\operatorname{Bun}_ G(S^1)\simeq G/ \!  /G$, where $G$ acts on itself by conjugation. In particular, there is a bijection between the set of isomorphism classes of $\operatorname{Bun}_ G(S^1)$ and the set of conjugacy classes in $G$; if we denote by $P_ g$ the bundle corresponding to $g\in G$, then $\operatorname{Aut}(P_ g)$ is the centralizer of $g$: $\operatorname{Aut}(P_ g)\simeq Z_ g=\{ h\in G\;  | \; hgh^{-1}=g\} $. </p>
 </article> 
 </p>
