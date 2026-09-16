@@ -12,9 +12,7 @@ Addition of an edge with a vertex to a 2-gon
 
 
 
-<div class="equation">
-  \begin{align*}  \vcenter {\hbox{\includegraphics{figures/c13-fig05.svg}}}\leftrightarrow \vcenter {\hbox{\includegraphics{figures/c13-fig06.svg}}}\leftrightarrow \vcenter {\hbox{\includegraphics{figures/c13-fig07.svg}}}\end{align*}
-</div>
+<div class="centered"><img class="includegraphics" src="/static/figures/c13-eqfig02.svg" /></div>
 </li><li><p>
 Addition of an edge inside an n-gon 
 </p>
@@ -23,9 +21,7 @@ Addition of an edge inside an n-gon
 
 
 
-<div class="equation">
-  \begin{align*}  \vcenter {\hbox{\includegraphics{figures/c13-fig08.svg}}}\leftrightarrow \vcenter {\hbox{\includegraphics{figures/c13-fig09.svg}}}\leftrightarrow \vcenter {\hbox{\includegraphics{figures/c13-fig10.svg}}}\leftrightarrow \vcenter {\hbox{\includegraphics{figures/c13-fig11.svg}}}\leftrightarrow \vcenter {\hbox{\includegraphics{figures/c13-fig12.svg}}}\end{align*}
-</div>
+<div class="centered"><img class="includegraphics" src="/static/figures/c13-eqfig03.svg" /></div>
 <p>
 Apart from the pentagons shown above, the other diagrams included in this local move are all the n-gons with $n \ge 3$. The domain wall can run between any two edges. 
 </p>

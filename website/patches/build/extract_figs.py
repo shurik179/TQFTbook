@@ -13,23 +13,43 @@ os.makedirs(OUTDIR, exist_ok=True)
 src = open(CHAPTER).read()
 ENVS = ("tikzpicture", "tikzcd")
 
-# Inline mini-diagram macros (\tinypants, \tinycup, ...) expand to a tikzpicture
-# but hide it behind the macro name, so a plain tikz scan can't see them and the
-# math reaches MathJax (-> "Undefined control sequence"). Pull their names from
-# tikzcob.tex; any math span using one is imaged whole (the figure preamble
-# defines the macro, so the extracted snippet still compiles).
+# Diagram macros hide a picture behind the macro name: the inline mini-diagrams
+# (\tinypants, \tinycup, ...) and chapter 19's \tzPairingIII, ... expand to a
+# tikzpicture, and \figscale to an \includegraphics. A plain tikz scan can't see
+# them, so the math would reach MathJax (-> "Undefined control sequence"). Pull
+# the names of all such macros from the style files; any math span using one is
+# imaged whole (the figure preamble defines the macro, so the extracted snippet
+# still compiles).
+_PICTURE = re.compile(r'\\begin\{tikzpicture\}|\\tikz\b|\\includegraphics')
+_NEWCMD = re.compile(r'\\(?:re)?newcommand\*?\s*\{?\\([A-Za-z]+)\}?'
+                     r'(?:\s*\[[^\]]*\])*\s*\{')
+
+def _braced_end(t, k):
+    """t[k-1] is an opening brace: return the index just past its partner
+    (skipping escaped characters and % comments)."""
+    depth = 1
+    while k < len(t) and depth:
+        c = t[k]
+        if c == '\\':
+            k += 2; continue
+        if c == '%':
+            nl = t.find('\n', k)
+            k = len(t) if nl < 0 else nl + 1; continue
+        depth += {'{': 1, '}': -1}.get(c, 0)
+        k += 1
+    return k
+
 def _diagram_macro_names():
     names = set()
     for fn in ("tikzcob.tex", "tikzsetup.tex", "definitions.tex"):
         try: t = open(fn).read()
         except OSError: continue
-        for mm in re.finditer(r'\\newcommand\{\\(tiny[A-Za-z]+)\}', t):
-            names.add(mm.group(1))
+        t = re.sub(r'(?<!\\)%.*', '', t)                 # drop TeX comments
+        for mm in _NEWCMD.finditer(t):
+            body = t[mm.end():_braced_end(t, mm.end())]
+            if mm.group(1).startswith("tiny") or _PICTURE.search(body):
+                names.add(mm.group(1))
     return names
-_DMACROS = _diagram_macro_names()
-_HASDIAG = re.compile(
-    r'\\begin\{(?:tikzpicture|tikzcd)\}'
-    + ((r'|\\(?:%s)\b' % "|".join(sorted(_DMACROS))) if _DMACROS else ''))
 
 def commented(pos):
     """True if an unescaped % precedes pos on the same line (TeX comment)."""
@@ -43,6 +63,33 @@ def commented(pos):
             return True
         k += 1
     return False
+
+# A chapter may define diagram macros itself (c13: \twogonA, ..., \picone, used
+# in align* displays). The figure preamble doesn't know those, so a snippet that
+# uses one gets the macro's definition in its own preamble (_local_defs_for).
+LOCAL_DEFS = {}
+for _mm in _NEWCMD.finditer(src):
+    if commented(_mm.start()):
+        continue
+    _end = _braced_end(src, _mm.end())
+    if _PICTURE.search(src[_mm.end():_end]):
+        LOCAL_DEFS[_mm.group(1)] = src[_mm.start():_end]
+
+def _local_defs_for(body):
+    """The definitions of the chapter's own diagram macros that body uses."""
+    need, todo = [], [body]
+    while todo:
+        text = todo.pop()
+        for name, d in LOCAL_DEFS.items():
+            if name not in need and re.search(r'\\%s(?![A-Za-z])' % name, text):
+                need.append(name)
+                todo.append(d)
+    return "".join(LOCAL_DEFS[n] + "\n" for n in need)
+
+_DMACROS = _diagram_macro_names() | set(LOCAL_DEFS)
+_HASDIAG = re.compile(
+    r'\\begin\{(?:tikzpicture|tikzcd)\}'
+    + ((r'|\\(?:%s)\b' % "|".join(sorted(_DMACROS))) if _DMACROS else ''))
 
 # tokenize into begin/end markers, matching nested-safe per env type
 _pat = re.compile(r"\\(begin|end)\{(tikzpicture|tikzcd)\}")
@@ -225,9 +272,11 @@ open(base + "-gerby.tex", "w").write(rewritten)
 template = (
     "\\documentclass[border=3pt]{standalone}\n"
     "\\input{figpre.tex}\n"
+    "%s"                                   # chapter-local diagram macros, if used
     "\\begin{document}\n%s\n\\end{document}\n")
 for name, block in figs:
-    open(os.path.join(OUTDIR, name + ".tex"), "w").write(template % block)
+    open(os.path.join(OUTDIR, name + ".tex"), "w").write(
+        template % (_local_defs_for(block), block))
 
 print("chapter:", base + "-gerby.tex")
 print("figures:", len(figs))

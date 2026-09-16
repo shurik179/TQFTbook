@@ -361,10 +361,7 @@ to this chapter.
 	adjacent to it with a single 1-cell.
 %%%%%%%%%%%%%%   
 \begin{figure}[ht]
-	$$\figscale{0.7}{figures/M1a.pdf}
-	\xxto{\text{remove vertex } v}
-	\figscale{0.7}{figures/M1b.pdf}
-	$$
+	\begin{center}\includegraphics{figures/c19-eqfig02.svg}\end{center}
 	\caption{Move M1}\label{f:movef1}
 \end{figure}
 %%%%%%%%%%%%%%   
@@ -376,10 +373,7 @@ to this chapter.
 	the cells $c_1,c_2$ with a  single cell $c$. 
 %%%%%%%%%%%%%%   
 \begin{figure}[ht]
-	$$\figscale{0.7}{figures/M2a.pdf}
-	\xxto{\text{remove edge } e}
-	\figscale{0.7}{figures/M2b.pdf}
-	$$
+	\begin{center}\includegraphics{figures/c19-eqfig03.svg}\end{center}
 	\caption{Move M2}\label{f:movef2}
 \end{figure}
 %%%%%%%%%%%%%%   
@@ -391,10 +385,7 @@ to this chapter.
 	cells $F_1,F_2$ with a single cell $F$.
 %%%%%%%%%%%%%%   
 \begin{figure}[ht]
-	$$\figscale{0.7}{figures/M3a.pdf}
-	\xxto{\text{remove face } c}
-	\figscale{0.7}{figures/M3b.pdf}
-	$$
+	\begin{center}\includegraphics{figures/c19-eqfig04.svg}\end{center}
 	\caption{Move M3}\label{f:movef3}
 \end{figure}
 %%%%%%%%%%%%%%   
@@ -410,15 +401,7 @@ First we consider move M1. Note that by applying M2 and M3, we can
 transform an open book  with any number of pages to one with only one page
 (see \firef{f:book}). 
 \begin{figure}[ht]
-	\begin{align*}&\figscale{0.7}{figures/book0.pdf}
-		\xxto{\text{add edge to each page}}
-		\figscale{0.7}{figures/book1.pdf}
-		\\
-		& \xxto{\text{add faces between new edges}}
-		\figscale{0.7}{figures/book2.pdf}
-		\xxto{\text{remove all pages but one}}  
-		\figscale{0.7}{figures/book3.pdf} 
-	\end{align*}
+	\begin{center}\includegraphics{figures/c19-eqfig05.svg}\end{center}
 	\caption{Decomposing an open book into a single page book}\label{f:book}
 \end{figure} 
 
@@ -426,11 +409,7 @@ transform an open book  with any number of pages to one with only one page
 Thus, it suffices to prove invariance under M1 in this
 special case. Drawing the dual graph in the vicinity of the vertex,
 invariance under M1 is equivalent to the following equality:
-$$
-\frac{1}{\DD}\sum_{j,k\in \OC}d_{j}d_{k}\tzPairingVII
-=
-\sum_{i\in \OC}d_{i}\tzPairingIII
-$$
+\begin{center}\includegraphics{figures/c19-eqfig06.svg}\end{center}
 Note the normalizing factor
 $\frac{1}{\mathcal{D}^2}$ which comes from the fact that we are removing a
 vertex.
@@ -438,11 +417,7 @@ vertex.
 Using semisimplicity of $\C$, it is easy to see that it suffices to show
 this equality in the special case when $V=V_1\otimes \dots \otimes V_n$ is
 simple:
-$$
-\frac{1}{\DD}\sum_{j,k\in \OC}d_{j}d_{k}\tzPairingVIII
-=
-\sum_{i\in \OC}d_{i}\tzPairingIX
-$$
+\begin{center}\includegraphics{figures/c19-eqfig07.svg}\end{center}
 
 By \leref{l:pairing}, the right-hand side is equal to $\coev_V\colon \one
 \to V\otimes V^*$. Since $\Hom(\one, V\otimes V^*)$ is one-dimensional,
@@ -471,10 +446,7 @@ immediately from the fact that if $\ph_\al,\ph^\al$ and $\psi_\be,\psi^\be$
 are dual bases, then so are $\ph_\al\ccc{X_i}\psi_\be$, $\psi^\be\ccc{X_i^*}\ph^\al$ 
 (cf. \coref{c:composition2}). 
 \begin{figure}[ht]
-	\begin{align*}
-		&\sum_{i,\alpha,\beta}d_{i}\tzMoveMtwoI \tzMoveMtwoII\\ 
-		&\quad= \sum_{i,\alpha,\beta} \tzMoveMtwoIII \tzMoveMtwoIV
-	\end{align*}
+	\begin{center}\includegraphics{figures/c19-eqfig08.svg}\end{center}
 	\caption{}\label{f:move2}
 \end{figure}
 

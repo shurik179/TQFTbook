@@ -185,6 +185,12 @@ build_site() {
   (cd website && python3 build_site.py --no-serve $KEEP_FIGURES) \
     || die "the website build failed (see the messages above)"
   note "website rebuilt ($((SECONDS - t0)) s)"
+  # a figure without an SVG did not compile (reported again at the very end)
+  local t
+  for t in website/build/figures/*fig*.tex; do
+    [ -e "$t" ] || continue
+    if [ ! -f "${t%.tex}.svg" ]; then t=${t##*/}; FIG_FAILS="$FIG_FAILS ${t%.tex}"; fi
+  done
 }
 
 preview() {
@@ -224,6 +230,18 @@ on_exit() {
     git reset -q || true
     echo "    (nothing was committed; your changes are as they were)" >&2
   fi
+  if [ -n "$FIG_FAILS" ]; then
+    echo
+    warn "these figures did not compile, so they are missing on the website:"
+    note "     $FIG_FAILS"
+    note "  see website/build/figures/<name>.log"
+  fi
+}
+
+# GitHub answers "HTTP 400" to a push that git sends in chunks, which git does
+# for anything bigger than http.postBuffer (1 MB by default) -- so raise it.
+push_to_github() {
+  git -c http.postBuffer=157286400 "$@" push --quiet origin "$BRANCH"
 }
 
 # -------------------------------------------------------------------- main ---
@@ -319,6 +337,7 @@ if ask "Push to GitHub at the end?" y; then PUSH=1; else PUSH=0; fi
 
 # 2. stage your edits now, so that edits made during the build stay out
 STAGED_BY_US=0
+FIG_FAILS=""
 trap on_exit EXIT
 trap 'exit 130' INT TERM
 if git diff --cached --quiet; then INDEX_WAS_CLEAN=1; else INDEX_WAS_CLEAN=0; fi
@@ -362,8 +381,11 @@ if [ "$PUSH" = 0 ]; then
 fi
 old_remote=$(git rev-parse "origin/$BRANCH")
 say "Pushing $AHEAD commit(s) to GitHub"
-git push --quiet origin "$BRANCH" \
-  || die "the push failed (see above). Your commit is saved here; once the problem is fixed, run 'git push'."
+if ! push_to_github; then
+  warn "the push failed -- trying once more, over HTTP/1.1"
+  push_to_github -c http.version=HTTP/1.1 \
+    || die "the push failed (see above). Your commit is saved here; to try again: publish.sh --source-only"
+fi
 note "OK"
 
 # 6. what is left to do by hand

@@ -106,6 +106,14 @@ Then, on **PythonAnywhere**:
 - **Backups and scratch files:** don't commit them. When `publish.sh` asks
   about one, answer `i`. The file is then listed in `.git/info/exclude` (on
   this computer only); delete that line to be asked again.
+- **If `git push` fails with `HTTP 400`** (it happens with big pushes, such as
+  a rebuilt site), push with a larger buffer:
+  `git -c http.postBuffer=157286400 push`. `publish.sh` already does this, and
+  if that fails it retries over HTTP/1.1.
+- **Figures that fail to compile** are listed at the end of the site build and
+  again at the end of `publish.sh`; each has a log in
+  `website/build/figures/<name>.log`. They are missing on the website until
+  fixed.
 - **If `pa_update.sh` refuses to pull** (it uses `git pull --ff-only`), the
   copy on PythonAnywhere has diverged from GitHub. Never edit files directly on
   PythonAnywhere; make changes locally and push.

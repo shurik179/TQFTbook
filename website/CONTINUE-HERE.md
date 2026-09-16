@@ -13,6 +13,31 @@ relocatable: move it and `python3 build_site.py` / `./serve.sh` still work (the
 venvs run via `bin/python`, not console-script shebangs). If `source/` moves,
 edit the one `source = ...` line in config.ini.
 
+## Figure and publishing fixes (2026-09-16, resolved)
+
+**Problems.** A full rebuild once showed four problems:
+- `PDF FAIL c13-fig…`;
+- chapter 13 pictures that were stale or missing;
+- raw macros in §19.4 and in a chapter 13 lemma;
+- a push that GitHub rejected with `HTTP 400`.
+
+All are fixed. For details, see `FINDINGS.md`, section "Stale style files;
+chapter 13 and §19.4 figures".
+
+**What to remember.**
+- **Style files.** `build_site.py` copies `definitions.tex`, `tikzsetup.tex`
+  and `tikzcob.tex` from the source tree on **every** build. Never edit the
+  copies in `build/`. Chapter-local set-up that the figures need goes into
+  `build/figpre.tex`.
+- **Figure failures.** The build lists figures that did not compile at the end
+  of its output; `publish.sh` repeats the list at its end. Logs are in
+  `build/figures/<name>.log`.
+- **Snippets.** Figure snippets are regenerated from scratch on each build, and
+  the served SVGs are kept in sync with them, so no stale pictures remain.
+- **Pushing.** `publish.sh` pushes with `http.postBuffer=157286400` and, if that
+  fails, retries over HTTP/1.1. For a manual push, use
+  `git -c http.postBuffer=157286400 push`.
+
 ## Status (as of last session)
 
 **Part I (chapters 1-3) is fully converted** and live: `c1-motivation`,

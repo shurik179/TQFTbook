@@ -10,3 +10,14 @@
 % Chapter-local TikZ styles defined in the body BEFORE a figure (so they fall
 % outside the extracted tikzpicture block). Hoisted here so the figures compile.
 \tikzset{l/.style={font=\fontsize{8}{8}\selectfont}}   % c7-2categories.tex:556
+
+% c13-defects.tex draws its (TikZiT) figures inside the defectfiguresetup
+% environment of tikzsetup.tex, which declares their layers and styles inside a
+% group. An extracted figure sits outside that environment, so run the
+% environment's set-up code here, minus the \begingroup it starts with.
+% Its layer list replaces the one of the backgrounds library, which other
+% chapters use (c10), so list the layers of both.
+\makeatletter
+\expandafter\@gobble\defectfiguresetup
+\makeatother
+\pgfsetlayers{background,edgelayer,nodelayer,labels,main}

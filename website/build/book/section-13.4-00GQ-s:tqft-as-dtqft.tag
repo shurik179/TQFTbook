@@ -13,7 +13,7 @@ We can also get a TQFT, described by separable symmetric Frobenius algebra $A$, 
 
 <div class="equation" >
     <span class="equation-label">13.4.2</span>
-    <div class="centered"><img class="includegraphics" src="/static/figures/c13-fig15.svg"></div>
+    <div class="centered"><img class="includegraphics" src="/static/figures/c13-eqfig01.svg"></div>
 </div>
 <p>
  where $U$ is a forgetful functor that erases the phase labelled by $\mathbf{k}$, and removes all defect lines. See <span class="cite">[<a href="/bibliography/carqueville">Car2016</a>]</span> for detailed construction of a TQFT ( with or without boundary ) from a defect TQFT. 

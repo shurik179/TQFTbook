@@ -57,6 +57,12 @@ PORT    = cfg.PORT
 NO_SERVE      = "--no-serve" in sys.argv
 KEEP_FIGURES  = "--keep-figures" in sys.argv
 
+# Style files that the figure preamble (build/figpre.tex) and the render wrapper
+# (build/book.tex) \input from build/. They are copied from the book's source
+# tree on EVERY build, so the website always uses the book's current macros and
+# TikZ set-up (stale copies once broke all the figures of chapter 13).
+STYLE_FILES = ("definitions.tex", "tikzsetup.tex", "tikzcob.tex")
+
 # ------------------------------------------------------------------ helpers ---
 def step(msg):
     print("\n=== %s ===" % msg, flush=True)
@@ -151,6 +157,11 @@ if not includes:
 print("Chapters (in order): " + ", ".join(includes))
 
 step("1/8  preparing chapter sources")
+for fn in STYLE_FILES:
+    if not os.path.exists(os.path.join(SRC, fn)):
+        sys.exit("\nBUILD FAILED: %s not found in %s\n" % (fn, SRC))
+    shutil.copyfile(os.path.join(SRC, fn), os.path.join(BUILD, fn))
+print("  copied %s from the source tree" % ", ".join(STYLE_FILES))
 MATH_LABEL_MAP = build_math_label_map(includes)
 if MATH_LABEL_MAP:
     print("  remapping %d underscore equation labels (e.g. %s -> %s)"
@@ -160,15 +171,37 @@ for base in includes:
     print("  prepped %s" % base)
 
 step("2/8  extracting TikZ figures")
+FIGDIR = os.path.join(BUILD, "figures")
+FIG_EXTS = (".tex", ".pdf", ".svg", ".log", ".aux")
+# Extract into a clean slate, so figures/ holds exactly the book's current
+# figures (numbers shift when a chapter gains or loses one) ...
+for p in glob.glob(os.path.join(FIGDIR, "*fig*.tex")):
+    os.remove(p)
 for base in includes:
     run([VENVTEX_PY, "extract_figs.py", base + "-src.tex"], quiet=True)
-print("  %d figure snippets" % len(glob.glob(os.path.join(BUILD, "figures", "*fig*.tex"))))
+FIGS = sorted(os.path.basename(p)[:-4]
+              for p in glob.glob(os.path.join(FIGDIR, "*fig*.tex")))
+# ... and drop the output of figures the book no longer has.
+for p in glob.glob(os.path.join(FIGDIR, "*fig*.*")):
+    name, ext = os.path.splitext(os.path.basename(p))
+    if ext in FIG_EXTS and name not in FIGS:
+        os.remove(p)
+print("  %d figure snippets" % len(FIGS))
 
 if KEEP_FIGURES:
     step("3/8  compiling figures to SVG (SKIPPED --keep-figures)")
 else:
     step("3/8  compiling figures to SVG  (slowest step)")
-    run(["bash", "build_figs.sh"], env={"TEX_BIN": cfg.TEX_BIN})
+    run(["bash", "build_figs.sh"], env={"TEX_BIN": cfg.TEX_BIN, "TEX_SOURCE": SRC})
+# build_figs.sh deletes a figure's old SVG before compiling it, so a missing SVG
+# means that figure failed (or, with --keep-figures, was never compiled).
+FIG_FAILS = [f for f in FIGS if not os.path.exists(os.path.join(FIGDIR, f + ".svg"))]
+if FIG_FAILS:
+    print("  WARNING: %d of %d figures have no SVG: %s"
+          % (len(FIG_FAILS), len(FIGS), " ".join(FIG_FAILS)))
+    if not KEEP_FIGURES and len(FIG_FAILS) > len(FIGS) // 2:
+        sys.exit("\nBUILD FAILED: most figures did not compile -- is the TeX "
+                 "installation OK? (logs in website/build/figures/)\n")
 
 step("4/8  bibliography  amsrefs -> BibTeX")
 with open(os.path.join(BUILD, "tqft.bib"), "w") as f:
@@ -240,8 +273,17 @@ else:
 
 step("7/8  deploying figures + bib, rebuilding database")
 figdst = os.path.join(STATIC, "figures"); os.makedirs(figdst, exist_ok=True)
-for svg in glob.glob(os.path.join(BUILD, "figures", "*.svg")):
-    shutil.copy(svg, figdst)
+served = set()
+for f in FIGS:
+    svg = os.path.join(FIGDIR, f + ".svg")
+    if os.path.exists(svg):
+        shutil.copy(svg, figdst)
+        served.add(f + ".svg")
+# Remove served figures that the book no longer has or that failed this time,
+# so a reused figure number never shows an outdated picture.
+for p in glob.glob(os.path.join(figdst, "c*-*fig*.svg")):
+    if os.path.basename(p) not in served:
+        os.remove(p)
 shutil.copy(os.path.join(BUILD, "tqft.bib"), os.path.join(tagdir, "tqft.bib"))
 db = os.path.join(SITE, "tqft.sqlite")
 if os.path.exists(db): os.remove(db)                  # comments.sqlite is kept
@@ -253,6 +295,12 @@ run([VENV_PY, os.path.join(WEB, "tools", "update.py")],
 import datetime
 open(os.path.join(SITE, "build_date.txt"), "w").write(
     datetime.date.today().isoformat() + "\n")
+
+if FIG_FAILS:
+    print("\nWARNING: %d figure(s) will be missing on the site: %s\n  %s"
+          % (len(FIG_FAILS), " ".join(FIG_FAILS),
+             "(--keep-figures: run without it to compile them)" if KEEP_FIGURES
+             else "(they did not compile; see website/build/figures/<name>.log)"))
 
 # ------------------------------------------------------------------ serve -----
 if NO_SERVE:

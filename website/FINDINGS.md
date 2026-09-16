@@ -513,6 +513,65 @@ Later updated to the user's dedicated logo `logo/tqft-logo-512.png` ->
 `static/tqft-logo.png` (blue cobordism in a grey ring).
 Backups: `patches/gerby-website-static/{style.css,tqft-logo.png}`.
 
+## Stale style files; chapter 13 and §19.4 figures (DONE, 2026-09-16)
+
+**Symptoms** of a full rebuild (run through `publish.sh`):
+- `PDF FAIL c13-fig04` … `c13-fig16`;
+- c13-fig01..03 silently showed June drawings;
+- raw `\DD`, `\sll`, `\ccc`, `\xxto`, `\figscale`, `\tz…` in tags 00BU, 00E7
+  and 00H5.
+
+**Causes and fixes.**
+
+- **Stale style files.**
+  - *Cause:* `build/definitions.tex` and `build/tikzsetup.tex` were copies from
+    June that nothing refreshed. (`tikzcob.tex` was still identical.)
+  - *Fix:* `build_site.py` now copies `STYLE_FILES` (all three) from the source
+    tree at the start of every build.
+- **c13 layers and styles.**
+  - *Cause:* c13 draws its TikZiT figures inside `defectfiguresetup`
+    (tikzsetup.tex). Inside a group, that environment declares the layers
+    `nodelayer`, `edgelayer`, `labels` and the styles `0cell`, `1cell`,
+    `defect`, `junction`, `none`. Extracted snippets sit outside the group.
+  - *Fix:* `figpre.tex` runs the environment's body without its `\begingroup`
+    (`\expandafter\@gobble\defectfiguresetup`). It then resets the layer list
+    to `background,edgelayer,nodelayer,labels,main`: c10 uses the backgrounds
+    library's `background` layer, while `foreground` is not declared (listing
+    it breaks every figure).
+- **Old PDFs reused.**
+  - *Cause:* when pdflatex failed, `build_figs.sh` kept the figure's old PDF
+    and converted it anyway.
+  - *Fix:* it now deletes `$b.pdf` and `$b.svg` first, checks pdflatex's exit
+    status, and prints a `FAILED:` list.
+- **§19.4 diagram macros.**
+  - *Cause:* the math uses `\figscale` (an `\includegraphics` of
+    `source/figures/*.pdf`) and `\tzPairing…`, `\tzMoveMtwo…` (tikzpictures).
+    None were recognised as diagrams.
+  - *Fix:* `extract_figs.py` now treats as a diagram macro every
+    `\newcommand` in the style files whose body contains `tikzpicture`,
+    `\tikz` or `\includegraphics`, plus the `\tiny*` ones (21 macros). To
+    resolve `figures/M1a.pdf`, `build_figs.sh` adds `TEX_SOURCE` to
+    `TEXINPUTS`. c19 now has 14 snippets instead of 7.
+- **Chapter-local diagram macros.**
+  - *Cause:* c13 defines its own picture macros (`\twogonA`…`C`,
+    `\pentagonA`…`E`, `\picone`, `\pictwo`, each a `\vcenter{\hbox{tikz}}`)
+    and uses them in two `align*` displays and one equation. MathJax got
+    `\vcenter{\hbox{\includegraphics…}}` (tags 00FL, 00GM). This was already
+    broken before these changes.
+  - *Fix:* `extract_figs.py` also collects the chapter's own `\newcommand`s
+    with a picture (`LOCAL_DEFS`) and treats them as diagram macros. A snippet
+    that uses one gets the definitions in its own preamble. This adds
+    c13-eqfig01..03; all other snippets are byte-identical.
+- **Stale snippets.**
+  - *Cause:* 30 snippets from older chapter versions were compiled and served
+    forever.
+  - *Fix:*
+    - step 2 now clears `figures/*fig*.tex` before extracting and deletes the
+      outputs of figures the book no longer has;
+    - step 7 removes every served `c*-*fig*.svg` that has no current SVG;
+    - figures without an SVG are reported after step 3 and again at the end;
+    - if more than half fail, the build aborts.
+
 ## Recommended structure (Stacks/Kerodon practice)
 Keep the PDF build untouched. Maintain a **separate plasTeX preamble** that:
 - swaps amsbook→book, drops mathtools/euscript/amsrefs/imakeidx,

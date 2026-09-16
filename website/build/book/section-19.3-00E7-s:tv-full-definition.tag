@@ -22,7 +22,7 @@ By Lemma&#160;<a href="/tag/00D6" data-tag="00D6">18.5.3</a>, we get an invarian
     <div>\begin{equation}  (Z(F,l),\otimes \varphi _ C)=\langle \Gamma ,l,\{  \varphi _ C\} \rangle _{S^2\setminus \{ p\} } \end{equation}</div>
 </div>
 <p>
-If $F$ is a tetrahedron, then this coincides with the definition in <span class="cite">[<a href="/bibliography/barrett">BW1996</a>]</span>; if $\mathcal{C}$ is the category of representations of quantum $\sll _2$, these numbers are the $6j$-symbols. 
+If $F$ is a tetrahedron, then this coincides with the definition in <span class="cite">[<a href="/bibliography/barrett">BW1996</a>]</span>; if $\mathcal{C}$ is the category of representations of quantum $\mathfrak {sl}_2$, these numbers are the $6j$-symbols. 
 </p>
 <figure class="figure">
   <p>
@@ -63,7 +63,7 @@ $\operatorname{ev}$ is the tensor product over all $c$ of evaluation maps $H(c',
 </ul></p>
   <p> Finally we define </p>
   <div class="equation">
-  \[  Z(M)= \DD ^{-v (M)} \sum _{l} \left( Z( M,l) \prod _{e} d^{n_ e}_{l(e)} \right)  \]
+  \[  Z(M)= \dim (\mathcal{C})^{-v (M)} \sum _{l} \left( Z( M,l) \prod _{e} d^{n_ e}_{l(e)} \right)  \]
 </div>
   <p> where </p>
   <p><ul>
@@ -74,7 +74,7 @@ the sum is taken over all equivalence classes of simple labelings of $M$,
 $e$ runs over the set of all ( unoriented ) edges of $M$, 
 </p>
 </li><li><p>
-$\DD $ is the dimension of the category ( defined in Theorem&#160;<a href="/tag/00DP" data-tag="00DP">18.7.4</a>), and $v(M)=$number of internal vertices of $M$ + $\frac{1}{2}$(number of vertices on $\partial M$), 
+$\dim (\mathcal{C})$ is the dimension of the category ( defined in Theorem&#160;<a href="/tag/00DP" data-tag="00DP">18.7.4</a>), and $v(M)=$number of internal vertices of $M$ + $\frac{1}{2}$(number of vertices on $\partial M$), 
 </p>
 </li><li><p>
 $d_{l(e)} $ is the categorical dimension of $l(e)$, and 
