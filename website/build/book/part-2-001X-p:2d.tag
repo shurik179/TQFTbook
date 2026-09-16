@@ -1,4 +1,4 @@
-<h1 id="p:2d" class="tex-part"><span data-tag="001X">2</span> TQFTs in 2 dimensions</h1>
+<h1 id="p:2d" class="tex-part"><span data-tag="001X">2</span> Towards extended TQFTs</h1>
 <p>
  In this part, we start building the theory of extended TQFTs, i.e., theories where we consider not just cobordisms but manifolds with corners. In this part we are mostly working with 2-dimensional extended TQFTs, leaving higher dimensional case for the following part. 
 </p>

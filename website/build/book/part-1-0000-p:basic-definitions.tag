@@ -1,4 +1,4 @@
-<h1 id="p:basic-definitions" class="tex-part"><span data-tag="0000">1</span> Basic definitions</h1>
+<h1 id="p:basic-definitions" class="tex-part"><span data-tag="0000">1</span> TQFT basics</h1>
 <p>
  In this part, we introduce the basic definitions of TQFT. 
 </p>

@@ -13,8 +13,8 @@ It does NOT touch the static/branding parts (logo, About page, GitHub links,
 templates, CSS) -- those are configured once in the website and left alone.
 
 What it does, in order:
-  1. read build/book.tex to learn the chapter list + order (edit book.tex to
-     add chapters/parts);
+  1. take the parts and chapters (and their order) from the book's main file
+     (TQFTbook.tex) and write them into build/book.tex;
   2. copy each chapter from the monograph, auto-label unlabeled sections, turn
      amsrefs \\ocite into \\cite, drop unnumbered \\chapter* headings;
   3. extract TikZ pictures and compile them to SVG;
@@ -47,7 +47,8 @@ VENVTEX_PY = os.path.join(cfg.VENVTEX, "bin", "python")       # plasTeX venv
 # on the venv's absolute shebang -- keeps the whole tree relocatable.
 VENVTEX_PLASTEX = os.path.join(cfg.VENVTEX, "bin", "plastex")
 VENV_PY    = os.path.join(cfg.VENV, "bin", "python")          # website venv
-MASTER  = cfg.MASTER            # the hand-maintained build wrapper in build/
+MASTER  = cfg.MASTER            # the render wrapper in build/ (book.tex)
+MAIN    = cfg.MAIN              # the book's main file in SRC (TQFTbook.tex)
 BIB     = cfg.BIB               # amsrefs bibliography in SRC
 AUX     = cfg.AUX               # compiled .aux in SRC (for citation labels)
 PREFACE = cfg.PREFACE           # rendered to a standalone /preface page
@@ -62,6 +63,12 @@ KEEP_FIGURES  = "--keep-figures" in sys.argv
 # tree on EVERY build, so the website always uses the book's current macros and
 # TikZ set-up (stale copies once broke all the figures of chapter 13).
 STYLE_FILES = ("definitions.tex", "tikzsetup.tex", "tikzcob.tex")
+
+# The part/chapter tree of the website is generated from the book's main file on
+# every build: sync_parts() rewrites the block between these two lines of
+# build/book.tex, so the web version always has the book's parts and chapters.
+PARTS_BEGIN = "% BEGIN PARTS"
+PARTS_END   = "% END PARTS"
 
 # ------------------------------------------------------------------ helpers ---
 def step(msg):
@@ -149,8 +156,66 @@ def build_math_label_map(bases):
                     m[lbl] = lbl.replace('_', '-')
     return m
 
+def sync_parts():
+    """Rewrite the part/chapter block of build/book.tex from the book's main
+    file: its \\part and \\include commands, in order (the preface is served
+    separately, so it is left out). A part's tag comes from its label, so the
+    n-th part keeps the label it had in the block before (unless the book gives
+    that \\part a \\label); a part the book adds gets p:part<n>."""
+    main = re.sub(r'(?<!\\)%.*', '', open(os.path.join(SRC, MAIN)).read())
+    body = main.split("\\begin{document}", 1)[-1].split("\\end{document}", 1)[0]
+    master = open(master_path).read()
+    try:
+        head, rest = master.split(PARTS_BEGIN + "\n", 1)
+        old, tail = rest.split(PARTS_END + "\n", 1)
+    except ValueError:
+        sys.exit("\nBUILD FAILED: %s needs the lines '%s' and '%s'\n"
+                 % (MASTER, PARTS_BEGIN, PARTS_END))
+    old_labels = re.findall(r'\\part\b[^\n]*?\\label\{([^}]*)\}', old)
+    skip = os.path.splitext(PREFACE)[0]
+    lines, nparts, nfiles = [], 0, 0
+    for m in re.finditer(r'\\(part|include|appendix|backmatter)\b', body):
+        cmd, j = m.group(1), m.end()
+        if cmd == "backmatter":
+            break
+        if cmd == "appendix":
+            lines.append("\n\\appendix")
+            continue
+        j += len(body[j:]) - len(body[j:].lstrip())
+        if cmd == "include":
+            name = read_braced(body, j)[0].strip()
+            name = name[:-4] if name.endswith(".tex") else name
+            if name == skip:
+                continue
+            if not os.path.exists(os.path.join(SRC, name + ".tex")):
+                sys.exit("\nBUILD FAILED: %s includes %s, which is not in %s\n"
+                         % (MAIN, name, SRC))
+            lines.append("\\include{%s-src-gerby}" % name)
+            nfiles += 1
+            continue
+        short = ""                                     # \part[short]{title}
+        if body.startswith("[", j):
+            k = body.index("]", j)
+            short = body[j:k + 1]
+            j = k + 1
+            j += len(body[j:]) - len(body[j:].lstrip())
+        title, j = read_braced(body, j)
+        nparts += 1
+        lm = re.match(r'\s*\\label\{([^}]*)\}', body[j:])
+        label = (lm.group(1) if lm else
+                 old_labels[nparts - 1] if nparts <= len(old_labels) else
+                 "p:part%d" % nparts)
+        lines.append("\n\\part%s{%s}\\label{%s}" % (short, " ".join(title.split()), label))
+    block = "\n".join(lines).lstrip("\n") + "\n"
+    new = head + PARTS_BEGIN + "\n" + block + PARTS_END + "\n" + tail
+    if new != master:
+        open(master_path, "w").write(new)
+    print("Parts and chapters from %s: %d parts, %d files%s"
+          % (MAIN, nparts, nfiles, "" if new == master else " (book.tex updated)"))
+
 # ------------------------------------------------------------------ build -----
 master_path = os.path.join(BUILD, MASTER)
+sync_parts()
 includes = re.findall(r'^\s*\\include\{([^}]*)-src-gerby\}', open(master_path).read(), re.M)
 if not includes:
     sys.exit("No \\include{...-src-gerby} lines found in %s" % MASTER)

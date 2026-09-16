@@ -25,6 +25,9 @@ All are fixed. For details, see `FINDINGS.md`, section "Stale style files;
 chapter 13 and §19.4 figures".
 
 **What to remember.**
+- **Part tree.** The website's parts and chapters come from `TQFTbook.tex` on
+  every build (the generated block in `build/book.tex`). Until 2026-09-16 that
+  block was hand-written and still showed June's 5-part layout.
 - **Style files.** `build_site.py` copies `definitions.tex`, `tikzsetup.tex`
   and `tikzcob.tex` from the source tree on **every** build. Never edit the
   copies in `build/`. Chapter-local set-up that the figures need goes into
@@ -67,8 +70,9 @@ python3 build_site.py              # rebuild everything, then (re)start the serv
 python3 build_site.py --no-serve   # rebuild only
 python3 build_site.py --keep-figures  # skip recompiling TikZ (fast; if no figures changed)
 ```
-It reads `build/book.tex` for the chapter list/order (edit book.tex to add
-chapters/parts), auto-labels unlabeled sections, converts `\ocite`->`\cite`,
+It takes the parts and chapters from the book's main file (`TQFTbook.tex`) and
+writes them into the generated block of `build/book.tex`, so never add chapters
+there by hand. It also auto-labels unlabeled sections, converts `\ocite`->`\cite`,
 extracts+builds figures, converts the bibliography, tags (APPEND-only so tag URLs
 stay permanent), renders, post-processes, rebuilds the DB, and serves. It does
 **not** touch branding/static parts (logo, About, links, templates, CSS).

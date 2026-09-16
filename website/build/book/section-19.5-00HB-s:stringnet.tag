@@ -1,9 +1,6 @@
 <h2 id="s:stringnet" class="tex-section"><span data-tag="00HB">19.5</span> String-net model</h2>
 
 <p>
-FIXME: stringnet model of $Z(N)$ for closed surface $N$, following <span class="cite">[<a href="/bibliography/kirillov-stringnet">Kir2011</a>]</span>. 
-</p>
-<p>
 In this section we look at a physics model which, in a certain limit, is described by Turaev–Viro TQFT. This model was introduced by Levin-Wen <span class="cite">[<a href="/bibliography/levin-wen">LW2005</a>]</span>, and is known as the string-net model. Roughly speaking, a state in this model consists of highly fluctuating “string-nets” on a closed surface $N$, which are colored graphs on $N$ modulo some local relations. The allowed graphs on these string-nets alongwith the local relations encode the data of a spherical fusion category $\mathcal{C}$. We will here outline the correspondence between the string-net model and Turaev–Viro TQFT. Formal details, including the most general proof for this correspondence can be found in <span class="cite">[<a href="/bibliography/kirillov-stringnet">Kir2011</a>]</span>. We also use this section to make some general comments about how TQFTs are viewed in relation to gapped quantum systems in physics. 
 </p>
 <p>

@@ -151,8 +151,8 @@ The assignments $N \mapsto Z(N), M \mapsto Z(M)$ give a functor from the categor
 The proof to this theorem can also be found in <span class="cite">[<a href="/bibliography/balsam-kirillov">BK2010</a>]</span>. 
 </p>
 <p>
-TODO: Requires verification 
+TODO: The following paragraph should be verified by AK. 
 </p>
 <p>
-It's natural to ask if this construction can be extended to a fully extended TQFT. Balsam and Kirillov's state-sum construction 3-2-1 extends the Turaev-Viro theory. In principal, the same construction could have been straighforwardly extended down to a point. But to show that it defines a fully extended theory, one needs a symmetric monoidal ($\infty $,3) functor. This however requires showing that 0 dimensional data is fully dualizabile in $\mathbf{Tens}$ . And all the equivalences between 1-morphisms should hold upto 2-morphisms, and ( compositions of ) 2-morphisms can be further equivalent upto 3-morphisms. This leads to an inhumane web of coherence relations. The extension to 0 manifold clearly requires a more workable definition of a weak 3 category. 
+Balsam and Kirillov's state-sum construction 3-2-1 extends the Turaev-Viro theory. It's natural to ask if this can be extended to a fully extended TQFT. In principle, this is doable. But this requires the full complexity of a weak 3 category. In particular, all the equivalences between ( compositions of ) 1-morphisms should hold upto 2-morphisms, and ( compositions of ) 2-morphisms should hold upto 3-morphisms. This leads to a very complicated web of coherence relations. The extension to 0 manifold requires a more workable definition of an ($\infty $,3) category. 
 </p>

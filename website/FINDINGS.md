@@ -572,6 +572,31 @@ Backups: `patches/gerby-website-static/{style.css,tqft-logo.png}`.
     - figures without an SVG are reported after step 3 and again at the end;
     - if more than half fail, the build aborts.
 
+## Part tree out of date (DONE, 2026-09-16)
+
+**Symptom.** After an update, the front page and the PDF were new, but `/browse`
+still showed June's parts, with Part 1 = chapters 1–3. The book now has 4 parts:
+- I "TQFT basics" (c1–c6);
+- II "Towards extended TQFTs" (c7–c13);
+- III "Cobordism hypothesis" (c14–c15);
+- IV "Dimensions 3 and 4 …" (c16–c20, with the new p4-overview).
+
+**Cause.** The `\part`/`\include` list in `build/book.tex` was hand-written and
+never followed the book's reorganisation.
+
+**Fix.** `build_site.py` now runs `sync_parts()` at the start of every build.
+- *What it does:* it reads the `\part`, `\include` and `\appendix` commands of
+  `TQFTbook.tex` (`main` in config.ini), up to `\backmatter` and skipping the
+  preface, and rewrites the block between `% BEGIN PARTS` and `% END PARTS` in
+  book.tex.
+- *Tags:* a part's tag comes from its `\label`. The book's parts have none, so
+  the n-th part keeps the label the block had before. The old labels are
+  p:basic-definitions 0000, p:2d 001X, p:cobordism-hypothesis 001Y and
+  p:tensor-categories 001Z, so parts 1–4 kept their tags (their titles
+  changed). p:chern-simons (0020) is gone, since c20 is now in Part IV.
+- *New parts:* a new part gets `p:part<n>`. A `\label` after a `\part` in the
+  book wins.
+
 ## Recommended structure (Stacks/Kerodon practice)
 Keep the PDF build untouched. Maintain a **separate plasTeX preamble** that:
 - swaps amsbook→book, drops mathtools/euscript/amsrefs/imakeidx,

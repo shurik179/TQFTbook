@@ -244,6 +244,25 @@ push_to_github() {
   git -c http.postBuffer=157286400 "$@" push --quiet origin "$BRANCH"
 }
 
+# The one step this script cannot do: load the new version on PythonAnywhere.
+pa_instructions() {
+  cat <<EOF
+
+    ======================================================================
+    ${BOLD}UPDATE THE LIVE SITE ON PYTHONANYWHERE${OFF}
+
+    1. Open a Bash console at
+         $PA_CONSOLES
+    2. Run
+         $PA_UPDATE
+       (if it says there is no WSGI file, press the green Reload button
+        on the Web tab: $PA_WEBAPPS)
+    3. Check
+         $SITE_URL
+    ======================================================================
+EOF
+}
+
 # -------------------------------------------------------------------- main ---
 cd "$(dirname "$0")"
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) \
@@ -310,6 +329,8 @@ fi
 if [ "$MODE" = source ] && [ -z "$SRC_CHANGES" ] && [ "$SITE_CHANGES" -eq 0 ] \
    && [ ${#ADD_LIST[@]} -eq 0 ] && [ "$AHEAD" -eq 0 ]; then
   say "Nothing to publish -- GitHub is up to date"
+  note "If the live site does not show your latest changes yet:"
+  pa_instructions
   exit 0
 fi
 
@@ -373,10 +394,14 @@ fi
 AHEAD=$(unpushed)
 if [ "$AHEAD" -eq 0 ]; then
   say "Nothing to publish -- the website and GitHub are already up to date"
+  note "If the live site does not show your latest changes yet:"
+  pa_instructions
   exit 0
 fi
 if [ "$PUSH" = 0 ]; then
-  say "Committed, not pushed. Later: run 'git push', then do the PythonAnywhere step (PUBLISHING.md)."
+  say "Committed, not pushed."
+  note "When you are ready, push with 'publish.sh --source-only', and then:"
+  pa_instructions
   exit 0
 fi
 old_remote=$(git rev-parse "origin/$BRANCH")
@@ -397,15 +422,6 @@ if git diff --quiet "$old_remote" HEAD -- website; then
     say "Done. The website did not change, so there is nothing to do on PythonAnywhere."
   fi
 else
-  say "Done. Last step -- load the new version on the live site:"
-  cat <<EOF
-    1. open a Bash console on PythonAnywhere:
-         $PA_CONSOLES
-    2. run
-         $PA_UPDATE
-       (if it says there is no WSGI file, press Reload on the Web tab:
-         $PA_WEBAPPS )
-    3. check the result:
-         $SITE_URL
-EOF
+  say "Done with the local steps. One step is left, on PythonAnywhere:"
+  pa_instructions
 fi

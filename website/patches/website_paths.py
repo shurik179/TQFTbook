@@ -30,6 +30,7 @@ SITE_INFO = {**_SITE_DEFAULTS,
 
 # --- external TeX source tree + the files we read from it ---------------------
 SOURCE  = _resolve(_cfg["paths"]["source"])
+MAIN    = _cfg.get("source_files", "main", fallback="TQFTbook.tex")
 AUX     = _cfg["source_files"]["aux"]
 BIB     = _cfg["source_files"]["bibliography"]
 PREFACE = _cfg["source_files"]["preface"]

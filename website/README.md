@@ -87,12 +87,15 @@ lookups, dwarfed by the SQLite queries).
 there, so there are **no hardcoded absolute paths in any script** and the whole
 `website/` tree is relocatable: move it and the commands above still work.
 
-**Which TeX files get processed** is *not* in `config.ini` — it is the list of
-`\include{…}` lines in the render wrapper **`build/book.tex`**. That file (book
-class + porting stubs + the `\part`/`\include` structure) is the master list of
-every chapter/part the build processes, in order. To add or reorder
-chapters/parts, edit `build/book.tex` (add `\include{…-src-gerby}` and `\part{…}`
-lines), then rebuild.
+**Which TeX files get processed**, and in which parts, comes from the book
+itself: on every build, `build_site.py` reads the `\part` and `\include` lines of
+the book's main file (`main` in `config.ini`, i.e. `TQFTbook.tex`). It writes them
+into the `% BEGIN PARTS` … `% END PARTS` block of the render wrapper
+**`build/book.tex`**; the rest of that file (book class + porting stubs) is
+maintained by hand. To add or reorder chapters or parts, change `TQFTbook.tex`
+and rebuild. Never edit the generated block. Each part keeps the `\label` it has
+there, so the *n*-th part keeps its tag (permanent URL) even if its title
+changes. A `\label` right after a `\part` in the book takes precedence.
 
 > ⚠️ **Venvs are the exception.** `venv/` and `venv-tex/` contain absolute paths
 > internally (script shebangs, `activate`, `pyvenv.cfg`, the editable-install
@@ -138,7 +141,7 @@ website/
 ├── serve.sh            # serve the already-built site
 ├── moderate.py         # comment moderation CLI
 ├── build/              # the build workspace (copies of sources + generated files)
-│   ├── book.tex        #   render wrapper: lists the parts/chapters to include
+│   ├── book.tex        #   render wrapper; its parts/chapters block is generated
 │   ├── extract_figs.py #   pulls TikZ out of chapters into standalone figures
 │   ├── build_figs.sh   #   compiles figures: pdflatex → pdftocairo → SVG
 │   ├── figpre.tex      #   preamble used only for compiling figures
