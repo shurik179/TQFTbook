@@ -54,7 +54,7 @@ indent() { sed 's/^/        /'; }
 ask() {
   local reply hint="[y/N]"
   if [ "$2" = y ]; then hint="[Y/n]"; fi
-  read -r -p "    $1 $hint " reply || reply=n
+  read -r -p "    $1 $hint " reply || { echo; reply=n; }
   case "$reply" in
     "")                [ "$2" = y ] ;;
     [yY]|[yY][eE][sS]) true ;;
@@ -121,7 +121,7 @@ collect_new_files() {
 # listed in .git/info/exclude, which stays on this computer); otherwise skip
 offer_new_file() {
   local reply exclude
-  read -r -p "    add $1 ?  [y/N, i = never ask again] " reply || reply=n
+  read -r -p "    add $1 ?  [y/N, i = never ask again] " reply || { echo; reply=n; }
   case "$reply" in
     [yY]|[yY][eE][sS])
       ADD_LIST+=("$1") ;;
@@ -303,10 +303,15 @@ if [ -n "$SRC_CHANGES" ] || [ ${#ADD_LIST[@]} -gt 0 ]; then
   echo
   note "Commit message: what did you change?"
   note "(Enter = \"$defmsg\", q = quit without doing anything)"
-  read -r -p "    > " MSG || MSG=q
-  case "$MSG" in
-    q|Q) say "Stopped -- nothing was changed"; exit 0 ;;
-  esac
+  while :; do
+    read -r -p "    > " MSG || { echo; MSG=q; }
+    case "$MSG" in
+      q|Q) say "Stopped -- nothing was changed"; exit 0 ;;
+      [yYnN]|[yY][eE][sS]|[nN][oO])
+        note "(that looks like a yes/no answer -- type a commit message, or just press Enter)" ;;
+      *) break ;;
+    esac
+  done
   MSG=${MSG:-$defmsg}
 fi
 echo
