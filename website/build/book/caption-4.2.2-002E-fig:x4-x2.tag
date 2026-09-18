@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Figure 4.2.2. Crossing of critical values in family $f_ s=x^2-x^4+sx$</figcaption>
+<figcaption class="figcaption">Figure 4.2.2. Crossing of critical values in the family $f_ s=2x^2-x^4+sx$.</figcaption>

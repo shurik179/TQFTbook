@@ -1,0 +1,3 @@
+<article class="env-remark" id="00HQ">
+  <p><a class="environment-identifier" href="/tag/00HQ">Remark <span data-tag="00HQ">3.3.1</span>.</a> In fact, there is a stronger statement: $C_\varphi \simeq C_{\varphi '}$ if and only if $\varphi , \varphi '$ are <em>pseudo-isotopic</em>; see <span class="cite">[<a href="/bibliography/milnor-h-cobordism">Mil1965</a>, <span class="postnote">Theorem 1.9</span>]</span>. </p>
+</article>

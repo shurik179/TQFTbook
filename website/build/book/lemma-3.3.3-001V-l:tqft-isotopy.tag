@@ -1,5 +1,5 @@
 <article class="env-lemma" id="001V">
-  <p><a class="environment-identifier" href="/tag/001V">Lemma <span data-tag="001V">3.3.3</span>.</a> Let $C_\varphi $ be defined above. Then: </p>
+  <p><a class="environment-identifier" href="/tag/001V">Lemma <span data-tag="001V">3.3.3</span>.</a> Let $C_\varphi $ be as defined above. Then: </p>
   <p><ol>
   <li><p>
 The isomorphism class of $C_\varphi $ (as a cobordism) only depends on the isotopy class of $\varphi $: if $\varphi , \varphi '$ are isotopic to each other, then $C_\varphi \simeq C_{\varphi '}$. 

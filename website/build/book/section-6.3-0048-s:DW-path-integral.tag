@@ -1,6 +1,6 @@
 <h2 id="s:DW-path-integral" class="tex-section"><span data-tag="0048">6.3</span> Path integral interpretation of DW theory</h2>
 <p>
- One can rewrite our definition of DW theory so that it looks similar to the original description of QFT in terms of path integrals. Namely, let $BG$ be the classifying space of the group $G$; this is a topological space which is obtained by taking a contractible space $EG$ on which $G$ acts freely and then defining $BG=EG/G$. (Explicit constructions of $EG$ and $BG$ are well-known; note however that typically $BG$ is infinite-dimensional, even for a finite group $G$). 
+ One can rewrite our definition of DW theory so that it looks similar to the original description of QFT in terms of path integrals. Namely, let $BG$ be the classifying space of the group $G$; this is a topological space which is obtained by taking a contractible space $EG$ on which $G$ acts freely and then defining $BG=EG/G$. (Explicit constructions of $EG$ and $BG$ are well known; note, however, that for a nontrivial finite group $G$, the space $BG$ is necessarily infinite-dimensional.) 
 </p>
 <p>
 We have the universal $G$-bundle $EG\to BG$; thus, any continuous map $\gamma \colon M\to BG$ gives rise to the pullback bundle $P_\gamma = \gamma ^*(EG)$ over $M$. It is well known that any $G$-bundle can be obtained in this way; more precisely, we have a bijection 
@@ -12,7 +12,7 @@ We have the universal $G$-bundle $EG\to BG$; thus, any continuous map $\gamma \c
  where $[M,BG]$ is the set of homotopy classes of maps $M\to BG$. 
 </p>
 <p>
-Thus, the definition of DW invariant of a closed $n$-manifold can be rewritten as follows 
+Thus, the definition of the DW invariant of a closed $n$-manifold can be rewritten as follows: 
 </p>
 <div class="equation">
   \[  Z_ G(M)=\int _{[M, BG]} D\gamma  \]
@@ -28,10 +28,10 @@ This also suggests that we can define a “twisted” version of DW theory. Assu
     <div>\begin{equation} \label{e:DW-integral} Z_ G^\omega (M)= \int _{[M, BG]}\langle \gamma ^* \omega , [M]\rangle  D\gamma . \end{equation}</div>
 </div>
 <p>
- One should think of $\langle \gamma ^* \omega , [M]\rangle $ as an analogue of the term $e^{iS(\phi )}$ in the path integral. 
+ One should think of $\langle \gamma ^* \omega , [M]\rangle $ as an analog of the term $e^{iS[\varphi ]}$ in the path integral. 
 </p>
 <p>
-Note that the short exact sequence of abelian groups $0\to \mathbb {Z}\to \mathbb {R}\to \mathbb {R}/\mathbb {Z}\to 0$ gives rise to a long exact sequence of cohomology of $BG$; since it is well known that for a finite group and $n\ge 1$, $H^ n(BG, \mathbb {R})=H^ n(G,\mathbb {R})=0$ (here $H^ n(G)$ is the group cohomology), we get an isomorphism 
+Note that the short exact sequence of abelian groups $0\to \mathbb {Z}\to \mathbb {R}\to \mathbb {R}/\mathbb {Z}\to 0$ gives rise to a long exact sequence of cohomology of $BG$; since it is well known that for a finite group $G$ and $n\ge 1$, $H^ n(BG, \mathbb {R})=H^ n(G,\mathbb {R})=0$ (here $H^ n(G)$ is the group cohomology), we get an isomorphism 
 </p>
 <div class="equation">
   \[  H^ n(BG, U(1))=H^{n+1}(BG, \mathbb {Z}).  \]

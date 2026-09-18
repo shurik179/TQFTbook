@@ -1,3 +1,3 @@
 <article class="env-lemma" id="001D">
-  <p><a class="environment-identifier" href="/tag/001D">Lemma <span data-tag="001D">2.5.1</span>.</a> A vector space $V$, considered as an object in monoidal category $\mathbf{Vec}$, has a left dual if and only if it is finite-dimensional. In this case, the left dual is given by $V^*$, with evaluation and coevaluation defined as in Example&#160;<a href="/tag/00G1" data-tag="00G1">2.5.1</a> </p>
+  <p><a class="environment-identifier" href="/tag/001D">Lemma <span data-tag="001D">2.5.1</span>.</a> A vector space $V$, considered as an object in the monoidal category $\mathbf{Vec}$, has a left dual if and only if it is finite-dimensional. In this case, the left dual is given by $V^*$, with evaluation and coevaluation defined as in Example&#160;<a href="/tag/00G1" data-tag="00G1">2.5.1</a>. </p>
 </article>

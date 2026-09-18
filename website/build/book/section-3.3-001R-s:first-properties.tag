@@ -18,14 +18,14 @@ In particular, for TQFTs with values in $\mathbf{Vec}$, for any closed $(n-1)$-d
 </p>
 <p>
 More generally, we have the following lemma. <article class="env-lemma" id="00G6">
-  <p><a class="environment-identifier" href="/tag/00G6">Lemma <span data-tag="00G6">3.3.2</span>.</a> Let $Z$ be an $n$-dimensional TQFT, and let $M$ be a $n$-dimensional manifold with boundary. Let $N\subset M$ be a a smooth codimension one submanifold and denote by $M_{\text{cut}}$ the manifold with boundary obtained by cutting $M$ along $N$; thus, $\partial (M_{\text{cut}})\cong N\sqcup \overline{N}\sqcup \partial M$, see Figure&#160;<a href="/tag/00G7" data-tag="00G7">3.3.1</a>. </p>
-  <p>Prove that then </p>
+  <p><a class="environment-identifier" href="/tag/00G6">Lemma <span data-tag="00G6">3.3.2</span>.</a> Let $Z$ be an $n$-dimensional TQFT with values in $\mathbf{Vec}$, and let $M$ be an $n$-dimensional manifold with boundary. Let $N\subset M$ be a closed smooth codimension-one submanifold contained in the interior of $M$, and denote by $M_{\text{cut}}$ the manifold with boundary obtained by cutting $M$ along $N$; thus, $\partial (M_{\text{cut}})\cong N\sqcup \overline{N}\sqcup \partial M$; see Figure&#160;<a href="/tag/00G7" data-tag="00G7">3.3.1</a>. </p>
+  <p>Then </p>
   <div class="equation">
   \[  Z(M)=\operatorname{tr}_{Z(N)} (Z(M_{\text{cut}}))\in Z(\partial M)  \]
 </div>
   <p> where $\operatorname{tr}_{Z(N)}$ is the canonical pairing </p>
   <div class="equation">
-  \[  Z(N)\otimes Z(\overline{N})\cong Z(N)\otimes Z(N)^*\to \mathbf{k} \]
+  \[  Z(N)\otimes Z(\overline{N})\cong Z(N)\otimes Z(N)^*\to \mathbf{k}.  \]
 </div>
 </article> 
 </p>
@@ -33,19 +33,19 @@ More generally, we have the following lemma. <article class="env-lemma" id="00G6
   <div class="centered"><p>
 <img class="includegraphics" src="/static/figures/c3-fig03.svg" /> 
 </p>
-<figcaption class="figcaption">Figure 3.3.1. Cutting of a manifold $M$ along a codimension one submanifold $N$</figcaption>
+<figcaption class="figcaption">Figure 3.3.1. Cutting a manifold $M$ along a codimension-one submanifold $N$.</figcaption>
 
 </div>
 
 </figure>
 <p>
-This lemma is another form of the gluing axiom for TQFT (compare with (<a href="/tag/00G4" data-tag="00G4">3.1.2</a>).) 
+This lemma is another form of the gluing axiom for TQFT (compare with (<a href="/tag/00G4" data-tag="00G4">3.1.2</a>)). We leave the proof as an exercise to the reader. 
 </p>
 <p>
 Note that unlike the one-dimensional case, in general we cannot claim that any rigid object of $\mathcal{C}$ defines a TQFT. The proper generalization of that statement is the cobordism hypothesis, which we will discuss later. 
 </p>
 <p>
-Another property of TQFTs is functoriality. As mentioned before, it is natural to expect that a diffeomorphism $\varphi \colon N_0\to N_1$ between two $(n-1)$-dimensional closed manifolds gives rise to an isomorphism $Z(\varphi )\colon Z(N_0)\to Z(N_1)$; however, we didn't include that as part of the definition. It turns out it is not necessary. 
+Another property of TQFTs is functoriality. As mentioned before, it is natural to expect that a diffeomorphism $\varphi \colon N_0\to N_1$ between two $(n-1)$-dimensional closed manifolds gives rise to an isomorphism $Z(\varphi )\colon Z(N_0)\to Z(N_1)$; however, we did not include that as part of the definition. It turns out that it is not necessary. 
 </p>
 <p>
 Let $\varphi \colon N_0\to N_1$ be an orientation-preserving diffeomorphism. Define the cobordism 
@@ -59,7 +59,7 @@ Let $\varphi \colon N_0\to N_1$ be an orientation-preserving diffeomorphism. Def
 </p>
 <p>
 <article class="env-lemma" id="001V">
-  <p><a class="environment-identifier" href="/tag/001V">Lemma <span data-tag="001V">3.3.3</span>.</a> Let $C_\varphi $ be defined above. Then: </p>
+  <p><a class="environment-identifier" href="/tag/001V">Lemma <span data-tag="001V">3.3.3</span>.</a> Let $C_\varphi $ be as defined above. Then: </p>
   <p><ol>
   <li><p>
 The isomorphism class of $C_\varphi $ (as a cobordism) only depends on the isotopy class of $\varphi $: if $\varphi , \varphi '$ are isotopic to each other, then $C_\varphi \simeq C_{\varphi '}$. 
@@ -72,18 +72,18 @@ Given diffeomorphisms $\varphi _1\colon N_0\to N_1$, $\varphi _2\colon N_1\to N_
 </div>
 </li>
 </ol></p>
-</article> Recall that $\varphi , \varphi '$ are called isotopic if there exists a one-parameter family $\varphi _ t$ of smooth maps $N_0\to N_1$ such that $\varphi _ t$ is a diffeomorphism for all $t$, and $\varphi _0=\varphi $, $\varphi _1=\varphi '$. 
+</article> Recall that $\varphi , \varphi '$ are called isotopic if there exists a smooth one-parameter family $\varphi _ t$, $t\in [0,1]$, of smooth maps $N_0\to N_1$ such that $\varphi _ t$ is a diffeomorphism for all $t$, and $\varphi _0=\varphi $, $\varphi _1=\varphi '$. 
 </p>
 <p>
 We leave the proof of this lemma as an easy exercise to the reader. 
 </p>
 <p>
-<article class="env-remark" id="">
-  <p><a class="environment-identifier" href="/tag/">Remark <span data-tag="">3.3.1</span>.</a>In fact, there is a stronger statement: $C_\varphi \simeq C_{\varphi '}$ if and only if $\varphi , \varphi '$ are <em>pseudo-isotopic</em>, see <span class="cite">[<a href="/bibliography/milnor-h-cobordism">Mil1965</a>, <span class="postnote">Theorem 1.9</span>]</span>. </p>
+<article class="env-remark" id="00HQ">
+  <p><a class="environment-identifier" href="/tag/00HQ">Remark <span data-tag="00HQ">3.3.1</span>.</a> In fact, there is a stronger statement: $C_\varphi \simeq C_{\varphi '}$ if and only if $\varphi , \varphi '$ are <em>pseudo-isotopic</em>; see <span class="cite">[<a href="/bibliography/milnor-h-cobordism">Mil1965</a>, <span class="postnote">Theorem 1.9</span>]</span>. </p>
 </article> 
 </p>
 <p>
-As an immediate corollary, we get the following theorem. <article class="env-theorem" id="001W">
+This immediately implies the following theorem. <article class="env-theorem" id="001W">
   <p><a class="environment-identifier" href="/tag/001W">Theorem <span data-tag="001W">3.3.4</span>.</a> Let $Z\colon \mathbf{Cob}_ n\to \mathcal{C}$ be an $n$-dimensional TQFT. </p>
   <p><ol>
   <li><p>
@@ -94,5 +94,16 @@ If $\varphi ,\varphi '$ are isotopic, then $Z(\varphi )=Z(\varphi ')$.
 </p>
 </li>
 </ol></p>
-</article> <br /> 
+</article> 
+</p>
+<p>
+As a corollary, this gives the action of the mapping class group on $Z(N)$. Recall that for an oriented closed manifold $N$, the mapping clas group  $\Gamma (N)$ is defined as the group of isotopy classes of orientation-preserving diffeomorphisms $\varphi \colon N\to N$. 
+</p>
+<p>
+<article class="env-corollary" id="00HR">
+  <p><a class="environment-identifier" href="/tag/00HR">Corollary <span data-tag="00HR">3.3.5</span>.</a> Let $Z$ be an $n$-dimensional TQFT. Then for any closed oriented $(n-1)$-manifold $N$, vector space $Z(N)$ has a natural action of the mapping class group $\Gamma (N)$. </p>
+</article> 
+</p>
+<p>
+<br /> 
 </p>

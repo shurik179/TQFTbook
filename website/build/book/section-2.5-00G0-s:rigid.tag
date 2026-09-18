@@ -1,6 +1,6 @@
 <h2 id="s:rigid" class="tex-section"><span data-tag="00G0">2.5</span> Rigid monoidal categories</h2>
 <p>
- In many monoidal categories, cuch as the category of finite-dimensional vector spaces or the category of finitd-eimensional representations of a group $G$, in addition ot the tensor product we also have the operation of taking duals: for every representation $V$, we also have the dual representation $V^*$. The following definition allows one to talk about duals in any monoidal category. <article class="env-definition" id="001F">
+ In many monoidal categories, such as the category of finite-dimensional vector spaces or the category of finite-dimensional representations of a group $G$, in addition to the tensor product we also have the operation of taking duals: for every representation $V$, we also have the dual representation $V^*$. The following definition allows one to talk about duals in any monoidal category. <article class="env-definition" id="001F">
   <p><a class="environment-identifier" href="/tag/001F">Definition <span data-tag="001F">2.5.1</span>.</a> Let $\mathcal{C}$ be a monoidal category. A <em>dual pair</em> is a pair of objects $A,B\in \mathcal{C}$ together with morphisms </p>
   <div class="equation">
   \begin{align*}  \operatorname{ev}& \colon A\otimes B\to \mathbf{1}\qquad \text{(evaluation morphism),}\\  \operatorname{coev}& \colon \mathbf{1}\to B\otimes A \qquad \text{(coevaluation morphism)}, \end{align*}
@@ -32,13 +32,13 @@ The following example provides the motivation for this definition.
 </p>
 <p>
 <article class="env-example" id="00G1">
-  <p><a class="environment-identifier" href="/tag/00G1">Example <span data-tag="00G1">2.5.1</span>.</a> Let $V$ be a finite-dimensional vector space and let $V^*$ be the dual vector space. Let $\operatorname{ev}\colon V^*\otimes V\to \mathbf{k}$ be the natural pairing. Define coevaluation </p>
+  <p><a class="environment-identifier" href="/tag/00G1">Example <span data-tag="00G1">2.5.1</span>.</a> Let $V$ be a finite-dimensional vector space and let $V^*$ be the dual vector space. Let $\operatorname{ev}\colon V^*\otimes V\to \mathbf{k}$ be the natural pairing. Define the coevaluation </p>
   <div class="equation" id="00G2">
     <span class="equation-label"><a href="/tag/00G2" data-tag="00G2">2.5.6</a></span>
     <div>\begin{equation} \label{e:dual-vector} \begin{aligned}  \operatorname{coev}\colon \mathbf{k}& \to V\otimes V^*\\  1& \mapsto \sum v_ i\otimes v^ i \end{aligned} \end{equation}</div>
 </div>
-  <p> where $v_ i, v^ i$ are dual bases in $V, V^*$ respectively. Then so defined $\operatorname{ev}$ and $\operatorname{coev}$ satisfy rigidity equations (<a href="/tag/001G" data-tag="001G">2.5.1</a>); thus, $(V^*, V, \operatorname{ev}, \operatorname{coev})$ for a dual pair. </p>
-  <p>Indeed, one easily sees that the rigidiry equations are equivalent to requiring that for any $v in V, f\in V^*$, we have </p>
+  <p> where $v_ i, v^ i$ are dual bases in $V, V^*$ respectively. Then the maps $\operatorname{ev}$ and $\operatorname{coev}$ so defined satisfy the rigidity equations (<a href="/tag/001G" data-tag="001G">2.5.1</a>); thus, $(V^*, V, \operatorname{ev}, \operatorname{coev})$ form a dual pair. </p>
+  <p>Indeed, one easily sees that the rigidity equations are equivalent to requiring that for any $v\in V, f\in V^*$, we have </p>
   <div class="equation" >
     <span class="equation-label">2.5.9</span>
     <div>\begin{equation}  \begin{aligned}  \sum \langle v^ i, v\rangle v_ i & = v\\  \sum \langle f, v_ i\rangle v^ i & = f \end{aligned} \end{equation}</div>
@@ -47,29 +47,29 @@ The following example provides the motivation for this definition.
 </p>
 <p>
 <article class="env-lemma" id="001D">
-  <p><a class="environment-identifier" href="/tag/001D">Lemma <span data-tag="001D">2.5.1</span>.</a> A vector space $V$, considered as an object in monoidal category $\mathbf{Vec}$, has a left dual if and only if it is finite-dimensional. In this case, the left dual is given by $V^*$, with evaluation and coevaluation defined as in Example&#160;<a href="/tag/00G1" data-tag="00G1">2.5.1</a> </p>
+  <p><a class="environment-identifier" href="/tag/001D">Lemma <span data-tag="001D">2.5.1</span>.</a> A vector space $V$, considered as an object in the monoidal category $\mathbf{Vec}$, has a left dual if and only if it is finite-dimensional. In this case, the left dual is given by $V^*$, with evaluation and coevaluation defined as in Example&#160;<a href="/tag/00G1" data-tag="00G1">2.5.1</a>. </p>
 </article> 
 </p>
 <p>
-We now return to dual objects in arbitrary monoidal categoires. 
+We now return to dual objects in arbitrary monoidal categories. 
 </p>
 <p>
-It turns out that right dual, if exists, is unique up to unique isomorphism. <article class="env-theorem" id="001J">
-  <p><a class="environment-identifier" href="/tag/001J">Theorem <span data-tag="001J">2.5.2</span>.</a> Let $(A, B, \operatorname{ev}, \operatorname{coev})$ and $(A,B', \operatorname{ev}', \operatorname{coev}')$ be two dual pairs with the same $A$. Then there exists a unique morphism $\varphi \colon B\to B'$ such that $\operatorname{ev}= \operatorname{ev}' \circ (1_ A\otimes \varphi )$, $\operatorname{coev}' =(\varphi \otimes 1_ A) \operatorname{coev}$. </p>
+It turns out that the right dual, if it exists, is unique up to a unique isomorphism. <article class="env-theorem" id="001J">
+  <p><a class="environment-identifier" href="/tag/001J">Theorem <span data-tag="001J">2.5.2</span>.</a> Let $(A, B, \operatorname{ev}, \operatorname{coev})$ and $(A,B', \operatorname{ev}', \operatorname{coev}')$ be two dual pairs with the same $A$. Then there exists a unique morphism $\varphi \colon B\to B'$ such that $\operatorname{ev}= \operatorname{ev}' \circ (1_ A\otimes \varphi )$, $\operatorname{coev}' =(\varphi \otimes 1_ A) \operatorname{coev}$. Moreover, $\varphi $ is invertible. </p>
 </article> The proof is a standard snake-diagram argument: the required $\varphi $ is given by the composition 
 </p>
 <div class="equation">
-  \[  B \xrightarrow {1_ B\otimes \operatorname{coev}'} B\otimes A\otimes B' \xrightarrow {\operatorname{ev}\otimes 1_{B'}} B',  \]
+  \[  B \xrightarrow {\operatorname{coev}'\otimes 1_ B} B'\otimes A\otimes B \xrightarrow {1_{B'}\otimes \operatorname{ev}} B',  \]
 </div>
 <p>
- and uniqueness follows by chasing the rigidity equations. A similar statement holds for left dual. 
+ and uniqueness follows by chasing the rigidity equations. A similar statement holds for left duals. 
 </p>
 <p>
-This allows us to talk about the right dual of $A$ as a well-defined object in $\mathcal{C}$. We will denote the right dual of $A$ by ${}^*A$; similarly we will use notation $B^*$ for left dual of $B$. In this notation, evaluation and coevaluation morphisms become 
+This allows us to talk about the right dual of $A$ as a well-defined object in $\mathcal{C}$. We will denote the right dual of $A$ by ${}^*A$; similarly we will use the notation $B^*$ for the left dual of $B$. In this notation, the evaluation and coevaluation morphisms become 
 </p>
 <div class="equation" >
     <span class="equation-label">2.5.12</span>
-    <div>\begin{equation}  \begin{aligned}  \operatorname{ev}_ b& \colon B^*\otimes B\to \mathbf{1}\\  \operatorname{coev}_ B& \colon \mathbf{1}\to B\otimes B^*. \end{aligned} \end{equation}</div>
+    <div>\begin{equation}  \begin{aligned}  \operatorname{ev}_ B& \colon B^*\otimes B\to \mathbf{1}\\  \operatorname{coev}_ B& \colon \mathbf{1}\to B\otimes B^*. \end{aligned} \end{equation}</div>
 </div>
 <p>
 Clearly, in a symmetric monoidal category, the left dual is also a right dual. 
@@ -93,7 +93,7 @@ Clearly, in a symmetric monoidal category, the left dual is also a right dual.
 </p>
 <p>
 <article class="env-exercise" id="001N">
-  <p><a class="environment-identifier" href="/tag/001N">Exercise <span data-tag="001N">2.5.2</span>.</a> Let $X^*$, $Y^*$ be left duals of objects $X, Y$. Show that then $X\otimes Y$ also has a right dual, and there is a canonical isomorphism $(X\otimes Y)^*\simeq Y^* \otimes X^*$. </p>
+  <p><a class="environment-identifier" href="/tag/001N">Exercise <span data-tag="001N">2.5.2</span>.</a> Let $X^*$, $Y^*$ be left duals of objects $X, Y$. Show that then $X\otimes Y$ also has a left dual, and there is a canonical isomorphism $(X\otimes Y)^*\simeq Y^* \otimes X^*$. </p>
 </article> 
 </p>
 <p>

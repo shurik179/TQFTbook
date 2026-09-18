@@ -1,3 +1,3 @@
 <article class="env-example" id="0009">
-  <p><a class="environment-identifier" href="/tag/0009">Example <span data-tag="0009">2.1.1</span>.</a> Let $X$ be a topological space. Define its <em>fundamental groupoid</em> $\Pi _1(X)$ as the category whose objects are points in $X$ and morphisms are homotopy classes of paths between points, with the obvious composition. </p>
+  <p><a class="environment-identifier" href="/tag/0009">Example <span data-tag="0009">2.1.1</span>.</a> Let $X$ be a topological space. Define its <em>fundamental groupoid</em> $\Pi _1(X)$ as the category whose objects are points in $X$ and morphisms are homotopy classes (relative to the endpoints) of paths between points, with the obvious composition. </p>
 </article>

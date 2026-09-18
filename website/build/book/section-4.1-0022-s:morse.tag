@@ -14,7 +14,7 @@ Recall that given a smooth real-valued function $f$ on an $n$-dimensional manifo
  (this statement is usually called the <em>Morse lemma</em>). The number $r$ of minuses in (<a href="/tag/00EH" data-tag="00EH">4.1.1</a>) is called the <em>index</em> of the critical point. 
 </p>
 <p>
-It is immediate from the definition that a non-degenerate critical point is isolated; thus, if $M$ is compact, there can be only finitely many non-degenerate critical points. 
+It is immediate from the Morse lemma that a non-degenerate critical point is isolated; thus, if $M$ is compact and all critical points of $f$ are non-degenerate, there are only finitely many of them. 
 </p>
 <p>
 <article class="env-definition" id="0024">
@@ -51,7 +51,7 @@ all critical points of $f$ are in the interior $M\setminus (N_0\cup N_1)$, and a
 </article> Again, one can prove that such functions exist and form an open dense subset of all functions satisfying $f|_{N_0}=a_0$, $f|_{N_1}=a_1$. 
 </p>
 <p>
-The main result of Morse theory is that given an excellent function $f$, the topology of the manifold $M_ t=f^{-1}((-\infty , t])$ does not change between critical values: if $c_ i&lt;c_{i+1}$ are critical values, with no other critical values between them, then for all $t\in I=[c_ i+\varepsilon , c_{i+1}-\varepsilon ]$, the manifolds $M_ t$ are diffeomorphic, and $M_ I=f^{-1}(I)\xrightarrow {\sim }N_{t_0} \times I$, where $N_{t_0}=f^{-1}(t_0)$ is a slice for any $t_0\in I$. Moreover, one can give an explicit description of how topology of $M_ t$ changes when one goes through a critical point (this is usually referred to as “attaching a handle”). In particular, this implies that if $f$ has no critical points, then $M$ is a cylinder: $M\xrightarrow {\sim }N\times I$. 
+The main result of Morse theory is that given an excellent function $f$, the topology of the manifold $M_ t=f^{-1}((-\infty , t])$ does not change between critical values: if $c_ i&lt;c_{i+1}$ are critical values, with no other critical values between them, then for all $t\in I=[c_ i+\varepsilon , c_{i+1}-\varepsilon ]$, the manifolds $M_ t$ are diffeomorphic, and $M_ I=f^{-1}(I)\xrightarrow {\sim }N_{t_0} \times I$, where $N_{t_0}=f^{-1}(t_0)$ is a slice for any $t_0\in I$. Moreover, one can give an explicit description of how the topology of $M_ t$ changes when one goes through a critical point (this is usually referred to as “attaching a handle”). In particular, this implies that if $f$ has no critical points, then $M$ is a cylinder: $M\xrightarrow {\sim }N\times I$. 
 </p>
 <p>
 Therefore, one can use Morse functions to decompose a cobordism as a composition of “elementary” cobordisms. <article class="env-definition" id="0027">
@@ -66,10 +66,10 @@ Thus, given an excellent function with critical values $c_1&lt;\dots &lt;c_ k$, 
     <div>\begin{equation} \label{e:morse-decomposition} M=M_ k\circ \dots \circ M_1, \end{equation}</div>
 </div>
 <p>
- where $M_ i=f^{-1}([a_{i-1}, a_ i])$ is the elementary cobordism containing critical point $p_ i$. It follows from the result above that up to isomorphism, $M_ i$ does not depend on the choice of $a_ i$. We will refer to (<a href="/tag/00EJ" data-tag="00EJ">4.1.2</a>) as a <em>Morse decomposition</em> of a cobordism. 
+ where $M_ i=f^{-1}([a_{i-1}, a_ i])$ is the elementary cobordism containing the critical point $p_ i$. It follows from the result above that up to isomorphism, $M_ i$ does not depend on the choice of $a_ i$. We will refer to (<a href="/tag/00EJ" data-tag="00EJ">4.1.2</a>) as a <em>Morse decomposition</em> of a cobordism. 
 </p>
 <p>
-In particular, for $n=2$, for an excellent Morse function $f$ each non-critical level set is a smooth one-dimensional manifold (and thus a finite union of circles). Using Morse lemma, it is easy to see that each connected elementary cobordism is isomorphic to one of the four cobordisms shown in Table&#160;<a href="/tag/0029" data-tag="0029">4.1.1</a>. Note that here we follow our convention that cobordisms go “top to bottom”; thus, the $y$-axis is directed downward, so that the minimal value of $f$ is at the top, and the maximal, at the bottom. 
+In particular, for $n=2$, for an excellent Morse function $f$ each non-critical level set is a smooth one-dimensional manifold (and thus a finite disjoint union of circles). Using the Morse lemma, it is easy to see that each connected elementary cobordism is isomorphic to one of the four cobordisms shown in Table&#160;<a href="/tag/0029" data-tag="0029">4.1.1</a>. Note that here we follow our convention that cobordisms go “top to bottom”; thus, the $y$-axis is directed downward, so that the minimal value of $f$ is at the top, and the maximal, at the bottom. 
 </p>
  <div class="centered"><table class="tabular">
   <tr>

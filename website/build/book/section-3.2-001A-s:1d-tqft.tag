@@ -5,7 +5,7 @@ Now that we have a definition of a TQFT, let us try to construct examples. We be
 </p>
 <p>
 <article class="env-theorem" id="001B">
-  <p><a class="environment-identifier" href="/tag/001B">Theorem <span data-tag="001B">3.2.1</span>.</a> A 1-dimensional TQFT is the following collection of data: </p>
+  <p><a class="environment-identifier" href="/tag/001B">Theorem <span data-tag="001B">3.2.1</span>.</a> A 1-dimensional TQFT is equivalent to the following collection of data: </p>
   <p><ul>
   <li><p>
 A vector space $V_+=Z(\bullet ^+)$ 
@@ -21,7 +21,7 @@ A linear map $\operatorname{coev}= Z(\cap )\colon \mathbf{k}\to V_-\otimes V_+$
 </p>
 </li>
 </ul></p>
-  <p> satisfying relations below. </p>
+  <p> satisfying the relations below. </p>
   <div class="equation" id="001C">
     <span class="equation-label"><a href="/tag/001C" data-tag="001C">3.2.1</a></span>
     <div class="centered"><img class="includegraphics" src="/static/figures/c3-eqfig01.svg"></div>
@@ -57,15 +57,15 @@ the <em>cap</em> $\varnothing \to \bullet ^-\sqcup \bullet ^+$, on which $Z$ is 
     </p>
 </article>
 <p>
-Comparing this with definition of dual pair given in Section&#160;<a href="/tag/00G0" data-tag="00G0">2.5</a>, we see that this data is exactly the data of a dual pair $V_+, V_-$. Therefore, by Lemma&#160;<a href="/tag/001D" data-tag="001D">2.5.1</a> $V_+$, $V_-$ must be finite-dimensional, and $V_-\simeq (V_+)^*$, so we get the following result. 
+Comparing this with the definition of a dual pair given in Section&#160;<a href="/tag/00G0" data-tag="00G0">2.5</a>, we see that this data is exactly the data of a dual pair $(V_+, V_-)$. Therefore, by Lemma&#160;<a href="/tag/001D" data-tag="001D">2.5.1</a>, $V_+$ and $V_-$ must be finite-dimensional, and $V_-\simeq (V_+)^*$, so we get the following result. 
 </p>
 <p>
 <article class="env-theorem" id="00G5">
-  <p><a class="environment-identifier" href="/tag/00G5">Theorem <span data-tag="00G5">3.2.2</span>.</a> A one-dimensional TQFT is completely determined by the vector space $V=Z(\bullet ^+)$ which must be <em>finite-dimensional</em>. Conversely, every finite-dimensional vector space $V$ uniquely defines 1-dimensional TQFT. For such a TQFT, $Z(S^1)=\dim V$. </p>
+  <p><a class="environment-identifier" href="/tag/00G5">Theorem <span data-tag="00G5">3.2.2</span>.</a> A 1-dimensional TQFT is completely determined by the vector space $V=Z(\bullet ^+)$, which must be <em>finite-dimensional</em>. Conversely, every finite-dimensional vector space $V$ uniquely defines a 1-dimensional TQFT. For such a TQFT, $Z(S^1)=\dim V$. </p>
 </article> 
 </p>
 <p>
 This result easily generalizes to TQFTs with values in an arbitrary symmetric monoidal category. <article class="env-theorem" id="001Q">
-  <p><a class="environment-identifier" href="/tag/001Q">Theorem <span data-tag="001Q">3.2.3</span>.</a> If $Z\colon \mathbf{Cob}_1\to \mathcal{C}$ is a $1$-dimensional TQFT with values in a symmetric monoidal category $\mathcal{C}$, then $A=Z(\bullet ^+)$ is a rigid object; its dual is $Z(\bullet ^-)$. Conversely, any rigid object $A\in \mathcal{C}$ defines a one-dimensional TQFT such that $Z(\bullet ^+)=A$. </p>
+  <p><a class="environment-identifier" href="/tag/001Q">Theorem <span data-tag="001Q">3.2.3</span>.</a> If $Z\colon \mathbf{Cob}_1\to \mathcal{C}$ is a $1$-dimensional TQFT with values in a symmetric monoidal category $\mathcal{C}$, then $A=Z(\bullet ^+)$ is a rigid object; its dual is $Z(\bullet ^-)$. Conversely, any rigid object $A\in \mathcal{C}$ defines a 1-dimensional TQFT such that $Z(\bullet ^+)=A$. </p>
 </article> 
 </p>

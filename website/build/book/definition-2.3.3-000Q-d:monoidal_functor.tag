@@ -4,5 +4,5 @@
   \begin{align*}  J& \colon F(X\otimes Y)\to F(X)\otimes F(Y)\\  \varphi & \colon \mathbf{1}_\mathcal{D}\to F(\mathbf{1}_\mathcal{C}) \end{align*}
 </div>
   <p> satisfying suitable constraints (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 2.4</span>]</span>). </p>
-  <p>We say that categories $\mathcal{C}, \mathcal{D}$ are monoidally equivalent if there exist monoidal functors $F\colon \mathcal{C}\to \mathcal{D}$, $G\colon \mathcal{D}\to \mathcal{C}$ such that $F\circ G\simeq \operatorname{id}_\mathcal{C}$, $G\circ F \simeq \operatorname{id}_\mathcal{D}$. </p>
+  <p>We say that categories $\mathcal{C}, \mathcal{D}$ are monoidally equivalent if there exist monoidal functors $F\colon \mathcal{C}\to \mathcal{D}$, $G\colon \mathcal{D}\to \mathcal{C}$ such that $F\circ G\simeq \operatorname{id}_\mathcal{D}$, $G\circ F \simeq \operatorname{id}_\mathcal{C}$. </p>
 </article>

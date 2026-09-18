@@ -13,7 +13,7 @@ Show that the map $A\to A^*\colon a\mapsto (a, -)$ is a morphism of $A$-bimodule
 More generally, let $M$ be a finite-dimensional left $A$-module. Let $M^\vee =\operatorname{Hom}_ A(M, A)$; it has a natural structure of a right $A$-module. Show that then the map below is an isomorphism of right $A$-modules: 
 </p>
 <div class="equation">
-  \begin{align*}  M^\vee & \to M^*\\  f& \mapsto \varepsilon (f(-)). \end{align*}
+  \begin{align*}  M^\vee & \to M^*\\  f& \mapsto \varepsilon (f(-)), \end{align*}
 </div>
 <p>
  and the inverse is given by 

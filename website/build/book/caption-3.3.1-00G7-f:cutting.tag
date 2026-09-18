@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Figure 3.3.1. Cutting of a manifold $M$ along a codimension one submanifold $N$</figcaption>
+<figcaption class="figcaption">Figure 3.3.1. Cutting a manifold $M$ along a codimension-one submanifold $N$.</figcaption>

@@ -1,1 +1,1 @@
-<figcaption class="figcaption">Figure 4.3.1. Possible shapes of critical level set $S$. Note that for the last graph, intersection points are not vertices.</figcaption>
+<figcaption class="figcaption">Figure 4.3.1. Possible shapes of the critical level set $S$. Note that for the last graph, intersection points are not vertices.</figcaption>

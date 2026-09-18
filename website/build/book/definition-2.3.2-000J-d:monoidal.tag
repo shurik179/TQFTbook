@@ -2,7 +2,7 @@
   <p><a class="environment-identifier" href="/tag/000J">Definition <span data-tag="000J">2.3.2</span>.</a> A <em>monoidal category</em> is a category $\mathcal{C}$ together with the following data: </p>
   <p><ul>
   <li><p>
-An object $\mathbf{1}\in \mathcal{C}$ 
+an object $\mathbf{1}\in \mathcal{C}$ 
 </p>
 </li><li><p>
 a functor $\otimes \colon \mathcal{C}\times \mathcal{C}\to \mathcal{C}$ 
@@ -15,7 +15,7 @@ functorial isomorphisms
 </div>
 </li>
 </ul></p>
-  <p> satisfying compatibility conditions below: </p>
+  <p> satisfying the following compatibility conditions: </p>
   <p><ol>
   <li><p>
 Triangle axiom: for any $A,B\in \mathcal{C}$, the diagram below commutes 
@@ -32,7 +32,7 @@ Pentagon axiom: for any $A,B,C,D \in \mathcal{C}$, the diagram below commutes
     <div class="centered"><img class="includegraphics" src="/static/figures/c2-fig04.svg"></div>
 </div>
 <p>
- (all arrows are given by the associativity isomorphism $\alpha $.) 
+ (all arrows are given by the associativity isomorphism $\alpha $, tensored with identity morphisms where necessary.) 
 </p>
 </li>
 </ol></p>

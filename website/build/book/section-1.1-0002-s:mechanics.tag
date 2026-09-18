@@ -1,37 +1,37 @@
 <h2 id="s:mechanics" class="tex-section"><span data-tag="0002">1.1</span> Classical and quantum mechanics</h2>
 
 <p>
-In classical mechanics, at any time $t$, a point particle is described by its position $x(t) \in N$ and its velocity $\dot x(t) \in T_{x(t)}N$. Here $N$ is the configuration space which, for a point particle, is the same as physical space, and $T_{x(t)}N$ is the tangent space to $N$ at point $x(t)$. (For a more general mechanical system, $N$ can be some other space of configurations.) The trajectory of a particle is a map from the time interval $[t_0,t_1]$ to $N$: 
+In classical mechanics, at any time $t$, a point particle is described by its position $x(t) \in N$ and its velocity $\dot x(t) \in T_{x(t)}N$. Here $N$ is the configuration space which, for a point particle, is the same as physical space, and $T_{x(t)}N$ is the tangent space to $N$ at the point $x(t)$. (For a more general mechanical system, $N$ can be some other space of configurations.) The trajectory of a particle is a map from the time interval $[t_0,t_1]$ to $N$: 
 </p>
 <div class="equation" >
     <span class="equation-label">1.1.1</span>
-    <div>\begin{equation}  \gamma \colon [t_0,t_1] \rightarrow N, \nonumber \end{equation}</div>
+    <div>\begin{equation}  \gamma \colon [t_0,t_1] \rightarrow N. \nonumber \end{equation}</div>
 </div>
 <p>
- We are using the position variable $x$ and the trajectory $\gamma $ interchangeably. They are both continuous maps from the time-interval to the configuration space, but the notation $\gamma $ is better suited for quantum mechanics where we will be considering all such maps. 
+ We are using the position variable $x$ and the trajectory $\gamma $ interchangeably. They are both continuous maps from the time interval to the configuration space, but the notation $\gamma $ is better suited for quantum mechanics where we will be considering all such maps. 
 </p>
 <p>
-The equations of motion are usually derived using the Lagrangian formalism. Namely, for each trajectory $\gamma (t)$ we define its action functional: 
+The equations of motion are usually derived using the Lagrangian formalism. Namely, for each trajectory $\gamma (t)$ we define its action: 
 </p>
 <div class="equation" >
     <span class="equation-label">1.1.1</span>
-    <div>\begin{equation}  S[\gamma ]= \int L(x(t),\dot x(t)) dt \nonumber \end{equation}</div>
+    <div>\begin{equation}  S[\gamma ]= \int _{t_0}^{t_1} L(x(t),\dot x(t))\,  dt \nonumber \end{equation}</div>
 </div>
 <p>
- where $L(x, \dot x)$ is a smooth function on $TN$ called the Lagrangian. The precise form of Lagrangian function $L$ depends on the physics governing the motion of the particle. 
+ where $L(x, \dot x)$ is a smooth function on $TN$ called the Lagrangian. The precise form of the Lagrangian function $L$ depends on the physics governing the motion of the particle. 
 </p>
 <p>
-The least action principle (more appropriately called the stationary action principle) states that the actual trajectory that the physical particle takes is one for which the functional variation of the action vanishes (in the class of all trajectories with fixed starting and ending position): 
+The least action principle (more appropriately called the stationary action principle) states that the actual trajectory that the physical particle takes is one for which the functional variation of the action vanishes (in the class of all trajectories with fixed starting and ending positions): 
 </p>
 <div class="equation" id="00FM">
     <span class="equation-label"><a href="/tag/00FM" data-tag="00FM">1.1.1</a></span>
-    <div>\begin{equation} \label{e:stationary-path} \delta S[ x_{ph}(t)] = 0 , x_{ph}(t_0) = x_0, x_{ph}(t_1) = x_1 \end{equation}</div>
+    <div>\begin{equation} \label{e:stationary-path} \delta S[x_{\mathrm{ph}}] = 0, \qquad x_{\mathrm{ph}}(t_0) = x_0,\quad x_{\mathrm{ph}}(t_1) = x_1. \end{equation}</div>
 </div>
 <p>
- This condition leads to so-called Euler–Lagrange equations, which are the equations of motion in classical mechanics. 
+ This condition leads to the so-called Euler–Lagrange equations, which are the equations of motion in classical mechanics. 
 </p>
 <p>
-In quantum mechanics, the state of the particle is described by the wave function $\psi $, a vector in some Hilbert space $\mathcal{H}_ N$; for a single particle moving in configuration space $N$, $\mathcal{H}_ N$ is the space of square integrable functions on $N$: 
+In quantum mechanics, the state of the particle is described by the wave function $\psi $, a vector in some Hilbert space $\mathcal{H}_ N$; for a single particle moving in the configuration space $N$, $\mathcal{H}_ N$ is the space of square-integrable functions on $N$: 
 </p>
 <div class="equation">
   \begin{equation*}  \psi \in \mathcal{H}_ N \cong L^2(N). \end{equation*}
@@ -57,16 +57,16 @@ The Feynman path integral prescription states that this integral kernel can be w
     <div>\begin{equation} \label{e:feynman1} K(x_1,x_0) = \int _{\substack {\gamma (t_0)=x_0 \\ \gamma (t_1)=x_1}} e^{ \frac{i}{\hbar } S[\gamma ] } D\gamma \end{equation}</div>
 </div>
 <p>
- where $\hbar $ is the Planck constant. 
+ where $\hbar $ is the reduced Planck constant. 
 </p>
 <p>
 The physical essence of this formula is that all possible paths taking the particle from $x_0$ at $t_0$ to $x_1$ at $t_1$ contribute to its evolution. This prescription of integration over all trajectories is sometimes called “sum over histories”. 
 </p>
 <p>
-Formula (<a href="/tag/00FN" data-tag="00FN">1.1.3</a>) expresses the evolution operator in terms of integral over the infinite-dimensional space of paths. Making sense of such integrals is non-trivial; however, heuristically one can argue that in the limit $\hbar \to 0$, the integral in (<a href="/tag/00FN" data-tag="00FN">1.1.3</a>) is dominated by the contribution from the neighborhood of critical points of the action. For finite-dimensional integrals of this form, method of stationary phase allows one to write asymptotic expansion in powers of $\hbar $; using that as inspiration, one can also write similar formulas for asymptotic expansion of integral (<a href="/tag/00FN" data-tag="00FN">1.1.3</a>). The lowest order term in this expansion corresponds to contribution from the classical path defined in (<a href="/tag/00FM" data-tag="00FM">1.1.1</a>). 
+Formula (<a href="/tag/00FN" data-tag="00FN">1.1.3</a>) expresses the evolution operator in terms of an integral over the infinite-dimensional space of paths. Making sense of such integrals is non-trivial; however, heuristically one can argue that in the limit $\hbar \to 0$, the integral in (<a href="/tag/00FN" data-tag="00FN">1.1.3</a>) is dominated by the contributions from neighborhoods of the critical points of the action. For finite-dimensional integrals of this form, the method of stationary phase allows one to write an asymptotic expansion in powers of $\hbar $; using that as inspiration, one can also write similar formulas for the asymptotic expansion of the integral (<a href="/tag/00FN" data-tag="00FN">1.1.3</a>). The lowest-order term in this expansion corresponds to the contribution from the classical path defined in (<a href="/tag/00FM" data-tag="00FM">1.1.1</a>). 
 </p>
 <p>
-In Table <a href="/tag/0003" data-tag="0003">1.1.1</a>, we summarize the main structures of classical mechanics and the analogous quantities in quantum mechanics. In the next section, we will use this prescription of sum over histories to define time evolution in a quantum field theory. 
+In Table&#160;<a href="/tag/0003" data-tag="0003">1.1.1</a>, we summarize the main structures of classical mechanics and the analogous quantities in quantum mechanics. In the next section, we will use this prescription of sum over histories to define time evolution in a quantum field theory. 
 </p>
  <div class="centered"><table class="tabular">
   <tr>

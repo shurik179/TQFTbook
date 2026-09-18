@@ -3,6 +3,6 @@
   <div class="equation">
   \[  (d\beta )(g_1, g_2, g_3)= \frac{\beta (g_2, g_3)\, \beta (g_1, g_2g_3)}{\beta (g_1g_2, g_3)\, \beta (g_1, g_2)}.  \]
 </div>
-  <p> Show that then category $\mathbf{Vec}_ G^\omega $ is monoidally equivalent to $\mathbf{Vec}_ G$. </p>
-  <p>More generally, categories $\mathbf{Vec}_ G^\omega $ and $\mathbf{Vec}_ G^{\omega '}$ are equivalent, with the equivalence preserving the $G$-graded dimension, if and only if $\omega '=\omega \cdot d\beta $ for some $\beta \colon G\times G\to \mathbf{k}^\times $ (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 2.6</span>]</span>). </p>
+  <p> Show that then the category $\mathbf{Vec}_ G^\omega $ is monoidally equivalent to $\mathbf{Vec}_ G$. </p>
+  <p>More generally, the categories $\mathbf{Vec}_ G^\omega $ and $\mathbf{Vec}_ G^{\omega '}$ are monoidally equivalent, with the equivalence preserving the $G$-graded dimension, if and only if $\omega '=\omega \cdot d\beta $ for some $\beta \colon G\times G\to \mathbf{k}^\times $ (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 2.6</span>]</span>). </p>
 </article>

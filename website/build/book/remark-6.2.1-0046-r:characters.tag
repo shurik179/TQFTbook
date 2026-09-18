@@ -1,5 +1,5 @@
 <article class="env-remark" id="0046">
-  <p><a class="environment-identifier" href="/tag/0046">Remark <span data-tag="0046">6.2.1</span>.</a> It follows from orthogonality of characters that </p>
+  <p><a class="environment-identifier" href="/tag/0046">Remark <span data-tag="0046">6.2.1</span>.</a> It follows from the orthogonality relations for characters that </p>
   <div class="equation">
   \[  e_ i =\frac{\dim V_ i}{|G|} \sum _{g\in G}\chi _ i(g^{-1})g,  \]
 </div>

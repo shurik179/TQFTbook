@@ -10,22 +10,22 @@
 </article> 
 </p>
 <p>
-The picture below shows a 2-dimensional cobordism between a circle and a union of two circles; this cobordism is usually called <em>pair of pants</em>. 
+The picture below shows a 2-dimensional cobordism between a circle and a disjoint union of two circles; this cobordism is usually called the <em>pair of pants</em>. 
 </p>
 <div class="centered"> <img class="includegraphics" src="/static/figures/c3-fig01.svg" /> </div>
 <p>
-<article class="env-convention" id="">
-  <p><a class="environment-identifier" href="/tag/">Convention <span data-tag="">3.1.1</span>.</a>In our pictures, cobordisms go “top to bottom”: the in-boundary is at the top, and the out-boundary is at the bottom. </p>
+<article class="env-convention" id="00HP">
+  <p><a class="environment-identifier" href="/tag/00HP">Convention <span data-tag="00HP">3.1.1</span>.</a> In our pictures, cobordisms go “top to bottom”: the in-boundary is at the top, and the out-boundary is at the bottom. </p>
 </article> 
 </p>
 <p>
 <article class="env-definition" id="0015">
-  <p><a class="environment-identifier" href="/tag/0015">Definition <span data-tag="0015">3.1.2</span>.</a> An isomorphism of two cobordisms $M_1, M_2\in \mathbf{Cob}_ n(N_0,N_1)$ is a diffeomorphism $f\colon M_1\to M_2$ which makes this diagram commutative: </p>
+  <p><a class="environment-identifier" href="/tag/0015">Definition <span data-tag="0015">3.1.2</span>.</a> An isomorphism of two cobordisms $M_1, M_2$ from $N_0$ to $N_1$ is a diffeomorphism $f\colon M_1\to M_2$ which makes the following diagram commute: </p>
   <div class="equation" id="00EY">
     <span class="equation-label"><a href="/tag/00EY" data-tag="00EY">3.1.1</a></span>
     <div class="centered"><img class="includegraphics" src="/static/figures/c3-fig02.svg"></div>
 </div>
-</article> Given two cobordisms $N_0\Rightarrow N_1$, $N_1\Rightarrow N_2$, it is natural to ask if they can be glued together in a single cobordism $M=M_2\circ M_1$ 
+</article> Given two cobordisms $N_0\Rightarrow N_1$, $N_1\Rightarrow N_2$, it is natural to ask if they can be glued together into a single cobordism $M=M_2\circ M_1$ 
 </p>
 <div class="equation">
   \[  N_0\Rightarrow N_2.  \]
@@ -38,7 +38,7 @@ The picture below shows a 2-dimensional cobordism between a circle and a union o
 One can switch to the category of PL manifolds and cobordisms, where the problem does not arise: the PL structure on $M_1\cup _{N_1} M_2$ is uniquely determined by the PL structures on $M_1$, $M_2$. 
 </p>
 </li><li><p>
-One can consider <em>collared</em> manifolds: instead of isomorphism $\overline{N_0}\sqcup N_1\to \partial M$, we can require in the definition of cobordism an isomorphism of $(\overline{N_0}\sqcup N_1)\times [0, \epsilon )$ with a neighborhood of $\partial M$ in $M$. 
+One can consider <em>collared</em> manifolds: instead of an isomorphism $\overline{N_0}\sqcup N_1\to \partial M$, we can require in the definition of a cobordism an isomorphism of $(\overline{N_0}\sqcup N_1)\times [0, \epsilon )$ with a neighborhood of $\partial M$ in $M$. 
 </p>
 </li>
 </ul>
@@ -47,8 +47,8 @@ One can consider <em>collared</em> manifolds: instead of isomorphism $\overline{
 </p>
 <p>
 <article class="env-theorem" id="0016">
-  <p><a class="environment-identifier" href="/tag/0016">Theorem <span data-tag="0016">3.1.1</span>.</a> The smooth structure on $M=M_1\cup _{N_1} M_2$ which agrees with the given smooth structures on $M_1$, $M_2$, is unique up to isomorphism: if $\alpha , \alpha '$ are two different smooth structures on $M$, then $(M,\alpha )$, $(M,\alpha ')$ are isomorphic as cobordisms. </p>
-</article> You can find a proof of this in <span class="cite">[<a href="/bibliography/kock">Koc2004</a>, <span class="postnote">Theorem 1.3.12</span>]</span>. 
+  <p><a class="environment-identifier" href="/tag/0016">Theorem <span data-tag="0016">3.1.1</span>.</a> The smooth structure on $M=M_1\cup _{N_1} M_2$ which agrees with the given smooth structures on $M_1$, $M_2$ is unique up to isomorphism: if $\alpha , \alpha '$ are two different smooth structures on $M$, then $(M,\alpha )$, $(M,\alpha ')$ are isomorphic as cobordisms. </p>
+</article> For a proof, see <span class="cite">[<a href="/bibliography/kock">Koc2004</a>, <span class="postnote">Theorem 1.3.12</span>]</span>. 
 </p>
 <p>
 <article class="env-definition" id="0017">
@@ -57,7 +57,7 @@ One can consider <em>collared</em> manifolds: instead of isomorphism $\overline{
   \[  M_2\circ M_1 = M_1\cup _{N_1} M_2  \]
 </div>
   <p> (by the previous theorem it is independent of the choice of smooth structure). The identity morphism $\operatorname{id}_ N$ is the cylinder $N\times I$. </p>
-</article> Similarly one defines the PL version of cobordism category. 
+</article> Similarly one defines the PL version of the cobordism category. 
 </p>
 <p>
 This category has a natural structure of a symmetric monoidal category with respect to disjoint union. 
@@ -75,7 +75,7 @@ In particular, this definition implies that
     <div>\begin{equation} \label{e:tqft-gluing0} Z( M_1\cup _{N_1} M_2) = Z(M_2) Z(M_1) \end{equation}</div>
 </div>
 <p>
- which is one of the forms of the <em>gluing axiom</em>. An equivalent formulation of the gluing axiom will be given below, see Lemma&#160;<a href="/tag/00G6" data-tag="00G6">3.3.2</a>. 
+ which is one of the forms of the <em>gluing axiom</em>. An equivalent formulation of the gluing axiom will be given below; see Lemma&#160;<a href="/tag/00G6" data-tag="00G6">3.3.2</a>. 
 </p>
 <p>
 One can also generalize this definition, allowing the TQFT to take values in other categories. 

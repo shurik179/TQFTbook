@@ -94,10 +94,10 @@ Prove that the comultiplication is also given by the picture below:
 <p>
 <article class="env-corollary" id="0035">
   <p><a class="environment-identifier" href="/tag/0035">Corollary <span data-tag="0035">5.1.2</span>.</a> If a Frobenius algebra $A$ is commutative, it is also cocommutative. </p>
-</article> 
+</article> Indeed, in this case the pairing is symmetric, so $e=\sum x_ i \otimes x^ i$ is also symmetric, which by (<a href="/tag/0033" data-tag="0033">5.1.5</a>) implies cocommutativity. 
 </p>
 <p>
-Conversely, one can recover the structure of a Frobenius algebra from the pairing $(, \,  \, )$. 
+Conversely, one can recover the structure of a Frobenius algebra from the pairing $(\,  , \, )$. 
 </p>
 <p>
 <article class="env-theorem" id="0036">
@@ -126,7 +126,7 @@ Conversely, one can recover the structure of a Frobenius algebra from the pairin
     <div>\begin{equation} \label{e:frob-pairing} (a,b) = \varepsilon (ab) \end{equation}</div>
 </div>
   <p> is non-degenerate. </p>
-</article> By Theorems <a href="/tag/002Y" data-tag="002Y">5.1.1</a> and <a href="/tag/0036" data-tag="0036">5.1.3</a>, this is equivalent to the previously given definition (Definition&#160;<a href="/tag/002R" data-tag="002R">4.3.1</a>). 
+</article> By Theorems&#160;<a href="/tag/002Y" data-tag="002Y">5.1.1</a> and&#160;<a href="/tag/0036" data-tag="0036">5.1.3</a>, this is equivalent to the previously given definition (Definition&#160;<a href="/tag/002R" data-tag="002R">4.3.1</a>). 
 </p>
 <p>
 There are also many other equivalent definitions of Frobenius algebras; see, e.g., <span class="cite">[<a href="/bibliography/kock">Koc2004</a>, <span class="postnote">Section 2.2</span>]</span>. 
@@ -137,7 +137,7 @@ Note that while in general, the pairing $(a,b) = \varepsilon (ab)$ need not be s
   <div class="equation">
   \[  \varepsilon (ab)=\varepsilon (ba).  \]
 </div>
-</article> Of course, every commutative Frobenius algebra is symmetric; however, the examples below show that an algebra can be symmetric without being commutative. 
+</article> Of course, every commutative Frobenius algebra is symmetric; however, Example&#160;<a href="/tag/003B" data-tag="003B">5.1.2</a> below shows that a Frobenius algebra can be symmetric without being commutative. 
 </p>
 <p>
 <article class="env-example" id="003A">
@@ -151,7 +151,7 @@ The following lemma is immediate from the definition. <article class="env-lemma"
   <p><a class="environment-identifier" href="/tag/003C">Lemma <span data-tag="003C">5.1.4</span>.</a> Let $A$ be a symmetric Frobenius algebra, and let $e=\sum x_ i\otimes x^ i\in A\otimes A$ be as in Theorem&#160;<a href="/tag/0036" data-tag="0036">5.1.3</a>. Then </p>
   <p><ol>
   <li><p>
-$e$ is symmetric: $P(e)=e$, where $P\colon A\otimes A\colon a\otimes b\mapsto b\otimes a$. 
+$e$ is symmetric: $P(e)=e$, where $P\colon A\otimes A\to A\otimes A\colon a\otimes b\mapsto b\otimes a$. 
 </p>
 </li><li><p>
 $e$ is <em>bicentral</em>: 

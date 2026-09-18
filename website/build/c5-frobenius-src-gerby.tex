@@ -3,13 +3,13 @@
 \chapter{Frobenius algebras}\label{c:frobenius}
 
 
-In the previous chapter, we have shown that 2-dimensional TQFTs are classified
+In the previous chapter, we showed that 2-dimensional TQFTs are classified
 by commutative, cocommutative Frobenius algebras. In this chapter, we will study
 Frobenius algebras in detail.
 
 
 Recall that a Frobenius
-algebra is a vector space over a field $\kk$ with two structures (see
+algebra is a vector space $A$ over a field $\kk$ with two structures (see
 \deref{d:frobenius}):
 \begin{itemize}
   \item A structure of an associative algebra, with multiplication $m$ and
@@ -21,7 +21,7 @@ These two structures must satisfy the Frobenius condition
 \eqref{e:frobenius}.
 
 Note that the Frobenius condition can be restated as follows. Define on
-$A\otimes A$ an  $A$-bimodule structure by $x (a_1\otimes a_2) = (xa_1)\otimes
+$A\otimes A$ an $A$-bimodule structure by $x (a_1\otimes a_2) = (xa_1)\otimes
 a_2$, $(a_1\otimes a_2) x = a_1\otimes (a_2 x)$. Then the Frobenius condition
 is equivalent to the following:
 \begin{equation}\label{e:frobenius2}
@@ -30,19 +30,20 @@ is equivalent to the following:
 Note that in this definition, we do not assume that $A$ is commutative or
 cocommutative.
 
-\begin{remark}
+\begin{remark}\label{r:bialgebra-vs-frobenius}
   Given a vector space with structures of an associative algebra and
   coassociative coalgebra, there are several natural choices for
   compatibility between these two structures. By far the most commonly used
   ones are
   \begin{itemize}
     \item \emph{Bialgebra condition}:
-      the comultiplication is a morphism of algebras.
-      (Frequently one also requires existence of a certain involution, called
+      the comultiplication and the counit are morphisms of algebras.
+      (Frequently one also requires the existence of a certain linear map
+      $S\colon A\to A$, called
       the \emph{antipode}\index{antipode}; this gives the definition of a Hopf
       algebra\index{Hopf algebra}.)
       Examples of bialgebras include group algebras, universal
-      enveloping algebras of  Lie algebras, and more.
+      enveloping algebras of Lie algebras, and more.
     \item \emph{Frobenius condition}: the comultiplication is a morphism
       of $A$-bimodules.
   \end{itemize}
@@ -69,7 +70,7 @@ by graphs with $k$ legs at the top and $m$ legs at the bottom (thus, our
 operators act ``from top to bottom'').
 
 \firef{f:graphical1} shows
-graphs used to represent  the  common algebraic operations.
+the graphs used to represent common algebraic operations.
 \begin{figure}[ht]
   \includegraphics{figures/c5-fig01.svg}
 %  \begin{tikzpicture}
@@ -130,7 +131,7 @@ and the coevaluation $\De \circ i$:
   relation that these maps satisfy the rigidity condition:
   \begin{equation}\label{e:frob-rigidity}\includegraphics{figures/c5-eqfig03.svg}\end{equation}
   where $x_i, x^i$ are defined by $\De(1)=\sum x_i \otimes x^i$.
-  Thus, by  \leref{l:rigidity_vect}, $A$ is finite-dimensional, and $\eps(ab)$
+  Thus, by \leref{l:rigidity_vect}, $A$ is finite-dimensional, and $\eps(ab)$
   is a non-degenerate pairing.
 
 \end{proof}
@@ -172,29 +173,32 @@ relation that
     \item
       Prove that the comultiplication is also given by the picture below:
       \begin{equation}\label{e:fr-comultiplication}\includegraphics{figures/c5-fig02.svg}\end{equation}
-    or, equivalently, by 
+    or, equivalently, by
     \begin{equation}
       (a\otimes b, \De(c))=(ab,c),
     \end{equation}
-    where we extend the pairing $(\, , \,)$ to $A\otimes A$ by 
-    $(a_1\otimes a_2, b_2\otimes b_1)=(a_1, b_1)\cdot (a_2, b_2)$ 
+    where we extend the pairing $(\, , \,)$ to $A\otimes A$ by
+    $(a_1\otimes a_2, b_2\otimes b_1)=(a_1, b_1)\cdot (a_2, b_2)$
     (note the order!).
   \end{enumerate}
 \end{exercise}
 
 \begin{corollary}\label{c:frobenius-commutative}
-  If a Frobenius algebra  $A$ is commutative, it is also cocommutative.
+  If a Frobenius algebra $A$ is commutative, it is also cocommutative.
 \end{corollary}
+Indeed, in this case the pairing is symmetric, so $e=\sum x_i \otimes x^i$
+is also symmetric, which by \eqref{e:Delta} implies cocommutativity.
+
 
 Conversely, one can recover the structure of a Frobenius algebra from the
-pairing $(, \, \,)$.
+pairing $(\, , \,)$.
 
 \begin{theorem}\label{t:frobenius2}
   Let $A$ be a finite-dimensional associative algebra and let $\eps\colon A\to
   \kk$ be a linear map such that the bilinear pairing $(a,b) = \eps(ab)$ is
   non-degenerate. Let $e= \sum x_i \otimes x^i\in A\otimes A$, where $x_i, x^i$
   are dual bases with respect to $(\, , \,)$: $(x^i, x_j)= \de_{ij}$. Then $e$
-  is central: $(a\otimes 1)e = e (1\otimes a)$, and  $A$ has a canonical
+  is central: $(a\otimes 1)e = e (1\otimes a)$, and $A$ has a canonical
   Frobenius algebra structure with the comultiplication given by
   \eqref{e:Delta}.
 \end{theorem}
@@ -215,7 +219,7 @@ Thus, we could give an alternative definition of a Frobenius algebra.
   \end{equation}
   is non-degenerate.
 \end{definition}
-By Theorems \ref{t:frobenius1} and \ref{t:frobenius2}, this is equivalent to the
+By Theorems~\ref{t:frobenius1} and~\ref{t:frobenius2}, this is equivalent to the
 previously given definition (\deref{d:frobenius}).
 
 There are also many other equivalent definitions of Frobenius
@@ -231,7 +235,7 @@ be symmetric, in most examples of interest to us it is.
   $$
 \end{definition}
 Of course, every commutative Frobenius algebra is symmetric;
-however, the examples below show that an algebra can be
+however, \exref{x:frobenius2} below shows that a Frobenius algebra can be
 symmetric without being commutative.
 
 \begin{example}\label{x:frobenius1}
@@ -250,11 +254,11 @@ symmetric without being commutative.
 
 The following lemma is immediate from the definition.
 \begin{lemma}\label{l:bicentral}
-  Let $A$ be  a symmetric Frobenius algebra, and let
+  Let $A$ be a symmetric Frobenius algebra, and let
   $e=\sum x_i\otimes x^i\in A\otimes A$ be as in \thref{t:frobenius2}. Then
   \begin{enumerate}
-    \item $e$ is symmetric: $P(e)=e$, where $P\colon A\otimes A\colon a\otimes
-    b\mapsto b\otimes a$.
+    \item $e$ is symmetric: $P(e)=e$, where $P\colon A\otimes A\to A\otimes
+    A\colon a\otimes b\mapsto b\otimes a$.
     \item $e$ is \emph{bicentral}\index{bicentral}:
     \begin{align*}
       \sum ax_i\otimes x^i&=\sum x_i\otimes x^i a,\\
@@ -265,14 +269,14 @@ The following lemma is immediate from the definition.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Semisimple Frobenius algebras}\label{s:frobenius-ss}
 
-Recall that an associative algebra is semisimple if it is semisimple 
-as a left module over itself.  As we will see later, semisimple 
+Recall that an associative algebra is semisimple if it is semisimple
+as a left module over itself. As we will see later, semisimple
 algebras play a special role in the
 construction of TQFTs, so in this section, we study \textbf{semisimple}
 Frobenius algebras. We have already seen one example: the Frobenius algebra
 $A=\Mat_n(\kk)$ given in \exref{x:frobenius2}. In fact, over an algebraically
-closed field, it is the most general example of a semisimple symmetric Frobenius
-algebra. Namely, we have the following lemma.
+closed field, direct sums of such algebras are the only examples of semisimple
+symmetric Frobenius algebras. Namely, we have the following lemma.
 
 \begin{lemma}\label{l:frobenius-ss}\index{Frobenius algebra!semisimple}
   Let $\kk$ be an algebraically closed field.
@@ -287,7 +291,7 @@ algebra. Namely, we have the following lemma.
   for some constants $\la_i\ne 0$, where $a_i\in\Mat_{n_i}(\kk)$ is the
   $i$-th component of $a$.
 \end{lemma}
-Indeed, by the Wedderburn theorem (see e.g., \cite[Section 3.5]{pierce}), any
+Indeed, by the Wedderburn theorem (see, e.g., \cite[Section 3.5]{pierce}), any
 finite-dimensional semisimple algebra over $\kk$ is a direct sum of matrix
 algebras, and it is well known that for a matrix algebra, $A/[A,A]$ is
 one-dimensional, which easily implies the statement of the lemma.
@@ -341,7 +345,7 @@ where $T=\Si_1$ is the two-dimensional torus.
   Using the formula for comultiplication, we see that $W(e_i)=\la_i^{-1}e_i$,
   which immediately gives the statement of the lemma.
 \end{proof}
-\begin{remark}
+\begin{remark}\label{r:euler-element}
   It is easy to see that the operator $W$ defined above
   coincides with the operator of multiplication
   by the element $w=m\circ \Delta (1)$. Explicitly,
@@ -350,10 +354,10 @@ where $T=\Si_1$ is the two-dimensional torus.
     w=\sum x_ix^i \in A,
   \end{equation}
   where $x_i$, $x^i$ are dual bases in $A$ with respect to the pairing. This
-  element is sometimes called the \emph{Euler element}\index{Euler element}
-  and will play an important role later, see \thref{t:separable-frobenius}.
-  (In \cite{lauda-pfeiffer}, $w$ is called the ``window element''.) 
-  Note also that it easily follows from centrality of $e$ thta $w$ is central. 
+  element is sometimes called the \emph{Euler element}\index{Euler element} and
+  will play an important role later; see \thref{t:separable-frobenius}. (In
+  \cite{lauda-pfeiffer}, $w$ is called the ``window element''.) Note also that
+  it easily follows from the centrality of $e$ that $w$ is central.
 \end{remark}
 
 \begin{exercise}\label{ec:dual-module-frob}
@@ -377,7 +381,7 @@ where $T=\Si_1$ is the two-dimensional torus.
       $A$-modules: %FIXME
       \begin{align*}
         M^\vee &\to M^*\\
-        f&\mapsto \eps(f(-)).
+        f&\mapsto \eps(f(-)),
       \end{align*}
       and the inverse is given by
       \begin{align*}

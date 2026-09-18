@@ -1,9 +1,9 @@
 <h2 id="s:principal-bundles" class="tex-section"><span data-tag="003M">6.1</span> Principal $G$-bundles</h2>
 
 <p>
-<article class="env-definition" id="">
-  <p><a class="environment-identifier" href="/tag/">Definition <span data-tag="">6.1.1</span>.</a> A $G$-bundle over a manifold $M$ is a finite covering $\pi \colon P\to M$ together with a right action of $G$ on $P$ which preserves $\pi $ and such that the action of $G$ on each fiber $P_ x=\pi ^{-1}(x)$ is free and transitive. </p>
-</article> The reason for choosing a right action instead of a left one is purely technical; one could also use left action and get an equivalent definition. 
+<article class="env-definition" id="00HU">
+  <p><a class="environment-identifier" href="/tag/00HU">Definition <span data-tag="00HU">6.1.1</span>.</a> A $G$-bundle over a manifold $M$ is a finite covering $\pi \colon P\to M$ together with a right action of $G$ on $P$ which preserves $\pi $ and such that the action of $G$ on each fiber $P_ x=\pi ^{-1}(x)$ is free and transitive. </p>
+</article> The reason for choosing a right action instead of a left one is purely technical; one could also use a left action and get an equivalent definition. 
 </p>
 <p>
 We define an isomorphism of $G$-bundles (for the same $G$ and $M$) in the obvious way. We denote by $\operatorname{Bun}_ G(M)$ the category of $G$-bundles on $M$, with morphisms being isomorphisms of $G$-bundles. This category is a <em>groupoid</em>, i.e., a category in which all morphisms are invertible. In particular, for a $G$-bundle $P$ we denote by $\operatorname{Aut}(P)$ the group of automorphisms of $P$. 
@@ -31,10 +31,10 @@ If we choose a point $\tilde x\in P_ x$, we can identify $P_ x$ with $G$ by $g\m
 </article> 
 </p>
 <p>
-We will refer to a pair $(P, \tilde x)$ as in the lemma as a <em>based $G$-bundle</em>. One can restate this lemma as follows: for connected $M$, the groupoid $\widetilde{\operatorname{Bun}}_ G$ of based $G$-bundles is equivalent as a groupoid to the set $\operatorname{Hom}(\pi _1(M,x), G)$ (considered as a trivial groupoid: the only morphisms are identity morphisms). 
+We will refer to a pair $(P, \tilde x)$ as in the lemma as a <em>based $G$-bundle</em>. One can restate this lemma as follows: for connected $M$, the groupoid $\widetilde{\operatorname{Bun}}_ G(M)$ of based $G$-bundles is equivalent to the set $\operatorname{Hom}(\pi _1(M,x), G)$ (considered as a discrete groupoid: the only morphisms are identity morphisms). 
 </p>
 <p>
-If we change the choice of $\tilde x$, replacing it by $\tilde x g$ (for the same $P$), then it is easy to see that the monodromy map (<a href="/tag/003N" data-tag="003N">6.1.1</a>) is conjugated by $g^{-1}$. Thus, we get the following result. 
+If we change the choice of $\tilde x$, replacing it by $\tilde x g$ (for the same $P$), then it is easy to see that the monodromy map $\rho \colon \pi _1(M,x)\to G$ is conjugated by $g^{-1}$. Thus, we get the following result. 
 </p>
 <p>
 <article class="env-lemma" id="003Q">
@@ -47,8 +47,8 @@ If we change the choice of $\tilde x$, replacing it by $\tilde x g$ (for the sam
     <span class="equation-label"><a href="/tag/003R" data-tag="003R">6.1.2</a></span>
     <div>\begin{equation} \label{e:aut-bundle-monodromy} \operatorname{Aut}(P) = \{ g\in G\;  | \; g\rho g^{-1} = \rho \} . \end{equation}</div>
 </div>
-</article> One can restate it as an equivalence of groupoids. <article class="env-definition" id="">
-  <p><a class="environment-identifier" href="/tag/">Definition <span data-tag="">6.1.2</span>.</a>Let $X$ be a set with an action of a group $G$. We define the groupoid $X/ \!  /G$ as the category whose objects are points $x\in X$ and $\operatorname{Hom}(x_0, x_1)=\{ g\in G\;  | \; g(x_0)=x_1\} $. </p>
+</article> One can restate it as an equivalence of groupoids. <article class="env-definition" id="00HV">
+  <p><a class="environment-identifier" href="/tag/00HV">Definition <span data-tag="00HV">6.1.2</span>.</a> Let $X$ be a set with an action of a group $G$. We define the groupoid $X/ \!  /G$ as the category whose objects are points $x\in X$ and $\operatorname{Hom}(x_0, x_1)=\{ g\in G\;  | \; g(x_0)=x_1\} $. </p>
 </article> Then Lemma&#160;<a href="/tag/003Q" data-tag="003Q">6.1.2</a> says that for a connected $M$, the groupoid $\operatorname{Bun}_ G(M)$ is equivalent to $\operatorname{Hom}(\pi _1(M,x),G)/ \!  /G$. 
 </p>
 <p>

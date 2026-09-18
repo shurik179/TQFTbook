@@ -1,5 +1,5 @@
 <article class="env-example" id="000L">
-  <p><a class="environment-identifier" href="/tag/000L">Example <span data-tag="000L">2.3.3</span>.</a> Let $G$ be a group. Define the category $\mathbf{Vec}_ G$ of <em>$G$-graded vector spaces</em> as the category whose objects are finite-dimensional vector spaces $V$ together with decomposition </p>
+  <p><a class="environment-identifier" href="/tag/000L">Example <span data-tag="000L">2.3.3</span>.</a> Let $G$ be a group. Define the category $\mathbf{Vec}_ G$ of <em>$G$-graded vector spaces</em> as the category whose objects are finite-dimensional vector spaces $V$ together with a decomposition </p>
   <div class="equation">
   \[  V=\bigoplus _{g\in G} V_ g.  \]
 </div>

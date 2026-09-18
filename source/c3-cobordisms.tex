@@ -3,15 +3,15 @@
 \chapter{Category of cobordisms and definition of TQFT}\label{c:cobordisms}
 
 In this chapter, we give the key definition of this book, namely the notion of a
-TQFT, following work of Atiyah (see \ocite{atiyah}). To do that, we first define
-the notion of a cobordism.
+TQFT, following the work of Atiyah (see \ocite{atiyah}). To do that, we first
+define the notion of a cobordism.
 
 Unless specified otherwise, ``manifold'' means a compact oriented smooth
 manifold, possibly with boundary. For a manifold $M$, we denote by $\del M$ its
 boundary, with the orientation determined by the orientation of $M$. If $\del
 M=\varnothing$, we say that $M$ is \emph{closed}. Morphisms between manifolds
 are smooth maps; unless stated otherwise, ``diffeomorphism'' means an
-orientation-preserving invertible smooth map.
+orientation-preserving smooth map with a smooth inverse.
 
 We denote by $\ov{M}$ the manifold $M$ considered with the
 opposite orientation.
@@ -35,22 +35,23 @@ Following \ocite{kock}, we will write $N_0\cob{M} N_1$ to indicate that $M$ is a
 cobordism from $N_0$ to $N_1$.
 \end{definition}
 
-The picture below shows a 2-dimensional cobordism between a circle and a union
-of two circles; this cobordism is usually called \emph{pair of pants}\index{pair of pants}.
+The picture below shows a 2-dimensional cobordism between a circle and a
+disjoint union of two circles; this cobordism is usually called the \emph{pair
+of pants}\index{pair of pants}.
 \begin{center}
 \begin{tikzpicture}
   \pic[scale =1.5] {pants};
 \end{tikzpicture}
 \end{center}
 
-\begin{convention}
+\begin{convention}\label{conv:cobordism-pictures}
 In our pictures, cobordisms go ``top to bottom'':
 the in-boundary is at the top, and the out-boundary is at the bottom.
 \end{convention}
 
 \begin{definition}\label{d:cobordism-isomorphism}\index{cobordism!isomorphism}
-  An isomorphism of two cobordisms $M_1, M_2\in \nCob(N_0,N_1)$ is a
-  diffeomorphism $f\colon M_1\to M_2$ which makes this diagram commutative:
+  An isomorphism of two cobordisms $M_1, M_2$ from $N_0$ to $N_1$ is a
+  diffeomorphism $f\colon M_1\to M_2$ which makes the following diagram commute:
   \begin{equation}\label{e:cob-iso}
   \begin{tikzcd}[column sep=5mm, row sep=2mm]
     & M_1\arrow[dd, "f"]\\
@@ -62,7 +63,7 @@ the in-boundary is at the top, and the out-boundary is at the bottom.
   \end{equation}
 \end{definition}
 Given two cobordisms $N_0\cob{M_1}N_1$, $N_1\cob{M_2}N_2$, it is natural to
-ask if they can be glued together in a single cobordism $M=M_2\circ M_1$
+ask if they can be glued together into a single cobordism $M=M_2\circ M_1$
 $$
   N_0\cob{M_2\circ M_1}N_2.
 $$
@@ -76,8 +77,8 @@ unique. There are several ways to deal with this problem.
     is uniquely determined by the PL structures on $M_1$, $M_2$.
   \item One can consider \emph{collared}\index{collared manifold}
     manifolds: instead of
-    isomorphism $\ov{N_0}\sqcup N_1\to \del M$,
-    we can require in the definition of cobordism an isomorphism of
+    an isomorphism $\ov{N_0}\sqcup N_1\to \del M$,
+    we can require in the definition of a cobordism an isomorphism of
     $(\ov{N_0}\sqcup N_1)\times [0, \epsilon)$ with a neighborhood
     of $\del M$ in $M$.
 \end{itemize}
@@ -86,11 +87,11 @@ unique, different smooth structures give isomorphic cobordisms.
 
 \begin{theorem}\label{t:gluing-unique}
   The smooth structure on $M=M_1\cup_{N_1} M_2$ which agrees with
-  the given smooth structures on $M_1$, $M_2$, is unique up to isomorphism:
+  the given smooth structures on $M_1$, $M_2$ is unique up to isomorphism:
   if $\al, \al'$ are two different smooth structures on $M$, then $(M,\al)$,
   $(M,\al')$ are isomorphic as cobordisms.
 \end{theorem}
-You can find a proof of this in \ocite{kock}*{Theorem 1.3.12}.
+For a proof, see \ocite{kock}*{Theorem 1.3.12}.
 
 \begin{definition}\label{d:ncob}\index{cobordism category}
   The cobordism category $\nCob$ is the category whose objects are closed
@@ -104,7 +105,7 @@ You can find a proof of this in \ocite{kock}*{Theorem 1.3.12}.
   (by the previous theorem it is independent of the choice of smooth structure).
   The identity morphism $\id_N$ is the cylinder $N\times I$.
 \end{definition}
-Similarly one defines the PL version of cobordism category.
+Similarly one defines the PL version of the cobordism category.
 
 This category has a natural structure of a symmetric monoidal
 category with respect to disjoint union.
@@ -121,7 +122,7 @@ In particular, this definition implies that
   Z( M_1\cup_{N_1} M_2) = Z(M_2) Z(M_1)
 \end{equation}
 which is one of the forms of the \emph{gluing axiom}\index{gluing axiom}.
-An equivalent formulation of the gluing axiom will be given below, see
+An equivalent formulation of the gluing axiom will be given below; see
 \leref{l:tqft-gluing}.
 
 
@@ -140,14 +141,14 @@ Now that we have a definition of a TQFT, let us try to construct examples. We
 begin with the simplest possible case, that of a 1-dimensional TQFT.
 
 \begin{theorem}\label{t:1d-TQFT}
-  A 1-dimensional TQFT is the following collection of data:
+  A 1-dimensional TQFT is equivalent to the following collection of data:
   \begin{itemize}
     \item A vector space $V_+=Z(\bullet^+)$
     \item A vector space $V_-=Z(\bullet^-)$
     \item A linear map $\ev= Z(\cup)\colon V_+\otimes V_-\to \kk$
     \item A linear map $\coev = Z(\cap)\colon \kk \to V_-\otimes V_+$
   \end{itemize}
-  satisfying relations below.
+  satisfying the relations below.
   \begin{equation}\label{e:1d-tqft-rigidity}
     \begin{aligned}
       &
@@ -172,11 +173,11 @@ begin with the simplest possible case, that of a 1-dimensional TQFT.
   \end{equation}
 \end{theorem}
 \begin{proof}
-  Since $Z$ is symmetric monoidal, $Z(N_1\sqcup N_2)\simeq Z(N_1)\otimes Z(N_2)$,
-  so $Z$ on objects is determined by its values on connected 0-manifolds. The
-  only connected 0-manifolds are the positively and negatively oriented points
-  $\bullet^+, \bullet^-$, hence $Z$ on objects is determined by
-  $V_\pm := Z(\bullet^\pm)$.
+  Since $Z$ is symmetric monoidal,
+  $Z(N_1\sqcup N_2)\simeq Z(N_1)\otimes Z(N_2)$, so $Z$ on objects is determined
+  by its values on connected 0-manifolds. The only connected 0-manifolds are the
+  positively and negatively oriented points $\bullet^+, \bullet^-$, hence $Z$ on
+  objects is determined by $V_\pm := Z(\bullet^\pm)$.
 
   Similarly, $Z$ on morphisms is determined by its values on connected
   cobordisms. Up to isomorphism, every connected oriented $1$-cobordism with
@@ -210,15 +211,15 @@ begin with the simplest possible case, that of a 1-dimensional TQFT.
   functor $\oneCob\to\vect$.
 \end{proof}
 
-Comparing this with definition of dual pair given in \seref{s:rigid}, we see
-that this data is  exactly the data of a dual pair  $V_+, V_-$. Therefore, by
-\leref{l:rigidity_vect} $V_+$, $V_-$ must be finite-dimensional, and $V_-\simeq
-(V_+)^*$, so we get the following result.
+Comparing this with the definition of a dual pair given in \seref{s:rigid}, we
+see that this data is exactly the data of a dual pair $(V_+, V_-)$. Therefore,
+by \leref{l:rigidity_vect}, $V_+$ and $V_-$ must be finite-dimensional, and
+$V_-\simeq (V_+)^*$, so we get the following result.
 
 \begin{theorem}\label{t:1d-tqft2}
-  A one-dimensional TQFT is completely determined by the vector space
-  $V=Z(\bullet^+)$ which must be \emph{finite-dimensional}. Conversely, every
-  finite-dimensional vector space $V$ uniquely defines 1-dimensional TQFT. For
+  A 1-dimensional TQFT is completely determined by the vector space
+  $V=Z(\bullet^+)$, which must be \emph{finite-dimensional}. Conversely, every
+  finite-dimensional vector space $V$ uniquely defines a 1-dimensional TQFT. For
   such a TQFT, $Z(S^1)=\dim V$.
 \end{theorem}
 
@@ -228,7 +229,7 @@ symmetric monoidal category.
   If $Z\colon \oneCob\to \calC$ is a $1$-dimensional TQFT with values in a
   symmetric monoidal category $\calC$, then $A=Z(\bullet^+)$ is a rigid object;
   its dual is $Z(\bullet^-)$. Conversely, any rigid object $A\in \calC$ defines
-  a one-dimensional TQFT such that $Z(\bullet^+)=A$.
+  a 1-dimensional TQFT such that $Z(\bullet^+)=A$.
 \end{theorem}
 
 %\begin{tikzpicture}
@@ -264,20 +265,21 @@ $(n-1)$-dimensional manifold $N$, the vector space $Z(N)$ is finite-dimensional.
 
 More generally, we have the following lemma.
 \begin{lemma}\label{l:tqft-gluing}
-Let $Z$ be an $n$-dimensional TQFT, and let $M$ be a $n$-dimensional
-manifold with boundary. Let $N\subset M$ be a a smooth codimension one
-submanifold and denote by $M_{\text{cut}}$ the manifold with boundary
+Let $Z$ be an $n$-dimensional TQFT with values in $\vect$, and let $M$ be an
+$n$-dimensional manifold with boundary. Let $N\subset M$ be a closed smooth
+codimension-one submanifold contained in the interior of $M$, and denote by
+$M_{\text{cut}}$ the manifold with boundary
 obtained by cutting $M$ along $N$; thus,
-$\del(M_{\text{cut}})\cong N\sqcup \ov{N}\sqcup \del M$,
+$\del(M_{\text{cut}})\cong N\sqcup \ov{N}\sqcup \del M$;
 see \firef{f:cutting}.
 
-Prove that then
+Then
 $$
   Z(M)=\tr_{Z(N)} (Z(M_{\text{cut}}))\in Z(\del M)
 $$
 where $\tr_{Z(N)}$ is the canonical pairing
 $$
-  Z(N)\otimes Z(\ov{N})\cong Z(N)\otimes Z(N)^*\to \kk
+  Z(N)\otimes Z(\ov{N})\cong Z(N)\otimes Z(N)^*\to \kk.
 $$
 \end{lemma}
 
@@ -354,19 +356,19 @@ $$
       \node[left] at ($(45.center)+(-0.10,0.60)$) {$N$};
       \node[right] at ($(45.center)+(+0.50,0.60)$) {$N$};
       \node[left] at ($(45.center)+(+5.50,-1.50)$) {$\del M$};
-      \node[below] at ($(45.center)+(0.50,-4.00)$) {$M_{cut}$};
+      \node[below] at ($(45.center)+(0.50,-4.00)$) {$M_{\text{cut}}$};
 
     \end{scope}
 
   \end{tikzpicture}
 
-  \caption{Cutting of a manifold $M$ along a codimension one submanifold $N$}
+  \caption{Cutting a manifold $M$ along a codimension-one submanifold $N$.}
   \label{f:cutting}
 \end{figure}
 
 
 This lemma is another form of the gluing axiom for TQFT (compare with
-\eqref{e:tqft-gluing0}.)
+\eqref{e:tqft-gluing0}). We leave the proof as an exercise to the reader. 
 
 Note that unlike the one-dimensional case, in general we cannot claim that any
 rigid object of $\calC$ defines a TQFT. The proper generalization of that
@@ -377,8 +379,8 @@ statement is the cobordism hypothesis, which we will discuss later.
 Another property of TQFTs is functoriality. As mentioned before, it is
 natural to expect that a diffeomorphism $\ph \colon N_0\to N_1$ between two
 $(n-1)$-dimensional closed manifolds gives rise to an isomorphism
-$Z(\ph)\colon Z(N_0)\to Z(N_1)$; however, we didn't include that as part of
-the definition. It turns out it is not necessary.
+$Z(\ph)\colon Z(N_0)\to Z(N_1)$; however, we did not include that as part of
+the definition. It turns out that it is not necessary.
 
 Let $\ph \colon N_0\to N_1$ be an orientation-preserving diffeomorphism.
 Define the cobordism
@@ -389,7 +391,7 @@ to be the cylinder $N_1\times I$, with the identification $\ov{N_0}\sqcup N_1
 \to \del C_\ph$ given by $\ph\sqcup \id$.
 
 \begin{lemma}\label{l:tqft-isotopy}
-  Let $C_\ph$ be defined above. Then:
+  Let $C_\ph$ be as defined above. Then:
   \begin{enumerate}
     \item The isomorphism class of $C_\ph$ \textup{(}as a cobordism\textup{)}
     only depends on the
@@ -402,29 +404,42 @@ to be the cylinder $N_1\times I$, with the identification $\ov{N_0}\sqcup N_1
       $$
   \end{enumerate}
 \end{lemma}
-Recall that $\ph, \ph'$ are called isotopic if there exists a one-parameter
-family $\ph_t$ of smooth maps $N_0\to N_1$ such that $\ph_t$ is a diffeomorphism
-for all $t$, and $\ph_0=\ph$, $\ph_1=\ph'$.
+Recall that $\ph, \ph'$ are called isotopic if there exists a smooth
+one-parameter family $\ph_t$, $t\in[0,1]$, of smooth maps $N_0\to N_1$ such that
+$\ph_t$ is a diffeomorphism for all $t$, and $\ph_0=\ph$, $\ph_1=\ph'$.
 
 We leave the proof of this lemma as an easy exercise to the reader.
 
-\begin{remark}
+\begin{remark}\label{r:pseudo-isotopy}
   In fact, there is a stronger statement: $C_\ph\simeq C_{\ph'}$ if and only if
-  $\ph, \ph'$ are \emph{pseudo-isotopic}\index{pseudo-isotopic}, see
+  $\ph, \ph'$ are \emph{pseudo-isotopic}\index{pseudo-isotopic}; see
   \ocite{milnor-h-cobordism}*{Theorem 1.9}.
 \end{remark}
 
 
 
 
-As an immediate corollary, we get the following theorem.
+This immediately implies  the following theorem.
 \begin{theorem}\label{t:tqft-functoriality}
   Let $Z\colon \nCob\to \calC$ be an $n$-dimensional TQFT.
   \begin{enumerate}
-    \item For any orientation-preserving diffeomorphism $\ph\colon N_0\to N_1$, define
-      $Z(\ph)\colon Z(N_0)\to Z(N_1)$ by $Z(\ph)=Z(C_\ph)$. Then
+    \item For any orientation-preserving diffeomorphism $\ph\colon N_0\to N_1$,
+      define $Z(\ph)\colon Z(N_0)\to Z(N_1)$ by $Z(\ph)=Z(C_\ph)$. Then
       $Z(\ph_2\ph_1)= Z(\ph_2)\circ Z(\ph_1)$.
     \item If $\ph,\ph'$ are isotopic, then $Z(\ph)=Z(\ph')$.
   \end{enumerate}
 \end{theorem}
+
+As a corollary, this gives the action of the mapping class group on $Z(N)$.
+Recall that for an oriented  closed manifold $N$, the mapping clas group
+\index{mapping class group} $\Ga(N)$ is defined as the group of isotopy
+classes of orientation-preserving diffeomorphisms $\ph \colon N\to N$. 
+
+
+
+\begin{corollary}\label{c:mapping-class}
+  Let $Z$ be an $n$-dimensional TQFT. Then for any closed  oriented $(n-1)$-manifold 
+  $N$,  vector space $Z(N)$ has a natural action of the mapping class group $\Ga(N)$. 
+\end{corollary}  
+
 \clearpage

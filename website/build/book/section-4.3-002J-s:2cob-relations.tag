@@ -1,10 +1,10 @@
 <h2 id="s:2cob-relations" class="tex-section"><span data-tag="002J">4.3</span> Generators and relations of $\mathbf{Cob}_2$</h2>
 
 <p>
-Now let us apply the general theory of hte previous section to the question of classification of 2d TQFTs. 
+Now let us apply the general theory of the previous section to the question of the classification of 2d TQFTs. 
 </p>
 <p>
-First, choosing an excellent Morse function on a 2d cobordism $M$, we get a decomposition of $M$ into a composition of elementary cobordisms. Each elementary cobordism is a disjoint union of copies of the connected elementary cobordisms; and each connected elementary cobordism is isomorphic to one of the standard cobordisms shown in Table&#160;<a href="/tag/0029" data-tag="0029">4.1.1</a>: pair of pants, copants, cap, and cup. 
+First, choosing an excellent Morse function on a 2d cobordism $M$, we get a decomposition of $M$ into a composition of elementary cobordisms. Each elementary cobordism is a disjoint union of a connected elementary cobordism and several cylinders; and each connected elementary cobordism is isomorphic to one of the standard cobordisms shown in Table&#160;<a href="/tag/0029" data-tag="0029">4.1.1</a>: pair of pants, copants, cap, and cup. 
 </p>
 <p>
 Let us denote by $A=Z(S^1)$ the vector space associated to the circle, and by $m, i, \Delta , \varepsilon $ the linear operators corresponding to the standard cobordisms as shown below. 
@@ -14,7 +14,7 @@ Let us denote by $A=Z(S^1)$ the vector space associated to the circle, and by $m
     <div class="centered"><img class="includegraphics" src="/static/figures/c4-eqfig01.svg"></div>
 </div>
 <p>
-Note that $m$ and $\Delta $ are symmetric: $m\circ P= m$, where $P\colon A\otimes A\to A\otimes A$ is the permutation $P(a\otimes b)= b\otimes a$. Indeed, this follows from the isomorphism of cobordisms shown below: the standard copants surface admits a self-diffeomorphism (a $180^\circ $ rotation about its central vertical axis) that swaps the two input boundary circles and fixes the output boundary circle. 
+Note that $m$ and $\Delta $ are symmetric: $m\circ P= m$, where $P\colon A\otimes A\to A\otimes A$ is the permutation $P(a\otimes b)= b\otimes a$. Indeed, this follows from the isomorphism of cobordisms shown below: the standard copants surface admits a self-diffeomorphism (a $180^\circ $ rotation about its central vertical axis) that swaps the two input boundary circles and maps the output boundary circle to itself by a rotation, which is isotopic to the identity. 
 </p>
 <div class="equation" id="00F2">
     <span class="equation-label"><a href="/tag/00F2" data-tag="00F2">4.3.2</a></span>
@@ -24,13 +24,13 @@ Note that $m$ and $\Delta $ are symmetric: $m\circ P= m$, where $P\colon A\otime
  The analogous argument applied to the pants surface (turn the picture upside down) gives $P\circ \Delta = \Delta $. 
 </p>
 <p>
-Thus, a choice of an excellent Morse function $f$ on $M$, together with a choice of isomorphism $\varphi _ i$ of each of the connected elementary cobordisms defined by $f$ with one of the “standard” ones, gives us a presentation of $Z(M)$ as a composition of tensor products of operators $m, i, \Delta , \varepsilon $ shown in (<a href="/tag/002K" data-tag="002K">4.3.1</a>), and the identity operator $\operatorname{id}_ A$. Therefore, the structure of TQFT is completely determined by these 4 operators. 
+Thus, a choice of an excellent Morse function $f$ on $M$, together with a choice of an isomorphism $\varphi _ i$ of each of the connected elementary cobordisms defined by $f$ with one of the “standard” ones, gives us a presentation of $Z(M)$ as a composition of tensor products of operators $m, i, \Delta , \varepsilon $ shown in (<a href="/tag/002K" data-tag="002K">4.3.1</a>), and the identity operator $\operatorname{id}_ A$. Therefore, the structure of a TQFT is completely determined by these four operators. 
 </p>
 <p>
 Next, observe that the choice of isomorphisms $\varphi _ i$ is in fact irrelevant. Indeed, since any orientation-preserving diffeomorphism $\varphi $ of $S^1$ is isotopic to the identity, by Lemma&#160;<a href="/tag/001V" data-tag="001V">3.3.3</a> its action on $A$ is trivial: $\varphi _*=\operatorname{id}_ A$. From this it immediately follows that if $M$ is topologically a disk, considered as a cobordism $\varnothing \Rightarrow  S^1$ (i.e., a cap), then the operator $Z(M)\colon \mathbf{k}\to A$ does not depend on the choice of the isomorphism of $M$ with the standard cap; a similar result holds for the cup. 
 </p>
 <p>
-If $M$ is a cobordism $S^1\sqcup S^1\to S^1$ which is isomorphic to the standard pair of pants, there are just two isomorphisms up to isotopy; one is obtained from the other by composing with the diffeomorphism that interchanges the two circles that form the in-boundary. But since $m$ is symmetric as discussed above, both choices of isomorphism give us the same operator $Z(M)=m\colon A\otimes A\to A$. A similar statement holds for the cobordism $S^1\Rightarrow  S^1\sqcup S^1$. 
+If $M$ is a cobordism $S^1\sqcup S^1\to S^1$ which is isomorphic to the standard copants, there are just two isomorphisms up to isotopy; one is obtained from the other by composing with the diffeomorphism that interchanges the two circles that form the in-boundary. But since $m$ is symmetric as discussed above, both choices of isomorphism give us the same operator $Z(M)=m\colon A\otimes A\to A$. A similar statement holds for the cobordism $S^1\Rightarrow  S^1\sqcup S^1$. 
 </p>
 <p>
 Summarizing, we see that for any cobordism $M$, the presentation of $Z(M)$ as a composition of tensor products of $m, i, \Delta , \varepsilon $ only depends on the choice of an excellent Morse function and does not depend on any additional data. 
@@ -39,17 +39,17 @@ Summarizing, we see that for any cobordism $M$, the presentation of $Z(M)$ as a 
 Thus, to check that $Z(M)$ does not depend on any choices, we need to check that $Z(M)$ is invariant under the Cerf moves described in Theorem&#160;<a href="/tag/002H" data-tag="002H">4.2.2</a>. Let us analyze what these moves look like for $n=2$. 
 </p>
 <p>
-The birth-death moves (type $\alpha $) are easily seen to be of one of the following two types: 
+The birth–death moves (type $\alpha $) are easily seen to be of one of the following two types: 
 </p>
 <div class="centered"><img class="includegraphics" src="/static/figures/c4-eqfig02.svg" /></div>
 <p>
-Now let us consider the crossing move. Assume that we have a family of Morse functions $f_ s$ and two critical points $p_1, p_2$ such that for $s&lt;0$, $c_1&lt;c_2$, for $s&gt;0$, $c_1&gt;c_2$, and for $s=0$, $c_1=c_2=c$. Choose some $a_0&lt;c$, $a_1&gt;c$ and consider the (non-elementary) cobordism $M=f_{0}^{-1}([a_0, a_1])$. 
+Now let us consider the crossing move. Assume that we have a family of Morse functions $f_ s$ and two critical points $p_1, p_2$ such that for $s&lt;0$, $c_1&lt;c_2$, for $s&gt;0$, $c_1&gt;c_2$, and for $s=0$, $c_1=c_2=c$. Choose some $a_0&lt;c&lt;a_1$ such that $[a_0,a_1]$ contains no other critical values, and consider the (non-elementary) cobordism $M=f_{0}^{-1}([a_0, a_1])$. 
 </p>
 <p>
 Since operators of the form $X\otimes 1$ and $1\otimes Y$ commute anyway, if the points $p_1, p_2$ are in different connected components of the cobordism $M$, then the crossing move does not give any new conditions on $m, i, \Delta , \varepsilon $. Therefore, we only need to consider the case when the two critical points $p_1, p_2$ are in the same connected component of the critical level set $S=f_0^{-1}(c)$. This immediately implies that each of the critical points is of index 1. 
 </p>
 <p>
-The set $S$ is a smooth curve except at critical points, where $S$ looks like a coordinate cross; thus, $S$ is a graph with two 4-valent vertices $p_1$, $p_2$. Moreover, since $M$ is oriented, we can define an orientation on $S$ (for example, defining the tangent vector $v$ to $S$ by the condition that $(v, \operatorname{grad}f)$ is a positively oriented frame). Orientation also gives a cyclic order of edges at each vertex $p_ i$. Using Morse lemma, it is easy to see that near each critical points $S$ looks as shown below: 
+The set $S$ is a smooth curve except at critical points, where $S$ looks like a coordinate cross; thus, $S$ is a graph with two 4-valent vertices $p_1$, $p_2$. Moreover, since $M$ is oriented, we can define an orientation on $S$ (for example, defining the tangent vector $v$ to $S$ by the condition that $(v, \operatorname{grad}f)$ is a positively oriented frame). The orientation also gives a cyclic order of edges at each vertex $p_ i$. Using the Morse lemma, it is easy to see that near each critical point, $S$ looks as shown below: 
 </p>
 <div class="equation" id="00F3">
     <span class="equation-label"><a href="/tag/00F3" data-tag="00F3">4.3.3</a></span>
@@ -59,18 +59,18 @@ The set $S$ is a smooth curve except at critical points, where $S$ looks like a 
 <article class="env-lemma" id="002L">
   <p><a class="environment-identifier" href="/tag/002L">Lemma <span data-tag="002L">4.3.1</span>.</a> Let $S$ be a connected directed graph with two vertices $p_1, p_2$ of degree 4, together with a cyclic order of edges at each vertex, such that near each vertex it is locally isomorphic to the graph shown in (<a href="/tag/00F3" data-tag="00F3">4.3.3</a>). </p>
   <p>Then $S$ is isomorphic to one of the four graphs shown in Figure&#160;<a href="/tag/002M" data-tag="002M">4.3.1</a>, and their orientation reversals. </p>
-</article> The proof of this lemma is an elementary combinatorics argument; we leave details to the reader. Note that this lemma is about abstract graphs (directed, with cyclis order at vertices, not about their embeddings in the plane). 
+</article> The proof of this lemma is an elementary combinatorial argument; we leave the details to the reader. Note that this lemma is about abstract graphs (directed, with a cyclic order of edges at each vertex), not about their embeddings in the plane. 
 </p>
 <figure class="figure">
   <p>
  <img class="includegraphics" src="/static/figures/c4-fig15.svg" /> 
 </p>
-<figcaption class="figcaption">Figure 4.3.1. Possible shapes of critical level set $S$. Note that for the last graph, intersection points are not vertices.</figcaption>
+<figcaption class="figcaption">Figure 4.3.1. Possible shapes of the critical level set $S$. Note that for the last graph, intersection points are not vertices.</figcaption>
 
 
 </figure>
 <p>
-Each of these graphs uniquely determines the corresponding connected component of the cobordism $M=f_0^{-1}(c-\varepsilon , c+\varepsilon )$; we can recover it by replacing each arc of the graph by a thin ribbon. For example, for graph A, the corresponding cobordism is shown below (for reader's convenience, we also show it in a more familiar form): 
+Each of these graphs uniquely determines the corresponding connected component of the cobordism $M=f_0^{-1}([c-\varepsilon , c+\varepsilon ])$; we can recover it by replacing each arc of the graph by a thin ribbon. For example, for graph A, the corresponding cobordism is shown below (for the reader's convenience, we also show it in a more familiar form): 
 </p>
 <div class="centered"><img class="includegraphics" src="/static/figures/c4-eqfig03.svg" /></div>
 <p>
@@ -100,7 +100,7 @@ Similarly, graph $D$ gives a cobordism of genus 1 from $S^1$ to $S^1$; again, in
  and thus the corresponding Cerf move gives no new conditions on $m,\Delta $. 
 </p>
 <p>
-Summarising, we see that the non-trivial Cerf moves (both birth-death and crossings) for $n=2$ are shown in Figure&#160;<a href="/tag/002N" data-tag="002N">4.3.2</a>. In this table, we also include the algebraic identities on the operators $m, i, \Delta , \varepsilon $ (defined by (<a href="/tag/002K" data-tag="002K">4.3.1</a>)) corresponding to each of the moves. For the last move (Frobenius), we included two versions; this is not necessary, as any one of them implies the other, but will become useful later. 
+Summarizing, we see that the non-trivial Cerf moves (both birth–death and crossings) for $n=2$ are shown in Figure&#160;<a href="/tag/002N" data-tag="002N">4.3.2</a>. In this table, we also include the algebraic identities on the operators $m, i, \Delta , \varepsilon $ (defined by (<a href="/tag/002K" data-tag="002K">4.3.1</a>)) corresponding to each of the moves. For the last move (Frobenius), we include two versions; this is not necessary, as either of them implies the other (see Remark&#160;<a href="/tag/00FC" data-tag="00FC">4.3.1</a>), but it will be useful later. 
 </p>
 <figure class="figure">
   <div class="centered"> <table class="tabular">
@@ -264,7 +264,7 @@ Summarising, we see that the non-trivial Cerf moves (both birth-death and crossi
 
 </figure>
 <p>
-It is easy to see that the identities given by the unit and associativity moves are equivalent to the statement that $m, i$ define on $A=Z(S^1)$ a structure of an associative algebra. Similarly, coassociativity and counit say that $\Delta , \varepsilon $ define on $A$ a structure of coassocaitive coalgebra. 
+It is easy to see that the identities given by the unit and associativity moves (together with the symmetry of $m$ discussed above) are equivalent to the statement that $m, i$ define on $A=Z(S^1)$ the structure of an associative algebra with unit. Similarly, coassociativity and counit (together with the symmetry of $\Delta $) say that $\Delta , \varepsilon $ define on $A$ the structure of a coassociative coalgebra with counit. 
 </p>
 <p>
 Combining these identities with the symmetry relations $m\circ P = m$, $P\circ \Delta = \Delta $ established in (<a href="/tag/00F2" data-tag="00F2">4.3.2</a>), we obtain the following theorem. 
@@ -314,8 +314,8 @@ The Frobenius condition
 </article> 
 </p>
 <p>
-A standard way to restate the above theorem is using the notion of Frobenius algebra. <article class="env-definition" id="002R">
-  <p><a class="environment-identifier" href="/tag/002R">Definition <span data-tag="002R">4.3.1</span>.</a> A Frobenius algebra is a vector space over a field $\mathbf{k}$ with two structures: </p>
+A standard way to restate the above theorem is using the notion of a Frobenius algebra. <article class="env-definition" id="002R">
+  <p><a class="environment-identifier" href="/tag/002R">Definition <span data-tag="002R">4.3.1</span>.</a> A Frobenius algebra is a vector space $A$ over a field $\mathbf{k}$ with two structures: </p>
   <p><ul>
   <li><p>
 A structure of an associative algebra, with multiplication $m$ and unit $i\colon \mathbf{k}\to A$. 
@@ -331,10 +331,10 @@ A structure of a coassociative coalgebra, with comultiplication $\Delta $ and co
 <p>
 Then Theorem&#160;<a href="/tag/002P" data-tag="002P">4.3.2</a> can be rewritten as follows. <article class="env-theorem" id="002S">
   <p><a class="environment-identifier" href="/tag/002S">Theorem <span data-tag="002S">4.3.3</span>.</a> A 2d TQFT is equivalent to a commutative, cocommutative Frobenius algebra. </p>
-</article> In the next section we will show that cocommutativity follows from commutativity, so it is enough to require $A$ to be commutative; see Corollary&#160;<a href="/tag/0035" data-tag="0035">5.1.2</a>. 
+</article> In the next chapter we will show that cocommutativity follows from commutativity, so it is enough to require $A$ to be commutative; see Corollary&#160;<a href="/tag/0035" data-tag="0035">5.1.2</a>. 
 </p>
 <p>
 <article class="env-example" id="00G8">
-  <p><a class="environment-identifier" href="/tag/00G8">Example <span data-tag="00G8">4.3.1</span>.</a> Consider the trivial example $A=\mathbf{k}$, with the obvious Frobenius algebra structure. Then it is easy to see that for any 1-manifold $N$, including the empty one, the corresponding TQFT gives $Z(N)=\mathbf{k}$ (to be precise, $Z(N)$ is canonically isomorphic to $\mathbf{k}$), and for any 2-cobordism $M$, $Z(M)=\operatorname{id}$. </p>
+  <p><a class="environment-identifier" href="/tag/00G8">Example <span data-tag="00G8">4.3.1</span>.</a> Consider the trivial example $A=\mathbf{k}$, with the obvious Frobenius algebra structure. Then it is easy to see that for any closed 1-manifold $N$, including the empty one, the corresponding TQFT gives $Z(N)=\mathbf{k}$ (to be precise, $Z(N)$ is canonically isomorphic to $\mathbf{k}$), and for any 2-cobordism $M$, $Z(M)=\operatorname{id}$. </p>
 </article>  
 </p>

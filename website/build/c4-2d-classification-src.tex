@@ -4,16 +4,17 @@
 In this chapter, we present a full classification of 2-dimensional TQFTs; the
 final answer, given in \thref{t:2d-classification2}, states that such theories
 are classified by commutative Frobenius algebras. This is a relatively simple
-result; it goes back to at least 1989, see Dijkgraaf's thesis
-\cite{dijkgraaf-thesis}, but was probably known to experts much earlier. For
-us, it will serve as a model example for all future constructions.
+result; in some form, it goes back at least to 1989 (see Dijkgraaf's thesis
+\cite[Section 3.2]{dijkgraaf-thesis}), even though a mathematically rigorous
+proof was  not  published until 1996. For us, it will serve as a model example
+for all future constructions.
 
-For a two-dimensional TQFT, there is only one $1$-dimensional oriented closed
-manifold: the circle $S^1$, and any orientation-preserving diffeomorphism
-$S^1\to S^1$ is isotopic to the identity. It also seems obvious (and in fact
-can be justified using Morse theory, as we discuss below)  that any
-cobordism can be obtained by gluing pieces diffeomorphic to one of the
-cobordisms below together with the cylinder $S^1\times I$:
+For a two-dimensional TQFT, there is only one connected $1$-dimensional oriented
+closed manifold: the circle $S^1$, and any orientation-preserving diffeomorphism
+$S^1\to S^1$ is isotopic to the identity. It also seems obvious (and in fact can
+be justified using Morse theory, as we discuss below) that any cobordism can be
+obtained by gluing pieces diffeomorphic to one of the cobordisms below together
+with the cylinder $S^1\times I$:
 \begin{center}
   \begin{tikzpicture}
     \pic at (0,0) {pants};
@@ -25,7 +26,6 @@ cobordisms below together with the cylinder $S^1\times I$:
 
 It is also not hard to write some relations, such as the
 associativity relation
-
 \begin{equation}\label{e:2d-assoc-prelim}
   \begin{tikzpicture}[baseline = -1.2cm]
     \pic (p1) at (0,0) {copants};
@@ -41,16 +41,14 @@ associativity relation
 
 However, how can one show that this is the full list of relations?
 
-There are two approaches. One, used in \cite{kock}, uses the classification of
-surfaces; using that, we show that the relations we have are enough to bring any
-composition of generators to some canonical form. This approach does not require
-much beyond the classification of surfaces, but it does not generalize to
-higher dimensions.
+There are two approaches. One, used in  \cite{abrams} and \cite{kock},
+uses the classification of surfaces; using it, one shows that the relations
+we have are enough to bring any composition of generators to some canonical
+form. This approach does not require much beyond the classification of
+surfaces, but it does not generalize to higher dimensions.
 
 There is, however, an alternative approach, based on Morse and Cerf theory.
-This goes back at least to \cite{abrams}, who used a handle-decomposition
-viewpoint to give a classification of 2d TQFTs; the Cerf-theoretic version
-is presented in \cite{moore-segal} and \cite[Lecture~23]{freed-bordism},
+It is presented in \cite{moore-segal} and \cite[Lecture~23]{freed-bordism},
 the latter of which our exposition follows. One can also find more details
 in the unpublished paper \cite{gay-wehrheim-woodward}.
 
@@ -64,7 +62,7 @@ Recall that given a smooth real-valued function $f$ on an $n$-dimensional
 manifold $M$, a point $p\in M$ is a \emph{non-degenerate critical point}
 \index{critical point!non-degenerate} if
 $\del_i f (p)=0$ and the Hessian matrix
-$a_{ij}=\frac{\del^2 f}{\del  x^i \del x^j}(p)$ is non-degenerate. It is easy to
+$a_{ij}=\frac{\del^2 f}{\del x^i \del x^j}(p)$ is non-degenerate. It is easy to
 see that this is independent of the choice of coordinate system. It is also
 known that in such a case, one can choose local coordinates in a neighborhood
 of $p$ so that
@@ -76,9 +74,9 @@ of $p$ so that
 The number $r$ of minuses in \eqref{e:crit-point} is called the \emph{index}
 of the critical point.
 
-It is immediate from the definition that a non-degenerate critical point
-is isolated; thus, if $M$ is compact, there can be only finitely many
-non-degenerate critical points.
+It is immediate from the Morse lemma that a non-degenerate critical point
+is isolated; thus, if $M$ is compact and all critical points of $f$ are
+non-degenerate, there are only finitely many of them.
 
 \begin{definition}\label{d:morse_function}\index{Morse function}
   Let $M$ be a closed $n$-manifold. A Morse function is a
@@ -89,7 +87,7 @@ non-degenerate critical points.
 It will be more useful to impose a stronger condition.
 
 \begin{definition}\label{d:morse_function2}
-  Let $M$ be a closed $n$-manifold. A Morse function  $f\colon M\to \R$
+  Let $M$ be a closed $n$-manifold. A Morse function $f\colon M\to \R$
   is called \emph{excellent}\index{Morse function!excellent} if all critical
   values $c_i=f(p_i)$ are distinct.
 \end{definition}
@@ -110,8 +108,8 @@ or to cobordisms $N_0\cob{M} N_1$.
     \item all critical points of $f$ are in the interior
       $M\setminus (N_0\cup N_1)$, and all critical points are non-degenerate.
   \end{itemize}
-  If, in addition, all critical values of $f$ are distinct and different from $a_0$, $a_1$, 
-  then $f$ is called \emph{excellent}.
+  If, in addition, all critical values of $f$ are distinct and different from
+  $a_0$, $a_1$, then $f$ is called \emph{excellent}.
 \end{definition}
  Again, one can prove
 that such functions exist and form an open dense subset of all functions
@@ -123,7 +121,7 @@ critical values: if $c_i<c_{i+1}$ are critical values, with no other critical
 values between them, then for all $t\in I=[c_i+\eps, c_{i+1}-\eps]$, the
 manifolds $M_t$ are diffeomorphic, and $M_I=f^{-1}(I)\isoto N_{t_0} \times I$,
 where $N_{t_0}=f^{-1}(t_0)$ is a slice for any $t_0\in I$. Moreover, one can
-give an explicit description of how topology of $M_t$ changes when one  goes
+give an explicit description of how the topology of $M_t$ changes when one goes
 through a critical point (this is usually referred to as ``attaching a
 handle''). In particular, this implies that if $f$ has no critical points, then
 $M$ is a cylinder: $M\isoto N\times I$.
@@ -131,8 +129,8 @@ $M$ is a cylinder: $M\isoto N\times I$.
 Therefore, one can use Morse functions to decompose a cobordism as a
 composition of ``elementary'' cobordisms.
 \begin{definition}\label{d:elem-cobordism}\index{elementary cobordism}
-  An \emph{elementary cobordism} is a cobordism that admits a Morse  function
-  with a single  critical point.
+  An \emph{elementary cobordism} is a cobordism that admits a Morse function
+  with a single critical point.
 \end{definition}
 
 Thus, given an excellent function with critical values $c_1<\dots<c_k$,
@@ -142,19 +140,18 @@ can choose intermediate values $a_i\in (c_i, c_{i+1})$; then we have
   M=M_k\circ \dots \circ M_1,
 \end{equation}
 where $M_i=f^{-1}([a_{i-1}, a_i])$ is the elementary cobordism containing
-critical point $p_i$. It follows from the result above that up to
+the critical point $p_i$. It follows from the result above that up to
 isomorphism, $M_i$ does not depend on the choice of $a_i$. We will refer to
 \eqref{e:morse-decomposition} as a
 \emph{Morse decomposition}\index{Morse decomposition} of a cobordism.
 
-In particular, for $n=2$, for an excellent  Morse function $f$ each
-non-critical level set is a smooth one-dimensional manifold (and thus a
-finite union of circles). Using Morse lemma, it is easy to see that  each
-connected elementary cobordism is isomorphic to one of the four cobordisms
-shown in Table~\ref{tab:elementary-2cob}. Note that here we follow our
-convention that cobordisms go ``top to bottom''; thus, the $y$-axis is
-directed downward, so that the minimal value of $f$ is at the top, and the
-maximal, at the bottom.
+In particular, for $n=2$, for an excellent Morse function $f$ each non-critical
+level set is a smooth one-dimensional manifold (and thus a finite disjoint union
+of circles). Using the Morse lemma, it is easy to see that each connected
+elementary cobordism is isomorphic to one of the four cobordisms shown in
+Table~\ref{tab:elementary-2cob}. Note that here we follow our convention that
+cobordisms go ``top to bottom''; thus, the $y$-axis is directed downward, so
+that the minimal value of $f$ is at the top, and the maximal, at the bottom.
 \begin{table}[ht]
   \centering
   \setlength{\extrarowheight}{8pt}%
@@ -186,7 +183,7 @@ maximal, at the bottom.
   \label{tab:elementary-2cob}
 \end{table}
 A (not necessarily connected) elementary cobordism is obtained as a disjoint
-union of one of the connected elementary cobordisms and  several copies of the
+union of one of the connected elementary cobordisms and several copies of the
 identity cobordism, i.e., $S^1\times I$.
 
 Thus, we see that a choice of an excellent function gives a presentation of a
@@ -208,8 +205,8 @@ if we replace one excellent Morse function by another.
 
 It is easy to see that the space of excellent functions is not connected; thus,
 if $f_0$, $f_1$ are two excellent functions, and we want to connect them by a
-path $f_s$, $s\in [0,1]$ in the space of functions, in general this path must go
-through some points which are not excellent. This was studied by Cerf in
+path $f_s$, $s\in [0,1]$, in the space of functions, in general this path must
+go through some points which are not excellent. This was studied by Cerf in
 \cite{cerf} and is usually referred to as \emph{Cerf theory}\index{Cerf
 theory}.
 
@@ -221,10 +218,10 @@ theory}.
   $0$ and $1$ respectively; for $s>0$, it is also excellent, with no critical
   points; and for $s=0$, $f_0(x)=x^3$ is not a Morse function: zero is a
   degenerate critical point. Thus, in this case, $f_s$, considered as a path in
-  the function space, connects two excellent Morse functions but goes through a non-Morse
-  function $f_0=x^3$. This path describes annihilation of a pair of critical
-  points (or, going in the opposite direction, birth of a pair of critical
-  points).
+  the function space, connects two excellent Morse functions but goes through a
+  non-Morse function $f_0=x^3$. This path describes the annihilation of a pair
+  of critical points (or, going in the opposite direction, the birth of a pair
+  of critical points).
 
   \begin{figure}[ht]
     \centering
@@ -281,7 +278,7 @@ theory}.
         \addplot[blue, thick] {x^3+0.4*x};
       \end{axis}
     \end{tikzpicture}
-    \caption{Birth-death of critical points in family  $f_s=x^3+sx$}
+    \caption{Birth--death of critical points in the family $f_s=x^3+sx$.}
     \label{fig:x3}
   \end{figure}
 
@@ -289,10 +286,11 @@ theory}.
 \end{example}
 
 \begin{example}\label{x:morse-crossing}
-  Consider the family of  functions $f_s(x)=x^2-x^4+sx$ on $\R$. Then for
-  values of $s$ close to 0, $f_s$ has three  critical points, all of them
-  non-degenerate: local minimum at $p_0$ close to 0, and local maxima at
-  points $p_1<0$, $p_2>0$.
+  Consider the family of functions $f_s(x)=2x^2-x^4+sx$ on $\R$. Then for values
+  of $s$ close to 0, $f_s$ has three critical points, all of them
+  non-degenerate: a local minimum at $p_0$ close to 0, and local maxima at
+  points $p_1<0$ and $p_2>0$, with critical values $c_1=f_s(p_1)$,
+  $c_2=f_s(p_2)$.
 
   For $s<0$, we have $c_1>c_2$; for $s>0$, $c_1<c_2$, and for $s=0$, $c_1 = c_2$
   as shown below, so for $s=0$ this function is Morse but not excellent. Thus,
@@ -360,7 +358,7 @@ theory}.
       \end{axis}
     \end{tikzpicture}
 
-    \caption{Crossing of critical values in family $f_s=x^2-x^4+sx$}
+    \caption{Crossing of critical values in the family $f_s=2x^2-x^4+sx$.}
     \label{fig:x4-x2}
   \end{figure}
 
@@ -372,7 +370,7 @@ functions are at worst as in these examples. More precisely, we have the
 following.
 
 \begin{definition}\label{d:morse-good}
-  A \emph{good}  function on an $n$-dimensional closed manifold $M$ is a
+  A \emph{good} function on an $n$-dimensional closed manifold $M$ is a
   smooth function of one of the following types:
   \begin{itemize}
     \item {\bf Type $\alpha$}: all critical values are distinct, and all
@@ -395,7 +393,7 @@ It was shown by Cerf that this is the beginning of a stratification of the
 space $\calF=C^\infty(M)$: we can write
 $\calF = \calF^0\sqcup \calF^1\sqcup\dots$,
 where $\calF^0$ is the set of excellent functions, which is open and dense in
-$\calF$; the set $\calF^1$ consists of good functions and is a codimension 1
+$\calF$; the set $\calF^1$ consists of good functions and is a codimension-1
 subset of $\calF$, and so on. (One can also define higher codimension strata,
 but we will not need them.) A review of this theory can be found, e.g., in
 \cite[Section I.2]{hatcher-wagoner}.
@@ -416,7 +414,7 @@ Moreover, this path can be chosen so that it is transversal to $\calF^1$ (we
 skip the precise definition, referring the reader to \cite{hatcher-wagoner}).
 This allows one to describe how the Morse decomposition changes when we cross
 one of the components of $\calF^1$ (``walls''). Crossing a component
-corresponding to a type-$\alpha$ function produces a \emph{birth-death move}:
+corresponding to a type-$\alpha$ function produces a \emph{birth--death move}:
 two adjacent critical points (of indices $r-1, r$) appear or disappear.
 Crossing a component corresponding to a type-$\beta$ function produces a
 \emph{crossing move}: two critical values $c_i, c_{i+1}$ exchange their order.
@@ -425,7 +423,7 @@ Crossing a component corresponding to a type-$\beta$ function produces a
   Let $M$ be a cobordism, and let $f_0, f_1$ be two excellent functions on
   $M$, with corresponding Morse decompositions $\calD_0$, $\calD_1$ as in
   \eqref{e:morse-decomposition}. Then $\calD_0$ and $\calD_1$ can be obtained
-  from each other by a finite sequence of birth-death moves and crossing
+  from each other by a finite sequence of birth--death moves and crossing
   moves and their inverses.
 \end{theorem}
 
@@ -433,15 +431,15 @@ Crossing a component corresponding to a type-$\beta$ function produces a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Generators and relations of $\twoCob$}\label{s:2cob-relations}
 
-Now let us apply the general theory of hte previous section to the question
-of classification of 2d TQFTs.
+Now let us apply the general theory of the previous section to the question
+of the classification of 2d TQFTs.
 
 First, choosing an excellent Morse function on a 2d cobordism $M$, we get a
-decomposition of $M$ into a composition of elementary cobordisms. Each elementary
-cobordism is a disjoint union of copies of the connected elementary cobordisms;
-and each connected elementary cobordism is isomorphic to one of the standard
-cobordisms shown in Table~\ref{tab:elementary-2cob}: pair of pants, copants,
-cap, and cup.
+decomposition of $M$ into a composition of elementary cobordisms. Each
+elementary cobordism is a disjoint union of a connected elementary cobordism and
+several cylinders; and each connected elementary cobordism is isomorphic to one
+of the standard cobordisms shown in Table~\ref{tab:elementary-2cob}: pair of
+pants, copants, cap, and cup.
 
 Let us denote by $A=Z(S^1)$ the vector space associated to the circle, and by
 $m, i, \Delta, \eps$ the linear operators corresponding to the standard
@@ -458,12 +456,13 @@ cobordisms as shown below.
 
 
 
-Note  that $m$ and $\Delta$ are symmetric: $m\circ P= m$, where
+Note that $m$ and $\Delta$ are symmetric: $m\circ P= m$, where
 $P\colon A\otimes A\to A\otimes A$ is the permutation
 $P(a\otimes b)= b\otimes a$. Indeed, this follows from the isomorphism of
-cobordisms shown below: the standard copants surface admits a self-diffeomorphism
-(a $180^\circ$ rotation about its central vertical axis) that swaps the two
-input boundary circles and fixes the output boundary circle.
+cobordisms shown below: the standard copants surface admits a
+self-diffeomorphism (a $180^\circ$ rotation about its central vertical axis)
+that swaps the two input boundary circles and maps the output boundary circle to
+itself by a rotation, which is isotopic to the identity.
 \begin{equation}\label{e:m-symmetric}
   \begin{tikzpicture}[baseline = -1.0cm]
     % LHS: two slanted cylinders crossing (a "permutation" cobordism),
@@ -490,25 +489,26 @@ The analogous argument applied to the pants surface (turn the picture upside
 down) gives $P\circ\Delta = \Delta$.
 
 Thus, a choice of an excellent Morse function $f$ on $M$, together with a
-choice of isomorphism $\ph_i$ of each of the connected elementary
+choice of an isomorphism $\ph_i$ of each of the connected elementary
 cobordisms defined by $f$ with one of the ``standard'' ones, gives us a
 presentation of $Z(M)$ as a composition of tensor products of operators $m,
 i, \Delta, \eps$ shown in \eqref{e:frobenius-data}, and the identity
-operator $\id_A$. Therefore, the structure of TQFT is completely determined
-by these 4 operators.
+operator $\id_A$. Therefore, the structure of a TQFT is completely determined
+by these four operators.
 
 
 
 Next, observe that the choice of isomorphisms $\ph_i$ is in fact irrelevant.
 Indeed, since any orientation-preserving diffeomorphism $\ph$ of $S^1$ is
-isotopic to the identity, by \leref{l:tqft-isotopy} its action on $A$ is trivial:
-$\ph_*=\id_A$. From this it immediately follows that if $M$ is topologically a
-disk, considered as a cobordism $\varnothing \cob{} S^1$ (i.e., a cap), then the
-operator $Z(M)\colon \kk \to A$ does not depend on the choice of the isomorphism
-of $M$ with the standard cap; a similar result holds for the cup.
+isotopic to the identity, by \leref{l:tqft-isotopy} its action on $A$ is
+trivial: $\ph_*=\id_A$. From this it immediately follows that if $M$ is
+topologically a disk, considered as a cobordism $\varnothing \cob{} S^1$ (i.e.,
+a cap), then the operator $Z(M)\colon \kk \to A$ does not depend on the choice
+of the isomorphism of $M$ with the standard cap; a similar result holds for the
+cup.
 
 If $M$ is a cobordism $S^1\sqcup S^1\to S^1$ which is isomorphic to the
-standard pair of pants, there are just two isomorphisms up to isotopy; one is
+standard copants, there are just two isomorphisms up to isotopy; one is
 obtained from the other by composing with the diffeomorphism that interchanges
 the two circles that form the in-boundary. But since $m$ is symmetric as
 discussed above, both choices of isomorphism give us the same operator
@@ -524,7 +524,7 @@ Thus, to check that $Z(M)$ does not depend on any choices, we need to check
 that $Z(M)$ is invariant under the Cerf moves described in \thref{t:cerf}. Let
 us analyze what these moves look like for $n=2$.
 
-The birth-death moves (type $\alpha$) are easily seen to be of one of the
+The birth--death moves (type $\alpha$) are easily seen to be of one of the
 following two types:
 \begin{align*}
   &\qquad
@@ -544,14 +544,14 @@ following two types:
     \pic[notop,cobheight=0.3cm] at (p-bottom2) {cylinder};
     \node at (1.6,-0.6) {$\leftrightarrow$};
     \pic[cobheight=1.5cm] at (2.6,0) {cylinder};
-  \end{tikzpicture}\\[5pt]
+  \end{tikzpicture}
 \end{align*}
 
 Now let us consider the crossing move. Assume that we have a family of Morse
 functions $f_s$ and two critical points $p_1, p_2$ such that for $s<0$,
 $c_1<c_2$, for $s>0$, $c_1>c_2$, and for $s=0$, $c_1=c_2=c$. Choose some
-$a_0<c$, $a_1>c$ and consider the (non-elementary) cobordism
-$M=f_{0}^{-1}([a_0, a_1])$.
+$a_0<c<a_1$ such that $[a_0,a_1]$ contains no other critical values, and
+consider the (non-elementary) cobordism $M=f_{0}^{-1}([a_0, a_1])$.
 
 Since operators of the form $X\otimes 1$ and $1\otimes Y$ commute anyway, if
 the points $p_1, p_2$ are in different connected components of the cobordism
@@ -565,10 +565,10 @@ index 1.
 The set $S$ is a smooth curve except at critical points, where $S$ looks like a
 coordinate cross; thus, $S$ is a graph with two 4-valent vertices $p_1$, $p_2$.
 Moreover, since $M$ is oriented, we can define an orientation on $S$ (for
-example, defining the tangent vector $v$ to $S$ by the condition that $(v, \grad
-f)$ is a positively oriented frame). Orientation also gives a cyclic order of
-edges at each vertex $p_i$. Using Morse lemma, it is easy to see that
-near each critical points $S$ looks as shown below:
+example, defining the tangent vector $v$ to $S$ by the condition that
+$(v, \grad f)$ is a positively oriented frame). The orientation also gives a
+cyclic order of edges at each vertex $p_i$. Using the Morse lemma, it is easy to
+see that near each critical point, $S$ looks as shown below:
 \begin{equation}\label{e:S-local}
   \begin{tikzpicture}
   \node[dotnode] (p) at (0,0){};
@@ -587,9 +587,10 @@ near each critical points $S$ looks as shown below:
    Then $S$ is isomorphic to one of the four graphs shown in
    \firef{f:critical-level}, and their orientation reversals.
 \end{lemma}
-The proof of this lemma is an  elementary combinatorics argument; we leave
-details  to the reader. Note that this lemma is about abstract graphs (directed, 
-with cyclis order at vertices, not about their embeddings in the plane).
+The proof of this lemma is an elementary combinatorial argument; we leave the
+details to the reader. Note that this lemma is about abstract graphs (directed,
+with a cyclic order of edges at each vertex), not about their embeddings in the
+plane.
 
 
 \begin{figure}[ht]
@@ -631,16 +632,16 @@ with cyclis order at vertices, not about their embeddings in the plane).
       \node at (1, -1.25) {$D$};
     \end{scope}
   \end{tikzpicture}
-  \caption{Possible shapes of critical level set $S$. Note that for the last
+  \caption{Possible shapes of the critical level set $S$. Note that for the last
   graph, intersection points are not vertices.}\label{f:critical-level}
 \end{figure}
 
 
 Each of these graphs uniquely determines the corresponding connected component
-of the cobordism $M=f_0^{-1}(c-\eps, c+\eps)$; we can recover it by replacing
+of the cobordism $M=f_0^{-1}([c-\eps, c+\eps])$; we can recover it by replacing
 each arc of the graph by a thin ribbon. For example, for graph A, the
-corresponding cobordism is shown below (for reader's convenience, we also show
-it in a more familiar form):
+corresponding cobordism is shown below (for the reader's convenience, we also
+show it in a more familiar form):
 $$
 \begin{tikzpicture}[vcenter]
       \draw[blue, fill=black!10] (-1.2, 0) to [out=90, in=180, looseness=1.2]
@@ -754,7 +755,6 @@ of copants and pants. Thus, it gives no new conditions on $m, \Delta$.
 
 Similarly, graph $D$ gives a cobordism of genus 1 from $S^1$ to $S^1$; again,
 in this case both for $s<0$ and for $s>0$ the Morse decomposition looks like
-
 $$
 \begin{tikzpicture}[scale =0.5, every
   pic/.style={scale=0.5},vcenter]%frobenius
@@ -765,12 +765,13 @@ $$
 $$
 and thus the corresponding Cerf move gives no new conditions on $m,\Delta$.
 
-Summarising, we see that the non-trivial Cerf moves (both birth-death and
+Summarizing, we see that the non-trivial Cerf moves (both birth--death and
 crossings) for $n=2$ are shown in \firef{f:cerf-dim2}. In this table, we also
 include the algebraic identities on the operators $m, i, \Delta, \eps$ (defined
-by \eqref{e:frobenius-data}) corresponding to each of the moves. For the 
-last move (Frobenius), we included two versions; this is not necessary, 
-as any one of them implies the other, but will become useful later. 
+by \eqref{e:frobenius-data}) corresponding to each of the moves. For the last
+move (Frobenius), we include two versions; this is not necessary, as either of
+them implies the other (see \reref{r:frobenius-two}), but it will be useful
+later.
 
 \begin{figure}[ht]
 \centering
@@ -856,10 +857,12 @@ as any one of them implies the other, but will become useful later.
          the corresponding algebraic identities.}\label{f:cerf-dim2}
 \end{figure}
 
-It is easy to see that the identities given by the  unit and associativity moves
-are equivalent to the statement that $m, i$ define on $A=Z(S^1)$ a structure of
-an associative algebra. Similarly, coassociativity and counit say that $\Delta,
-\eps$ define on $A$ a structure of coassocaitive coalgebra.
+It is easy to see that the identities given by the unit and associativity moves
+(together with the symmetry of $m$ discussed above) are equivalent to the
+statement that $m, i$ define on $A=Z(S^1)$ the structure of an associative
+algebra with unit. Similarly, coassociativity and counit (together with the
+symmetry of $\Delta$) say that $\Delta, \eps$ define on $A$ the structure of a
+coassociative coalgebra with counit.
 
 Combining these identities with the symmetry relations $m\circ P = m$,
 $P\circ \Delta = \Delta$ established in \eqref{e:m-symmetric}, we obtain the
@@ -903,10 +906,11 @@ following theorem.
 
 
 
-A standard way to restate the above theorem is using the notion of Frobenius
+A standard way to restate the above theorem is using the notion of a Frobenius
 algebra.
 \begin{definition}\label{d:frobenius}\index{Frobenius algebra}
-  A Frobenius algebra is a vector space over a field $\kk$ with two structures:
+  A Frobenius algebra is a vector space $A$ over a field $\kk$ with two
+  structures:
   \begin{itemize}
     \item A structure of an associative algebra, with multiplication $m$ and
       unit $i\colon \kk \to A$.
@@ -922,14 +926,14 @@ Then \thref{t:2d-classification} can be rewritten as follows.
 \begin{theorem}\label{t:2d-classification2}
   A 2d TQFT is equivalent to a commutative, cocommutative Frobenius algebra.
 \end{theorem}
-In the next section we will show that cocommutativity follows from
+In the next chapter we will show that cocommutativity follows from
 commutativity, so it is enough to require $A$ to be commutative; see
 \coref{c:frobenius-commutative}.
 
 
 \begin{example}\label{x:trivial-2d}
   Consider the trivial example $A=\kk$, with the obvious Frobenius algebra
-structure. Then it is easy to see that for any  1-manifold $N$, including
+structure. Then it is easy to see that for any closed 1-manifold $N$, including
 the empty one, the corresponding TQFT gives $Z(N)=\kk$ (to be precise,
 $Z(N)$ is canonically isomorphic to $\kk$), and for any 2-cobordism $M$,
 $Z(M)=\id$.

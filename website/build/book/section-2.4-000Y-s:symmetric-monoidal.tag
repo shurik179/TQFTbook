@@ -17,7 +17,7 @@
     <span class="equation-label"><a href="/tag/00EW" data-tag="00EW">2.4.1</a></span>
     <div class="centered"><img class="includegraphics" src="/static/figures/c2-fig06.svg"></div>
 </div>
-</article> The hexagon axiom looks complicated; to make it easier to understand, one can drop all associativity isomorphisms, replacing the hexagon axiom with the one below 
+</article> The hexagon axiom looks complicated; to make it easier to understand, one can drop all associativity isomorphisms, replacing the hexagon axiom with the following diagram: 
 </p>
 <div class="equation" id="00EX">
     <span class="equation-label"><a href="/tag/00EX" data-tag="00EX">2.4.2</a></span>
@@ -29,10 +29,10 @@
   <p><a class="environment-identifier" href="/tag/0010">Example <span data-tag="0010">2.4.1</span>.</a></p>
   <p><ol>
   <li><p>
-Category $\mathbf{Set}$ with respect to disjoint union is a symmetric monoidal category; same is true for categories $\mathbf{Man}$, $\mathbf{PLMan}$. 
+Category $\mathbf{Set}$ with respect to disjoint union is a symmetric monoidal category; the same is true for the categories $\mathbf{Man}$, $\mathbf{PLMan}$. 
 </p>
 </li><li><p>
-The category of vector spaces over $\mathbf{k}$ is a symmetric monoidal category. Same is true for categories of representations of a group $G$ or a Lie algebra $\mathfrak {g}$. 
+The category of vector spaces over $\mathbf{k}$ is a symmetric monoidal category. The same is true for the categories of representations of a group $G$ or a Lie algebra $\mathfrak {g}$. 
 </p>
 </li><li><p>
 (Super vector spaces). Consider the category $\mathbf{SVec}$ whose objects are $\mathbb {Z}_2$-graded vector spaces $V=V_0\oplus V_1$. This has an obvious monoidal structure. Define the commutativity isomorphism $c_{V,W}\colon V\otimes W \to W\otimes V$ by 
@@ -41,12 +41,12 @@ The category of vector spaces over $\mathbf{k}$ is a symmetric monoidal category
   \[  c(v\otimes w)=(-1)^{pq} w\otimes v, \quad v\in V_ p, w\in W_ q.  \]
 </div>
 <p>
- Then this defines on the category $\mathbf{SVec}$ a structure of a symmetric monoidal category. 
+ Then this defines on the category $\mathbf{SVec}$ the structure of a symmetric monoidal category. 
 </p>
 </li>
 </ol></p>
-</article> Note that one can also define the symmetric structure on $\mathbf{SVec}$ without the $(-1)^{pq}$ factor; this illustrates the fact that a monoidal category can have several different symmetric structures. <article class="env-remark" id="">
-  <p><a class="environment-identifier" href="/tag/">Remark <span data-tag="">2.4.1</span>.</a>There are monoidal categories that do not have a natural symmetric structure; for example, the category $\mathbf{Vec}_ G$ of $G$-graded vector spaces, or a category of bimodules over a ring. There are also “braided” categories where we do have isomorphisms $c_{X,Y}\colon X\otimes Y \to Y\otimes X$, but these isomorphisms fail to satisfy condition $c^2=\operatorname{id}$. The most famous example of a braided category is the category of representations of a quantum group. We will discuss braided categories later (see Chapter&#160;<a href="/tag/00E9" data-tag="00E9">20</a>). </p>
+</article> Note that one can also define a symmetric structure on $\mathbf{SVec}$ without the $(-1)^{pq}$ factor; this illustrates the fact that a monoidal category can have several different symmetric structures. <article class="env-remark" id="00HN">
+  <p><a class="environment-identifier" href="/tag/00HN">Remark <span data-tag="00HN">2.4.1</span>.</a> There are monoidal categories that do not have a natural symmetric structure; for example, the category $\mathbf{Vec}_ G$ of $G$-graded vector spaces for a non-abelian group $G$, or a category of bimodules over a ring. There are also “braided” categories where we do have isomorphisms $c_{X,Y}\colon X\otimes Y \to Y\otimes X$, but these isomorphisms fail to satisfy the condition $c^2=\operatorname{id}$. The most famous example of a braided category is the category of representations of a quantum group. We will discuss braided categories later (see Chapter&#160;<a href="/tag/00E9" data-tag="00E9">20</a>). </p>
 </article> 
 </p>
 <p>
@@ -58,13 +58,13 @@ As before, the real importance of the hexagon axiom is the following coherence t
   <p><a class="environment-identifier" href="/tag/0011">Theorem <span data-tag="0011">2.4.1</span> <span class="named">(Mac Lane's coherence theorem for symmetric monoidal categories)</span>.</a>Let $\mathcal{C}$ be a symmetric monoidal category. Let $F_1, F_2\colon \mathcal{C}^ n\to \mathcal{C}$ be two functors obtained by compositions of </p>
   <p><ul>
   <li><p>
-tensor product functor $\otimes \colon \mathcal{C}\times \mathcal{C}\to \mathcal{C}$ 
+the tensor product functor $\otimes \colon \mathcal{C}\times \mathcal{C}\to \mathcal{C}$ 
 </p>
 </li><li><p>
-functors $X\mapsto X\otimes \mathbf{1}$, $X\mapsto \mathbf{1}\otimes X$ 
+the functors $X\mapsto X\otimes \mathbf{1}$, $X\mapsto \mathbf{1}\otimes X$ 
 </p>
 </li><li><p>
-permutation functor $\mathcal{C}\times \mathcal{C}\to \mathcal{C}\times \mathcal{C}\colon (A, B)\mapsto (B,A)$ 
+the permutation functor $\mathcal{C}\times \mathcal{C}\to \mathcal{C}\times \mathcal{C}\colon (A, B)\mapsto (B,A)$ 
 </p>
 </li>
 </ul></p>
@@ -75,20 +75,20 @@ permutation functor $\mathcal{C}\times \mathcal{C}\to \mathcal{C}\times \mathcal
   <p> Then </p>
   <p><ol>
   <li><p>
-There exists a functorial isomorphism $F_1\simeq F_2$, obtained by composition of associativity isomorphism $\alpha $, left and right unit isomorphisms $l,r$, commutativity isomorphism $c$, and their inverses. 
+There exists a functorial isomorphism $F_1\simeq F_2$, obtained by composition of the associativity isomorphism $\alpha $, the left and right unit isomorphisms $l,r$, the commutativity isomorphism $c$, and their inverses. 
 </p>
 </li><li><p>
 Any two such isomorphisms $F_1\to F_2$ are equal. 
 </p>
 </li>
 </ol></p>
-</article> Similar to Theorem&#160;<a href="/tag/000M" data-tag="000M">2.3.2</a>, this theorem can be understood as a statement that a certain cell complex is simply connected; if we only use permutations and tensor product (i.e., no units), then this complex is called <em>permutoassociahedron</em>. (Yes, we know, it is long and impossible to spell.) 
+</article> Similar to Theorem&#160;<a href="/tag/000M" data-tag="000M">2.3.2</a>, this theorem can be understood as a statement that a certain cell complex is simply connected; if we only use permutations and tensor product (i.e., no units), then this complex is called the <em>permutoassociahedron</em>. (Yes, we know, it is long and impossible to spell.) 
 </p>
 <p>
 As before, we skip the proof of this theorem, referring the reader to <span class="cite">[<a href="/bibliography/mac-lane">ML1998</a>, <span class="postnote">Section XI.1</span>]</span>. 
 </p>
 <p>
 <article class="env-corollary" id="00FZ">
-  <p><a class="environment-identifier" href="/tag/00FZ">Corollary <span data-tag="00FZ">2.4.2</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal category and let $A_ s$, $s\in S$ be a collection of objects in $\mathcal{C}$ indexed by a finite set $S$. Then we have a well-defined (up to a canonical isomorphism) object $ \bigotimes _{s\in S} A_ s$. </p>
+  <p><a class="environment-identifier" href="/tag/00FZ">Corollary <span data-tag="00FZ">2.4.2</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal category and let $A_ s$, $s\in S$, be a collection of objects in $\mathcal{C}$ indexed by a finite set $S$. Then we have a well-defined (up to a canonical isomorphism) object $ \bigotimes _{s\in S} A_ s$. </p>
 </article> 
 </p>

@@ -1,7 +1,7 @@
 <h2 id="s:frobenius-ss" class="tex-section"><span data-tag="003D">5.2</span> Semisimple Frobenius algebras</h2>
 
 <p>
-Recall that an associative algebra is semisimple if it is semisimple as a left module over itself. As we will see later, semisimple algebras play a special role in the construction of TQFTs, so in this section, we study <strong>semisimple</strong> Frobenius algebras. We have already seen one example: the Frobenius algebra $A=\operatorname{Mat}_ n(\mathbf{k})$ given in Example&#160;<a href="/tag/003B" data-tag="003B">5.1.2</a>. In fact, over an algebraically closed field, it is the most general example of a semisimple symmetric Frobenius algebra. Namely, we have the following lemma. 
+Recall that an associative algebra is semisimple if it is semisimple as a left module over itself. As we will see later, semisimple algebras play a special role in the construction of TQFTs, so in this section, we study <strong>semisimple</strong> Frobenius algebras. We have already seen one example: the Frobenius algebra $A=\operatorname{Mat}_ n(\mathbf{k})$ given in Example&#160;<a href="/tag/003B" data-tag="003B">5.1.2</a>. In fact, over an algebraically closed field, direct sums of such algebras are the only examples of semisimple symmetric Frobenius algebras. Namely, we have the following lemma. 
 </p>
 <p>
 <article class="env-lemma" id="003E">
@@ -14,7 +14,7 @@ Recall that an associative algebra is semisimple if it is semisimple as a left m
   \[  \varepsilon (a)=\sum _ i \lambda _ i \operatorname{tr}(a_ i)  \]
 </div>
   <p> for some constants $\lambda _ i\ne 0$, where $a_ i\in \operatorname{Mat}_{n_ i}(\mathbf{k})$ is the $i$-th component of $a$. </p>
-</article> Indeed, by the Wedderburn theorem (see e.g., <span class="cite">[<a href="/bibliography/pierce">Pie1982</a>, <span class="postnote">Section 3.5</span>]</span>), any finite-dimensional semisimple algebra over $\mathbf{k}$ is a direct sum of matrix algebras, and it is well known that for a matrix algebra, $A/[A,A]$ is one-dimensional, which easily implies the statement of the lemma. 
+</article> Indeed, by the Wedderburn theorem (see, e.g., <span class="cite">[<a href="/bibliography/pierce">Pie1982</a>, <span class="postnote">Section 3.5</span>]</span>), any finite-dimensional semisimple algebra over $\mathbf{k}$ is a direct sum of matrix algebras, and it is well known that for a matrix algebra, $A/[A,A]$ is one-dimensional, which easily implies the statement of the lemma. 
 </p>
 <p>
 In particular, this gives us the following classification of semisimple commutative Frobenius algebras. 
@@ -72,13 +72,13 @@ It is an easy exercise to show that for an algebra described in Theorem&#160;<a 
     </p>
 </article>
 <p>
- <article class="env-remark" id="">
-  <p><a class="environment-identifier" href="/tag/">Remark <span data-tag="">5.2.1</span>.</a>It is easy to see that the operator $W$ defined above coincides with the operator of multiplication by the element $w=m\circ \Delta (1)$. Explicitly, this element can be described by </p>
+ <article class="env-remark" id="00HT">
+  <p><a class="environment-identifier" href="/tag/00HT">Remark <span data-tag="00HT">5.2.1</span>.</a> It is easy to see that the operator $W$ defined above coincides with the operator of multiplication by the element $w=m\circ \Delta (1)$. Explicitly, this element can be described by </p>
   <div class="equation" id="003H">
     <span class="equation-label"><a href="/tag/003H" data-tag="003H">5.2.1</a></span>
     <div>\begin{equation} \label{e:euler} w=\sum x_ ix^ i \in A, \end{equation}</div>
 </div>
-  <p> where $x_ i$, $x^ i$ are dual bases in $A$ with respect to the pairing. This element is sometimes called the <em>Euler element</em> and will play an important role later, see Theorem&#160;<a href="/tag/006P" data-tag="006P">9.3.4</a>. (In <span class="cite">[<a href="/bibliography/lauda-pfeiffer">LP2007</a>]</span>, $w$ is called the “window element”.) Note also that it easily follows from centrality of $e$ thta $w$ is central. </p>
+  <p> where $x_ i$, $x^ i$ are dual bases in $A$ with respect to the pairing. This element is sometimes called the <em>Euler element</em> and will play an important role later; see Theorem&#160;<a href="/tag/006P" data-tag="006P">9.3.4</a>. (In <span class="cite">[<a href="/bibliography/lauda-pfeiffer">LP2007</a>]</span>, $w$ is called the “window element”.) Note also that it easily follows from the centrality of $e$ that $w$ is central. </p>
 </article> 
 </p>
 <p>
@@ -97,7 +97,7 @@ Show that the map $A\to A^*\colon a\mapsto (a, -)$ is a morphism of $A$-bimodule
 More generally, let $M$ be a finite-dimensional left $A$-module. Let $M^\vee =\operatorname{Hom}_ A(M, A)$; it has a natural structure of a right $A$-module. Show that then the map below is an isomorphism of right $A$-modules: 
 </p>
 <div class="equation">
-  \begin{align*}  M^\vee & \to M^*\\  f& \mapsto \varepsilon (f(-)). \end{align*}
+  \begin{align*}  M^\vee & \to M^*\\  f& \mapsto \varepsilon (f(-)), \end{align*}
 </div>
 <p>
  and the inverse is given by 

@@ -595,3 +595,15 @@
 00HG,e:untwisted-DW
 00HH,e:twisted-DW
 00HJ,auto:c19-TV-comparison-with-cobordism-hypothesis
+00HK,e:qft-axiom1a
+00HL,e:qft-axiom1b
+00HM,s:abelian
+00HN,r:non-symmetric
+00HP,conv:cobordism-pictures
+00HQ,r:pseudo-isotopy
+00HR,c:mapping-class
+00HS,r:bialgebra-vs-frobenius
+00HT,r:euler-element
+00HU,d:G-bundle
+00HV,d:action-groupoid
+00HW,c:dw-center

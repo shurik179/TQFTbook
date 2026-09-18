@@ -1,10 +1,10 @@
 <h1 id="c:frobenius" class="tex-chapter"><span data-tag="002T">5</span> Frobenius algebras</h1>
 
 <p>
-In the previous chapter, we have shown that 2-dimensional TQFTs are classified by commutative, cocommutative Frobenius algebras. In this chapter, we will study Frobenius algebras in detail. 
+In the previous chapter, we showed that 2-dimensional TQFTs are classified by commutative, cocommutative Frobenius algebras. In this chapter, we will study Frobenius algebras in detail. 
 </p>
 <p>
-Recall that a Frobenius algebra is a vector space over a field $\mathbf{k}$ with two structures (see Definition&#160;<a href="/tag/002R" data-tag="002R">4.3.1</a>): 
+Recall that a Frobenius algebra is a vector space $A$ over a field $\mathbf{k}$ with two structures (see Definition&#160;<a href="/tag/002R" data-tag="002R">4.3.1</a>): 
 </p>
 <ul>
   <li><p>
@@ -29,11 +29,11 @@ Note that the Frobenius condition can be restated as follows. Define on $A\otime
  Note that in this definition, we do not assume that $A$ is commutative or cocommutative. 
 </p>
 <p>
-<article class="env-remark" id="">
-  <p><a class="environment-identifier" href="/tag/">Remark <span data-tag="">5.0.1</span>.</a>Given a vector space with structures of an associative algebra and coassociative coalgebra, there are several natural choices for compatibility between these two structures. By far the most commonly used ones are </p>
+<article class="env-remark" id="00HS">
+  <p><a class="environment-identifier" href="/tag/00HS">Remark <span data-tag="00HS">5.0.1</span>.</a> Given a vector space with structures of an associative algebra and coassociative coalgebra, there are several natural choices for compatibility between these two structures. By far the most commonly used ones are </p>
   <p><ul>
   <li><p>
-<em>Bialgebra condition</em>: the comultiplication is a morphism of algebras. (Frequently one also requires existence of a certain involution, called the <em>antipode</em>; this gives the definition of a Hopf algebra.) Examples of bialgebras include group algebras, universal enveloping algebras of Lie algebras, and more. 
+<em>Bialgebra condition</em>: the comultiplication and the counit are morphisms of algebras. (Frequently one also requires the existence of a certain linear map $S\colon A\to A$, called the <em>antipode</em>; this gives the definition of a Hopf algebra.) Examples of bialgebras include group algebras, universal enveloping algebras of Lie algebras, and more. 
 </p>
 </li><li><p>
 <em>Frobenius condition</em>: the comultiplication is a morphism of $A$-bimodules. 
@@ -47,7 +47,7 @@ Note that the Frobenius condition can be restated as follows. Define on $A\otime
 We will use a graphical presentation of various algebraic operations, representing linear operators $A^{\otimes k}\to A^{\otimes m}$ by graphs with $k$ legs at the top and $m$ legs at the bottom (thus, our operators act “from top to bottom”). 
 </p>
 <p>
-Figure&#160;<a href="/tag/002V" data-tag="002V">5.0.1</a> shows graphs used to represent the common algebraic operations. 
+Figure&#160;<a href="/tag/002V" data-tag="002V">5.0.1</a> shows the graphs used to represent common algebraic operations. 
 </p>
 <figure class="figure">
   <p>

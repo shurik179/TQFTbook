@@ -1,0 +1,3 @@
+<article class="env-remark" id="00HN">
+  <p><a class="environment-identifier" href="/tag/00HN">Remark <span data-tag="00HN">2.4.1</span>.</a> There are monoidal categories that do not have a natural symmetric structure; for example, the category $\mathbf{Vec}_ G$ of $G$-graded vector spaces for a non-abelian group $G$, or a category of bimodules over a ring. There are also “braided” categories where we do have isomorphisms $c_{X,Y}\colon X\otimes Y \to Y\otimes X$, but these isomorphisms fail to satisfy the condition $c^2=\operatorname{id}$. The most famous example of a braided category is the category of representations of a quantum group. We will discuss braided categories later (see Chapter&#160;<a href="/tag/00E9" data-tag="00E9">20</a>). </p>
+</article>

@@ -1,9 +1,9 @@
 <h2 id="s:monoidal" class="tex-section"><span data-tag="000F">2.3</span> Monoidal categories</h2>
 <p>
- One of the most important notions is the notion of a monoidal category, which informally is described as a category with an associative operation; the model example is the category of vector spaces with the operation of tensor product. In this section, we review this notion; as before, we refer the reader to <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Chapter 2</span>]</span>; <span class="cite">[<a href="/bibliography/leinster">Lei2004</a>, <span class="postnote">Section 1.2</span>]</span> for a more in-depth discussion. 
+ One of the most important notions is the notion of a monoidal category, which informally is described as a category with an associative operation; the model example is the category of vector spaces with the operation of tensor product. In this section, we review this notion; as before, we refer the reader to <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Chapter 2</span>]</span> and <span class="cite">[<a href="/bibliography/leinster">Lei2004</a>, <span class="postnote">Section 1.2</span>]</span> for a more in-depth discussion. 
 </p>
 <p>
-Before defining monoidal categories, let us look at simpler notion: a monoid. 
+Before defining monoidal categories, let us look at a simpler notion: a monoid. 
 </p>
 <p>
 A <em>monoid</em> is a set together with an associative multiplication operation and a unit: 
@@ -17,10 +17,10 @@ A <em>monoid</em> is a set together with an associative multiplication operation
 <p>
 <article class="env-theorem" id="000G">
   <p><a class="environment-identifier" href="/tag/000G">Theorem <span data-tag="000G">2.3.1</span>.</a> Let $M$ be a monoid and $a_1, \dots , a_ n\in M$. Consider all possible expressions obtained by writing $a_1, \dots , a_ n$ (in this order), then inserting some copies of $1$ and then putting parentheses so that multiplications are just binary products, e.g., $(a_1 \cdot 1) \cdot (1 \cdot a_2) $. Then all of them are equal: if $X_1, X_2$ are two such expressions (with the same $a_1, \dots , a_ n$), then $X_1=X_2$. </p>
-</article> It may seem obvious, but in fact it is not quite trivial; essentially it is the statement that if we construct a graph whose vertices correspond to different expressions written above, and edges to application of associativity and unit relations, then this graph is connected. 
+</article> It may seem obvious, but in fact it is not quite trivial; essentially it is the statement that if we construct a graph whose vertices correspond to different expressions written above, and edges to applications of the associativity and unit relations, then this graph is connected. 
 </p>
 <p>
-If we only include $a_1, \dots , a_ n$ but no 1's, then such expressions are naturally described by planar binary trees. For example, the bracketings $((a_1 a_2)a_3) a_4$ and $((a_1 a_2)(a_3 a_4))$ correspond to the trees below: 
+If we only include $a_1, \dots , a_ n$ but no 1's, then such expressions are naturally described by planar binary trees. For example, the bracketings $((a_1 a_2)a_3) a_4$ and $(a_1 a_2)(a_3 a_4)$ correspond to the trees below: 
 </p>
 <div class="centered"> <img class="includegraphics" src="/static/figures/c2-fig01.svg" /> &#8195;&#8195;<img class="includegraphics" src="/static/figures/c2-fig02.svg" /> </div>
 <p>
@@ -51,7 +51,7 @@ The proper way is to require the existence of a distinguished (canonical) isomor
   <p><a class="environment-identifier" href="/tag/000J">Definition <span data-tag="000J">2.3.2</span>.</a> A <em>monoidal category</em> is a category $\mathcal{C}$ together with the following data: </p>
   <p><ul>
   <li><p>
-An object $\mathbf{1}\in \mathcal{C}$ 
+an object $\mathbf{1}\in \mathcal{C}$ 
 </p>
 </li><li><p>
 a functor $\otimes \colon \mathcal{C}\times \mathcal{C}\to \mathcal{C}$ 
@@ -64,7 +64,7 @@ functorial isomorphisms
 </div>
 </li>
 </ul></p>
-  <p> satisfying compatibility conditions below: </p>
+  <p> satisfying the following compatibility conditions: </p>
   <p><ol>
   <li><p>
 Triangle axiom: for any $A,B\in \mathcal{C}$, the diagram below commutes 
@@ -81,7 +81,7 @@ Pentagon axiom: for any $A,B,C,D \in \mathcal{C}$, the diagram below commutes
     <div class="centered"><img class="includegraphics" src="/static/figures/c2-fig04.svg"></div>
 </div>
 <p>
- (all arrows are given by the associativity isomorphism $\alpha $.) 
+ (all arrows are given by the associativity isomorphism $\alpha $, tensored with identity morphisms where necessary.) 
 </p>
 </li>
 </ol></p>
@@ -112,12 +112,12 @@ Category of bimodules over a fixed ring $R$, with respect to $\otimes _ R$, and 
 </p>
 <p>
 <article class="env-example" id="00FX">
-  <p><a class="environment-identifier" href="/tag/00FX">Example <span data-tag="00FX">2.3.2</span>.</a> Let $G$ be a topological group. Let $\Pi _1(G)$ be its fundamental groupoid, as defined in Definition&#160;<a href="/tag/0009" data-tag="0009">2.1.1</a>. Then multiplication on $G$ defines on $\Pi _1(G)$ a structure of a monoidal category. </p>
+  <p><a class="environment-identifier" href="/tag/00FX">Example <span data-tag="00FX">2.3.2</span>.</a> Let $G$ be a topological group. Let $\Pi _1(G)$ be its fundamental groupoid, as defined in Example&#160;<a href="/tag/0009" data-tag="0009">2.1.1</a>. Then multiplication on $G$ defines on $\Pi _1(G)$ a structure of a monoidal category. </p>
 </article> 
 </p>
 <p>
 <article class="env-example" id="000L">
-  <p><a class="environment-identifier" href="/tag/000L">Example <span data-tag="000L">2.3.3</span>.</a> Let $G$ be a group. Define the category $\mathbf{Vec}_ G$ of <em>$G$-graded vector spaces</em> as the category whose objects are finite-dimensional vector spaces $V$ together with decomposition </p>
+  <p><a class="environment-identifier" href="/tag/000L">Example <span data-tag="000L">2.3.3</span>.</a> Let $G$ be a group. Define the category $\mathbf{Vec}_ G$ of <em>$G$-graded vector spaces</em> as the category whose objects are finite-dimensional vector spaces $V$ together with a decomposition </p>
   <div class="equation">
   \[  V=\bigoplus _{g\in G} V_ g.  \]
 </div>
@@ -131,33 +131,33 @@ Category of bimodules over a fixed ring $R$, with respect to $\otimes _ R$, and 
 <p>
 <article class="env-theorem" id="000M">
       
-  <p><a class="environment-identifier" href="/tag/000M">Theorem <span data-tag="000M">2.3.2</span> <span class="named">(Mac Lane's coherence theorem)</span>.</a>Let $\mathcal{C}$ be a monoidal category. Let $F_1, F_2\colon \mathcal{C}^ n\to \mathcal{C}$ be two functors obtained by compositions of tensor product functor $\otimes $ and functors $X\mapsto X\otimes \mathbf{1}$, $X\mapsto \mathbf{1}\otimes X$, e.g., </p>
+  <p><a class="environment-identifier" href="/tag/000M">Theorem <span data-tag="000M">2.3.2</span> <span class="named">(Mac Lane's coherence theorem)</span>.</a>Let $\mathcal{C}$ be a monoidal category. Let $F_1, F_2\colon \mathcal{C}^ n\to \mathcal{C}$ be two functors obtained by compositions of the tensor product functor $\otimes $ and functors $X\mapsto X\otimes \mathbf{1}$, $X\mapsto \mathbf{1}\otimes X$, e.g., </p>
   <div class="equation">
   \begin{align*}  F_1(A,B,C)& =(A\otimes B)\otimes (\mathbf{1}\otimes C),\\  F_2(A,B,C)& =A\otimes (( B\otimes C)\otimes \mathbf{1}). \end{align*}
 </div>
   <p> Then </p>
   <p><ol>
   <li><p>
-There exists a functorial isomorphism $F_1\simeq F_2$, obtained by composition of associativity isomorphism $\alpha $, left and right unit isomorphisms $l,r$, and their inverses. 
+There exists a functorial isomorphism $F_1\simeq F_2$, obtained by composition of the associativity isomorphism $\alpha $, the left and right unit isomorphisms $l,r$, and their inverses. 
 </p>
 </li><li><p>
 Any two such isomorphisms $F_1\to F_2$ are equal. 
 </p>
 </li>
 </ol></p>
-</article> In other words, if we construct a cell complex $X_ n$ whose vertices are functors $\mathcal{C}^ n\to \mathcal{C}$ as in the statement of the theorem, edges correspond to applications of the associativity and unit isomorphisms, and 2-cells correspond to commutative diagrams given by the pentagon axiom, unit axioms, and functoriality of $\alpha , l, r$, then this complex is simply-connected. 
+</article> In other words, if we construct a cell complex $X_ n$ whose vertices are functors $\mathcal{C}^ n\to \mathcal{C}$ as in the statement of the theorem, edges correspond to applications of the associativity and unit isomorphisms, and 2-cells correspond to commutative diagrams given by the pentagon axiom, unit axioms, and functoriality of $\alpha , l, r$, then this complex is simply connected. 
 </p>
 <p>
-This is a natural generalization of coherence theorem for monoids (Theorem&#160;<a href="/tag/000G" data-tag="000G">2.3.1</a>); in this language, Theorem&#160;<a href="/tag/000G" data-tag="000G">2.3.1</a> is exactly claim (1) of the theorem, i.e., the statement that $X_ n$ is connected. 
+This is a natural generalization of the coherence theorem for monoids (Theorem&#160;<a href="/tag/000G" data-tag="000G">2.3.1</a>); in this language, Theorem&#160;<a href="/tag/000G" data-tag="000G">2.3.1</a> is exactly claim (1) of the theorem, i.e., the statement that $X_ n$ is connected. 
 </p>
 <p>
 <article class="env-remark" id="000N">
-  <p><a class="environment-identifier" href="/tag/000N">Remark <span data-tag="000N">2.3.1</span>.</a> If we only consider functors obtained by composing the tensor product functor (thus, no units), the corresponding complex is a 2-skeleton of a convex polytope $K_ n$, called the <em>associahedron</em>, or the <em>Stasheff polytope</em>. The vertices of $K_ n$ are indexed by binary trees with $n$ leaves; thus, the number of vertices is the Catalan number $C_{n-1} = \frac{1}{n}\binom {2(n-1)}{n-1}$ (so $K_5$ has $C_4 = 14$ vertices). This polytope was introduced by Jim Stasheff in the 1960s. It can be realized as a convex polytope in Euclidean space; see, e.g., <span class="cite">[<a href="/bibliography/loday">Lod2004</a>]</span>. </p>
+  <p><a class="environment-identifier" href="/tag/000N">Remark <span data-tag="000N">2.3.1</span>.</a> If we only consider functors obtained by composing the tensor product functor (thus, no units), the corresponding complex is the 2-skeleton of a convex polytope $K_ n$, called the <em>associahedron</em>, or the <em>Stasheff polytope</em>. The vertices of $K_ n$ are indexed by binary trees with $n$ leaves; thus, the number of vertices is the Catalan number $C_{n-1} = \frac{1}{n}\binom {2(n-1)}{n-1}$ (so $K_5$ has $C_4 = 14$ vertices). This polytope was introduced by Jim Stasheff in the 1960s. It can be realized as a convex polytope in Euclidean space; see, e.g., <span class="cite">[<a href="/bibliography/loday">Lod2004</a>]</span>. </p>
 </article> 
 </p>
 <p>
 <article class="env-exercise" id="000P">
-  <p><a class="environment-identifier" href="/tag/000P">Exercise <span data-tag="000P">2.3.1</span>.</a> Draw the associahedron $K_5$ (it has 14 vertices) and verify that it is simply-connected (more precisely, its 2-skeleton is topologically a sphere $S^2$). We will return to it later, when talking about monoidal 2-categories. </p>
+  <p><a class="environment-identifier" href="/tag/000P">Exercise <span data-tag="000P">2.3.1</span>.</a> Draw the associahedron $K_5$ (it has 14 vertices) and verify that its 2-skeleton is simply connected (in fact, it is homeomorphic to the sphere $S^2$). We will return to it later, when talking about monoidal 2-categories. </p>
 </article> 
 </p>
 <p>
@@ -167,12 +167,12 @@ This is a natural generalization of coherence theorem for monoids (Theorem&#160;
   \begin{align*}  J& \colon F(X\otimes Y)\to F(X)\otimes F(Y)\\  \varphi & \colon \mathbf{1}_\mathcal{D}\to F(\mathbf{1}_\mathcal{C}) \end{align*}
 </div>
   <p> satisfying suitable constraints (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 2.4</span>]</span>). </p>
-  <p>We say that categories $\mathcal{C}, \mathcal{D}$ are monoidally equivalent if there exist monoidal functors $F\colon \mathcal{C}\to \mathcal{D}$, $G\colon \mathcal{D}\to \mathcal{C}$ such that $F\circ G\simeq \operatorname{id}_\mathcal{C}$, $G\circ F \simeq \operatorname{id}_\mathcal{D}$. </p>
+  <p>We say that categories $\mathcal{C}, \mathcal{D}$ are monoidally equivalent if there exist monoidal functors $F\colon \mathcal{C}\to \mathcal{D}$, $G\colon \mathcal{D}\to \mathcal{C}$ such that $F\circ G\simeq \operatorname{id}_\mathcal{D}$, $G\circ F \simeq \operatorname{id}_\mathcal{C}$. </p>
 </article> 
 </p>
 <p>
 <article class="env-remark" id="00FY">
-  <p><a class="environment-identifier" href="/tag/00FY">Remark <span data-tag="00FY">2.3.2</span>.</a> In many references, monoidal functors as defined above are called <em>weak monoidal functors</em>. One can also consider variations of this definition: instead of requiring $J$ to be an isomorphism, one requires $J$ to be a functorial morphism (not necessarily invertible). This gives the definition of <em>lax monoidal functor</em>, see <span class="cite">[<a href="/bibliography/leinster">Lei2004</a>, <span class="postnote">Definition 1.2.10</span>]</span>. </p>
+  <p><a class="environment-identifier" href="/tag/00FY">Remark <span data-tag="00FY">2.3.2</span>.</a> In many references, monoidal functors as defined above are called <em>weak monoidal functors</em>. One can also consider variations of this definition: instead of requiring an isomorphism $F(X\otimes Y)\simeq F(X)\otimes F(Y)$, one can require a functorial morphism (not necessarily invertible) $F(X\otimes Y)\to F(X)\otimes F(Y)$, or a functorial morphism in the opposite direction. This gives the definitions of a <em>colax/lax monoidal functor</em> respectively; see <span class="cite">[<a href="/bibliography/leinster">Lei2004</a>, <span class="postnote">Definition 1.2.10</span>]</span>. </p>
 </article> 
 </p>
 <p>
@@ -188,28 +188,32 @@ This is a natural generalization of coherence theorem for monoids (Theorem&#160;
   <div class="equation">
   \[  \omega (g_1g_2, g_3, g_4)\omega (g_1, g_2, g_3g_4) = \omega (g_1, g_2, g_3) \omega (g_1, g_2g_3, g_4)\omega (g_2, g_3, g_4).  \]
 </div>
-  <p> Consider the category $\mathbf{Vec}^\omega _ G$ which coincides with $\mathbf{Vec}_ G$ as an abelian category; moreover, it has the same tensor product functor $\otimes $ and unit object $\mathbf{1}=\mathbf{k}_1$. However, the associativity isomorphism is different: namely, $\alpha \colon (V\otimes W)\otimes U \to V \otimes (W\otimes U)$ is given by </p>
+  <p> Consider the category $\mathbf{Vec}^\omega _ G$ which coincides with $\mathbf{Vec}_ G$ as an abelian category; moreover, it has the same tensor product functor $\otimes $ and unit object $\mathbf{1}=\mathbf{k}_1$. However, the associativity and unit isomorphisms are different: namely, $\alpha \colon (V\otimes W)\otimes U \to V \otimes (W\otimes U)$ is given by </p>
   <div class="equation">
-  \[  \alpha ((v \otimes w) \otimes u )= \omega (g,h,m) v \otimes (w\otimes u), \qquad v\in V_ g, w\in W_ h, u\in U_ m.  \]
+  \[  \alpha ((v \otimes w) \otimes u )= \omega (g,h,m) v \otimes (w\otimes u), \qquad v\in V_ g, w\in W_ h, u\in U_ m,  \]
 </div>
-  <p> The cocycle condition immediately implies that so defined $\alpha $ satisfies the pentagon axiom. </p>
+  <p> and the unit isomorphisms $l_ V\colon \mathbf{1}\otimes V\to V$, $r_ V\colon V\otimes \mathbf{1}\to V$ are given by </p>
+  <div class="equation">
+  \[  l_ V(1\otimes v)=\omega (1,1,g)^{-1}\,  v, \qquad r_ V(v\otimes 1)=\omega (g,1,1)\,  v, \qquad v\in V_ g.  \]
+</div>
+  <p> The cocycle condition immediately implies that the $\alpha $ so defined satisfies the pentagon axiom. Moreover, taking $(g_1,g_2,g_3,g_4)=(g,1,1,h)$ in the cocycle condition gives $\omega (g,1,h)=\omega (g,1,1)\, \omega (1,1,h)$, which is exactly the triangle axiom (<a href="/tag/00EU" data-tag="00EU">2.3.1</a>) for these $\alpha $, $l$, $r$. (If $\omega (g,1,h)=1$ for all $g,h$, then $l$ and $r$ are the usual unit isomorphisms of $\mathbf{Vec}_ G$; for a general 3-cocycle, however, the usual unit isomorphisms would violate the triangle axiom.) </p>
 </article> <article class="env-exercise" id="000U">
   <p><a class="environment-identifier" href="/tag/000U">Exercise <span data-tag="000U">2.3.2</span>.</a> Let $\omega \colon G\times G\times G\to \mathbf{k}^\times $ be a 3-cocycle. Assume that $\omega $ is a coboundary, i.e., there exists a function $\beta \colon G\times G\to \mathbf{k}^\times $ such that $\omega =d\beta $, where the coboundary operator $d$ is given by </p>
   <div class="equation">
   \[  (d\beta )(g_1, g_2, g_3)= \frac{\beta (g_2, g_3)\, \beta (g_1, g_2g_3)}{\beta (g_1g_2, g_3)\, \beta (g_1, g_2)}.  \]
 </div>
-  <p> Show that then category $\mathbf{Vec}_ G^\omega $ is monoidally equivalent to $\mathbf{Vec}_ G$. </p>
-  <p>More generally, categories $\mathbf{Vec}_ G^\omega $ and $\mathbf{Vec}_ G^{\omega '}$ are equivalent, with the equivalence preserving the $G$-graded dimension, if and only if $\omega '=\omega \cdot d\beta $ for some $\beta \colon G\times G\to \mathbf{k}^\times $ (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 2.6</span>]</span>). </p>
+  <p> Show that then the category $\mathbf{Vec}_ G^\omega $ is monoidally equivalent to $\mathbf{Vec}_ G$. </p>
+  <p>More generally, the categories $\mathbf{Vec}_ G^\omega $ and $\mathbf{Vec}_ G^{\omega '}$ are monoidally equivalent, with the equivalence preserving the $G$-graded dimension, if and only if $\omega '=\omega \cdot d\beta $ for some $\beta \colon G\times G\to \mathbf{k}^\times $ (see <span class="cite">[<a href="/bibliography/etingof-fusion">EGNO2015</a>, <span class="postnote">Section 2.6</span>]</span>). </p>
 </article> 
 </p>
 <p>
 We can restate Mac Lane's coherence theorem as follows. <article class="env-theorem" id="000V">
   <p><a class="environment-identifier" href="/tag/000V">Theorem <span data-tag="000V">2.3.3</span>.</a> Any monoidal category is monoidally equivalent to a strict monoidal category. </p>
-</article> If one knows the concept of a skeleton of a category, then Mac Lane's coherence theorem can be understood as the construction of the skeleton by looking at the isomorphism classes of objects in a monoidal category. 
+</article> 
 </p>
 <p>
 <article class="env-convention" id="000W">
-  <p><a class="environment-identifier" href="/tag/000W">Convention <span data-tag="000W">2.3.1</span>.</a> We will frequently use graphical presentation of morphisms in a monoidal category, representing a morphism $\varphi \colon A_1\otimes \dots \otimes A_ k\to B_1\otimes \dots \otimes B_ m$ by a box with $k$ inputs at the top and $m$ outputs at the bottom as shown in Figure&#160;<a href="/tag/" data-tag="">1.1</a>. </p>
+  <p><a class="environment-identifier" href="/tag/000W">Convention <span data-tag="000W">2.3.1</span>.</a> We will frequently use the graphical presentation of morphisms in a monoidal category, representing a morphism $\varphi \colon A_1\otimes \dots \otimes A_ k\to B_1\otimes \dots \otimes B_ m$ by a box with $k$ inputs at the top and $m$ outputs at the bottom as shown in Figure&#160;<a href="/tag/" data-tag="">1.1</a>. </p>
   <p><figure class="figure">
   <div class="centered"><img class="includegraphics" src="/static/figures/c2-fig05.svg" /> <figcaption class="figcaption">Figure 2.3.1. Graphical notation for a morphism in a monoidal category.</figcaption>  </div>
 
